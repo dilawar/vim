@@ -245,3 +245,28 @@ snippet timestamp
 	st = time.time()
 	stamp = datetime.datetime.fromtimestamp(st).strftime('%Y-%m-%d-%H%M')
 
+snippet argparse
+	import argparse
+    # Argument parser.
+    description = '''${0:description}
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument('--design-directory', '-d', metavar='design_directory'
+            , nargs=1
+            , action='append'
+            , required = True
+            , help = 'A generic option'
+            )
+    parser.add_argument('--language', '-l'
+            , metavar = 'language'
+            , nargs=1
+            , default = "vhdl"
+            , help = 'Which language (supported : vhdl )'
+            )
+    parser.add_argument('--compiler', '-c'
+            , metavar='compiler'
+            , required = False
+            , help = "Optional: Specify a compiler or I'll try to guess on system"
+            )
+    class Args: pass 
+    args = Args()
+    parser.parse_args(namespace=args)
