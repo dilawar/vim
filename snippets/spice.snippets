@@ -12,3 +12,6 @@ snippet control
 	  hardcopy `Filename()`.ps V(${1}) V(${2}) xl 1ns 81ns
 	.ENDC
 		
+snippet pulse
+	* A current pulse
+	I${0} in1 GND pulse(0 10p 1n 1n 1n ${1:width}n ${2:period}
