@@ -8,6 +8,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'dilawar/c.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
+Bundle 'vim-scripts/ShowMarks'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ervandew/supertab'
@@ -18,6 +19,7 @@ Bundle "garbas/vim-snipmate"
 Bundle "hdima/python-syntax"
 Bundle 'dilawar/vimlatex'
 Bundle "vimwiki/vimwiki"
+Bundle "tshirtman/vim-cython"
 
 filetype plugin indent on
 
