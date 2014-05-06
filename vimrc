@@ -125,7 +125,7 @@ let g:snips_email = 'dilawars@iitb.ac.in'
 
 
 " Python related settings
-autocmd BufRead *.py setlocal makeprg=pylint\ -E\ --output-format=parseable\ %:p
+autocmd BufRead *.py setlocal makeprg=pylint\ -E\ %:p
 let g:pymode_lint_write=0
 let g:pymode_lint=0
 
