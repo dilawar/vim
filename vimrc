@@ -17,8 +17,9 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "hdima/python-syntax"
-Bundle 'dilawar/vimlatex'
+"Bundle 'dilawar/vimlatex'
 Bundle "vimwiki/vimwiki"
+Bundle "danchoi/elinks.vim"
 Bundle "tshirtman/vim-cython"
 
 filetype plugin indent on
@@ -67,7 +68,7 @@ au BufRead,BufNewFile *.markdown set filetype=markdown
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.pandoc setlocal filetype=tex |
-    \ setlocal makeprg=md2pdf.sh\ % |
+    \ setlocal makeprg=markdown_to_pdf.sh\ % |
     \ setlocal spell spelllang=en
 
 let noweb_backend="tex"
