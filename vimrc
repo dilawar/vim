@@ -48,6 +48,9 @@ syntax enable
 
 " c-support
 set makeprg=make
+if filereadable("build_me.sh")
+    set makeprg=./build_me.sh
+endif
 set wildmode=longest,list
 
 
