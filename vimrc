@@ -116,10 +116,20 @@ set cc=+1
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " c-support
-set errorformat^=%-GIn\ file\ included\ %.%#
-set errorformat^=%-G%f:%l:\ warning:%m
-set errorformat^=%-G%f:%l:\ notes:%m
-
+" Start of the multi-line error message (%A),
+" %p^ means a string of spaces and then a ^ to
+" get the column number
+let &efm  = '%A%p^' . ','
+" Next is the main bit: continuation of the error line (%C)
+" followed by the filename in quotes, a comma (\,)
+" then the rest of the details
+let &efm .= '%C"%f"\, line %l: error(%n): %m' . ','
+" Next is the last line of the error message, any number
+" of spaces (' %#': equivalent to ' *') followed by a bit
+" more error message
+let &efm .= '%Z %#%m' . ','
+" This just ignores any other lines (must be last!)
+let &efm .= '%-G%.%#'
 " Source methods written in method script
 source $HOME/.vim/methods.vim 
 
