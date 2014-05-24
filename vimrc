@@ -9,6 +9,7 @@ Bundle 'dilawar/c.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/ShowMarks'
+Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ervandew/supertab'
@@ -116,21 +117,10 @@ set cc=+1
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " c-support
-" Start of the multi-line error message (%A),
-" %p^ means a string of spaces and then a ^ to
-" get the column number
-let &efm  = '%A%p^' . ','
-" Next is the main bit: continuation of the error line (%C)
-" followed by the filename in quotes, a comma (\,)
-" then the rest of the details
-let &efm .= '%C"%f"\, line %l: error(%n): %m' . ','
-" Next is the last line of the error message, any number
-" of spaces (' %#': equivalent to ' *') followed by a bit
-" more error message
-let &efm .= '%Z %#%m' . ','
-" This just ignores any other lines (must be last!)
-let &efm .= '%-G%.%#'
-" Source methods written in method script
+
+set errorformat+=%f:%l:\ %m
+set errorformat^=%-G%f:%l:\ warning:%m
+
 source $HOME/.vim/methods.vim 
 
 "" SnipMate 
