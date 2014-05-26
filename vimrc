@@ -10,6 +10,7 @@ Bundle 'dilawar/c.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/ShowMarks'
+Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ervandew/supertab'
@@ -48,7 +49,10 @@ set complete-=k
 syntax enable
 
 " c-support
-set makeprg=./build_me.sh
+set makeprg=make
+if filereadable("build_me.sh")
+    set makeprg=./build_me.sh
+endif
 set wildmode=longest,list
 let g:C_UseTool_cmake = 'yes'
 let g:C_UseTool_doxygen = 'yes'
@@ -121,7 +125,11 @@ colorscheme torte
 set cc=+1
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
-" Source methods written in method script
+" c-support
+
+set errorformat+=%f:%l:\ %m
+set errorformat^=%-G%f:%l:\ warning:%m
+
 source $HOME/.vim/methods.vim 
 
 "" SnipMate 
