@@ -5,6 +5,7 @@ Bundle 'surround.vim'
 Bundle 'Align'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdcommenter'
+" Bundle 'WolfgangMehner/vim-plugins'
 Bundle 'dilawar/c.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
@@ -47,8 +48,10 @@ set complete-=k
 syntax enable
 
 " c-support
-set makeprg=make
+set makeprg=./build_me.sh
 set wildmode=longest,list
+let g:C_UseTool_cmake = 'yes'
+let g:C_UseTool_doxygen = 'yes'
 
 
 " Mappings
@@ -70,6 +73,12 @@ au BufRead,BufNewFile *.markdown set filetype=markdown
 au BufRead,BufNewFile *.pandoc setlocal filetype=tex |
     \ setlocal makeprg=markdown_to_pdf.sh\ % |
     \ setlocal spell spelllang=en
+
+" Make pandoc behave like tex
+au BufRead,BufNewFile *.anansi setlocal filetype=tex |
+    \ setlocal makeprg=anansi.sh\ % |
+    \ setlocal spell spelllang=en
+
 
 let noweb_backend="tex"
 let noweb_language="python"
@@ -111,11 +120,6 @@ set bg=dark
 colorscheme torte
 set cc=+1
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
-
-" c-support
-set errorformat^=%-GIn\ file\ included\ %.%#
-set errorformat^=%-G%f:%l:\ warning:%m
-set errorformat^=%-G%f:%l:\ notes:%m
 
 " Source methods written in method script
 source $HOME/.vim/methods.vim 
