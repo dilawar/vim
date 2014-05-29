@@ -105,7 +105,7 @@ let g:Tex_ViewRule = 'yap -1'
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 " unicode \u2506
-let g:haddock_browser="/usr/bin/firefox"
+"let g:haddock_browser="/usr/bin/elinks"
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
 
@@ -125,7 +125,7 @@ source $HOME/.vim/methods.vim
 
 "" SnipMate 
 let g:snips_author = 'Dilawar Singh'
-let g:snips_email = 'dilawars@iitb.ac.in'
+let g:snips_email = 'dilawars@ncbs.res.in'
 
 
 " Python related settings
@@ -152,4 +152,4 @@ set autoread
 set showmatch
 set backspace=2 "
 "set oldmethod=syntax
-"set foldnestmax=2
+set foldnestmax=2

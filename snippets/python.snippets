@@ -17,7 +17,6 @@ snippet docs
 	Description: ${0}
 	"""
 snippet header 
-	#!/usr/bin/env python
 
 	"""${0:`Filename('$1.py', 'unknown.py')`}: ${1}
 
@@ -28,11 +27,26 @@ snippet header
 	__author__           = "`g:snips_author`"
 	__copyright__        = "Copyright 2013, NCBS Bangalore"
 	__credits__          = ["NCBS Bangalore", "Bhalla Lab"]
-	__license__          = "GPL"
+	__license__          = "GNU GPL"
 	__version__          = "1.0.0"
 	__maintainer__       = "`g:snips_author`"
 	__email__            = "`g:snips_email`"
 	__status__           = "Development"
+	
+snippet moose_license
+	# This file is part of MOOSE simulator: http://moose.ncbs.res.in.
+
+	# MOOSE is free software: you can redistribute it and/or modify
+	# it under the terms of the GNU General Public License as published by
+	# the Free Software Foundation, either version 3 of the License, or
+	# (at your option) any later version.
+
+	# MOOSE is distributed in the hope that it will be useful,
+	# but WITHOUT ANY WARRANTY; without even the implied warranty of
+	# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	# GNU General Public License for more details.
+	# You should have received a copy of the GNU General Public License
+	# along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 	
 snippet wh
 	while ${1:condition}:
