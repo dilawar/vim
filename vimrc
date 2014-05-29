@@ -5,6 +5,7 @@ Bundle 'surround.vim'
 Bundle 'Align'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdcommenter'
+" Bundle 'WolfgangMehner/vim-plugins'
 Bundle 'dilawar/c.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
@@ -53,6 +54,8 @@ if filereadable("build_me.sh")
     set makeprg=./build_me.sh
 endif
 set wildmode=longest,list
+let g:C_UseTool_cmake = 'yes'
+let g:C_UseTool_doxygen = 'yes'
 
 
 " Mappings
@@ -74,6 +77,12 @@ au BufRead,BufNewFile *.markdown set filetype=markdown
 au BufRead,BufNewFile *.pandoc setlocal filetype=tex |
     \ setlocal makeprg=markdown_to_pdf.sh\ % |
     \ setlocal spell spelllang=en
+
+" Make pandoc behave like tex
+au BufRead,BufNewFile *.anansi setlocal filetype=tex |
+    \ setlocal makeprg=anansi.sh\ % |
+    \ setlocal spell spelllang=en
+
 
 let noweb_backend="tex"
 let noweb_language="python"
