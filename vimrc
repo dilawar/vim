@@ -24,6 +24,9 @@ Bundle "vimwiki/vimwiki"
 Bundle "danchoi/elinks.vim"
 Bundle "tshirtman/vim-cython"
 
+" Git protocol
+let g:vundle_default_git_proto = 'git'
+
 filetype plugin indent on
 
 " The following are commented out as they cause vim to behave a lot
