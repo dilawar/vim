@@ -5,10 +5,12 @@ Bundle 'surround.vim'
 Bundle 'Align'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdcommenter'
+" Bundle 'WolfgangMehner/vim-plugins'
 Bundle 'dilawar/c.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/ShowMarks'
+Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ervandew/supertab'
@@ -17,8 +19,9 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "hdima/python-syntax"
-Bundle 'dilawar/vimlatex'
+"Bundle 'dilawar/vimlatex'
 Bundle "vimwiki/vimwiki"
+Bundle "danchoi/elinks.vim"
 Bundle "tshirtman/vim-cython"
 
 filetype plugin indent on
@@ -47,7 +50,12 @@ syntax enable
 
 " c-support
 set makeprg=make
+if filereadable("build_me.sh")
+    set makeprg=./build_me.sh
+endif
 set wildmode=longest,list
+let g:C_UseTool_cmake = 'yes'
+let g:C_UseTool_doxygen = 'yes'
 
 
 " Mappings
@@ -67,8 +75,14 @@ au BufRead,BufNewFile *.markdown set filetype=markdown
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.pandoc setlocal filetype=tex |
-    \ setlocal makeprg=md2pdf.sh\ % |
+    \ setlocal makeprg=markdown_to_pdf.sh\ % |
     \ setlocal spell spelllang=en
+
+" Make pandoc behave like tex
+au BufRead,BufNewFile *.anansi setlocal filetype=tex |
+    \ setlocal makeprg=anansi.sh\ % |
+    \ setlocal spell spelllang=en
+
 
 let noweb_backend="tex"
 let noweb_language="python"
@@ -100,7 +114,7 @@ let g:Tex_ViewRule = 'yap -1'
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 " unicode \u2506
-let g:haddock_browser="/usr/bin/firefox"
+"let g:haddock_browser="/usr/bin/elinks"
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
 
@@ -112,16 +126,15 @@ set cc=+1
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " c-support
-set errorformat^=%-GIn\ file\ included\ %.%#
-set errorformat^=%-G%f:%l:\ warning:%m
-set errorformat^=%-G%f:%l:\ notes:%m
 
-" Source methods written in method script
+set errorformat+=%f:%l:\ %m
+set errorformat^=%-G%f:%l:\ warning:%m
+
 source $HOME/.vim/methods.vim 
 
 "" SnipMate 
 let g:snips_author = 'Dilawar Singh'
-let g:snips_email = 'dilawars@iitb.ac.in'
+let g:snips_email = 'dilawars@ncbs.res.in'
 
 
 " Python related settings
@@ -148,4 +161,4 @@ set autoread
 set showmatch
 set backspace=2 "
 "set oldmethod=syntax
-"set foldnestmax=2
+set foldnestmax=2

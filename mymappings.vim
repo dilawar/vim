@@ -66,7 +66,14 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
-
 imap ;;; <Plug>snipMateNextOrTrigger
-
 map gqc :call FormatComment()<CR>
+
+" Insert a  character n times.
+function! Repeat()
+    let times = input("Count: ")
+    let char  = input("Char: ")
+    exe ":normal a" . repeat(char, times)
+endfunction
+imap <C-r> <C-o>:call Repeat()<cr>
+
