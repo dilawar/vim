@@ -25,13 +25,28 @@ snippet header
 	"""
 		
 	__author__           = "`g:snips_author`"
-	__copyright__        = "Copyright 2013, NCBS Bangalore"
-	__credits__          = ["NCBS Bangalore", "Bhalla Lab"]
+	__copyright__        = "Copyright 2013, `g:snips_author` and NCBS Bangalore"
+	__credits__          = ["NCBS Bangalore"]
 	__license__          = "GNU GPL"
 	__version__          = "1.0.0"
 	__maintainer__       = "`g:snips_author`"
 	__email__            = "`g:snips_email`"
 	__status__           = "Development"
+	
+snippet license
+	# This file is part of ${1:app} ${2}.
+
+	# $1 is free software: you can redistribute it and/or modify
+	# it under the terms of the GNU General Public License as published by
+	# the Free Software Foundation, either version 3 of the License, or
+	# (at your option) any later version.
+
+	# $1 is distributed in the hope that it will be useful,
+	# but WITHOUT ANY WARRANTY; without even the implied warranty of
+	# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	# GNU General Public License for more details.
+	# You should have received a copy of the GNU General Public License
+	# along with $1.  If not, see <http://www.gnu.org/licenses/>.
 	
 snippet moose_license
 	# This file is part of MOOSE simulator: http://moose.ncbs.res.in.
@@ -46,7 +61,7 @@ snippet moose_license
 	# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	# GNU General Public License for more details.
 	# You should have received a copy of the GNU General Public License
-	# along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+	# along with MOOSE.  If not, see <http://www.gnu.org/licenses/>.
 	
 snippet wh
 	while ${1:condition}:
