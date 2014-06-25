@@ -270,12 +270,6 @@ snippet argparse
 	        , required = True
 	        , help = 'A generic option'
 	        )
-	parser.add_argument('--language', '-l'
-	        , metavar = 'language'
-	        , nargs=1
-	        , default = "vhdl"
-	        , help = 'Which language (supported : vhdl )'
-	        )
 	parser.add_argument('--compiler', '-c'
 	        , metavar='compiler'
 	        , required = False
@@ -284,3 +278,10 @@ snippet argparse
 	class Args: pass 
 	args = Args()
 	parser.parse_args(namespace=args)
+
+snippet savefigs
+	for i in pylab.get_fignums():
+		filename = __file__+"_{}.png".format(i)
+		pylab.figure(i)
+		print(("\t++ Storing figure {} to {}".format(i, filename)))
+		pylab.savefig(filename)
