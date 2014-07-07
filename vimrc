@@ -21,6 +21,7 @@ Bundle "garbas/vim-snipmate"
 Bundle "hdima/python-syntax"
 "Bundle 'dilawar/vimlatex'
 Bundle "vimwiki/vimwiki"
+Bundle "JuliaLang/julia-vim"
 Bundle "danchoi/elinks.vim"
 Bundle "tshirtman/vim-cython"
 Bundle "mattn/codepad-vim"
