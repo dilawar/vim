@@ -326,7 +326,7 @@ snippet cython
 	os.environ['CXX'] = "g++"
 
 	# Clean up
-	moduleName = "${1:module_name}"
+	moduleName = "${1:aanchoo}"
 	for root, dirs, files in os.walk(".", topdown=False):
 		for name in files:
 			if (name.startswith(moduleName) and not(name.endswith(".pyx") or
