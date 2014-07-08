@@ -122,10 +122,10 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
 
 " colorscheme and all
-set bg=dark
+"set bg=dark
 "colorscheme solarized
-colorscheme torte
-set cc=+1
+"colorscheme torte
+"set cc=+1
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " c-support
@@ -139,17 +139,16 @@ source $HOME/.vim/methods.vim
 let g:snips_author = 'Dilawar Singh'
 let g:snips_email = 'dilawars@ncbs.res.in'
 
-
 " Python related settings
 autocmd BufRead *.py setlocal makeprg=pylint\ -E\ %:p
 let g:pymode_lint_write=0
 let g:pymode_lint=0
 
 "indent guide
-hi IndentGuidesOdd  ctermbg=white
-hi IndentGuidesEven ctermbg=lightgrey
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size=1
+"hi IndentGuidesOdd  ctermbg=white
+"hi IndentGuidesEven ctermbg=lightgrey
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_guide_size=1
 
 " default
 set softtabstop=4
@@ -159,9 +158,8 @@ set smarttab
 set textwidth=80
 set wrap
 set iskeyword+=_
-"set foldmethod=manual
 set autoread
 set showmatch
 set backspace=2 "
-"set oldmethod=syntax
+set foldmethod=syntax
 set foldnestmax=2
