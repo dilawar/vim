@@ -342,20 +342,20 @@ snippet cython
 				Extension(moduleName
 					, language = "C++"
 					, include_dirs = [ 
-						, "."
+						"."
 						]
 					, sources = [
 						"${1:source_file}.pyx"
 						]
 					, extra_compile_args = [ 
-						, "-g"
+						"-g"
 						, "-DCYTHON"
 						, "-DLINUX"
 						, "-DPYMOOSE"
 						]
 					, extra_link_args = ["-L."]
 					, libraries = [
-						, "stdc++"
+						"stdc++"
 						]
 					)
 				]
