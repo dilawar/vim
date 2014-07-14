@@ -10,6 +10,7 @@ Bundle 'dilawar/c.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
+Bundle 'vim-scripts/pyrex.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ervandew/supertab'
@@ -160,5 +161,5 @@ set iskeyword+=_
 set autoread
 set showmatch
 set backspace=2 "
-set foldmethod=syntax
-set foldnestmax=2
+"set foldmethod=syntax
+"set foldnestmax=2
