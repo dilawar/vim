@@ -163,3 +163,4 @@ set showmatch
 set backspace=2 "
 "set foldmethod=syntax
 "set foldnestmax=2
+let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
