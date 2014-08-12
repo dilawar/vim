@@ -309,3 +309,14 @@ snippet addplot
 		\end{axis}
 	\end{tikzpicture}
 
+snippet readcsv
+	\begin{table}[h!]
+		\centering
+		\label{table:${1:label}}
+		\pgfplotstabletypeset[
+			col sep=comma,columns={} 
+			, every head row/.style={after row=\hline}
+			, every last row/.style={after row=\hline}
+		]{data.csv}
+	\end{table}
+
