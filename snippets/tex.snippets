@@ -325,9 +325,7 @@ snippet csvplot
 	\centering
 	\begin{tikzpicture}[scale=1]
 		\begin{axis}[xlabel=${1:xlabel},ylabel=${2:ylabel}]
-			\addplot [mark=*,color=red] table[x=index,y=red,col sep=comma] {${3:file}.csv};
-			\addplot [mark=*,color=blue] table[x=index,y=blue,col sep=comma] {${3}.csv};
-			\addplot [mark=*,color=green] table[x=index,y=green,col sep=comma] {${3}.csv};
+			\addplot [mark=*,color=red] table[x=${1},y=${2},col sep=comma] {${3:file}.csv};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{}
