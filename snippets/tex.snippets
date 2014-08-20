@@ -314,7 +314,9 @@ snippet csvreader
 		\centering
 		\label{table:${1:label}}
 		\pgfplotstabletypeset[
-			col sep=comma,columns={} 
+			col sep=comma
+			, string type
+			, columns={} 
 			, every head row/.style={after row=\hline}
 			, every last row/.style={after row=\hline}
 		]{data.csv}
