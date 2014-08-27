@@ -64,11 +64,11 @@ snippet external_project
 	include(ExternalProject)
 	ExternalProject_Add(
 	   ${1:external_prj_name}
-	   PREFIX ${2:${CMAKE_SOURCE_DIR}/$1}
-	   SOURCE_DIR  ${3:${CMAKE_SOURCE_DIR}/$1}
-	   CONFIGURE_COMMAND $3/configure --prefix=$3
+	   PREFIX ${2:${CMAKE_SOURCE_DIR}}/$1
+	   SOURCE_DIR  ${3:${CMAKE_SOURCE_DIR}}/$1
+	   CONFIGURE_COMMAND $3}/$1/configure --prefix=$3}/$1
 	   BUILD_COMMAND ${MAKE}
 	   BUILD_IN_SOURCE 1
 	) 
-	INCLUDE_DIRECTORIES($3/include)
-	LINK_DIRECTORIES(${CMAKE_SOURCE_DIR}/$3/lib)
+	INCLUDE_DIRECTORIES($3}/$1/include)
+	LINK_DIRECTORIES($3}/$1/lib)
