@@ -11,6 +11,7 @@ Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
+Bundle 'vim-scripts/dbext.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ervandew/supertab'
 Bundle 'kana/vim-fakeclip'
@@ -123,9 +124,9 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 " colorscheme and all
 "set bg=dark
 "colorscheme solarized
-"colorscheme torte
-"set cc=+1
-"hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+colorscheme torte
+set cc=+1
+hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " c-support
 
@@ -162,3 +163,4 @@ set showmatch
 set backspace=2 "
 "set foldmethod=syntax
 "set foldnestmax=2
+let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
