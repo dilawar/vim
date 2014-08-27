@@ -59,3 +59,14 @@ snippet props
 		${2:PROPERTIES} ${3:COMPILE_FLAGS}
 		${0:"-O3 -Wall -pedantic"}
 	)
+
+snippet external_project
+	include(ExternalProject)
+	ExternalProject_Add(
+	   ${0:external_prj_name}
+	   PREFIX ${1:$0}
+	   SOURCE_DIR  ${2:$0}
+	   CMAKE_ARGS ${CMARGS} -DCMAKE_INSTALL_PREFIX=${3:$0}
+	) 
+	INCLUDE_DIRECTORIES($3/include)
+	LINK_DIRECTORIES($3/lib)
