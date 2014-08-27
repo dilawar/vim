@@ -78,12 +78,12 @@ au BufRead,BufNewFile *.markdown set filetype=markdown
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.pandoc setlocal filetype=tex |
-    \ setlocal makeprg=markdown_to_pdf.sh\ |
+    \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
     \ setlocal spell spelllang=en
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.anansi setlocal filetype=tex |
-    \ setlocal makeprg=anansi.sh\ |
+    \ setlocal makeprg=anansi.sh\ % |
     \ setlocal spell spelllang=en
 
 
