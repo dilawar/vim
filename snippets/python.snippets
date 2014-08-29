@@ -361,3 +361,41 @@ snippet cython
 				]
 		)
 	
+snippet setup
+	import os
+	import sys
+	try:
+		from setuptools import setup
+	except ImportError:
+		from distutils.core import setup
+
+	with open("README.md") as f:
+		readme = f.read()
+
+	packages = ["${1:package}", ]
+	package_data = { }
+	requires = [ ]
+	classifiers = [
+		'Development Status :: 4 - Beta',
+		'Intended Audience :: Developers',
+		'License :: OSI Approved :: MIT License',
+		'Operating System :: OS Independent',
+		'Programming Language :: Python',
+		'Programming Language :: Python :: 2.6',
+		'Programming Language :: Python :: 2.7',
+		]
+
+	setup(
+		name = "$1",
+	    version = "0.0.1",
+	    description = "${2:Short description of package}",
+	    long_description = readme,
+	    packages = packages,
+	    package_data = package_data,
+	    install_requires = requires,
+	    author = "`g:snips_author`",
+	    author_email = "`g:snips_email`",
+	    url = "${3:http://github.com/dilawar/}",
+	    license='GPL',
+	    classifiers=classifiers,
+	)
