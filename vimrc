@@ -5,8 +5,6 @@ Bundle 'surround.vim'
 Bundle 'Align'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdcommenter'
-" Bundle 'WolfgangMehner/vim-plugins'
-Bundle 'dilawar/c.vim'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
@@ -19,7 +17,6 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "hdima/python-syntax"
-"Bundle 'dilawar/vimlatex'
 Bundle "vimwiki/vimwiki"
 Bundle "JuliaLang/julia-vim"
 Bundle "danchoi/elinks.vim"
@@ -164,3 +161,5 @@ set backspace=2 "
 "set foldmethod=syntax
 "set foldnestmax=2
 let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
+syntax match nonascii "[^\x00-\x7F]"
+highlight nonascii guibg=Red ctermbg=2

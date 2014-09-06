@@ -68,14 +68,14 @@ snippet mu
 ## Class
 # class
 snippet cl
-	class ${1:`Filename('$1', 'name')`}
+	class ${1:`Filename('', 'name')`}
 	{
-	public:
-		$1(${2});
-		~$1();
+		public:
+			$1(${2});
+			~$1();
 
-	private:
-		${0:/* data */}
+		private:
+			${0:/* data */}
 	};
 # member function implementation
 snippet mfun
