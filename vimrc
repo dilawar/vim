@@ -164,3 +164,7 @@ set backspace=2 "
 let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
 syntax match nonascii "[^\x00-\x7F]"
 highlight nonascii guibg=Red ctermbg=2
+
+"" Read pdf file in vim
+command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
+command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -csw78
