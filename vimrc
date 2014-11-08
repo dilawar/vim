@@ -75,7 +75,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.markdown set filetype=markdown
 
 " Make pandoc behave like tex
-au BufRead,BufNewFile *.pandoc setlocal filetype=tex |
+au BufRead,BufNewFile *.pandoc setlocal filetype=markdown |
     \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
     \ setlocal spell spelllang=en
 
@@ -168,3 +168,11 @@ highlight nonascii guibg=Red ctermbg=2
 "" Read pdf file in vim
 command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
 command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -csw78
+
+augroup nonvim
+   au!
+   au BufRead *.png,*.jpg,*.pdf,*.gif,*.xls* sil exe "!open " . shellescape(expand("%:p")) | bd | let &ft=&ft
+   au BufRead *.ppt*,*.doc*,*.rtf let g:output_pdf = shellescape(expand("%:r") . ".pdf")
+   au BufRead *.ppt*,*.doc*,*.rtf sil exe "!/home/dilawar/Scripts/any2pdf " . shellescape(expand("%:p"))
+   au BufRead *.ppt*,*.doc*,*.rtf sil exe "!open " . g:output_pdf | bd | let &ft=&ft
+augroup end
