@@ -123,8 +123,8 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 "set bg=dark
 "colorscheme solarized
 colorscheme torte
-set cc=+1
-hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+"set cc=+1
+"hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " c-support
 
