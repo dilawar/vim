@@ -3,7 +3,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'surround.vim'
 Bundle 'Align'
-Bundle 'dilawar/c.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
