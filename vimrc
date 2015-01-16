@@ -24,6 +24,7 @@ Bundle "tshirtman/vim-cython"
 Bundle "mattn/codepad-vim"
 Bundle "mattn/webapi-vim"
 Bundle "LaTex-Box-Team/LaTex-Box"
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on
 
