@@ -25,6 +25,7 @@ Bundle "mattn/codepad-vim"
 Bundle "mattn/webapi-vim"
 Bundle "LaTex-Box-Team/LaTex-Box"
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'muggenhor/Vim-Noweb'
 
 filetype plugin indent on
 
