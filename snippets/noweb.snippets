@@ -17,6 +17,23 @@ snippet pre
 
 	\end{document}          
 
+snippet header
+	\documentclass[]{article}
+	\usepackage[margin=20mm]{geometry}
+	\usepackage{hyperref}
+	\usepackage{graphicx}
+	\usepackage{noweb}
+	\usepackage{todonotes}
+	\usepackage{tikz}
+	\usepackage{fancyhdr}
+	\pagestyle{fancy}
+	\lhead{Experiments with synapse}
+	\rhead{Last modified: \today}
+	\begin{document}
+
+
+	\end{document}
+
 #newcommand
 snippet nc
 	\newcommand{\${1:cmd}}[${2:opt}]{${3:realcmd}} ${0}
