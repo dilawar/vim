@@ -70,6 +70,7 @@ let g:SuperTabDefaultCompletionType = "context"
 "" Section for literate programming.
 au BufNewFile *.nw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
+au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
 au BufRead,BufNewFile *.nw set spell spelllang=en
 au BufRead,BufNewFile *.blog set filetype=markdown
