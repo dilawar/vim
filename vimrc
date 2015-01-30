@@ -139,6 +139,11 @@ source $HOME/.vim/methods.vim
 "" SnipMate 
 let g:snips_author = 'Dilawar Singh'
 let g:snips_email = 'dilawars@ncbs.res.in'
+let g:snippets_dir = '$HOME/.vim/snippets'
+
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
 
 " Python related settings
 autocmd BufRead *.py setlocal makeprg=pylint\ -E\ %:p
