@@ -144,6 +144,7 @@ let g:snippets_dir = '$HOME/.vim/snippets'
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
+let g:snipMate.scope_aliases['markdown'] = 'markdown,tex'
 
 " Python related settings
 autocmd BufRead *.py setlocal makeprg=pylint\ -E\ %:p
