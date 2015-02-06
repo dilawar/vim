@@ -269,8 +269,7 @@ snippet clog
 	logging.getLogger('').addHandler(ch)
 
 snippet timestamp
-	st = time.time()
-	stamp = datetime.datetime.fromtimestamp(st).strftime('%Y-%m-%d-%H%M')
+	stamp = datetime.datetime.now().isoformat()
 
 snippet argparse
 	import argparse
@@ -393,6 +392,10 @@ snippet setup
 	    license='GPL',
 	    classifiers=classifiers,
 	)
-
 snippet legend
 	pylab.legend(loc='best', framealpha=0.4)
+snippet datadir
+	import os, datetime
+	now = datetime.datetime.now()
+	dirname = "data-%s" % (today.strftime('%Y%m%d-%H%M'))
+	if not os.path.isdir(dirname): os.makedirs(dirname)
