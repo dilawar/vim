@@ -219,9 +219,9 @@ snippet tt
 snippet ft
 	\footnote{${0:text}}
 snippet fig
-	\begin{figure}
+	\begin{figure}[ht!]
 	\begin{center}
-	    \includegraphics[scale=${1}]{Figures/${2}}
+	    \includegraphics[width=${1:1}\textwidth]{images/${2}}
 	\end{center}
 	\caption{${3}}
 	\label{fig:${4}}
