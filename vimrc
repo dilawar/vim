@@ -7,6 +7,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
+Bundle 'chrisbra/csv.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'vim-scripts/dbext.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -76,6 +77,7 @@ au BufRead,BufNewFile *.nw set spell spelllang=en
 au BufRead,BufNewFile *.blog set filetype=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.markdown set filetype=markdown
+au BufRead,BufNewFile *.csv set filetype=csv
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.pandoc setlocal filetype=markdown |
