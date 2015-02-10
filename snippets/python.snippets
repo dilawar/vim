@@ -274,22 +274,26 @@ snippet timestamp
 snippet argparse
 	import argparse
 	# Argument parser.
-	description = '''${0:description}
+	description = '''${0:description}'''
 	parser = argparse.ArgumentParser(description=description)
-	parser.add_argument('--design-directory', '-d', metavar='design_directory'
-	        , nargs=1
-	        , action='append'
+	parser.add_argument('--variable', '-v', metavar='variable'
 	        , required = True
 	        , help = 'A generic option'
-	        )
-	parser.add_argument('--compiler', '-c'
-	        , metavar='compiler'
-	        , required = False
-	        , help = "Optional: Specify a compiler or I'll try to guess on system"
 	        )
 	class Args: pass 
 	args = Args()
 	parser.parse_args(namespace=args)
+
+snippet arg
+	parser.add_argument('--${0:variable}', '-${1:v}'
+		, required = False
+		, help = '${3:Ding dong}'
+		)
+
+snippet arggroup
+	group = parser.add_mutually_exclusive_group()
+	group.add_argument("-${0:param1}", "--$0", help="${1}")
+	group.add_argument("-${2:param2}", "--$2", help="${3}")
 
 snippet savefigs
 	for i in pylab.get_fignums():
