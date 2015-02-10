@@ -283,13 +283,11 @@ snippet argparse
 	class Args: pass 
 	args = Args()
 	parser.parse_args(namespace=args)
-
 snippet arg
 	parser.add_argument('--${0:variable}', '-${1:v}'
 		, required = False
-		, help = '${3:Ding dong}'
+		, help = '${2:Ding dong}'
 		)
-
 snippet arggroup
 	group = parser.add_mutually_exclusive_group()
 	group.add_argument("-${0:param1}", "--$0", help="${1}")
