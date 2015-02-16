@@ -399,5 +399,5 @@ snippet legend
 snippet datadir
 	import os, datetime
 	now = datetime.datetime.now()
-	datadir = "data-%s" % (now.strftime('%Y%m%d-%H%M'))
+	datadir = "_data/%s" % (now.strftime('%Y%m%d-%H%M'))
 	if not os.path.isdir(datadir): os.makedirs(datadir)
