@@ -1,6 +1,6 @@
 snippet header
 	/***
-	 *       Filename:  `Filename()`
+	 *       Filename:  `expand('%:t')`
 	 *
 	 *    Description:  ${0:description}
 	 *
@@ -13,6 +13,12 @@ snippet header
 	 *
 	 *        License:  GNU GPL2
 	 */
+
+snippet #<
+	#include <${0:iostream}>
+
+snippet #"
+	#include "${0:`Filename()`.h}"
 
 ## STL Collections
 # std::array
