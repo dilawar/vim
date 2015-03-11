@@ -304,7 +304,6 @@ snippet cython
 	"""${0:`Filename('$1.pyx', 'unknown.pyx')`}: ${1}
 
 	"""
-		
 	__author__           = "`g:snips_author`"
 	__copyright__        = "Copyright 2013, Dilawar Singh"
 	__license__          = "GPL"
@@ -315,49 +314,15 @@ snippet cython
 
 	import sys
 	import os
-	import shutil
-
 	from distutils.core import setup
-	from distutils.extension import Extension
-	from Cython.Distutils import build_ext
+	from Cython.Build import cythonize
 
 	os.environ['CC'] = "g++"
 	os.environ['CXX'] = "g++"
 
-	# Clean up
-	moduleName = "${1:aanchoo}"
-	for root, dirs, files in os.walk(".", topdown=False):
-		for name in files:
-			if (name.startswith(moduleName) and not(name.endswith(".pyx") or
-				name.endswith(".pxd") or name.endswith(".cxx"))):
-				os.remove(os.path.join(root, name))
-	for name in dirs:
-		if(name == "build"):
-			shutil.rmtree(name)
-
 	setup(
-			cmdclass = {'build_ext': build_ext},
-			ext_modules = [
-				Extension(moduleName
-					, language = "C++"
-					, include_dirs = [ 
-						"."
-						]
-					, sources = [
-						"${1:source_file}.pyx"
-						]
-					, extra_compile_args = [ 
-						"-g"
-						, "-DCYTHON"
-						, "-DLINUX"
-						, "-DPYMOOSE"
-						]
-					, extra_link_args = ["-L."]
-					, libraries = [
-						"stdc++"
-						]
-					)
-				]
+		name = "${0:My stupid app}",
+		ext_modules = cythonize("${1:*.pyx}")
 		)
 	
 snippet setup
