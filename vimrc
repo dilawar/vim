@@ -18,13 +18,12 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 "Bundle "davidhalter/jedi-vim"
 Bundle "heavenshell/vim-pydocstring"
-Bundle "vimwiki/vimwiki"
 Bundle "JuliaLang/julia-vim"
 Bundle "danchoi/elinks.vim"
 Bundle "tshirtman/vim-cython"
 Bundle "mattn/codepad-vim"
-Bundle "mattn/webapi-vim"
-Bundle "LaTex-Box-Team/LaTex-Box"
+"Bundle "mattn/webapi-vim"
+"Bundle "LaTex-Box-Team/LaTex-Box"
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'muggenhor/Vim-Noweb'
 
@@ -92,7 +91,7 @@ au BufRead,BufNewFile *.anansi setlocal filetype=tex |
 
 let noweb_backend="tex"
 let noweb_language="python"
-let noweb_fold_code=1
+let noweb_fold_code=0
 
 au BufRead,BufNewFile *.tex set spell spelllang=en
 au BufEnter *.tex set nosmartindent
