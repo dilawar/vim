@@ -227,7 +227,7 @@ snippet fig
 	\label{fig:${4}}
 	\end{figure}
 	${0}
-snippet tikz
+snippet tikzpicture
 	\begin{figure}
 	\begin{center}
 	\begin{tikzpicture}[scale=${1:1}]
@@ -238,6 +238,13 @@ snippet tikz
 	\label{fig:${4}}
 	\end{figure}
 	${0}
+
+snippet tikz
+	\begin{tikzpicture}[scale=${1:1}
+	    , every node/.style={}
+	    ]
+		${2}
+	\end{tikzpicture}	
 #math
 snippet stackrel
 	\stackrel{${1:above}}{${2:below}} ${0}
