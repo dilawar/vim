@@ -104,6 +104,7 @@ au BufRead,BufNew *.md setlocal complete+=k
 au BufRead,BufNew *.md setlocal spell spelllang=en
 au BufRead,BufNew *.markdown setlocal complete+=k
 au BufRead,BufNew *.markdown setlocal syntax=markdown
+au BufRead,BufNew *.txt setlocal syntax=markdown
 au BufRead,BufNew *.markdown setlocal spell spelllang=en
 
 
@@ -168,6 +169,7 @@ set wrap
 set iskeyword+=_
 set autoread
 set showmatch
+set errorbells
 set backspace=2 "
 "set foldmethod=syntax
 "set foldnestmax=2
