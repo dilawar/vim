@@ -79,6 +79,10 @@ au BufRead,BufNewFile *.markdown set filetype=markdown
 au BufRead,BufNewFile *.csv set filetype=csv
 
 " Make pandoc behave like tex
+au BufRead,BufNewFile *.md setlocal filetype=markdown |
+    \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
+    \ setlocal spell spelllang=en
+
 au BufRead,BufNewFile *.pandoc setlocal filetype=markdown |
     \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
     \ setlocal spell spelllang=en
@@ -98,13 +102,11 @@ au BufEnter *.tex set nosmartindent
 
 " Blog related setting.
 au BufRead,BufNew *.blog setlocal spell spelllang=en 
-au BufRead,BufNew *.blog setlocal filetype=html
 au BufRead,BufNew *.blog setlocal complete+=k
 au BufRead,BufNew *.md setlocal complete+=k
 au BufRead,BufNew *.md setlocal spell spelllang=en
 au BufRead,BufNew *.markdown setlocal complete+=k
 au BufRead,BufNew *.markdown setlocal syntax=markdown
-au BufRead,BufNew *.txt setlocal syntax=markdown
 au BufRead,BufNew *.markdown setlocal spell spelllang=en
 
 
