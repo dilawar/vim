@@ -3,7 +3,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'surround.vim'
 Bundle 'Align'
-Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'yegappan/mru'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
@@ -16,16 +16,9 @@ Bundle 'kana/vim-fakeclip'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
-"Bundle "davidhalter/jedi-vim"
 Bundle "heavenshell/vim-pydocstring"
-Bundle "JuliaLang/julia-vim"
 Bundle "danchoi/elinks.vim"
-Bundle "tshirtman/vim-cython"
-Bundle "mattn/codepad-vim"
-"Bundle "mattn/webapi-vim"
-"Bundle "LaTex-Box-Team/LaTex-Box"
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'muggenhor/Vim-Noweb'
 
 filetype plugin indent on
 
