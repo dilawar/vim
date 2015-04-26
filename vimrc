@@ -7,6 +7,7 @@ Bundle 'yegappan/mru'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
+Bundle 'vim-scripts/savevers.vim'
 Bundle 'chrisbra/csv.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'vim-scripts/dbext.vim'
@@ -67,18 +68,15 @@ au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
 au BufRead,BufNewFile *.nw set spell spelllang=en
 au BufRead,BufNewFile *.blog set filetype=markdown
-au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.markdown set filetype=markdown
 au BufRead,BufNewFile *.csv set filetype=csv
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
     \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
-    \ setlocal spell spelllang=en
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=markdown |
     \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
-    \ setlocal spell spelllang=en
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.anansi setlocal filetype=tex |
@@ -166,6 +164,11 @@ set autoread
 set showmatch
 set errorbells
 set backspace=2 "
+" Create backup of all files.
+set backup
+set patchmode=.clean
+set backupdir=./.backup,.,/tmp
+
 "set foldmethod=syntax
 "set foldnestmax=2
 let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
