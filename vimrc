@@ -59,7 +59,6 @@ let g:C_UseTool_doxygen = 'yes'
 source $HOME/.vim/mymappings.vim
 
 " Supertab
-let g:SuperTabDefaultCompletionType = "context"
 
 "" Section for literate programming.
 au BufNewFile *.nw read ~/Scripts/template.snw 
@@ -165,9 +164,9 @@ set showmatch
 set errorbells
 set backspace=2 "
 " Create backup of all files.
-set backup
-set patchmode=.clean
-set backupdir=./.backup,.,/tmp
+"set backup
+"set patchmode=.clean
+"set backupdir=./.backup,.,/tmp
 
 "set foldmethod=syntax
 "set foldnestmax=2
