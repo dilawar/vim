@@ -7,6 +7,7 @@ Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/supertab'
 Bundle "garbas/vim-snipmate"
 Bundle "danchoi/elinks.vim"
