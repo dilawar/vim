@@ -2,6 +2,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc() 
 Bundle 'gmarik/vundle'
 Bundle 'surround.vim'
+Bundle 'bling/vim-airline'
 Bundle 'Align'
 Bundle 'yegappan/mru'
 Bundle 'vim-scripts/a.vim'
