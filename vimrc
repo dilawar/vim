@@ -8,13 +8,19 @@ Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'ervandew/supertab'
+
+" Following three goes together
+Bundle 'vim-scripts/tlib'
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle "garbas/vim-snipmate"
+
+
 Bundle "danchoi/elinks.vim"
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp'
+Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'Valloric/YouCompleteMe'
 
