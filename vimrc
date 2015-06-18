@@ -10,7 +10,7 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'ervandew/supertab'
 
 " Following three goes together
-Bundle 'vim-scripts/tlib'
+Bundle 'tomtom/tlib'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle "garbas/vim-snipmate"
 
@@ -18,7 +18,7 @@ Bundle "garbas/vim-snipmate"
 Bundle "danchoi/elinks.vim"
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
@@ -123,7 +123,7 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 " colorscheme and all
 "set bg=dark
 "colorscheme solarized
-colorscheme torte
+"colorscheme torte
 "set cc=+1
 "hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
@@ -168,15 +168,18 @@ set showmatch
 set errorbells
 set backspace=2 "
 " Create backup of all files.
-"set backup
-"set patchmode=.clean
-"set backupdir=./.backup,.,/tmp
+set backup
+set patchmode=.clean
+set backupdir=./.backup,.,/tmp
 
 "set foldmethod=syntax
 "set foldnestmax=2
 let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
 syntax match nonascii "[^\x00-\x7F]"
 highlight nonascii guibg=Red ctermbg=2
+
+" statusline
+set statusline=2
 
 "" Read pdf file in vim
 command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
@@ -189,3 +192,6 @@ augroup nonvim
    au BufRead *.ppt*,*.doc*,*.rtf sil exe "!/home/dilawar/Scripts/any2pdf " . shellescape(expand("%:p"))
    au BufRead *.ppt*,*.doc*,*.rtf sil exe "!open " . g:output_pdf | bd | let &ft=&ft
 augroup end
+
+" Supertab
+let g:SuperTabDefaultCompletionType = "context"
