@@ -257,7 +257,22 @@ snippet embed
 	embed()
 snippet log
 	import logging
-	logging.basicConfig(filename='log.log', level=logging.DEBUG)
+	logger = logging.getLogger("${0:app}")
+	logger.setLevel(logging.DEBUG)
+
+	# create file handler which logs even debug messages
+	fh = logging.FileHandler('${0}.log')
+	fh.setLevel(logging.DEBUG)
+	# create console handler with a higher log level
+	ch = logging.StreamHandler()
+	ch.setLevel(logging.ERROR)
+	# create formatter and add it to the handlers
+	formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+	ch.setFormatter(formatter)
+	fh.setFormatter(formatter)
+	# add the handlers to logger
+	logger.addHandler(ch)
+	logger.addHandler(fh)
 
 snippet clog
 	import logging
