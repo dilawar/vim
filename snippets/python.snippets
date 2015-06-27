@@ -259,7 +259,6 @@ snippet embed
 snippet logger
 	import logging
 	logger = logging.getLogger("${1:app}")
-	logger.setLevel(logging.DEBUG)
 
 	# create file handler which logs even debug messages
 	fh = logging.FileHandler('$1.log')
