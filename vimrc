@@ -10,7 +10,7 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'ervandew/supertab'
 
 " Following three goes together
-Bundle 'tomtom/tlib'
+Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle "garbas/vim-snipmate"
 
@@ -121,11 +121,10 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
 
 " colorscheme and all
-"set bg=dark
-"colorscheme solarized
-"colorscheme torte
-"set cc=+1
-"hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+set bg=dark
+colorscheme torte
+set cc=+1
+hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " c-support
 
@@ -170,7 +169,7 @@ set backspace=2 "
 " Create backup of all files.
 set backup
 set patchmode=.clean
-set backupdir=./.backup,.,/tmp
+set backupdir=/data/dilawars/vim-backup/,./.backup,.,/tmp
 
 "set foldmethod=syntax
 "set foldnestmax=2
