@@ -22,7 +22,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 
 
 filetype plugin indent on
@@ -169,7 +169,7 @@ set backspace=2 "
 " Create backup of all files.
 set backup
 set patchmode=.clean
-set backupdir=/data/dilawars/vim-backup/,./.backup,.,/tmp
+set backupdir=~/vim-backup/,./.backup,/tmp,.
 
 "set foldmethod=syntax
 "set foldnestmax=2
