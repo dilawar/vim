@@ -13,7 +13,8 @@ Bundle 'ervandew/supertab'
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle "garbas/vim-snipmate"
-
+Bundle "lukerandall/haskellmode-vim"
+Bundle "LaTex-Box-Team/LaTeX-Box"
 
 Bundle "danchoi/elinks.vim"
 Bundle 'scrooloose/nerdcommenter'
@@ -22,6 +23,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
+Bundle "vim-scripts/csv.vim"
 "Bundle 'Valloric/YouCompleteMe'
 
 
@@ -73,6 +75,7 @@ au BufRead,BufNewFile *.nw set spell spelllang=en
 au BufRead,BufNewFile *.blog set filetype=markdown
 au BufRead,BufNewFile *.markdown set filetype=markdown
 au BufRead,BufNewFile *.csv set filetype=csv
+au BufRead,BufNewFile *.yacml set filetype=dot
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
@@ -168,7 +171,6 @@ set errorbells
 set backspace=2 "
 " Create backup of all files.
 set backup
-set patchmode=.clean
 set backupdir=~/vim-backup/,./.backup,/tmp,.
 
 "set foldmethod=syntax
@@ -194,3 +196,4 @@ augroup end
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
+let g:haddock_browser = "firefox"
