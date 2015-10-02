@@ -363,3 +363,35 @@ snippet standalone
 	\begin{document}
 	${0}
 	\end{document}
+
+snippet minipage
+	\begin{minipage}[c]{0.48\textwidth}
+	\begin{itemize}
+	\end{itemize}
+	\end{minipage} \hfill
+	% another minipage
+	\begin{minipage}[c]{0.48\textwidth}
+	\begin{figure}[ht]
+	\end{figure}
+	\end{minipage}
+
+snippet beamer 
+	\documentclass{beamer}
+	\usepackage{pgf}
+	\usepackage{pgfplots}
+	\title[About Beamer] %optional
+	{About the Beamer class in presentation making}
+	 
+	\subtitle{A short story}
+	 
+	\author{Dilawar Singh}
+	 
+	\institute[NCBS] % (optional)
+	{
+	  \inst{1}%
+	  National Center for Biological Sciences Bangalore
+	}
+	 
+	\date[VLC 2015] % (optional)
+	{\today}
+

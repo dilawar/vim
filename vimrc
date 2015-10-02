@@ -2,9 +2,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc() 
 Bundle 'gmarik/vundle'
 Bundle 'surround.vim'
-Bundle 'bling/vim-airline'
+"Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/a.vim'
-Bundle 'vim-scripts/DrawIt'
+"Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'ervandew/supertab'
@@ -20,7 +20,7 @@ Bundle "danchoi/elinks.vim"
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle "vim-scripts/csv.vim"
@@ -172,6 +172,8 @@ set backspace=2 "
 " Create backup of all files.
 set backup
 set backupdir=~/vim-backup/,./.backup,/tmp,.
+set patchmode=.clean
+set backupdir=/tmp,.
 
 "set foldmethod=syntax
 "set foldnestmax=2
