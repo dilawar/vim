@@ -18,6 +18,7 @@ Bundle "LaTex-Box-Team/LaTeX-Box"
 
 Bundle "danchoi/elinks.vim"
 Bundle 'scrooloose/nerdcommenter'
+Bundle "tpope/vim-commentary"
 Bundle 'tpope/vim-fugitive'
 "Bundle 'scrooloose/syntastic'
 "Bundle 'scrooloose/nerdtree'
@@ -105,6 +106,9 @@ au BufRead,BufNew *.md setlocal spell spelllang=en
 au BufRead,BufNew *.markdown setlocal complete+=k
 au BufRead,BufNew *.markdown setlocal syntax=markdown
 au BufRead,BufNew *.markdown setlocal spell spelllang=en
+" On tmp files do not wrap lines by inserting newline, wrap it without newline.
+au BufRead,BufNew *.tmp setlocal wrap linebreak nolist 
+au BufRead,BufNew *.txt setlocal wrap linebreak nolist 
 
 
 au BufNewFile *.vhd read ~/.vim/template/template.vhd
