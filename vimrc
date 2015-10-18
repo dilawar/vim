@@ -24,7 +24,7 @@ Bundle 'tpope/vim-fugitive'
 "Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
-Bundle "vim-scripts/csv.vim"
+"Bundle "vim-scripts/csv.vim"
 "Bundle 'Valloric/YouCompleteMe'
 
 
@@ -109,6 +109,7 @@ au BufRead,BufNew *.markdown setlocal spell spelllang=en
 " On tmp files do not wrap lines by inserting newline, wrap it without newline.
 au BufRead,BufNew *.tmp setlocal wrap linebreak nolist 
 au BufRead,BufNew *.txt setlocal wrap linebreak nolist 
+au BufRead,BufNew *.lhs setlocal filetype=haskell
 
 
 au BufNewFile *.vhd read ~/.vim/template/template.vhd
