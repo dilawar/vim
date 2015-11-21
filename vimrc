@@ -178,7 +178,15 @@ set backspace=2 "
 set backup
 set backupdir=~/vim-backup/,./.backup,/tmp,.
 set patchmode=.clean
-set backupdir=/tmp,.
+set undofile
+
+let vimDir = '$HOME/.vim/'
+if has('presistennt_undo')
+    let myUndoDir=expand(vimDir . '/undodir')
+    call system('mkdir' . myUndoDir)
+    let &undodir = myUndoDir
+    set undodir
+endif
 
 "set foldmethod=syntax
 "set foldnestmax=2
