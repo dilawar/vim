@@ -20,6 +20,7 @@ Bundle "danchoi/elinks.vim"
 Bundle 'scrooloose/nerdcommenter'
 Bundle "tpope/vim-commentary"
 Bundle 'tpope/vim-fugitive'
+Bundle "junegunn/vim-easy-align"
 "Bundle 'scrooloose/syntastic'
 "Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
@@ -129,8 +130,8 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
 
 " colorscheme and all
-"set bg=dark
-"colorscheme torte
+set bg=dark
+colorscheme torte
 set cc=+1
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
