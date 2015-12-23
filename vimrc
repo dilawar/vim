@@ -116,6 +116,7 @@ au BufRead,BufNew *.lhs setlocal filetype=haskell
 au BufNewFile *.vhd read ~/.vim/template/template.vhd
 " au BufRead,BufNewFile *.bsv set filetype=verilog
 au BufRead,BufNewFile *.bsv set syntax=bsv
+au BufRead,BufNewFile *.rules set filetype=make
 
 
 " vim-latexsuite mapping

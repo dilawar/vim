@@ -104,10 +104,7 @@ let g:easy_align_delimiters = {
     \ }
 
 " Detect filetype using shebangs
-if did_filetype()
-    finish
-endif
-if getline(1) =~ '^#!.*/bin/make\s.*'
+if getline(1) =~ '^#!.*/bin/make.*'
     setfiletype make
 endif
 
