@@ -102,3 +102,12 @@ let g:easy_align_delimiters = {
     \     'right_margin': 0
     \   }
     \ }
+
+" Detect filetype using shebangs
+if did_filetype()
+    finish
+endif
+if getline(1) =~ '^#!.*/bin/make\s.*'
+    setfiletype make
+endif
+
