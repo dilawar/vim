@@ -287,13 +287,24 @@ snippet argparse
 	# Argument parser.
 	description = '''${0:description}'''
 	parser = argparse.ArgumentParser(description=description)
-	parser.add_argument('--${0:var}', '-${1:v}'
+	parser.add_argument('--input', '-i'
 	    , required = True
-	    , help = 'A generic option'
+	    , help = 'Input file'
+	    )
+	parser.add_argument('--output', '-o'
+	    , required = False
+	    , help = 'Output file'
+	    )
+	parser.add_argument( '--debug', '-d'
+	    , required = False
+	    , default = 0
+	    , type = int
+	    , help = 'Enable debug mode. Default 0, debug level'
 	    )
 	class Args: pass 
 	args = Args()
 	parser.parse_args(namespace=args)
+
 snippet arg
 	parser.add_argument('--${0:var}', '-${1:v}'
 	    , required = False
