@@ -1,7 +1,7 @@
 set rtp+=~/.vim/bundle/vundle/ 
 call vundle#rc() 
 Bundle 'gmarik/vundle'
-Bundle 'surround.vim'
+Bundle 'tpope/vim-surround'
 "Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/a.vim'
 "Bundle 'vim-scripts/DrawIt'
@@ -179,7 +179,6 @@ set backspace=2 "
 " Create backup of all files.
 set backup
 set backupdir=~/vim-backup/,./.backup,/tmp,.
-set patchmode=.clean
 set undofile
 
 let vimDir = '$HOME/.vim/'
