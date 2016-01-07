@@ -4,7 +4,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 "Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/a.vim'
-"Bundle 'vim-scripts/DrawIt'
+Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'ervandew/supertab'
@@ -16,6 +16,7 @@ Bundle "garbas/vim-snipmate"
 Bundle "lukerandall/haskellmode-vim"
 Bundle "LaTex-Box-Team/LaTeX-Box"
 
+Bundle 'easymotion/vim-easymotion'
 Bundle "danchoi/elinks.vim"
 Bundle 'scrooloose/nerdcommenter'
 Bundle "tpope/vim-commentary"
@@ -37,7 +38,7 @@ set showcmd    " Show (partial) command in status line.
 set showmatch  " Show matching brackets.
 set smartcase  " Do smart case matching
 set incsearch  " Incremental search
-set mouse=a    " Enable mouse usage (all modes)
+set mouse=v    " Enable mouse usage (all modes)
 set number
 set ruler
 set hlsearch
