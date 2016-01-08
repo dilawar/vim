@@ -183,12 +183,10 @@ set backupdir=~/vim-backup/,./.backup,/tmp,.
 set undofile
 
 let vimDir = '$HOME/.vim/'
-if has('presistennt_undo')
-    let myUndoDir=expand(vimDir . '/undodir')
-    call system('mkdir' . myUndoDir)
-    let &undodir = myUndoDir
-    set undodir
-endif
+let myUndoDir=expand(vimDir . '/undodir')
+call system('mkdir -p ' . myUndoDir)
+let &undodir = myUndoDir
+set undofile
 
 "set foldmethod=syntax
 "set foldnestmax=2
