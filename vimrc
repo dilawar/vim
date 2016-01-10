@@ -26,7 +26,7 @@ Bundle "junegunn/vim-easy-align"
 "Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
-"Bundle "vim-scripts/csv.vim"
+Bundle "chrisbra/csv.vim"
 "Bundle 'Valloric/YouCompleteMe'
 
 
