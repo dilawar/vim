@@ -27,6 +27,7 @@ Bundle "junegunn/vim-easy-align"
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle "chrisbra/csv.vim"
+Bundle "JuliaLang/julia-vim"
 "Bundle 'Valloric/YouCompleteMe'
 
 
@@ -200,6 +201,19 @@ set statusline=2
 "" Read pdf file in vim
 command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
 command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -csw78
+
+" clipboard
+set clipboard=unnamedplus
+
+""" When xlipboard support is not available
+" copy to X CLIPBOARD
+map <leader>cc :w !xsel -i -b<CR>
+map <leader>cp :w !xsel -i -p<CR>
+map <leader>cs :w !xsel -i -s<CR>
+" Paste from X CLIPBOARD
+map <leader>pp :r!xsel -p<CR>
+map <leader>ps :r!xsel -s<CR>
+map <leader>pb :r!xsel -b<CR>
 
 augroup nonvim
    au!
