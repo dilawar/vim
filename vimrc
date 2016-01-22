@@ -206,14 +206,20 @@ command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -cs
 set clipboard=unnamedplus
 
 """ When xlipboard support is not available
-" copy to X CLIPBOARD
-map <leader>cc :w !xsel -i -b<CR>
-map <leader>cp :w !xsel -i -p<CR>
-map <leader>cs :w !xsel -i -s<CR>
-" Paste from X CLIPBOARD
-map <leader>pp :r!xsel -p<CR>
-map <leader>ps :r!xsel -s<CR>
-map <leader>pb :r!xsel -b<CR>
+:command -range Cz :silent :<line1>,<line2>w !xsel -i -b
+:command -range Cx :silent :<line1>,<line2>w !xsel -i -p
+:command -range Cv :silent :<line1>,<line2>w !xsel -i -s
+:cabbrev cv Cv
+:cabbrev cz Cz
+:cabbrev cx Cx
+
+:command -range Pz :silent :r !xsel -o -b
+:command -range Px :silent :r !xsel -o -p
+:command -range Pv :silent :r !xsel -o -s
+
+:cabbrev pz Pz
+:cabbrev px Px
+:cabbrev pv Pv
 
 augroup nonvim
    au!
