@@ -450,3 +450,21 @@ snippet assignment
 	\renewcommand{\labelenumi}{\theenumi}
 	\renewcommand{\theenumii}{\roman{enumii}}
 	\begin{document}
+
+snippet report
+	\documentclass{article}
+	\usepackage[left=35mm,margin=20mm]{geometry}
+	\usepackage{ifthen,empheq}
+	\date{\today}
+	\usepackage{fancyhdr}
+	\usepackage[]{dot2texi}
+	\setlength{\headheight}{15pt}
+
+	\lhead{Title here}
+	\chead{Dilawar Singh}
+	\rhead{\today}
+
+	\lfoot{}\cfoot{\thepage}\rfoot{}
+	\pagestyle{fancy}
+
+	\begin{document}
