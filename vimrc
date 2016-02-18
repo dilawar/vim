@@ -28,7 +28,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle "chrisbra/csv.vim"
 Bundle "JuliaLang/julia-vim"
-Bundle 
 "Bundle 'Valloric/YouCompleteMe'
 
 
@@ -81,6 +80,7 @@ au BufRead,BufNewFile *.blog set filetype=markdown
 au BufRead,BufNewFile *.markdown set filetype=markdown
 au BufRead,BufNewFile *.csv set filetype=csv
 au BufRead,BufNewFile *.yacml set filetype=dot
+au BufRead,BufNewFile *.ino set filetype=cpp
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
@@ -97,7 +97,7 @@ au BufRead,BufNewFile *.anansi setlocal filetype=tex |
 
 let noweb_backend="tex"
 let noweb_language="python"
-let noweb_fold_code=0
+let noweb_fold_code=1
 
 au BufRead,BufNewFile *.tex set spell spelllang=en
 au BufEnter *.tex set nosmartindent
@@ -190,8 +190,8 @@ call system('mkdir -p ' . myUndoDir)
 let &undodir = myUndoDir
 set undofile
 
-"set foldmethod=syntax
-"set foldnestmax=2
+set foldmethod=syntax
+set foldnestmax=2
 let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
 syntax match nonascii "[^\x00-\x7F]"
 highlight nonascii guibg=Red ctermbg=2

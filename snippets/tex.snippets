@@ -468,3 +468,14 @@ snippet report
 	\pagestyle{fancy}
 
 	\begin{document}
+
+	${1:Write here}
+
+	\end{document}
+
+snippet glos
+	\newglossaryentry{${0:item}} 
+	{
+	    name=${1:name},
+	    description={${2:description}}
+	}
