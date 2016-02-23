@@ -89,6 +89,8 @@ au BufRead,BufNewFile *.md setlocal filetype=markdown |
 au BufRead,BufNewFile *.pandoc setlocal filetype=markdown |
     \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
 
+au BufNewFile,BufRead *.context setlocal filetype=tex 
+
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.anansi setlocal filetype=tex |
     \ setlocal makeprg=anansi.sh\ % |
@@ -190,8 +192,10 @@ call system('mkdir -p ' . myUndoDir)
 let &undodir = myUndoDir
 set undofile
 
-set foldmethod=syntax
-set foldnestmax=2
+set foldmethod=indent
+"set foldnestmax=4
+"set foldlevel=1
+
 let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
 syntax match nonascii "[^\x00-\x7F]"
 highlight nonascii guibg=Red ctermbg=2
