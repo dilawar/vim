@@ -494,20 +494,7 @@ snippet context
 	\usetikzlibrary[ fit,calc,graphs,graphdrawing ]
 	\usegdlibrary[ circular,force,layered ]
 	\usetikzlibrary[ shapes,backgrounds,decorations.text,decorations.pathmorphing ]
-
-	\long\def\CAMKIIRING#1#2#3#4#5{
-	    \foreach \i in {1,...,6}
-	    {
-		\doifinstringelse {\i} {#4}
-		{
-		    \node[ball color=red,draw,circle,minimum size=#5cm] (r\i) at ($(\i*60:#5)+(#2,#3)$) {};
-		}
-		{
-		    \node[ball color=blue,circle,minimum size=#5cm] (r\i) at ($(\i*60:#5)+(#2,#3)$) {}; 
-		}
-	    };
-	    \node[circle,fit={(r1) (r2) (r3) (r4) (r5) (r6)}] (#1) {};
-	}
-
 	\starttext
+
+	\stoptext
 
