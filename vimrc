@@ -2,12 +2,14 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc() 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
-"Bundle 'bling/vim-airline'
+Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'dilawar/vim-snippets'
 
 " Following three goes together
 Bundle 'tomtom/tlib_vim'
@@ -237,3 +239,12 @@ augroup end
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
 let g:haddock_browser = "firefox"
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
