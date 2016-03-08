@@ -10,6 +10,7 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'dilawar/vim-snippets'
+Plugin 'heavenshell/vim-pydocstring'
 
 " Following three goes together
 Bundle 'tomtom/tlib_vim'
