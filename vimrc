@@ -12,6 +12,9 @@ Plugin 'SirVer/ultisnips'
 Plugin 'dilawar/vim-snippets'
 Plugin 'heavenshell/vim-pydocstring'
 
+" This script increase/descreses etc a selected column
+Plugin 'vim-scripts/VisIncr'
+
 " Following three goes together
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
