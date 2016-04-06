@@ -1,5 +1,6 @@
 set rtp+=~/.vim/bundle/vundle/ 
 call vundle#rc() 
+Bundle 'lervag/vimtex'
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'bling/vim-airline'
@@ -9,16 +10,17 @@ Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
-Plugin 'dilawar/vim-snippets'
-Plugin 'heavenshell/vim-pydocstring'
+"Plugin 'dilawar/vim-snippets'
+"Plugin 'heavenshell/vim-pydocstring'
+Plugin 'WolfgangMehner/vim-plugins'
 
 " This script increase/descreses etc a selected column
-Plugin 'vim-scripts/VisIncr'
+"Plugin 'vim-scripts/VisIncr'
 
 " Following three goes together
-Bundle 'tomtom/tlib_vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle "garbas/vim-snipmate"
+"Bundle 'tomtom/tlib_vim'
+"Bundle 'MarcWeber/vim-addon-mw-utils'
+" Bundle 'garbas/vim-snipmate'
 
 Bundle 'easymotion/vim-easymotion'
 Bundle "danchoi/elinks.vim"
@@ -83,6 +85,7 @@ au BufRead,BufNewFile *.nw set spell spelllang=en
 au BufRead,BufNewFile *.blog set filetype=markdown
 au BufRead,BufNewFile *.markdown set filetype=markdown
 au BufRead,BufNewFile *.csv set filetype=csv
+au BufRead,BufNewFile *.asy set filetype=cpp
 au BufRead,BufNewFile *.yacml set filetype=dot
 au BufRead,BufNewFile *.ino set filetype=cpp
 
@@ -163,7 +166,7 @@ let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
 let g:snipMate.scope_aliases['markdown'] = 'markdown,tex'
 
 " Python related settings
-autocmd BufRead *.py setlocal makeprg=pylint\ -E\ %:p
+autocmd BufRead *.py setlocal makeprg=pylint\ \ %:p
 let g:pymode_lint_write=0
 let g:pymode_lint=0
 
