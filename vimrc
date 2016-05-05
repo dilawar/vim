@@ -58,6 +58,7 @@ set encoding=utf-8
 " set dictionary+=/usr/share/dict/words
 " no dictionary autocomplete. 
 set complete-=k
+set completeopt-=preview
 
 syntax enable
 
@@ -143,8 +144,8 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
 
 " colorscheme and all
-set bg=dark
-colorscheme torte
+"set bg=dark
+"colorscheme torte
 set cc=+1
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
