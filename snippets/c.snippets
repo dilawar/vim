@@ -1,3 +1,19 @@
+snippet header
+	/***
+	 *       Filename:  `expand('%:t')`
+	 *
+	 *    Description:  ${0:description}
+	 *
+	 *        Version:  0.0.1
+	 *        Created:  `system("date +%Y-%m-%d")`
+	 *       Revision:  none
+	 *
+	 *         Author:  Dilawar Singh <dilawars@ncbs.res.in>
+	 *   Organization:  NCBS Bangalore
+	 *
+	 *        License:  GNU GPL2
+	 */
+
 ## Main
 # main
 snippet main
@@ -20,7 +36,7 @@ snippet inc
 	#include <${1:stdio}.h>
 # #include "..."
 snippet Inc
-	#include "${1:`vim_snippets#Filename("$1.h")`}"
+	#include "${1:`Filename("$1.h")`}"
 # ifndef...define...endif
 snippet ndef
 	#ifndef $1
@@ -41,7 +57,7 @@ snippet #if
 	#endif
 # header include guard
 snippet once
-	#ifndef ${1:`toupper(vim_snippets#Filename('$1_H', 'UNTITLED_H'))`}
+	#ifndef ${1:`toupper(Filename('$1_H', 'UNTITLED_H'))`}
 
 	#define $1
 
@@ -96,12 +112,13 @@ snippet case
 ## Loops
 # for
 snippet for
-	for (${2:i} = 0; $2 < ${1:count}; $2${3:++}) {
+	for (size_t ${2:i} = 0; $2 < ${1:count}; $2${3:++}) 
+	{
 		${4}
 	}
 # for (custom)
 snippet forr
-	for (${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
+	for (size_t ${1:i} = ${2:0}; ${3:$1 < 10}; $1${4:++}) {
 		${5}
 	}
 # while
@@ -132,14 +149,14 @@ snippet td
 	typedef ${1:int} ${2:MyCustomType};
 # struct
 snippet st
-	struct ${1:`vim_snippets#Filename('$1_t', 'name')`} {
+	struct ${1:`Filename('$1_t', 'name')`} {
 		${2:/* data */}
 	}${3: /* optional variable list */};
 # typedef struct
 snippet tds
 	typedef struct ${2:_$1 }{
 		${3:/* data */}
-	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
+	} ${1:`Filename('$1_t', 'name')`};
 # typedef enum
 snippet tde
 	typedef enum {

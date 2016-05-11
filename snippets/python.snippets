@@ -1,8 +1,8 @@
-jsnippet #!
+snippet #!
 	#!/usr/bin/env python
-jsnippet imp
+snippet imp
 	import ${0:module}
-_snippet uni
+snippet uni
 	def __unicode__(self):
 		${0:representation}
 snippet from
@@ -20,12 +20,10 @@ snippet header
 
 	"""${0:`Filename('$1.py', 'unknown.py')`}: ${1}
 
-	Last modified: Sat Jan 18, 2014  05:01PM
-
 	"""
 		
 	__author__           = "`g:snips_author`"
-	__copyright__        = "Copyright 2013, `g:snips_author` and NCBS Bangalore"
+	__copyright__        = "Copyright 2016, `g:snips_author`"
 	__credits__          = ["NCBS Bangalore"]
 	__license__          = "GNU GPL"
 	__version__          = "1.0.0"
@@ -232,7 +230,7 @@ snippet lw
 	logger.warning(${0:msg})
 snippet lc
 	logger.critical(${0:msg})
-sni_ppet li
+snippet li
 	logger.info(${0:msg})
 snippet epydoc
 	"""
@@ -247,19 +245,23 @@ snippet epydoc
 	@raise e: ${0: Description}
 	"""
 
-# My snippets
-snippet mimport
-    import sys
-    sys.path.append(${0:path})
-
-   import moose
-
 snippet embed
 	from IPython import embed
 	embed()
-snippet log
+
+snippet logger
 	import logging
-	logging.basicConfig(filename='log.log', level=logging.DEBUG)
+	logging.basicConfig(level=logging.DEBUG,
+		format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+		datefmt='%m-%d %H:%M',
+		filename='${0:default}.log',
+		filemode='w')
+	console = logging.StreamHandler()
+	console.setLevel(logging.INFO)
+	formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
+	console.setFormatter(formatter)
+	_logger = logging.getLogger('${1:}')
+	_logger.addHandler(console)
 
 snippet clog
 	import logging
@@ -271,28 +273,40 @@ snippet clog
 	logging.getLogger('').addHandler(ch)
 
 snippet timestamp
-	st = time.time()
-	stamp = datetime.datetime.fromtimestamp(st).strftime('%Y-%m-%d-%H%M')
+	stamp = datetime.datetime.now().isoformat()
 
 snippet argparse
 	import argparse
 	# Argument parser.
-	description = '''${0:description}
+	description = '''${0:description}'''
 	parser = argparse.ArgumentParser(description=description)
-	parser.add_argument('--design-directory', '-d', metavar='design_directory'
-	        , nargs=1
-	        , action='append'
-	        , required = True
-	        , help = 'A generic option'
-	        )
-	parser.add_argument('--compiler', '-c'
-	        , metavar='compiler'
-	        , required = False
-	        , help = "Optional: Specify a compiler or I'll try to guess on system"
-	        )
+	parser.add_argument('--input', '-i'
+	    , required = True
+	    , help = 'Input file'
+	    )
+	parser.add_argument('--output', '-o'
+	    , required = False
+	    , help = 'Output file'
+	    )
+	parser.add_argument( '--debug', '-d'
+	    , required = False
+	    , default = 0
+	    , type = int
+	    , help = 'Enable debug mode. Default 0, debug level'
+	    )
 	class Args: pass 
 	args = Args()
 	parser.parse_args(namespace=args)
+
+snippet arg
+	parser.add_argument('--${0:var}', '-${1:v}'
+	    , required = False
+	    , help = '${2:Help}'
+	    )
+snippet arggroup
+	group = parser.add_mutually_exclusive_group()
+	group.add_argument("-${0:param1}", "--$0", help="${1}")
+	group.add_argument("-${2:param2}", "--$2", help="${3}")
 
 snippet savefigs
 	for i in pylab.get_fignums():
@@ -305,7 +319,6 @@ snippet cython
 	"""${0:`Filename('$1.pyx', 'unknown.pyx')`}: ${1}
 
 	"""
-		
 	__author__           = "`g:snips_author`"
 	__copyright__        = "Copyright 2013, Dilawar Singh"
 	__license__          = "GPL"
@@ -316,49 +329,15 @@ snippet cython
 
 	import sys
 	import os
-	import shutil
-
 	from distutils.core import setup
-	from distutils.extension import Extension
-	from Cython.Distutils import build_ext
+	from Cython.Build import cythonize
 
 	os.environ['CC'] = "g++"
 	os.environ['CXX'] = "g++"
 
-	# Clean up
-	moduleName = "${1:aanchoo}"
-	for root, dirs, files in os.walk(".", topdown=False):
-		for name in files:
-			if (name.startswith(moduleName) and not(name.endswith(".pyx") or
-				name.endswith(".pxd") or name.endswith(".cxx"))):
-				os.remove(os.path.join(root, name))
-	for name in dirs:
-		if(name == "build"):
-			shutil.rmtree(name)
-
 	setup(
-			cmdclass = {'build_ext': build_ext},
-			ext_modules = [
-				Extension(moduleName
-					, language = "C++"
-					, include_dirs = [ 
-						"."
-						]
-					, sources = [
-						"${1:source_file}.pyx"
-						]
-					, extra_compile_args = [ 
-						"-g"
-						, "-DCYTHON"
-						, "-DLINUX"
-						, "-DPYMOOSE"
-						]
-					, extra_link_args = ["-L."]
-					, libraries = [
-						"stdc++"
-						]
-					)
-				]
+		name = "${0:My stupid app}",
+		ext_modules = cythonize("${1:*.pyx}")
 		)
 	
 snippet setup
@@ -395,3 +374,18 @@ snippet setup
 	    license='GPL',
 	    classifiers=classifiers,
 	)
+snippet legend
+	pylab.legend(loc='best', framealpha=0.4)
+snippet datadir
+	import os, datetime
+	now = datetime.datetime.now()
+	datadir = "_data/%s" % (now.strftime('%Y%m%d-%H%M'))
+	if not os.path.isdir(datadir): os.makedirs(datadir)
+
+snippet _debug
+	debug_level_ = 1
+	def debug__( msg, level = 1 ):
+	    # Print debug message depending on level
+	    global debug_level_ 
+	    if type(msg) == list: msg = '\n|- '.join(msg)
+	    if level >= debug_level_: print( msg )
