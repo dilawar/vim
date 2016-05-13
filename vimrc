@@ -8,8 +8,10 @@ Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
+Bundle "will133/vim-dirdiff"
 Bundle 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
+Bundle "rafi/awesome-vim-colorschemes"
 "Plugin 'dilawar/vim-snippets'
 "Plugin 'heavenshell/vim-pydocstring'
 Plugin 'WolfgangMehner/vim-plugins'
@@ -144,10 +146,14 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
 
 " colorscheme and all
-"set bg=dark
-"colorscheme torte
-set cc=+1
-hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+if &diff 
+    colorscheme torte
+else
+    set bg=dark
+    colorscheme torte
+    set cc=+1
+    hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+endif
 
 " c-support
 
@@ -254,3 +260,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" Diffdir options
+let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,*/.git/*"
