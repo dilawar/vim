@@ -91,6 +91,7 @@ au BufRead,BufNewFile *.csv set filetype=csv
 au BufRead,BufNewFile *.asy set filetype=cpp
 au BufRead,BufNewFile *.yacml set filetype=dot
 au BufRead,BufNewFile *.ino set filetype=cpp
+au BufRead,BufNewFile *.gnu set filetype=gnuplot
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
@@ -144,16 +145,17 @@ set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 "let g:haddock_browser="/usr/bin/elinks"
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
-
-" colorscheme and all
-if &diff 
-    colorscheme torte
-else
-    set bg=dark
-    colorscheme torte
-    set cc=+1
-    hi ColorColumn ctermbg=lightgrey guibg=lightgrey
-endif
+""
+""" colorscheme and all
+""if &diff 
+""    colorscheme torte
+""else
+""    set bg=dark
+""    colorscheme torte
+""endif
+""
+set cc=+1
+hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " c-support
 
