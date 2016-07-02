@@ -91,7 +91,7 @@ au BufRead,BufNewFile *.csv set filetype=csv
 au BufRead,BufNewFile *.asy set filetype=cpp
 au BufRead,BufNewFile *.yacml set filetype=dot
 au BufRead,BufNewFile *.ino set filetype=cpp
-au BufRead,BufNewFile *.gnu set filetype=gnuplot
+au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
