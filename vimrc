@@ -92,6 +92,8 @@ au BufRead,BufNewFile *.asy set filetype=cpp
 au BufRead,BufNewFile *.yacml set filetype=dot
 au BufRead,BufNewFile *.ino set filetype=cpp
 au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
+au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
+au BufRead *.lyx syntax sync fromstart
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
@@ -249,6 +251,7 @@ augroup nonvim
    au BufRead *.ppt*,*.doc*,*.rtf sil exe "!/home/dilawar/Scripts/any2pdf " . shellescape(expand("%:p"))
    au BufRead *.ppt*,*.doc*,*.rtf sil exe "!open " . g:output_pdf | bd | let &ft=&ft
 augroup end
+
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
