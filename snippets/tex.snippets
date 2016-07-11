@@ -19,7 +19,9 @@ snippet pre
 
 #newcommand
 snippet nc
-	\newcommand{\${1:cmd}}[${2:opt}]{${3:realcmd}} ${0}
+	\newcommand{\\${1:cmd}}[${2:3}]{
+	    ${0:text} 
+	}
 #usepackage
 snippet up
 	\usepackage[${1:options}]{${2:package}} ${0}
