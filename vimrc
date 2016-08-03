@@ -11,6 +11,7 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
 Bundle 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
+Bundle 'eagletmt/ghcmod-vim'
 Bundle "rafi/awesome-vim-colorschemes"
 "Plugin 'dilawar/vim-snippets'
 "Plugin 'heavenshell/vim-pydocstring'
