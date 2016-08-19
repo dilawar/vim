@@ -11,7 +11,11 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
 Bundle 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
+
+" Following two go hand in hand 
+Bundle 'Shougo/vimproc.vim'
 Bundle 'eagletmt/ghcmod-vim'
+
 Bundle "rafi/awesome-vim-colorschemes"
 "Plugin 'dilawar/vim-snippets'
 "Plugin 'heavenshell/vim-pydocstring'
@@ -81,7 +85,7 @@ source $HOME/.vim/mymappings.vim
 " Supertab
 
 "" Section for literate programming.
-au BufNewFile *.nw read ~/Scripts/template.snw 
+au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
@@ -101,7 +105,7 @@ au BufRead,BufNewFile *.md setlocal filetype=markdown |
     \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=markdown |
-    \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
+    \ setlocal makeprg=pandoc2pdf.sh\ %\ |
 
 au BufNewFile,BufRead *.context setlocal filetype=tex 
 
@@ -112,7 +116,7 @@ au BufRead,BufNewFile *.anansi setlocal filetype=tex |
 
 
 let noweb_backend="tex"
-let noweb_language="python"
+let noweb_language="haskell"
 let noweb_fold_code=1
 
 au BufRead,BufNewFile *.tex set spell spelllang=en
@@ -129,12 +133,14 @@ au BufRead,BufNew *.markdown setlocal spell spelllang=en
 " On tmp files do not wrap lines by inserting newline, wrap it without newline.
 au BufRead,BufNew *.tmp setlocal wrap linebreak nolist 
 au BufRead,BufNew *.txt setlocal wrap linebreak nolist 
-au BufRead,BufNew *.lhs setlocal filetype=haskell
 
 
 au BufNewFile *.vhd read ~/.vim/template/template.vhd
 " au BufRead,BufNewFile *.bsv set filetype=verilog
 au BufRead,BufNewFile *.bsv set syntax=bsv
+au BufRead,BufNewFile *.max set syntax=maxima
+au BufRead,BufNewFile *.maxima set syntax=maxima
+au BufRead,BufNewFile *.mac set syntax=maxima
 au BufRead,BufNewFile *.rules set filetype=make
 
 
