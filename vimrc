@@ -175,7 +175,6 @@ endif
 ""
 set cc=+1
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
->>>>>>> 970c95372e28f1b06e9c0f127c8f618ae23bf133
 
 " c-support
 
