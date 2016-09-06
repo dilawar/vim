@@ -35,6 +35,18 @@ snippet header
 	import os
 	import matplotlib.pyplot as plt
 	import numpy as np
+
+snippet matplotlib 
+	import matplotlib as mpl
+	import matplotlib.pyplot as plt
+	try:
+	    mpl.style.use( 'seaborn-talk' )
+	except Exception as e:
+	    pass
+	mpl.rcParams['axes.linewidth'] = 0.1
+	plt.rc('text', usetex=True)
+	plt.rc('font', family='serif')
+
 	
 snippet license
 	# This file is part of ${1:app} ${2}.
