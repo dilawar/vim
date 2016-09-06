@@ -20,9 +20,9 @@ Plugin 'WolfgangMehner/vim-plugins'
 "Plugin 'vim-scripts/VisIncr'
 
 " Following three goes together
-"Bundle 'tomtom/tlib_vim'
-"Bundle 'MarcWeber/vim-addon-mw-utils'
-" Bundle 'garbas/vim-snipmate'
+Bundle 'tomtom/tlib_vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'garbas/vim-snipmate'
 
 Bundle 'easymotion/vim-easymotion'
 Bundle "danchoi/elinks.vim"
@@ -149,8 +149,8 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 if &diff 
     colorscheme torte
 else
-    set bg=dark
-    colorscheme torte
+    "set bg=dark
+    "colorscheme torte
     set cc=+1
     hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 endif
