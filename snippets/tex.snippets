@@ -513,3 +513,12 @@ snippet biblatex
 	\addbibresource{biblatex-examples.bib}
 	\usepackage[]{hyperref}
 	\hypersetup{ colorlinks=true}
+
+snippet pgfplots
+	\usepackage{tikz,pgfplots,pgfplotstable}
+	\pgfplotsset{compat=newest}
+	\usepgfplotslibrary{external}
+	\tikzexternamize
+	\tikzset{external/system call={lualatex -shell-escape -halt-on-error -interact
+ion=batchmode -jobname "\image" "\texsource"}}
+	\usepackage{luaotfload}
