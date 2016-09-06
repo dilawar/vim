@@ -19,7 +19,9 @@ snippet pre
 
 #newcommand
 snippet nc
-	\newcommand{\${1:cmd}}[${2:opt}]{${3:realcmd}} ${0}
+	\newcommand{\\${1:cmd}}[${2:3}]{
+	    ${0:} 
+	}
 #usepackage
 snippet up
 	\usepackage[${1:options}]{${2:package}} ${0}
@@ -498,3 +500,24 @@ snippet context
 
 	\stoptext
 
+snippet biblatex 
+	\usepackage[autostyle]{csquotes}
+	\usepackage[
+	    backend=biber,
+	    style=authoryear-icomp,
+	    sortlocale=de_DE,
+	    natbib=true,
+	    url=false, 
+	    doi=true,
+	    eprint=false]{biblatex}
+	\addbibresource{biblatex-examples.bib}
+	\usepackage[]{hyperref}
+	\hypersetup{ colorlinks=true}
+
+snippet pgfplots
+	\usepackage{tikz,pgfplots,pgfplotstable}
+	\pgfplotsset{compat=newest}
+	\usepgfplotslibrary{external}
+	\tikzexternalize
+	\usepackage{luaotfload}
+	\tikzset{external/system call={lualatex -shell-escape -halt-on-error -interaction=bactchmode -jobname "\image" "\texsource"}} 

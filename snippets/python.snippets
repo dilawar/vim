@@ -30,6 +30,23 @@ snippet header
 	__maintainer__       = "`g:snips_author`"
 	__email__            = "`g:snips_email`"
 	__status__           = "Development"
+
+	import sys
+	import os
+	import matplotlib.pyplot as plt
+	import numpy as np
+
+snippet matplotlib 
+	import matplotlib as mpl
+	import matplotlib.pyplot as plt
+	try:
+	    mpl.style.use( 'seaborn-talk' )
+	except Exception as e:
+	    pass
+	mpl.rcParams['axes.linewidth'] = 0.1
+	plt.rc('text', usetex=True)
+	plt.rc('font', family='serif')
+
 	
 snippet license
 	# This file is part of ${1:app} ${2}.
@@ -309,11 +326,11 @@ snippet arggroup
 	group.add_argument("-${2:param2}", "--$2", help="${3}")
 
 snippet savefigs
-	for i in pylab.get_fignums():
+	for i in plt.get_fignums():
 		filename = __file__+"_{}.png".format(i)
-		pylab.figure(i)
+		plt.figure(i)
 		print(("\t++ Storing figure {} to {}".format(i, filename)))
-		pylab.savefig(filename)
+		plt.savefig(filename)
 
 snippet cython
 	"""${0:`Filename('$1.pyx', 'unknown.pyx')`}: ${1}
@@ -375,7 +392,7 @@ snippet setup
 	    classifiers=classifiers,
 	)
 snippet legend
-	pylab.legend(loc='best', framealpha=0.4)
+	plt.legend(loc='best', framealpha=0.4)
 snippet datadir
 	import os, datetime
 	now = datetime.datetime.now()
