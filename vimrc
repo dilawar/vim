@@ -43,6 +43,9 @@ Bundle "junegunn/vim-easy-align"
 "Bundle "JuliaLang/julia-vim"
 "Bundle 'Valloric/YouCompleteMe'
 
+" This is here to autocomplete citation 
+Bundle "gerw/vim-latex-suite"
+
 
 filetype plugin indent on
 
@@ -104,16 +107,11 @@ au BufRead *.lyx syntax sync fromstart
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
     \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
 
-au BufRead,BufNewFile *.pandoc setlocal filetype=markdown |
+au BufRead,BufNewFile *.pandoc setlocal filetype=tex |
     \ setlocal makeprg=pandoc2pdf.sh\ %\ |
-
-au BufNewFile,BufRead *.context setlocal filetype=tex 
-
-" Make pandoc behave like tex
-au BufRead,BufNewFile *.anansi setlocal filetype=tex |
-    \ setlocal makeprg=anansi.sh\ % |
     \ setlocal spell spelllang=en
 
+au BufNewFile,BufRead *.context setlocal filetype=tex 
 
 let noweb_backend="tex"
 let noweb_language="haskell"
@@ -148,6 +146,8 @@ au BufRead,BufNewFile *.rules set filetype=make
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_ViewRule = 'yap -1'
+" Do not expand " to stupid quites.
+let g:Tex_SmartKeyQuote = 0
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 " unicode \u2506
@@ -163,6 +163,7 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 ""    colorscheme torte
 ""endif
 ""
+colorscheme elflord
 set cc=+1
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
