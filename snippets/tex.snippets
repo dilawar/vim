@@ -453,6 +453,31 @@ snippet assignment
 	\renewcommand{\theenumii}{\roman{enumii}}
 	\begin{document}
 
+snippet labnote
+	% created on `system("date +%Y-%m-%d")`
+	\documentclass{extarticle}
+	\usepackage[landscape,left=35mm,margin=20mm]{geometry}
+	\usepackage{tikz,pgfplots}
+	\usepackage{ifthen,empheq}
+	\date{\today}
+	\usepackage{fancyhdr}
+	\usepackage[]{dot2texi}
+	\setlength{\headheight}{15pt}
+
+	\lhead{ ${1:Labnote title} }
+	\chead{Dilawar Singh}
+	\rhead{\today}
+
+	\lfoot{}\cfoot{\thepage}\rfoot{}
+	\pagestyle{fancy}
+	\begin{document}
+
+	${2:Write here}
+
+	\end{document}
+
+
+
 snippet report
 	\documentclass{article}
 	\usepackage[left=35mm,margin=20mm]{geometry}
