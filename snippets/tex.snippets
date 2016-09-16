@@ -455,21 +455,26 @@ snippet assignment
 
 snippet labnote
 	% created on `system("date +%Y-%m-%d")`
-	\documentclass{extarticle}
+	\documentclass[14pt]{extarticle}
 	\usepackage[landscape,left=35mm,margin=20mm]{geometry}
-	\usepackage{tikz,pgfplots}
 	\usepackage{ifthen,empheq}
 	\date{\today}
 	\usepackage{fancyhdr}
 	\usepackage[]{dot2texi}
 	\setlength{\headheight}{15pt}
-
 	\lhead{ ${1:Labnote title} }
 	\chead{Dilawar Singh}
 	\rhead{\today}
-
 	\lfoot{}\cfoot{\thepage}\rfoot{}
 	\pagestyle{fancy}
+	\usepackage{tikz,pgfplots,pgfplotstable}
+	\usetikzlibrary{shapes}
+	\pgfplotsset{compat=newest}
+	\usepgfplotslibrary{statistics,external}
+	\usepgfplotslibrary{groupplots}
+	\tikzexternalize[prefix=_tikz/,shell escape=-shell-escape]
+	\tikzset{external/system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
+
 	\begin{document}
 
 	${2:Write here}
