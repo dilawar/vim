@@ -25,9 +25,9 @@ Plugin 'WolfgangMehner/vim-plugins'
 "Plugin 'vim-scripts/VisIncr'
 
 " Following three goes together
-"Bundle 'tomtom/tlib_vim'
-"Bundle 'MarcWeber/vim-addon-mw-utils'
-" Bundle 'garbas/vim-snipmate'
+Bundle 'tomtom/tlib_vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'garbas/vim-snipmate'
 
 Bundle 'easymotion/vim-easymotion'
 Bundle "danchoi/elinks.vim"
@@ -154,6 +154,16 @@ set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 "let g:haddock_browser="/usr/bin/elinks"
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
+
+" colorscheme and all
+if &diff 
+    colorscheme torte
+else
+    "set bg=dark
+    "colorscheme torte
+    set cc=+1
+    hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+endif
 ""
 """ colorscheme and all
 ""if &diff 
