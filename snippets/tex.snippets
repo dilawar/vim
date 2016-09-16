@@ -551,3 +551,13 @@ snippet pgfplots
 	\tikzexternalize
 	\usepackage{luaotfload}
 	\tikzset{external/system call={lualatex -shell-escape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}} 
+
+snippet fancyhdr 
+	\usepackage{fancyhdr}
+	\usepackage[]{dot2texi}
+	\setlength{\headheight}{15pt}
+	\lhead{ ${1:Title here} }
+	\chead{Dilawar Singh}
+	\rhead{\today}
+	\lfoot{}\cfoot{\thepage}\rfoot{}
+	\pagestyle{fancy}
