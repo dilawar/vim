@@ -364,7 +364,7 @@ snippet gnuplot
 	\begin{tikzpicture}[scale=1]
 	    \begin{axis}[xlabel=${1:xlabel},ylabel=${2:ylabel}]
 		\addplot [color=blue] gnuplot [ raw gnuplot ] {
-		    plot "${3:file}.csv" using 2:3 with lines;
+		    plot "${3:file}.csv" using 2:3 with lines
 		};
 	    \end{axis}
 	\end{tikzpicture}
