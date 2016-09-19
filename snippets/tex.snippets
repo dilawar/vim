@@ -487,6 +487,7 @@ snippet labnote
 	\usepgfplotslibrary{groupplots}
 	\tikzexternalize[prefix=_tikz/,shell escape=-shell-escape]
 	\tikzset{external/system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
+	\immediate\write18{mkdir -p _tikz}
 
 	\begin{document}
 
