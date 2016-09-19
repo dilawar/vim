@@ -17,7 +17,7 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'eagletmt/ghcmod-vim'
 
 Bundle "rafi/awesome-vim-colorschemes"
-"Plugin 'dilawar/vim-snippets'
+Plugin 'dilawar/vim-snippets'
 "Plugin 'heavenshell/vim-pydocstring'
 Plugin 'WolfgangMehner/vim-plugins'
 
@@ -184,15 +184,16 @@ set errorformat^=%-G%f:%l:\ warning:%m
 
 source $HOME/.vim/methods.vim 
 
-"" SnipMate 
-let g:snips_author = 'Dilawar Singh'
-let g:snips_email = 'dilawars@ncbs.res.in'
-let g:snippets_dir = '$HOME/.vim/snippets'
-
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
-let g:snipMate.scope_aliases['markdown'] = 'markdown,tex'
+""" SnipMate 
+""" NOTE: Using ultisnips
+"let g:snips_author = 'Dilawar Singh'
+"let g:snips_email = 'dilawars@ncbs.res.in'
+"let g:snippets_dir = '$HOME/.vim/snippets'
+"
+"let g:snipMate = {}
+"let g:snipMate.scope_aliases = {}
+"let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
+"let g:snipMate.scope_aliases['markdown'] = 'markdown,tex'
 
 " Python related settings
 autocmd BufRead *.py setlocal makeprg=pylint\ \ %:p
