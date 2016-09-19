@@ -360,6 +360,19 @@ snippet csvplot
 	\caption{}
 	\end{figure}
 
+snippet gnuplot 
+	\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}[scale=1]
+		\begin{axis}[xlabel=${1:xlabel},ylabel=${2:ylabel}]
+			\addplot [color=blue] gnuplot [ raw gnuplot ] {
+			plot "${3:file}.csv" using 2:3 with lines
+			};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{}
+	\end{figure}
+
 snippet standalone 
 	\documentclass[crop,tikz]{standalone}
 	\begin{document}
