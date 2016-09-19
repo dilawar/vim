@@ -1,0 +1,17 @@
+snippet control
+	.CONTROL
+	  set hcopydevtype=postscript
+	  set hcopypscolor=true
+	  set color0 = white      ;background
+	  set color1 = black      ;text and grid
+	  set color2 = rgb:f/0/0  ;vector0
+	  set color3 = rgb:0/f/0  ;vector1
+	  set color3 = rgb:0/0/f  ;vector2
+	  op
+	  tran 100ps 80ns
+	  hardcopy `Filename()`.ps V(${1}) V(${2}) xl 1ns 81ns
+	.ENDC
+		
+snippet pulse
+	* A current pulse
+	I${0} in1 GND pulse(0 10p 1n 1n 1n ${1:width}n ${2:period}

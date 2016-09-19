@@ -1,0 +1,74 @@
+snippet header
+	CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+	PROJECT(${1:ProjectName})
+snippet cmake
+	CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+	PROJECT(${1:ProjectName})
+
+	FIND_PACKAGE(${2:LIBRARY})
+
+	INCLUDE_DIRECTORIES(
+		${$2_INCLUDE_DIR}
+	)
+
+	ADD_SUBDIRECTORY(${0:src})
+
+	ADD_EXECUTABLE($1)
+
+	TARGET_LINK_LIBRARIES($1
+		${$2_LIBRARIES}
+	)
+
+snippet include
+	INCLUDE_DIRECTORIES(
+		${${0:INCLUDE_DIR}}
+	)
+
+snippet find
+	FIND_PACKAGE(${0:LIBRARY})
+
+snippet glob
+	FILE(GLOB ${1:SRCS} *.${0:cpp})
+
+snippet subdir
+	ADD_SUBDIRECTORY(${0:src})
+
+snippet lib
+	ADD_LIBRARY(${1:lib} ${2:STATIC}
+		${${0:SRCS}}
+	)
+
+snippet link
+	TARGET_LINK_LIBRARIES(${1:bin}
+		${0:somelib}
+	)
+
+snippet bin
+	ADD_EXECUTABLE(${1:bin})
+
+snippet set
+	SET(${1:var} ${0:val})
+
+snippet dep
+	ADD_DEPENDENCIES(${1:target}
+		${0:dep}
+	)
+
+snippet props
+	SET_TARGET_PROPERTIES(${1:target}
+		${2:PROPERTIES} ${3:COMPILE_FLAGS}
+		${0:"-O3 -Wall -pedantic"}
+	)
+
+snippet external_project
+	include(ExternalProject)
+	ExternalProject_Add(
+	   ${1:external_prj_name}
+	   PREFIX ${2:${CMAKE_SOURCE_DIR}}/$1
+	   SOURCE_DIR  ${3:${CMAKE_SOURCE_DIR}}/$1
+	   CONFIGURE_COMMAND $3}/$1/configure --prefix=$3}/$1
+	   BUILD_COMMAND ${MAKE}
+	   BUILD_IN_SOURCE 1
+	) 
+	INCLUDE_DIRECTORIES($3}/$1/include)
+	LINK_DIRECTORIES($3}/$1/lib)
