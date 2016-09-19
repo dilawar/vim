@@ -361,17 +361,13 @@ snippet csvplot
 	\end{figure}
 
 snippet gnuplot 
-	\begin{figure}[ht]
-	\centering
 	\begin{tikzpicture}[scale=1]
-		\begin{axis}[xlabel=${1:xlabel},ylabel=${2:ylabel}]
-			\addplot [color=blue] gnuplot [ raw gnuplot ] {
-			plot "${3:file}.csv" using 2:3 with lines
-			};
-		\end{axis}
+	    \begin{axis}[xlabel=${1:xlabel},ylabel=${2:ylabel}]
+		\addplot [color=blue] gnuplot [ raw gnuplot ] {
+		    plot "${3:file}.csv" using 2:3 with lines;
+		};
+	    \end{axis}
 	\end{tikzpicture}
-	\caption{}
-	\end{figure}
 
 snippet standalone 
 	\documentclass[crop,tikz]{standalone}
@@ -474,7 +470,7 @@ snippet labnote
 	\date{\today}
 	\usepackage{fancyhdr}
 	\usepackage[]{dot2texi}
-	\setlength{\headheight}{15pt}
+	\setlength{\headheight}{20pt}
 	\lhead{ ${1:Labnote title} }
 	\chead{Dilawar Singh}
 	\rhead{\today}
@@ -494,8 +490,6 @@ snippet labnote
 	${2:Write here}
 
 	\end{document}
-
-
 
 snippet report
 	\documentclass{article}
