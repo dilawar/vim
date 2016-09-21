@@ -1,0 +1,49 @@
+# #!/usr/bin/env gnuplot
+
+snippet #!
+	#!usr/bin/env gnuplot
+
+snippet plot
+	plot ${1:"`Filename()`.dat"} ${2:using 1:2} ${3:with lines} title "${4:}"${7:,\}
+
+snippet fit
+	fit ${1:f(x)} ${2:"${3}.dat"} ${4:using 1:2} via "${5:start.par}"
+
+snippet fx
+	f(x) = 
+
+snippet ti
+	set title "${1}"
+	${2}
+
+snippet term
+	set terminal ${1:pdf} 
+	set output "`Filename()`.$1"
+	${2}
+
+snippet xr
+	set xrange [${1:0}:${2:10}]
+	${3}
+
+snippet yr
+	set yrange [${1:0}:${2:10}]
+	${3}
+
+snippet zr
+	set zrange [${1:0}:${2:10}]
+	${3}
+
+snippet xl
+	set xlabel "${1:label}"${2}
+	${3}
+
+snippet yl
+	set ylabel "${1:label}"${2}
+	${3}
+
+snippet zl
+	set ylabel "${1:label}"${2}
+	${3}
+
+snippet key
+	set key ${1:outside}

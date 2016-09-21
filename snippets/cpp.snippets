@@ -144,32 +144,32 @@ snippet lld
 
 # SC_MODULE
 snippet SC_MODULE 
-    SC_MODULE(${0:dum}) 
-    {
-        sc_in<bool> clock;
-        // In port(s)
-        sc_in<bool> in;
-        // Out port(s)
-        sc_in<bool> out;
-        // Vector of signals
-        sc_signal<double> signals[5];
+	SC_MODULE(${0:dum}) 
+	{
+	    sc_in<bool> clock;
+	    // In port(s)
+	    sc_in<bool> in;
+	    // Out port(s)
+	    sc_in<bool> out;
+	    // Vector of signals
+	    sc_signal<double> signals[5];
 
-        void $0_proc();
+	    void $0_proc();
 
-        SC_HAS_PROCESS($0);
+	    SC_HAS_PROCESS($0);
 
-        $0(sc_module_name name_, ${1:params}:
-            sc_module(name_), ${2:params_inst}
-        {
-            SC_THREAD($0_proc);
-            sensitive << clock.pos();
+	    $0(sc_module_name name_, ${1:params}:
+		sc_module(name_), ${2:params_inst}
+	    {
+		SC_THREAD($0_proc);
+		sensitive << clock.pos();
 
-            // Other process and their sensitivity list.
+		// Other process and their sensitivity list.
 
-        }
+	    }
 
-        private:
-            
-            // Private members.
-    };
+	    private:
+
+		// Private members.
+	};
 

@@ -19,7 +19,9 @@ snippet pre
 
 #newcommand
 snippet nc
-	\newcommand{\${1:cmd}}[${2:opt}]{${3:realcmd}} ${0}
+	\newcommand{\\${1:cmd}}[${2:3}]{
+	    ${0:} 
+	}
 #usepackage
 snippet up
 	\usepackage[${1:options}]{${2:package}} ${0}
@@ -358,6 +360,15 @@ snippet csvplot
 	\caption{}
 	\end{figure}
 
+snippet gnuplot 
+	\begin{tikzpicture}[scale=1]
+	    \begin{axis}[xlabel=${1:xlabel},ylabel=${2:ylabel}]
+		\addplot [color=blue] gnuplot [ raw gnuplot ] {
+		    plot "${3:file}.csv" using 2:3 with lines
+		};
+	    \end{axis}
+	\end{tikzpicture}
+
 snippet standalone 
 	\documentclass[crop,tikz]{standalone}
 	\begin{document}
@@ -450,3 +461,111 @@ snippet assignment
 	\renewcommand{\labelenumi}{\theenumi}
 	\renewcommand{\theenumii}{\roman{enumii}}
 	\begin{document}
+
+snippet labnote
+	% created on `system("date +%Y-%m-%d")`
+	\documentclass[14pt]{extarticle}
+	\usepackage[landscape,left=35mm,margin=20mm]{geometry}
+	\usepackage{ifthen,empheq}
+	\date{\today}
+	\usepackage{fancyhdr}
+	\usepackage[]{dot2texi}
+	\setlength{\headheight}{20pt}
+	\lhead{ ${1:Labnote title} }
+	\chead{Dilawar Singh}
+	\rhead{\today}
+	\lfoot{}\cfoot{\thepage}\rfoot{}
+	\pagestyle{fancy}
+	\usepackage{tikz,pgfplots,pgfplotstable}
+	\usetikzlibrary{shapes}
+	\pgfplotsset{compat=newest}
+	\usepgfplotslibrary{statistics,external}
+	\usepgfplotslibrary{groupplots}
+	\tikzexternalize[prefix=_tikz/,shell escape=-shell-escape]
+	\tikzset{external/system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
+	\immediate\write18{mkdir -p _tikz}
+
+	\begin{document}
+
+	${2:Write here}
+
+	\end{document}
+
+snippet report
+	\documentclass{article}
+	\usepackage[left=35mm,margin=20mm]{geometry}
+	\usepackage{ifthen,empheq}
+	\date{\today}
+	\usepackage{fancyhdr}
+	\usepackage[]{dot2texi}
+	\setlength{\headheight}{15pt}
+
+	\lhead{Title here}
+	\chead{Dilawar Singh}
+	\rhead{\today}
+
+	\lfoot{}\cfoot{\thepage}\rfoot{}
+	\pagestyle{fancy}
+
+	\begin{document}
+
+	${1:Write here}
+
+	\end{document}
+
+snippet glos
+	\newglossaryentry{${1:item}} 
+	{
+	    name=${2:name},
+	    description={${3:description}}
+	}
+
+snippet context 
+	\setuphead[title][]
+	\setuppagenumbering[location=bottom]
+
+	\setupbibtex[database={../bibliography/zotero}]
+
+	\usemodule[pgf,tikz]
+	\usemodule[todolists]
+
+	\defineparagraphs[comment][n=1,width=\textwidth,style=slanted]
+
+	\usetikzlibrary[ fit,calc,graphs,graphdrawing ]
+	\usegdlibrary[ circular,force,layered ]
+	\usetikzlibrary[ shapes,backgrounds,decorations.text,decorations.pathmorphing ]
+	\starttext
+
+	\stoptext
+
+snippet biblatex 
+	\usepackage[autostyle]{csquotes}
+	\usepackage[
+	    backend=biber,
+	    style=authoryear-icomp,
+	    sortlocale=de_DE,
+	    natbib=true,
+	    url=false, 
+	    doi=true,
+	    eprint=false]{biblatex}
+	\addbibresource{biblatex-examples.bib}
+	\usepackage[]{hyperref}
+	\hypersetup{ colorlinks=true}
+
+snippet pgfplots
+	\usepackage{tikz,pgfplots,pgfplotstable}
+	\pgfplotsset{compat=newest}
+	\usepgfplotslibrary{external}
+	\tikzexternalize
+	\usepackage{luaotfload}
+	\tikzset{external/system call={lualatex -shell-escape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}} 
+
+snippet fancyhdr 
+	\usepackage{fancyhdr}
+	\usepackage[]{dot2texi}
+	\setlength{\headheight}{15pt}
+	\lhead{ ${1:Title here} }
+	\chead{Dilawar Singh}
+	\rhead{\today}
+	\lfoot{}\cfoot{\thepage}\rfoot{}
+	\pagestyle{fancy}
