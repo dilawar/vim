@@ -308,12 +308,6 @@ snippet circuit
 	\label{circuit:${2:label}}
 	\end{figure}
 
-snippet addplot
-        \addplot[smooth] plot  file {hh.csv};
-        \addplot[smooth, color=blue] plot coordinates {
-                (0   , -60)
-        };
-
 snippet csvreader
 	\begin{table}[h!]
 		\centering
@@ -341,9 +335,9 @@ snippet csvplot
 snippet gnuplot 
 	\begin{tikzpicture}[scale=1]
 	    \begin{axis}[
-                xlabel=${1:xlabel},ylabel=${2:ylabel}
-                , grid style={draw=gray!20}, grid = both, minor tick num = 4
-            ]
+		xlabel=${1:xlabel},ylabel=${2:ylabel}
+		, grid style={draw=gray!20}, grid = both, minor tick num = 4 
+	    ]
 		\addplot [color=blue] gnuplot [ raw gnuplot ] {
 		    plot "${3:file}.csv" using 2:3 with lines
 		};
@@ -351,15 +345,14 @@ snippet gnuplot
 	\end{tikzpicture}
 
 snippet axis
-        \begin{axis}[
-            xlabel=${1:xlabel},ylabel=${2:ylabel}
-            , grid style={draw=gray!20}, grid = both, minor tick num = 4
-        ]
-            \addplot [color=blue] gnuplot [ raw gnuplot ] {
-                plot "${3:file}.csv" using 2:3 with lines
-            };
-        \end{axis}
-
+	\begin{axis}[
+	    xlabel=${1:xlabel},ylabel=${2:ylabel}
+	    , grid style={draw=gray!20}, grid = both, minor tick num = 4
+	]
+	    \addplot [color=blue] gnuplot [ raw gnuplot ] {
+	        plot "${3:file}.csv" using 2:3 with lines
+	    };
+	\end{axis}
 
 snippet standalone 
 	\documentclass[crop,tikz]{standalone}
