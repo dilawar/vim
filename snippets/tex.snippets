@@ -447,6 +447,12 @@ snippet assignment
 	\renewcommand{\theenumii}{\roman{enumii}}
 	\begin{document}
 
+snippet tikzexternal 
+	\usepgfplotslibrary{external}
+	\tikzexternalize[prefix=_tikz/,shell escape=-shell-escape]
+	\tikzset{external/system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
+	\immediate\write18{mkdir -p _tikz}
+
 snippet labnote
 	% created on `system("date +%Y-%m-%d")`
 	\documentclass[14pt]{extarticle}
