@@ -560,3 +560,18 @@ snippet fancyhdr
 	\rhead{\today}
 	\lfoot{}\cfoot{\thepage}\rfoot{}
 	\pagestyle{fancy}
+
+snippet datavis 
+	\datavisualization[
+	   scientific axes=clean, visualize as scatter
+	   , scatter={
+	       style={mark=*
+	           , mark options={color=blue,mark size=2pt} } 
+	       }
+	]
+	data[ format=function ] {
+	    var i : interval [-100:100];
+	    var j : interval [-100:100];
+	    func y = abs(\value i + \value j) ;
+	    func x = abs( abs(\value i) - abs(\value j) );
+	};
