@@ -575,3 +575,16 @@ snippet datavis
 	    func y = abs(\value i + \value j) ;
 	    func x = abs( abs(\value i) - abs(\value j) );
 	};
+
+snippet pgfplotstable 
+	% create a new table with 10 rows and columns 'x' and 'y':
+	\pgfplotstablenew
+	[
+	    % define how the 'new' column shall be filled:
+	    create on use/x/.style ={ create col/expr ={100*rand}},
+	    create on use/y/.style ={ create col/expr ={100*rand}},
+	    columns={x,y}
+	] {1000} \mydata
+	% show it:
+	%\pgfplotstabletypeset\mydata
+	
