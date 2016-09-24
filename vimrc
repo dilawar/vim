@@ -4,7 +4,7 @@ Bundle 'lervag/vimtex'
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'bling/vim-airline'
-Bundle 'vim-scripts/a.vim'
+"Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
@@ -17,7 +17,7 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'eagletmt/ghcmod-vim'
 
 Bundle "rafi/awesome-vim-colorschemes"
-Plugin 'dilawar/vim-snippets'
+"Plugin 'dilawar/vim-snippets'
 "Plugin 'heavenshell/vim-pydocstring'
 Plugin 'WolfgangMehner/vim-plugins'
 
