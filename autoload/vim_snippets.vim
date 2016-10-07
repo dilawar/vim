@@ -6,7 +6,7 @@
 " optional arg2: return this value if buffer has no filename
 "  But why not use the template in this case, too?
 "  Doesn't make sense to me
-fun! Filename(...)
+fun! vim_snippets#Filename(...)
   let template = get(a:000, 0, "$1")
   let arg2 = get(a:000, 1, "")
 
