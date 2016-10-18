@@ -159,7 +159,7 @@ if &diff
     colorscheme torte
 else
     "set bg=dark
-    "colorscheme torte
+    colorscheme torte
     set cc=+1
     hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 endif

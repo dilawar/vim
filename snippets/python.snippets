@@ -412,3 +412,10 @@ snippet p
 
 snippet imshow 
 	plt.imshow( ${1:img}, interpolation = 'none', aspect = 'auto' )
+
+snippet subplots
+	gridSize = (3, 2)
+	ax1 = plt.subplot2grid( gridSize, (0,0), colspan = 2 )
+	ax2 = plt.subplot2grid( gridSize, (1,0), colspan = 2 )
+	ax3 = plt.subplot2grid( gridSize, (2,0), colspan = 1 )
+	ax4 = plt.subplot2grid( gridSize, (2,1), colspan = 1 )
