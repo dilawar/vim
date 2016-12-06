@@ -172,7 +172,7 @@ endif
 ""    colorscheme torte
 ""endif
 ""
-colorscheme elflord
+colorscheme default
 set cc=+1
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
@@ -185,14 +185,14 @@ source $HOME/.vim/methods.vim
 
 """ SnipMate 
 """ NOTE: Using ultisnips
-"let g:snips_author = 'Dilawar Singh'
-"let g:snips_email = 'dilawars@ncbs.res.in'
-"let g:snippets_dir = '$HOME/.vim/snippets'
-"
-"let g:snipMate = {}
-"let g:snipMate.scope_aliases = {}
-"let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
-"let g:snipMate.scope_aliases['markdown'] = 'markdown,tex'
+let g:snips_author = 'Dilawar Singh'
+let g:snips_email = 'dilawars@ncbs.res.in'
+let g:snippets_dir = '$HOME/.vim/snippets'
+
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
+let g:snipMate.scope_aliases['markdown'] = 'markdown,tex'
 
 " Python related settings
 autocmd BufRead *.py setlocal makeprg=pylint\ \ %:p

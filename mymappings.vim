@@ -109,3 +109,5 @@ if getline(1) =~ '^#!.*/bin/make.*'
     setfiletype make
 endif
 
+" Tidy 
+vmap ,x :!tidy -q -i --show-errors 0<CR>
