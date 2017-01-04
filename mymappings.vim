@@ -66,8 +66,9 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
-imap ;;; <Plug>snipMateNextOrTrigger
+imap <leader><leader> <Plug>snipMateNextOrTrigger
 map gqc :call FormatComment()<CR>
+
 
 " Insert a  character n times.
 function! Repeat()
@@ -108,3 +109,5 @@ if getline(1) =~ '^#!.*/bin/make.*'
     setfiletype make
 endif
 
+" Tidy 
+vmap ,x :!tidy -q -i --show-errors 0<CR>

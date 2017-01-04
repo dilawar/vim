@@ -19,7 +19,9 @@ snippet pre
 
 #newcommand
 snippet nc
-	\newcommand{\${1:cmd}}[${2:opt}]{${3:realcmd}} ${0}
+	\newcommand{\\${1:cmd}}[${2:3}]{
+	    ${0:} 
+	}
 #usepackage
 snippet up
 	\usepackage[${1:options}]{${2:package}} ${0}
@@ -306,34 +308,6 @@ snippet circuit
 	\label{circuit:${2:label}}
 	\end{figure}
 
-snippet addplot
-	\begin{tikzpicture}
-		\begin{axis}[
-				xlabel=$ms$
-				, ylabel=$mV$
-			]
-			\addplot[smooth] plot  file {hh.csv};
-			\addplot[smooth, color=blue] plot coordinates {
-				(0   , -60)
-				(0.2 , -60.3)
-				(0.3 , -60.5)
-				(0.5 , -60)
-				(0.8 , -40)
-				(1.2 , 0)
-				(1.5 , 26)
-				(1.9, 23)
-				(2.3, 10)
-				(2.7, 0)
-				(3.1, -10)
-				(3.5, -20)
-				(4.3, -45)
-				(5.5, -80)
-				(6.1, -78)
-				(7, -77.8)
-			};
-		\end{axis}
-	\end{tikzpicture}
-
 snippet csvreader
 	\begin{table}[h!]
 		\centering
@@ -357,6 +331,28 @@ snippet csvplot
 	\end{tikzpicture}
 	\caption{}
 	\end{figure}
+
+snippet gnuplot 
+	\begin{tikzpicture}[scale=1]
+	    \begin{axis}[
+		xlabel=${1:xlabel},ylabel=${2:ylabel}
+		, grid style={draw=gray!20}, grid = both, minor tick num = 4 
+	    ]
+		\addplot [color=blue] gnuplot [ raw gnuplot ] {
+		    plot "${3:file}.csv" using 2:3 with lines
+		};
+	    \end{axis}
+	\end{tikzpicture}
+
+snippet axis
+	\begin{axis}[
+	    xlabel=${1:xlabel},ylabel=${2:ylabel}
+	    , grid style={draw=gray!20}, grid = both, minor tick num = 4
+	]
+	    \addplot [color=blue] gnuplot [ raw gnuplot ] {
+	        plot "${3:file}.csv" using 2:3 with lines
+	    };
+	\end{axis}
 
 snippet standalone 
 	\documentclass[crop,tikz]{standalone}
@@ -451,6 +447,41 @@ snippet assignment
 	\renewcommand{\theenumii}{\roman{enumii}}
 	\begin{document}
 
+snippet tikzexternal 
+	\usepgfplotslibrary{external}
+	\tikzexternalize[prefix=_tikz/,shell escape=-shell-escape]
+	\tikzset{external/system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
+	\immediate\write18{mkdir -p _tikz}
+
+snippet labnote
+	% created on `system("date +%Y-%m-%d")`
+	\documentclass[14pt]{extarticle}
+	\usepackage[landscape,left=35mm,margin=20mm]{geometry}
+	\usepackage{ifthen,empheq}
+	\date{\today}
+	\usepackage{fancyhdr}
+	\usepackage[]{dot2texi}
+	\setlength{\headheight}{20pt}
+	\lhead{ ${1:Labnote title} }
+	\chead{Dilawar Singh}
+	\rhead{\today}
+	\lfoot{}\cfoot{\thepage}\rfoot{}
+	\pagestyle{fancy}
+	\usepackage{tikz,pgfplots,pgfplotstable}
+	\usetikzlibrary{shapes}
+	\pgfplotsset{compat=newest}
+	\usepgfplotslibrary{statistics,external}
+	\usepgfplotslibrary{groupplots}
+	\tikzexternalize[prefix=_tikz/,shell escape=-shell-escape]
+	\tikzset{external/system call={lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}}
+	\immediate\write18{mkdir -p _tikz}
+
+	\begin{document}
+
+	${2:Write here}
+
+	\end{document}
+
 snippet report
 	\documentclass{article}
 	\usepackage[left=35mm,margin=20mm]{geometry}
@@ -498,3 +529,62 @@ snippet context
 
 	\stoptext
 
+snippet biblatex 
+	\usepackage[autostyle]{csquotes}
+	\usepackage[
+	    backend=biber,
+	    style=authoryear-icomp,
+	    sortlocale=de_DE,
+	    natbib=true,
+	    url=false, 
+	    doi=true,
+	    eprint=false]{biblatex}
+	\addbibresource{biblatex-examples.bib}
+	\usepackage[]{hyperref}
+	\hypersetup{ colorlinks=true}
+
+snippet pgfplots
+	\usepackage{tikz,pgfplots,pgfplotstable}
+	\pgfplotsset{compat=newest}
+	\usepgfplotslibrary{external}
+	\tikzexternalize
+	\usepackage{luaotfload}
+	\tikzset{external/system call={lualatex -shell-escape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}} 
+
+snippet fancyhdr 
+	\usepackage{fancyhdr}
+	\usepackage[]{dot2texi}
+	\setlength{\headheight}{15pt}
+	\lhead{ ${1:Title here} }
+	\chead{Dilawar Singh}
+	\rhead{\today}
+	\lfoot{}\cfoot{\thepage}\rfoot{}
+	\pagestyle{fancy}
+
+snippet datavis 
+	\datavisualization[
+	   scientific axes=clean, visualize as scatter
+	   , scatter={
+	       style={mark=*
+	           , mark options={color=blue,mark size=2pt} } 
+	       }
+	]
+	data[ format=function ] {
+	    var i : interval [-100:100];
+	    var j : interval [-100:100];
+	    func y = abs(\value i + \value j) ;
+	    func x = abs( abs(\value i) - abs(\value j) );
+	};
+
+snippet pgfplotstable 
+	% create a new table with 10 rows and columns 'x' and 'y':
+	\pgfplotstablenew
+	[
+	    % define how the 'new' column shall be filled:
+	    create on use/x/.style ={ create col/expr ={100*rand}},
+	    create on use/y/.style ={ create col/expr ={100*rand}},
+	    columns={x,y}
+	] {1000} \mydata
+	% show it:
+	%\pgfplotstabletypeset\mydata
+	

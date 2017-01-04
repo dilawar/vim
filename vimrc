@@ -1,5 +1,6 @@
 set rtp+=~/.vim/bundle/vundle/ 
 call vundle#rc() 
+Bundle 'lervag/vimtex'
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'bling/vim-airline'
@@ -7,17 +8,25 @@ Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
+Bundle "will133/vim-dirdiff"
 Bundle 'ervandew/supertab'
-Plugin 'dilawar/vim-snippets'
-Plugin 'heavenshell/vim-pydocstring'
+"Plugin 'SirVer/ultisnips'
+
+" Following two go hand in hand 
+Bundle 'Shougo/vimproc.vim'
+Bundle 'eagletmt/ghcmod-vim'
+
+Bundle "rafi/awesome-vim-colorschemes"
+"Plugin 'heavenshell/vim-pydocstring'
+Plugin 'WolfgangMehner/vim-plugins'
 
 " This script increase/descreses etc a selected column
-Plugin 'vim-scripts/VisIncr'
+"Plugin 'vim-scripts/VisIncr'
 
 " Following three goes together
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle "garbas/vim-snipmate"
+Bundle 'garbas/vim-snipmate'
 
 Bundle 'easymotion/vim-easymotion'
 Bundle "danchoi/elinks.vim"
@@ -58,6 +67,7 @@ set encoding=utf-8
 " set dictionary+=/usr/share/dict/words
 " no dictionary autocomplete. 
 set complete-=k
+set completeopt-=preview
 
 syntax enable
 
@@ -77,7 +87,7 @@ source $HOME/.vim/mymappings.vim
 " Supertab
 
 "" Section for literate programming.
-au BufNewFile *.nw read ~/Scripts/template.snw 
+au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
@@ -85,26 +95,25 @@ au BufRead,BufNewFile *.nw set spell spelllang=en
 au BufRead,BufNewFile *.blog set filetype=markdown
 au BufRead,BufNewFile *.markdown set filetype=markdown
 au BufRead,BufNewFile *.csv set filetype=csv
+au BufRead,BufNewFile *.asy set filetype=cpp
 au BufRead,BufNewFile *.yacml set filetype=dot
 au BufRead,BufNewFile *.ino set filetype=cpp
+au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
+au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
+au BufRead *.lyx syntax sync fromstart
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
     \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
 
-au BufRead,BufNewFile *.pandoc setlocal filetype=markdown |
-    \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
+au BufRead,BufNewFile *.pandoc setlocal filetype=tex |
+    \ setlocal makeprg=pandoc2pdf.sh\ %\ |
+    \ setlocal spell spelllang=en
 
 au BufNewFile,BufRead *.context setlocal filetype=tex 
 
-" Make pandoc behave like tex
-au BufRead,BufNewFile *.anansi setlocal filetype=tex |
-    \ setlocal makeprg=anansi.sh\ % |
-    \ setlocal spell spelllang=en
-
-
 let noweb_backend="tex"
-let noweb_language="python"
+let noweb_language="haskell"
 let noweb_fold_code=1
 
 au BufRead,BufNewFile *.tex set spell spelllang=en
@@ -121,12 +130,14 @@ au BufRead,BufNew *.markdown setlocal spell spelllang=en
 " On tmp files do not wrap lines by inserting newline, wrap it without newline.
 au BufRead,BufNew *.tmp setlocal wrap linebreak nolist 
 au BufRead,BufNew *.txt setlocal wrap linebreak nolist 
-au BufRead,BufNew *.lhs setlocal filetype=haskell
 
 
 au BufNewFile *.vhd read ~/.vim/template/template.vhd
 " au BufRead,BufNewFile *.bsv set filetype=verilog
 au BufRead,BufNewFile *.bsv set syntax=bsv
+au BufRead,BufNewFile *.max set syntax=maxima
+au BufRead,BufNewFile *.maxima set syntax=maxima
+au BufRead,BufNewFile *.mac set syntax=maxima
 au BufRead,BufNewFile *.rules set filetype=make
 
 
@@ -134,6 +145,8 @@ au BufRead,BufNewFile *.rules set filetype=make
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_ViewRule = 'yap -1'
+" Do not expand " to stupid quites.
+let g:Tex_SmartKeyQuote = 0
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 " unicode \u2506
@@ -142,8 +155,24 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
 
 " colorscheme and all
-set bg=dark
-colorscheme torte
+if &diff 
+    colorscheme torte
+else
+    "set bg=dark
+    colorscheme torte
+    set cc=+1
+    hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+endif
+""
+""" colorscheme and all
+""if &diff 
+""    colorscheme torte
+""else
+""    set bg=dark
+""    colorscheme torte
+""endif
+""
+colorscheme default
 set cc=+1
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
@@ -154,7 +183,8 @@ set errorformat^=%-G%f:%l:\ warning:%m
 
 source $HOME/.vim/methods.vim 
 
-"" SnipMate 
+""" SnipMate 
+""" NOTE: Using ultisnips
 let g:snips_author = 'Dilawar Singh'
 let g:snips_email = 'dilawars@ncbs.res.in'
 let g:snippets_dir = '$HOME/.vim/snippets'
@@ -165,7 +195,7 @@ let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
 let g:snipMate.scope_aliases['markdown'] = 'markdown,tex'
 
 " Python related settings
-autocmd BufRead *.py setlocal makeprg=pylint\ -E\ %:p
+autocmd BufRead *.py setlocal makeprg=pylint\ \ %:p
 let g:pymode_lint_write=0
 let g:pymode_lint=0
 
@@ -240,6 +270,7 @@ augroup nonvim
    au BufRead *.ppt*,*.doc*,*.rtf sil exe "!open " . g:output_pdf | bd | let &ft=&ft
 augroup end
 
+
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
 let g:haddock_browser = "firefox"
@@ -255,3 +286,5 @@ let g:UltiSnipsEditSplit="vertical"
 
 " For mac
 set clipboard=unnamed
+" Diffdir options
+let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,*/.git/*"
