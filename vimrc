@@ -8,7 +8,6 @@ Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
 Plugin 'dilawar/vim-snippets'
 Plugin 'heavenshell/vim-pydocstring'
 
@@ -33,6 +32,9 @@ Bundle "junegunn/vim-easy-align"
 "Bundle "chrisbra/csv.vim"
 "Bundle "JuliaLang/julia-vim"
 "Bundle 'Valloric/YouCompleteMe'
+
+"" Fakeclip
+Bundle "kana/vim-fakeclip"
 
 
 filetype plugin indent on
@@ -250,3 +252,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" For mac
+set clipboard=unnamed
