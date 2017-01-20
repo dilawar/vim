@@ -41,8 +41,8 @@ Bundle "junegunn/vim-easy-align"
 "Bundle "JuliaLang/julia-vim"
 "Bundle 'Valloric/YouCompleteMe'
 
-" This is here to autocomplete citation 
-Bundle "gerw/vim-latex-suite"
+"" Fakeclip
+Bundle "kana/vim-fakeclip"
 
 
 filetype plugin indent on
@@ -283,5 +283,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" For mac
+set clipboard=unnamed
 " Diffdir options
 let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,*/.git/*"
