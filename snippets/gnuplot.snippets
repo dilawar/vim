@@ -47,3 +47,8 @@ snippet zl
 
 snippet key
 	set key ${1:outside}
+
+snippet hist
+	binwidth=${1:1}
+	bin(x,width)=width*floor(x/width)
+	plot '${2:datafile.dat}' using (bin(\$1,binwidth)):(1.0) smooth freq with boxes
