@@ -227,7 +227,7 @@ call system('mkdir -p ' . myUndoDir)
 let &undodir = myUndoDir
 set undofile
 
-set foldmethod=indent
+"set foldmethod=indent
 "set foldnestmax=4
 "set foldlevel=1
 
