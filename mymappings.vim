@@ -1,9 +1,11 @@
 source $HOME/.vim/scripts/format_comment.vim
 
-imap jj <Esc>
-imap qq <C-P>
-imap ww <C-N>
-imap ddd <C-X><C-K>
+" ww was overwriting www.something.com when pasting. I don't use it anyway
+" anymore.
+"imap jj <Esc>
+"imap qq <C-P>
+"imap ww <C-N>
+"imap ddd <C-X><C-K>
 noremap K i<CR><Esc>
 nnoremap gr :grep <cword> *<CR>
 nnoremap Gr :grep <cword> %:p:h/*<CR>
