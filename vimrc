@@ -34,9 +34,9 @@ Bundle 'scrooloose/nerdcommenter'
 "Bundle "tpope/vim-commentary"
 Bundle 'tpope/vim-fugitive'
 Bundle "junegunn/vim-easy-align"
-"Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 "Bundle 'scrooloose/nerdtree'
-"Bundle 'kien/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 "Bundle 'mattn/gist-vim'
 "Bundle "chrisbra/csv.vim"
 "Bundle "JuliaLang/julia-vim"
