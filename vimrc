@@ -100,6 +100,7 @@ au BufRead,BufNewFile *.yacml set filetype=dot
 au BufRead,BufNewFile *.ino set filetype=cpp
 au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
 au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
+au BufRead,BufNewFile wscript set filetype=python 
 au BufRead *.lyx syntax sync fromstart
 
 " Make pandoc behave like tex
