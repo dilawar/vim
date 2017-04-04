@@ -35,7 +35,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
 Bundle "junegunn/vim-easy-align"
 Bundle 'scrooloose/syntastic'
-"Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'mattn/gist-vim'
 "Bundle "chrisbra/csv.vim"
@@ -94,6 +94,8 @@ au BufRead,BufNewFile *.w set filetype=noweb
 au BufRead,BufNewFile *.nw set spell spelllang=en
 au BufRead,BufNewFile *.blog set filetype=markdown
 au BufRead,BufNewFile *.markdown set filetype=markdown
+au BufRead,BufNewFile *.pandoc set filetype=markdown
+au BufRead,BufNewFile *.labnote set filetype=markdown
 au BufRead,BufNewFile *.csv set filetype=csv
 au BufRead,BufNewFile *.asy set filetype=cpp
 au BufRead,BufNewFile *.yacml set filetype=dot
@@ -289,3 +291,12 @@ let g:UltiSnipsEditSplit="vertical"
 set clipboard=unnamed
 " Diffdir options
 let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,*/.git/*"
+
+" Syntastic is very slow with pylint
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
