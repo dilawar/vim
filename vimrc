@@ -138,11 +138,10 @@ au BufRead,BufNew *.txt setlocal wrap linebreak nolist
 au BufNewFile *.vhd read ~/.vim/template/template.vhd
 " au BufRead,BufNewFile *.bsv set filetype=verilog
 au BufRead,BufNewFile *.bsv set syntax=bsv
-au BufRead,BufNewFile *.max set syntax=maxima
-au BufRead,BufNewFile *.maxima set syntax=maxima
-au BufRead,BufNewFile *.mac set syntax=maxima
+au BufRead,BufNewFile *.max set filetype=maxima 
+au BufRead,BufNewFile *.maxima set filetype=maxima
+au BufRead,BufNewFile *.mac set filetype=maxima
 au BufRead,BufNewFile *.rules set filetype=make
-
 
 " vim-latexsuite mapping
 let g:tex_flavor='latex'
@@ -300,3 +299,4 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
