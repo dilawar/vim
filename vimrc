@@ -34,7 +34,6 @@ Bundle 'scrooloose/nerdcommenter'
 "Bundle "tpope/vim-commentary"
 Bundle 'tpope/vim-fugitive'
 Bundle "junegunn/vim-easy-align"
-Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'mattn/gist-vim'
@@ -44,6 +43,9 @@ Bundle 'kien/ctrlp.vim'
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
+
+"" vim-latexsuite. Make it very easy to insert bibliography.
+Bundle "vim-latex/vim-latex"
 
 
 filetype plugin indent on
