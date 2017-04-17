@@ -303,3 +303,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = ' -std=c++11 '
+
+" Calendar
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
