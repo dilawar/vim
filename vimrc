@@ -10,6 +10,7 @@ Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
 Bundle 'ervandew/supertab'
+Bundle 'itchyny/calendar.vim'
 "Plugin 'SirVer/ultisnips'
 
 " Following two go hand in hand 
