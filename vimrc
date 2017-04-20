@@ -39,7 +39,7 @@ Bundle 'kien/ctrlp.vim'
 "Bundle 'mattn/gist-vim'
 "Bundle "chrisbra/csv.vim"
 "Bundle "JuliaLang/julia-vim"
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
