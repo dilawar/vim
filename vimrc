@@ -140,9 +140,9 @@ au BufRead,BufNew *.txt setlocal wrap linebreak nolist
 au BufNewFile *.vhd read ~/.vim/template/template.vhd
 " au BufRead,BufNewFile *.bsv set filetype=verilog
 au BufRead,BufNewFile *.bsv set syntax=bsv
-au BufRead,BufNewFile *.max set filetype=maxima 
-au BufRead,BufNewFile *.maxima set filetype=maxima
-au BufRead,BufNewFile *.mac set filetype=maxima
+au BufRead,BufNewFile *.max set filetype=maxima  nospell
+au BufRead,BufNewFile *.maxima set filetype=maxima nospell
+au BufRead,BufNewFile *.mac set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
 
 " vim-latexsuite mapping
