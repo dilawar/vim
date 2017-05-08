@@ -113,3 +113,4 @@ endif
 
 " Tidy 
 vmap ,x :!tidy -q -i --show-errors 0<CR>
+

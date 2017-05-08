@@ -47,6 +47,9 @@ Bundle "kana/vim-fakeclip"
 "" vim-latexsuite. Make it very easy to insert bibliography.
 Bundle "vim-latex/vim-latex"
 
+" Easytags
+Bundle "xolox/vim-easytags"
+
 
 filetype plugin indent on
 
