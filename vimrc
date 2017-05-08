@@ -48,6 +48,7 @@ Bundle "kana/vim-fakeclip"
 Bundle "vim-latex/vim-latex"
 
 " Easytags
+Bundle "xolox/vim-misc"
 Bundle "xolox/vim-easytags"
 
 
