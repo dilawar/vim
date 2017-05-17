@@ -1,10 +1,12 @@
 #PREAMBLE
 snippet pre
+	\RequirePackage{luatex85,shellesc}
 	\documentclass[a4paper,10pt]{article}
 	\usepackage{pgf,tikz}
+	\usepackage{pgfplots}
 	\usepackage{amsmath}
 	\usepackage{amssymb}
-	\usetikzlibrary{shapes,backgrounds,decorations,decorations.pathmorphing}
+	\usetikzlibrary{shapes,backgrounds,calc,arrows,arrows.meta}
 	% Title Page
 	\title{Title here} 
 	\author{Dilawar Singh}
