@@ -39,7 +39,7 @@ Bundle 'kien/ctrlp.vim'
 "Bundle 'mattn/gist-vim'
 "Bundle "chrisbra/csv.vim"
 "Bundle "JuliaLang/julia-vim"
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
@@ -48,8 +48,11 @@ Bundle "kana/vim-fakeclip"
 Bundle "vim-latex/vim-latex"
 
 " Easytags
-Bundle "xolox/vim-misc"
-Bundle "xolox/vim-easytags"
+"Bundle "xolox/vim-misc"
+"Bundle "xolox/vim-easytags"
+
+" OpenSCAD scripts.
+Bundle "sirtaj/vim-openscad"
 
 
 filetype plugin indent on
