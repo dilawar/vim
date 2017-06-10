@@ -51,9 +51,6 @@ Bundle "vim-latex/vim-latex"
 "Bundle "xolox/vim-misc"
 "Bundle "xolox/vim-easytags"
 
-" OpenSCAD scripts.
-Bundle "sirtaj/vim-openscad"
-
 
 filetype plugin indent on
 
