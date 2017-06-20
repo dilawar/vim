@@ -95,6 +95,7 @@ source $HOME/.vim/mymappings.vim
 "" Section for literate programming.
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
+au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
 au BufRead,BufNewFile *.nw set spell spelllang=en
