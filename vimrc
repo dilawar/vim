@@ -28,6 +28,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle "chrisbra/csv.vim"
 Bundle "JuliaLang/julia-vim"
 Bundle 'Valloric/YouCompleteMe'
+Bundle "tpope/vim-fugitive"
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
