@@ -1,6 +1,6 @@
 set rtp+=~/.vim/bundle/vundle/ 
 call vundle#rc() 
-Bundle 'lervag/vimtex'
+
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'bling/vim-airline'
@@ -10,15 +10,7 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
 Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
-"Plugin 'SirVer/ultisnips'
-
-" Following two go hand in hand 
-Bundle 'Shougo/vimproc.vim'
-Bundle 'eagletmt/ghcmod-vim'
-
 Bundle "rafi/awesome-vim-colorschemes"
-"Plugin 'heavenshell/vim-pydocstring'
-Plugin 'WolfgangMehner/vim-plugins'
 
 " This script increase/descreses etc a selected column
 "Plugin 'vim-scripts/VisIncr'
@@ -30,16 +22,12 @@ Bundle 'garbas/vim-snipmate'
 
 Bundle 'easymotion/vim-easymotion'
 Bundle "danchoi/elinks.vim"
-Bundle 'scrooloose/nerdcommenter'
-"Bundle "tpope/vim-commentary"
-Bundle 'tpope/vim-fugitive'
+Bundle "tpope/vim-commentary"
 Bundle "junegunn/vim-easy-align"
-Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
-"Bundle 'mattn/gist-vim'
-"Bundle "chrisbra/csv.vim"
-"Bundle "JuliaLang/julia-vim"
-"Bundle 'Valloric/YouCompleteMe'
+Bundle "chrisbra/csv.vim"
+Bundle "JuliaLang/julia-vim"
+Bundle 'Valloric/YouCompleteMe'
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
@@ -50,6 +38,9 @@ Bundle "vim-latex/vim-latex"
 " Easytags
 "Bundle "xolox/vim-misc"
 "Bundle "xolox/vim-easytags"
+
+Bundle "airblade/vim-gitgutter"
+Bundle "nathanaelkane/vim-indent-guides"
 
 
 filetype plugin indent on
