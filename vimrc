@@ -22,12 +22,13 @@ Bundle 'garbas/vim-snipmate'
 
 Bundle 'easymotion/vim-easymotion'
 Bundle "danchoi/elinks.vim"
-Bundle "tpope/vim-commentary"
 Bundle "junegunn/vim-easy-align"
 Bundle 'kien/ctrlp.vim'
 Bundle "chrisbra/csv.vim"
 Bundle "JuliaLang/julia-vim"
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
+Bundle "scrooloose/nerdcommenter"
+
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
@@ -39,8 +40,8 @@ Bundle "vim-latex/vim-latex"
 "Bundle "xolox/vim-misc"
 "Bundle "xolox/vim-easytags"
 
-Bundle "airblade/vim-gitgutter"
-Bundle "nathanaelkane/vim-indent-guides"
+"Bundle "airblade/vim-gitgutter"
+"Bundle "nathanaelkane/vim-indent-guides"
 
 
 filetype plugin indent on
@@ -86,6 +87,7 @@ source $HOME/.vim/mymappings.vim
 "" Section for literate programming.
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
+au BufRead,BufNewFile *.cu set filetype=cpp
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
