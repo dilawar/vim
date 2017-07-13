@@ -1,6 +1,19 @@
 snippet header
 	cmake_minimum_required(VERSION 2.6)
 	project(${1:ProjectName})
+snippet mess
+	message( STATUS "${0:message}" )
+
+snippet add_custom_command
+	add_custom_target( ${TGT_NAME} DEPENDS ${OUTFILE} )
+	add_custom_command( OUTPUT ${OUTFILE}
+	    COMMAND ${0:command}
+	    DEPENDS ${_infile}
+	    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+	    MESSAGE "${1:message}"
+	    VERBATIM
+	    )
+
 snippet cmake
 	cmake_minimum_required(VERSION 2.6)
 	project(${1:ProjectName})
