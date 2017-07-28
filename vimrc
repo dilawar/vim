@@ -95,7 +95,7 @@ au BufRead,BufNewFile *.nw set spell spelllang=en
 au BufRead,BufNewFile *.blog set filetype=markdown
 au BufRead,BufNewFile *.markdown set filetype=markdown
 au BufRead,BufNewFile *.pandoc set filetype=markdown
-au BufRead,BufNewFile *.labnote set filetype=markdown
+au BufRead,BufNewFile *.labnote set filetype=tex
 au BufRead,BufNewFile *.csv set filetype=csv
 au BufRead,BufNewFile *.asy set filetype=cpp
 au BufRead,BufNewFile *.yacml set filetype=dot
@@ -106,7 +106,7 @@ au BufRead,BufNewFile wscript set filetype=python
 au BufRead *.lyx syntax sync fromstart
 
 " Make pandoc behave like tex
-au BufRead,BufNewFile *.md setlocal filetype=markdown |
+au BufRead,BufNewFile *.md setlocal filetype=tex |
     \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=tex |
