@@ -10,7 +10,6 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
 Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
-Bundle "rafi/awesome-vim-colorschemes"
 
 " This script increase/descreses etc a selected column
 "Plugin 'vim-scripts/VisIncr'
@@ -304,3 +303,34 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 '
 " Calendar
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+
+" Nerd Commentor 
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Doxygen 
+let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+let g:DoxygenToolkit_paramTag_pre="@Param "
+let g:DoxygenToolkit_returnTag="@Returns   "
+let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
+let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
+let g:DoxygenToolkit_authorName="Dilawar Singh <dilawars@ncbs.res.in>"
+let g:DoxygenToolkit_licenseTag="GNU-GPL v3"  
