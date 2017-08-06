@@ -105,7 +105,7 @@ au BufRead,BufNewFile wscript set filetype=python
 au BufRead *.lyx syntax sync fromstart
 
 " Make pandoc behave like tex
-au BufRead,BufNewFile *.md setlocal filetype=tex |
+au BufRead,BufNewFile *.md setlocal filetype=markdown |
     \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=tex |
