@@ -10,7 +10,7 @@ snippet add_custom_command
 	    COMMAND ${0:command}
 	    DEPENDS ${_infile}
 	    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-	    MESSAGE "${1:message}"
+	    COMMENT "${1:message}"
 	    VERBATIM
 	    )
 

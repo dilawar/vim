@@ -74,11 +74,12 @@ map gqc :call FormatComment()<CR>
 
 " Insert a  character n times.
 function! Repeat()
-    let times = input("Count: ")
+    let x = a:cursor_pos[1];
+    let times = &l:textwidth - x;
     let char  = input("Char: ")
     exe ":normal a" . repeat(char, times)
 endfunction
-imap <C-r> <C-o>:call Repeat()<cr>
+map <leader>RE :call Repeat()<cr>
 
 " Easy align plugins.
 let g:easy_align_delimiters = {
