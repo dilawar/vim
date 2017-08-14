@@ -85,3 +85,10 @@ snippet code
 	\begin{code}
 	${0}
 	\end{code}
+
+snippet rand 
+	randomDouble :: Int -> IO [ Double ] 
+	randomDouble n = do 
+	    g <- getStdGen
+	    let numbers = take n $ randoms g
+	    return numbers 
