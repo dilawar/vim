@@ -19,13 +19,11 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
 
-Bundle 'easymotion/vim-easymotion'
 Bundle "danchoi/elinks.vim"
 Bundle "junegunn/vim-easy-align"
-Bundle 'kien/ctrlp.vim'
-Bundle "chrisbra/csv.vim"
+" Bundle 'kien/ctrlp.vim'
+" Bundle "chrisbra/csv.vim"
 Bundle "JuliaLang/julia-vim"
-"Bundle 'Valloric/YouCompleteMe'
 Bundle "scrooloose/nerdcommenter"
 
 
@@ -34,14 +32,6 @@ Bundle "kana/vim-fakeclip"
 
 "" vim-latexsuite. Make it very easy to insert bibliography.
 Bundle "vim-latex/vim-latex"
-
-" Easytags
-"Bundle "xolox/vim-misc"
-"Bundle "xolox/vim-easytags"
-
-"Bundle "airblade/vim-gitgutter"
-"Bundle "nathanaelkane/vim-indent-guides"
-
 
 filetype plugin indent on
 
