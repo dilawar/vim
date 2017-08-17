@@ -325,4 +325,7 @@ let g:DoxygenToolkit_blockFooter="----------------------------------------------
 let g:DoxygenToolkit_authorName="Dilawar Singh <dilawars@ncbs.res.in>"
 let g:DoxygenToolkit_licenseTag="GNU-GPL v3"  
 
+" Pandoc 
+let g:pandoc#biblio#use_bibtool=1
+
 
