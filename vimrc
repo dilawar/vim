@@ -32,6 +32,8 @@ Bundle "kana/vim-fakeclip"
 
 "" vim-latexsuite. Make it very easy to insert bibliography.
 Bundle "vim-latex/vim-latex"
+Bundle "vim-pandoc/vim-pandoc"
+Bundle "vim-pandoc/vim-pandoc-syntax"
 
 filetype plugin indent on
 
@@ -82,8 +84,6 @@ au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
 au BufRead,BufNewFile *.nw set spell spelllang=en
 au BufRead,BufNewFile *.blog set filetype=markdown
-au BufRead,BufNewFile *.markdown set filetype=markdown
-au BufRead,BufNewFile *.pandoc set filetype=markdown
 au BufRead,BufNewFile *.labnote set filetype=tex
 au BufRead,BufNewFile *.csv set filetype=csv
 au BufRead,BufNewFile *.asy set filetype=cpp
