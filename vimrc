@@ -10,6 +10,7 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
 Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
+Bundle 'flazz/vim-colorschemes'
 
 " This script increase/descreses etc a selected column
 "Plugin 'vim-scripts/VisIncr'
@@ -145,27 +146,9 @@ set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
 
-" colorscheme and all
-if &diff 
-    colorscheme torte
-else
-    "set bg=dark
-    colorscheme torte
-    set cc=+1
-    hi ColorColumn ctermbg=lightgrey guibg=lightgrey
-endif
-""
-""" colorscheme and all
-""if &diff 
-""    colorscheme torte
-""else
-""    set bg=dark
-""    colorscheme torte
-""endif
-""
-colorscheme default
+set background=dark
+colorscheme solarized
 set cc=+1
-hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " c-support
 
