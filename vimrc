@@ -311,5 +311,6 @@ let g:DoxygenToolkit_licenseTag="GNU-GPL v3"
 " Pandoc 
 let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding" ]
+let g:pandoc#formatting#textwidth = 80
 
 
