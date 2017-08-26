@@ -11,6 +11,7 @@ Bundle "will133/vim-dirdiff"
 Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'vol2223/vim-colorblind-colorscheme'
 
 " This script increase/descreses etc a selected column
 "Plugin 'vim-scripts/VisIncr'
@@ -145,9 +146,9 @@ set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 "let g:haddock_browser="/usr/bin/elinks"
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
+"set background=dark
+" colorscheme solarized
 
-set background=dark
-colorscheme solarized
 set cc=+1
 
 " c-support
