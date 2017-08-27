@@ -12,6 +12,8 @@ Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'vol2223/vim-colorblind-colorscheme'
+Bundle 'mattn/sonictemplate-vim'
+Bundle 'heavenshell/vim-pydocstring'
 
 " This script increase/descreses etc a selected column
 "Plugin 'vim-scripts/VisIncr'
