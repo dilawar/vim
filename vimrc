@@ -14,6 +14,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'vol2223/vim-colorblind-colorscheme'
 Bundle 'mattn/sonictemplate-vim'
 Bundle 'heavenshell/vim-pydocstring'
+Bundle "tomtom/tcomment_vim"
 
 " This script increase/descreses etc a selected column
 "Plugin 'vim-scripts/VisIncr'
