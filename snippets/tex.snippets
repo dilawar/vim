@@ -359,6 +359,21 @@ snippet gnuplot
 	    \end{axis}
 	\end{tikzpicture}
 
+snippet image 
+	\begin{tikzpicture}[scale=1]
+	    \begin{axis}[ view = {0}{90}
+		, xlabel= , ylabel=Measurememnt rows
+		, colorbar, colorbar style={title=}
+		, title style={align=right,at={(-0.2,1)}}
+		, title = {a.}
+	    ]
+	    \addplot3 [raw gnuplot,surf,shader=interp,mesh/rows=64] gnuplot {
+		plot "./_measurement_matrix.dat" matrix with image;
+	    };
+	    \end{axis}
+	\end{tikzpicture}
+
+
 snippet axis
 	\begin{axis}[
 	    xlabel=${1:xlabel},ylabel=${2:ylabel}
