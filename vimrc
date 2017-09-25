@@ -14,7 +14,6 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'vol2223/vim-colorblind-colorscheme'
 Bundle 'mattn/sonictemplate-vim'
 Bundle 'heavenshell/vim-pydocstring'
-Bundle "tomtom/tcomment_vim"
 
 " This script increase/descreses etc a selected column
 "Plugin 'vim-scripts/VisIncr'
@@ -29,7 +28,6 @@ Bundle "junegunn/vim-easy-align"
 " Bundle 'kien/ctrlp.vim'
 " Bundle "chrisbra/csv.vim"
 Bundle "JuliaLang/julia-vim"
-Bundle "scrooloose/nerdcommenter"
 
 
 "" Fakeclip
@@ -300,6 +298,7 @@ let g:NERDCommentEmptyLines = 1
 
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
 
 " Doxygen 
 let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
