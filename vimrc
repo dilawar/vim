@@ -14,6 +14,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'vol2223/vim-colorblind-colorscheme'
 Bundle 'mattn/sonictemplate-vim'
 Bundle 'heavenshell/vim-pydocstring'
+Bundle "tomtom/tcomment_vim"
 
 " This script increase/descreses etc a selected column
 "Plugin 'vim-scripts/VisIncr'
@@ -28,6 +29,10 @@ Bundle "junegunn/vim-easy-align"
 " Bundle 'kien/ctrlp.vim'
 " Bundle "chrisbra/csv.vim"
 Bundle "JuliaLang/julia-vim"
+
+"" Nerd comment. Mess up my tex file.
+" Bundle "scrooloose/nerdcommenter"
+" autocmd FileType tex let g:NERDCreateDefaultMappings = 0
 
 
 "" Fakeclip
