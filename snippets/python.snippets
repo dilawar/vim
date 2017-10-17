@@ -41,9 +41,9 @@ snippet matplotlib
 	    mpl.style.use( 'seaborn-talk' )
 	except Exception as e:
 	    pass
-	mpl.rcParams['axes.linewidth'] = 0.1
+	mpl.rcParams['axes.linewidth'] = 0.2
+	mpl.rcParams['text.latex.preamble'] = [ '\\usepackage{siunitx}' ]
 	plt.rc('text', usetex=True)
-	plt.rc('font', family='serif')
 
 	
 snippet license
