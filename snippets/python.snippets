@@ -37,14 +37,11 @@ snippet header
 snippet matplotlib 
 	import matplotlib as mpl
 	import matplotlib.pyplot as plt
-	try:
-	    mpl.style.use( 'seaborn-talk' )
-	except Exception as e:
-	    pass
+	mpl.style.use( 'bmh' )
 	mpl.rcParams['axes.linewidth'] = 0.2
-	mpl.rcParams['text.latex.preamble'] = [ '\\usepackage{siunitx}' ]
-	plt.rc('text', usetex=True)
-
+	mpl.rcParams['lines.linewidth'] = 1.0
+	mpl.rcParams['text.latex.preamble'] = [ r'\\usepackage{siunitx}' ]
+	mpl.rcParams['text.usetex'] = True
 	
 snippet license
 	# This file is part of ${1:app} ${2}.
