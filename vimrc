@@ -26,9 +26,11 @@ Bundle 'garbas/vim-snipmate'
 
 Bundle "danchoi/elinks.vim"
 Bundle "junegunn/vim-easy-align"
-" Bundle 'kien/ctrlp.vim'
-" Bundle "chrisbra/csv.vim"
+Bundle 'kien/ctrlp.vim'
+Bundle "chrisbra/csv.vim"
 Bundle "JuliaLang/julia-vim"
+
+Bundle "Valloric/YouCompleteMe"
 
 "" Nerd comment. Mess up my tex file.
 " Bundle "scrooloose/nerdcommenter"
