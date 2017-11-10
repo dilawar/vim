@@ -36,10 +36,15 @@ Bundle 'garbas/vim-snipmate'
 
 Bundle "danchoi/elinks.vim"
 Bundle "junegunn/vim-easy-align"
-" Bundle 'kien/ctrlp.vim'
-" Bundle "chrisbra/csv.vim"
+Bundle 'kien/ctrlp.vim'
+Bundle "chrisbra/csv.vim"
 Bundle "JuliaLang/julia-vim"
-Bundle "scrooloose/nerdcommenter"
+
+Bundle "Valloric/YouCompleteMe"
+
+"" Nerd comment. Mess up my tex file.
+" Bundle "scrooloose/nerdcommenter"
+" autocmd FileType tex let g:NERDCreateDefaultMappings = 0
 
 
 "" Fakeclip
@@ -310,6 +315,7 @@ let g:NERDCommentEmptyLines = 1
 
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
 
 " Doxygen 
 let g:DoxygenToolkit_briefTag_pre="@Synopsis  "

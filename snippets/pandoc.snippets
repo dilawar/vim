@@ -1,6 +1,5 @@
 # Markdown
-
-# Includes octopress (http://octopress.org/) snippets
+extends tex
 
 snippet [
 	[${1:text}](http://${2:address} "${0:title}")
@@ -107,6 +106,7 @@ snippet header
 	fontfamily: libertine
 	header-includes:
 	    - \usepackage{pgfplots}
+	    - \usepackage{libertine,mathpazo}
 	---
 
 snippet labnote
@@ -120,6 +120,7 @@ snippet labnote
 	fontfamily: libertine
 	header-includes:
 	    - \usepackage{pgfplots}
+	    - \usepackage{libertine,mathpazo}
 	---
 
 	# Experiment Aim
