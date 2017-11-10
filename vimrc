@@ -10,11 +10,21 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
 Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
+Bundle 'tpope/vim-dispatch'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'vol2223/vim-colorblind-colorscheme'
 Bundle 'mattn/sonictemplate-vim'
 Bundle 'heavenshell/vim-pydocstring'
 Bundle "tomtom/tcomment_vim"
+
+" Easytags
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-easytags"
+:let g:easytags_always_enabled = 0
+:let g:easytags_auto_highlight = 0
+:let g:easytags_autorecurse = 0
+:let g:easytags_async=1
+:let g:easytags_opts=['--options=$HOME/Scripts/ctags']
 
 " This script increase/descreses etc a selected column
 "Plugin 'vim-scripts/VisIncr'
