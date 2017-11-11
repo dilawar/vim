@@ -3,7 +3,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
-Bundle 'bling/vim-airline'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
@@ -13,9 +12,8 @@ Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'vol2223/vim-colorblind-colorscheme'
-Bundle 'mattn/sonictemplate-vim'
-Bundle 'heavenshell/vim-pydocstring'
 Bundle "tomtom/tcomment_vim"
+Bundle "ctrlpvim/ctrlp.vim"
 
 " Easytags
 Bundle "xolox/vim-misc"
@@ -27,7 +25,7 @@ Bundle "xolox/vim-easytags"
 :let g:easytags_opts=['--options=$HOME/Scripts/ctags']
 
 " This script increase/descreses etc a selected column
-"Plugin 'vim-scripts/VisIncr'
+Plugin 'vim-scripts/VisIncr'
 
 " Following three goes together
 Bundle 'tomtom/tlib_vim'
@@ -36,16 +34,11 @@ Bundle 'garbas/vim-snipmate'
 
 Bundle "danchoi/elinks.vim"
 Bundle "junegunn/vim-easy-align"
-Bundle 'kien/ctrlp.vim'
-Bundle "chrisbra/csv.vim"
-Bundle "JuliaLang/julia-vim"
+Bundle "scrooloose/nerdcommenter"
 
-Bundle "Valloric/YouCompleteMe"
-
-"" Nerd comment. Mess up my tex file.
-" Bundle "scrooloose/nerdcommenter"
-" autocmd FileType tex let g:NERDCreateDefaultMappings = 0
-
+" YouCompleteMe.
+" Bundle "Valloric/YouCompleteMe"
+"let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
@@ -93,9 +86,6 @@ let g:C_UseTool_doxygen = 'yes'
 " Mappings
 source $HOME/.vim/mymappings.vim
 
-" Supertab
-
-"" Section for literate programming.
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.cu set filetype=cpp
@@ -113,6 +103,7 @@ au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
 au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
 au BufRead,BufNewFile wscript set filetype=python 
 au BufRead *.lyx syntax sync fromstart
+au BufRead,BufNewFile *.tex let mapleader=","
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
@@ -120,7 +111,8 @@ au BufRead,BufNewFile *.md setlocal filetype=markdown |
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
 
-au BufNewFile,BufRead *.context setlocal filetype=tex 
+au BufNewFile,BufRead *.context setlocal filetype=tex  |
+    \ let mapleader=","
 
 let noweb_backend="tex"
 let noweb_language="haskell"
@@ -162,8 +154,8 @@ set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 "let g:haddock_browser="/usr/bin/elinks"
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 
-"set background=dark
-" colorscheme solarized
+set background=light
+colorscheme default
 
 set cc=+1
 
@@ -218,10 +210,6 @@ let myUndoDir=expand(vimDir . '/undodir')
 call system('mkdir -p ' . myUndoDir)
 let &undodir = myUndoDir
 set undofile
-
-"set foldmethod=indent
-"set foldnestmax=4
-"set foldlevel=1
 
 let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
 syntax match nonascii "[^\x00-\x7F]"
@@ -331,3 +319,6 @@ let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding" ]
 let g:pandoc#formatting#mode="hA"
 
+" VIMRC
+set shortmess=a
+set cmdheight=2
