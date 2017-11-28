@@ -43,6 +43,7 @@ let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "active_filetypes": ["ruby", "php"],
     \ "passive_filetypes": ["python"] }
+map <F8> :SyntasticCheck<CR>
 
 " YouCompleteMe.
 Bundle "Valloric/YouCompleteMe"
