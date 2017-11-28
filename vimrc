@@ -3,6 +3,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
@@ -13,6 +14,11 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'vol2223/vim-colorblind-colorscheme'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
+Plugin 'bling/vim-airline'
+Plugin 'easymotion/vim-easymotion'
+
+" Syntastic
+Plugin 'scrooloose/syntastic'
 
 " This script increase/descreses etc a selected column
 Plugin 'vim-scripts/VisIncr'
@@ -54,8 +60,8 @@ set autoindent
 set smartindent
 set nospell
 set encoding=utf-8
-"set spell spelllang=en
-"" This option crashed vim in gentoo
+" set spell spelllang=en
+" This option crashed vim in gentoo
 " set dictionary+=/usr/share/dict/words
 " no dictionary autocomplete. 
 set complete-=k
@@ -97,7 +103,7 @@ au BufRead,BufNewFile *.tex let mapleader=","
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
-    \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
+    \ setlocal makeprg=markdown_to_pdf.sh\ % 
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
 
@@ -150,7 +156,6 @@ colorscheme default
 set cc=+1
 
 " c-support
-
 set errorformat+=%f:%l:\ %m
 set errorformat^=%-G%f:%l:\ warning:%m
 
