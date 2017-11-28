@@ -8,14 +8,15 @@ Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
-Bundle 'ervandew/supertab'
+" Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'vol2223/vim-colorblind-colorscheme'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
+
+Bundle 'flazz/vim-colorschemes'
+colorscheme default
 
 " This script increase/descreses etc a selected column
 Plugin 'vim-scripts/VisIncr'
@@ -46,8 +47,17 @@ let g:syntastic_mode_map = {
 map <F8> :SyntasticCheck<CR>
 
 " YouCompleteMe.
-Bundle "Valloric/YouCompleteMe"
-let g:ycm_filetype_blacklist = { 'python' : 1 }
+" Bundle "Valloric/YouCompleteMe"
+" let g:ycm_filetype_blacklist = { 'python' : 1 }
+
+" Dark complete
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
@@ -57,7 +67,10 @@ Bundle "vim-latex/vim-latex"
 " Bundle "vim-pandoc/vim-pandoc"
 " Bundle "vim-pandoc/vim-pandoc-syntax"
 
+filetype plugin on
 filetype plugin indent on
+syntax on
+set hidden
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
@@ -73,28 +86,11 @@ set autoindent
 set smartindent
 set nospell
 set encoding=utf-8
-" set spell spelllang=en
-" This option crashed vim in gentoo
-" set dictionary+=/usr/share/dict/words
-" no dictionary autocomplete. 
-set complete-=k
-set completeopt-=preview
-
 syntax enable
-
-" c-support
-set makeprg=make
-if filereadable("build_me.sh")
-    set makeprg=./build_me.sh
-endif
-set wildmode=longest,list
-let g:C_UseTool_cmake = 'yes'
-let g:C_UseTool_doxygen = 'yes'
-
+set complete-=k
 
 " Mappings
 source $HOME/.vim/mymappings.vim
-
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.cu set filetype=cpp
@@ -162,16 +158,6 @@ set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 " unicode \u2506
 "let g:haddock_browser="/usr/bin/elinks"
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
-
-set background=light
-colorscheme default
-
-set cc=+1
-
-" c-support
-set errorformat+=%f:%l:\ %m
-set errorformat^=%-G%f:%l:\ warning:%m
-
 source $HOME/.vim/methods.vim 
 
 """ SnipMate 
@@ -218,13 +204,6 @@ let myUndoDir=expand(vimDir . '/undodir')
 call system('mkdir -p ' . myUndoDir)
 let &undodir = myUndoDir
 set undofile
-
-let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
-syntax match nonascii "[^\x00-\x7F]"
-highlight nonascii guibg=Red ctermbg=2
-
-" statusline
-set statusline=2
 
 "" Read pdf file in vim
 command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
