@@ -33,8 +33,9 @@ Bundle "scrooloose/nerdcommenter"
 Plugin 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_write = 0
 let g:syntastic_cpp_compiler_options = ' -std=c++11 '
 let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
 let g:syntastic_python_pylint_args = '-E'
