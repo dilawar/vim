@@ -8,7 +8,7 @@ Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
-" Bundle 'ervandew/supertab'
+Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
@@ -58,6 +58,7 @@ else
   Plugin 'roxma/nvim-yarp'
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
+let g:deoplete#enable_at_startup=1
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
