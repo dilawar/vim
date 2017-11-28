@@ -17,9 +17,6 @@ Bundle "ctrlpvim/ctrlp.vim"
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
 
-" Syntastic
-Plugin 'scrooloose/syntastic'
-
 " This script increase/descreses etc a selected column
 Plugin 'vim-scripts/VisIncr'
 
@@ -32,9 +29,19 @@ Bundle "danchoi/elinks.vim"
 Bundle "junegunn/vim-easy-align"
 Bundle "scrooloose/nerdcommenter"
 
+" Syntastic
+Plugin 'scrooloose/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler_options = ' -std=c++11 '
+let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
+let g:syntastic_python_pylint_args = '-E'
+
 " YouCompleteMe.
-" Bundle "Valloric/YouCompleteMe"
-"let g:ycm_filetype_blacklist = { 'python' : 1 }
+Bundle "Valloric/YouCompleteMe"
+let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
@@ -267,11 +274,6 @@ let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,*/.git/*"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler_options = ' -std=c++11 '
 
 " Calendar
 let g:calendar_google_calendar = 1
