@@ -3,17 +3,17 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Plugin 'bling/vim-airline'
-Plugin 'easymotion/vim-easymotion'
+"Plugin 'easymotion/vim-easymotion'
 
 Bundle 'flazz/vim-colorschemes'
 colorscheme default
@@ -21,30 +21,30 @@ colorscheme default
 " This script increase/descreses etc a selected column
 Plugin 'vim-scripts/VisIncr'
 
-" Following three goes together
-Bundle 'tomtom/tlib_vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'garbas/vim-snipmate'
+"" Following three goes together
+"Bundle 'tomtom/tlib_vim'
+"Bundle 'MarcWeber/vim-addon-mw-utils'
+"Bundle 'garbas/vim-snipmate'
 
 Bundle "danchoi/elinks.vim"
 Bundle "junegunn/vim-easy-align"
 Bundle "scrooloose/nerdcommenter"
 
-" Syntastic
-Plugin 'scrooloose/syntastic'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler_options = ' -std=c++11 '
-let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
-let g:syntastic_python_pylint_args = '-E'
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": ["ruby", "php"],
-    \ "passive_filetypes": ["python"] }
-map <F8> :SyntasticCheck<CR>
+"" Syntastic
+"Plugin 'scrooloose/syntastic'
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_cpp_compiler_options = ' -std=c++11 '
+"let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
+"let g:syntastic_python_pylint_args = '-E'
+"let g:syntastic_aggregate_errors = 1
+"let g:syntastic_mode_map = {
+"    \ "mode": "active",
+"    \ "active_filetypes": ["ruby", "php"],
+"    \ "passive_filetypes": ["python"] }
+"map <F8> :SyntasticCheck<CR>
 
 " YouCompleteMe.
 " Bundle "Valloric/YouCompleteMe"
@@ -109,17 +109,12 @@ au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
 au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
 au BufRead,BufNewFile wscript set filetype=python 
 au BufRead *.lyx syntax sync fromstart
-au BufRead,BufNewFile *.tex let mapleader=","
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
     \ setlocal makeprg=markdown_to_pdf.sh\ % 
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
-
-au BufNewFile,BufRead *.context setlocal filetype=tex  |
-    \ let mapleader=","
-
 let noweb_backend="tex"
 let noweb_language="haskell"
 let noweb_fold_code=1
@@ -163,6 +158,7 @@ source $HOME/.vim/methods.vim
 
 """ SnipMate 
 """ NOTE: Using ultisnips
+Bundle 'SirVer/ultisnips'
 let g:snips_author = 'Dilawar Singh'
 let g:snips_email = 'dilawars@ncbs.res.in'
 let g:snippets_dir = '$HOME/.vim/snippets'
