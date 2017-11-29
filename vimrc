@@ -18,14 +18,14 @@ Bundle "ctrlpvim/ctrlp.vim"
 " Support from Wolfgang
 Bundle "WolfgangMehner/vim-plugins"
 
-" Easytags
-Bundle "xolox/vim-misc"
-Bundle "xolox/vim-easytags"
-:let g:easytags_always_enabled = 0
-:let g:easytags_auto_highlight = 0
-:let g:easytags_autorecurse = 0
-:let g:easytags_async=1
-:let g:easytags_opts=['--options=$HOME/Scripts/ctags']
+"" Easytags
+"Bundle "xolox/vim-misc"
+"Bundle "xolox/vim-easytags"
+":let g:easytags_always_enabled = 0
+":let g:easytags_auto_highlight = 0
+":let g:easytags_autorecurse = 0
+":let g:easytags_async=1
+":let g:easytags_opts=['--options=$HOME/Scripts/ctags']
 
 " This script increase/descreses etc a selected column
 Plugin 'vim-scripts/VisIncr'
