@@ -15,6 +15,9 @@ Bundle 'vol2223/vim-colorblind-colorscheme'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 
+" Support from Wolfgang
+Bundle "WolfgangMehner/vim-plugins"
+
 " Easytags
 Bundle "xolox/vim-misc"
 Bundle "xolox/vim-easytags"
