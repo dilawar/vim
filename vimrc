@@ -3,12 +3,11 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
-"Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
@@ -21,34 +20,28 @@ colorscheme default
 " This script increase/descreses etc a selected column
 Plugin 'vim-scripts/VisIncr'
 
-"" Following three goes together
-"Bundle 'tomtom/tlib_vim'
-"Bundle 'MarcWeber/vim-addon-mw-utils'
-"Bundle 'garbas/vim-snipmate'
-
 Bundle "danchoi/elinks.vim"
 Bundle "junegunn/vim-easy-align"
-Bundle "scrooloose/nerdcommenter"
 
 "" Syntastic
-"Plugin 'scrooloose/syntastic'
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_cpp_compiler_options = ' -std=c++11 '
-"let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
-"let g:syntastic_python_pylint_args = '-E'
-"let g:syntastic_aggregate_errors = 1
-"let g:syntastic_mode_map = {
-"    \ "mode": "active",
-"    \ "active_filetypes": ["ruby", "php"],
-"    \ "passive_filetypes": ["python"] }
-"map <F8> :SyntasticCheck<CR>
+Plugin 'scrooloose/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler_options = ' -std=c++11 '
+let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
+let g:syntastic_python_pylint_args = '-E'
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": ["ruby", "php"],
+    \ "passive_filetypes": ["python"] }
+map <F8> :SyntasticCheck<CR>
 
 " YouCompleteMe.
-" Bundle "Valloric/YouCompleteMe"
-" let g:ycm_filetype_blacklist = { 'python' : 1 }
+Bundle "Valloric/YouCompleteMe"
+let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 " Dark complete
 if has('nvim')
@@ -62,11 +55,26 @@ let g:deoplete#enable_at_startup=1
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
-
-"" vim-latexsuite. Make it very easy to insert bibliography.
 Bundle "vim-latex/vim-latex"
-" Bundle "vim-pandoc/vim-pandoc"
-" Bundle "vim-pandoc/vim-pandoc-syntax"
+Bundle 'ervandew/supertab'
+
+""" SnipMate 
+""" NOTE: Using ultisnips
+Bundle 'SirVer/ultisnips'
+let g:snips_author="Dilawar Singh"
+let g:snips_email="dilawars@ncbs.res.in"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsExpandTrigger="<nop>"
+function ExpandSnippetOrCarriageReturn()
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+        return snippet
+    else
+        return "\<CR>"
+    endif
+endfunction
+inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+
 
 filetype plugin on
 filetype plugin indent on
@@ -151,22 +159,9 @@ let g:Tex_ViewRule = 'yap -1'
 let g:Tex_SmartKeyQuote = 0
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
-" unicode \u2506
-"let g:haddock_browser="/usr/bin/elinks"
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 source $HOME/.vim/methods.vim 
 
-""" SnipMate 
-""" NOTE: Using ultisnips
-Bundle 'SirVer/ultisnips'
-let g:snips_author = 'Dilawar Singh'
-let g:snips_email = 'dilawars@ncbs.res.in'
-let g:snippets_dir = '$HOME/.vim/snippets'
-
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
-let g:snipMate.scope_aliases['markdown'] = 'markdown,tex'
 
 " Python related settings
 autocmd BufRead *.py setlocal makeprg=pylint\ \ %:p
@@ -174,10 +169,10 @@ let g:pymode_lint_write=0
 let g:pymode_lint=0
 
 "indent guide
-"hi IndentGuidesOdd  ctermbg=white
-"hi IndentGuidesEven ctermbg=lightgrey
-"let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_guide_size=1
+hi IndentGuidesOdd  ctermbg=white
+hi IndentGuidesEven ctermbg=lightgrey
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size=1
 
 " default
 set softtabstop=4
@@ -234,18 +229,6 @@ augroup nonvim
 augroup end
 
 
-" Supertab
-let g:SuperTabDefaultCompletionType = "context"
-let g:haddock_browser = "firefox"
-
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 " For mac
 set clipboard=unnamed

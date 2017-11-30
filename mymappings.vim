@@ -68,9 +68,7 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
-imap <leader><leader> <Plug>snipMateNextOrTrigger
 map gqc :call FormatComment()<CR>
-
 
 " Insert a  character n times.
 function! Repeat()
