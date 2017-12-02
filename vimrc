@@ -12,7 +12,7 @@ Bundle 'itchyny/calendar.vim'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Plugin 'bling/vim-airline'
-"Plugin 'easymotion/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 
 Bundle 'flazz/vim-colorschemes'
 colorscheme default
@@ -40,18 +40,8 @@ let g:syntastic_mode_map = {
 map <F8> :SyntasticCheck<CR>
 
 " YouCompleteMe.
-Bundle "Valloric/YouCompleteMe"
-let g:ycm_filetype_blacklist = { 'python' : 1 }
-
-" Dark complete
-if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup=1
+" Bundle "Valloric/YouCompleteMe"
+" let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
@@ -64,16 +54,16 @@ Bundle 'SirVer/ultisnips'
 let g:snips_author="Dilawar Singh"
 let g:snips_email="dilawars@ncbs.res.in"
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsExpandTrigger="<nop>"
-function ExpandSnippetOrCarriageReturn()
-    let snippet = UltiSnips#ExpandSnippetOrJump()
-    if g:ulti_expand_or_jump_res > 0
-        return snippet
-    else
-        return "\<CR>"
-    endif
-endfunction
-inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+"let g:UltiSnipsExpandTrigger="<nop>"
+"function ExpandSnippetOrCarriageReturn()
+"    let snippet = UltiSnips#ExpandSnippetOrJump()
+"    if g:ulti_expand_or_jump_res > 0
+"        return snippet
+"    else
+"        return "\<CR>"
+"    endif
+"endfunction
+"inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 
 
 filetype plugin on
@@ -95,6 +85,7 @@ set autoindent
 set smartindent
 set nospell
 set encoding=utf-8
+set fileencoding=utf-8
 syntax enable
 set complete-=k
 
@@ -168,11 +159,14 @@ autocmd BufRead *.py setlocal makeprg=pylint\ \ %:p
 let g:pymode_lint_write=0
 let g:pymode_lint=0
 
-"indent guide
-hi IndentGuidesOdd  ctermbg=white
-hi IndentGuidesEven ctermbg=lightgrey
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size=1
+""indent guide
+"Plugin 'nathanaelkane/vim-indent-guides'
+"hi IndentGuidesOdd  ctermbg=white
+"hi IndentGuidesEven ctermbg=lightgrey
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_guide_size=1
+Bundle "Yggdroot/indentLine"
+let g:indentLine_char="⋮"
 
 " default
 set softtabstop=4
