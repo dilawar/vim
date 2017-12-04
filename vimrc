@@ -33,7 +33,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 '
 let g:syntastic_python_checkers = ['pylint']  "" ['flake8', 'pylint']
 let g:syntastic_python_pylint_args = '-E'
 let g:syntastic_tex_checkers = ['chktex'] 
-let g:syntastic_tex_chktex_args =  '-n1 -n2 -n37 -n12 -n3'
+let g:syntastic_tex_chktex_args =  '-n1 -n2 -n37 -n12 -n3 -n25'
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_mode_map = {
     \ "mode": "active",
@@ -42,12 +42,11 @@ let g:syntastic_mode_map = {
 map <F8> :SyntasticCheck<CR>
 
 " YouCompleteMe.
-" Bundle "Valloric/YouCompleteMe"
-" let g:ycm_filetype_blacklist = { 'python' : 1 }
+Bundle "Valloric/YouCompleteMe"
+let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
-Bundle "vim-latex/vim-latex"
 Bundle 'ervandew/supertab'
 
 """ SnipMate 
@@ -55,6 +54,7 @@ Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 let g:snips_author="Dilawar Singh"
 let g:snips_email="dilawars@ncbs.res.in"
+let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsExpandTrigger="<nop>"
 "function ExpandSnippetOrCarriageReturn()
