@@ -67,6 +67,13 @@ let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
 "endfunction
 "inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 
+" vim-latexsuite mapping
+Bundle "vim-latex/vim-latex"
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_ViewRule = 'yap -1'
+" Do not expand " to stupid quites.
+let g:Tex_SmartKeyQuote = 0
 
 filetype plugin on
 filetype plugin indent on
@@ -144,12 +151,6 @@ au BufRead,BufNewFile *.maxima set filetype=maxima nospell
 au BufRead,BufNewFile *.mac set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
 
-" vim-latexsuite mapping
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_ViewRule = 'yap -1'
-" Do not expand " to stupid quites.
-let g:Tex_SmartKeyQuote = 0
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
@@ -280,3 +281,7 @@ let g:pandoc#formatting#mode="hA"
 " VIMRC
 set shortmess=a
 set cmdheight=2
+
+" wildcard
+set wildmode=longest,list,full
+set wildmenu
