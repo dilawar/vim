@@ -3,17 +3,22 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
-Bundle 'ervandew/supertab'
 Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'vol2223/vim-colorblind-colorscheme'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
+Plugin 'bling/vim-airline'
+Plugin 'easymotion/vim-easymotion'
+
+Bundle 'flazz/vim-colorschemes'
+colorscheme default
 
 " Support from Wolfgang
 Bundle "WolfgangMehner/vim-plugins"
@@ -30,28 +35,65 @@ Bundle "WolfgangMehner/vim-plugins"
 " This script increase/descreses etc a selected column
 Plugin 'vim-scripts/VisIncr'
 
-" Following three goes together
-Bundle 'tomtom/tlib_vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'garbas/vim-snipmate'
-
 Bundle "danchoi/elinks.vim"
 Bundle "junegunn/vim-easy-align"
-Bundle "scrooloose/nerdcommenter"
+
+"" Syntastic
+Plugin 'scrooloose/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler_options = ' -std=c++11 '
+let g:syntastic_python_checkers = ['pylint']  "" ['flake8', 'pylint']
+let g:syntastic_python_pylint_args = '-E'
+let g:syntastic_tex_checkers = ['chktex'] 
+let g:syntastic_tex_chktex_args =  '-n1 -n2 -n37 -n12 -n3 -n25'
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": ["ruby", "php"],
+    \ "passive_filetypes": ["python"] }
+map <F8> :SyntasticCheck<CR>
 
 " YouCompleteMe.
-" Bundle "Valloric/YouCompleteMe"
-"let g:ycm_filetype_blacklist = { 'python' : 1 }
+Bundle "Valloric/YouCompleteMe"
+let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
+Bundle 'ervandew/supertab'
 
-"" vim-latexsuite. Make it very easy to insert bibliography.
+""" SnipMate 
+""" NOTE: Using ultisnips
+Bundle 'SirVer/ultisnips'
+let g:snips_author="Dilawar Singh"
+let g:snips_email="dilawars@ncbs.res.in"
+let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
+" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsExpandTrigger="<nop>"
+"function ExpandSnippetOrCarriageReturn()
+"    let snippet = UltiSnips#ExpandSnippetOrJump()
+"    if g:ulti_expand_or_jump_res > 0
+"        return snippet
+"    else
+"        return "\<CR>"
+"    endif
+"endfunction
+"inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+
+" vim-latexsuite mapping
 Bundle "vim-latex/vim-latex"
-" Bundle "vim-pandoc/vim-pandoc"
-" Bundle "vim-pandoc/vim-pandoc-syntax"
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_ViewRule = 'yap -1'
+" Do not expand " to stupid quites.
+let g:Tex_SmartKeyQuote = 0
 
+filetype plugin on
 filetype plugin indent on
+syntax on
+set hidden
 
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
@@ -67,28 +109,12 @@ set autoindent
 set smartindent
 set nospell
 set encoding=utf-8
-"set spell spelllang=en
-"" This option crashed vim in gentoo
-" set dictionary+=/usr/share/dict/words
-" no dictionary autocomplete. 
-set complete-=k
-set completeopt-=preview
-
+set fileencoding=utf-8
 syntax enable
-
-" c-support
-set makeprg=make
-if filereadable("build_me.sh")
-    set makeprg=./build_me.sh
-endif
-set wildmode=longest,list
-let g:C_UseTool_cmake = 'yes'
-let g:C_UseTool_doxygen = 'yes'
-
+set complete-=k
 
 " Mappings
 source $HOME/.vim/mymappings.vim
-
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.cu set filetype=cpp
@@ -106,17 +132,12 @@ au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
 au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
 au BufRead,BufNewFile wscript set filetype=python 
 au BufRead *.lyx syntax sync fromstart
-au BufRead,BufNewFile *.tex let mapleader=","
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
-    \ setlocal makeprg=markdown_to_pdf.sh\ %\ |
+    \ setlocal makeprg=markdown_to_pdf.sh\ % 
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
-
-au BufNewFile,BufRead *.context setlocal filetype=tex  |
-    \ let mapleader=","
-
 let noweb_backend="tex"
 let noweb_language="haskell"
 let noweb_fold_code=1
@@ -145,51 +166,25 @@ au BufRead,BufNewFile *.maxima set filetype=maxima nospell
 au BufRead,BufNewFile *.mac set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
 
-" vim-latexsuite mapping
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_ViewRule = 'yap -1'
-" Do not expand " to stupid quites.
-let g:Tex_SmartKeyQuote = 0
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
-" unicode \u2506
-"let g:haddock_browser="/usr/bin/elinks"
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
-
-set background=light
-colorscheme default
-
-set cc=+1
-
-" c-support
-
-set errorformat+=%f:%l:\ %m
-set errorformat^=%-G%f:%l:\ warning:%m
-
 source $HOME/.vim/methods.vim 
 
-""" SnipMate 
-""" NOTE: Using ultisnips
-let g:snips_author = 'Dilawar Singh'
-let g:snips_email = 'dilawars@ncbs.res.in'
-let g:snippets_dir = '$HOME/.vim/snippets'
-
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
-let g:snipMate.scope_aliases['markdown'] = 'markdown,tex'
 
 " Python related settings
 autocmd BufRead *.py setlocal makeprg=pylint\ \ %:p
 let g:pymode_lint_write=0
 let g:pymode_lint=0
 
-"indent guide
+""indent guide
+"Plugin 'nathanaelkane/vim-indent-guides'
 "hi IndentGuidesOdd  ctermbg=white
 "hi IndentGuidesEven ctermbg=lightgrey
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size=1
+Bundle "Yggdroot/indentLine"
+let g:indentLine_char="⋮"
 
 " default
 set softtabstop=4
@@ -213,13 +208,6 @@ let myUndoDir=expand(vimDir . '/undodir')
 call system('mkdir -p ' . myUndoDir)
 let &undodir = myUndoDir
 set undofile
-
-let g:dbext_default_profile_sqlite_for_rails = 'type=SQLITE:dbname=./sqlite.db'
-syntax match nonascii "[^\x00-\x7F]"
-highlight nonascii guibg=Red ctermbg=2
-
-" statusline
-set statusline=2
 
 "" Read pdf file in vim
 command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
@@ -253,18 +241,6 @@ augroup nonvim
 augroup end
 
 
-" Supertab
-let g:SuperTabDefaultCompletionType = "context"
-let g:haddock_browser = "firefox"
-
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
 " For mac
 set clipboard=unnamed
@@ -275,11 +251,6 @@ let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,*/.git/*"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler_options = ' -std=c++11 '
 
 " Calendar
 let g:calendar_google_calendar = 1
@@ -325,3 +296,7 @@ let g:pandoc#formatting#mode="hA"
 " VIMRC
 set shortmess=a
 set cmdheight=2
+
+" wildcard
+set wildmode=longest,list,full
+set wildmenu

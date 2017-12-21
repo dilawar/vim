@@ -560,3 +560,8 @@ snippet CSVIterator
 
 snippet is
 	isset($1{VISUAL})
+
+snippet prepare 
+	$stmt = $db->prepare( "${0}" );
+	$stmt->execute( );
+	$res = $stmt->fetchAll( $stmt );
