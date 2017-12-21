@@ -10,8 +10,6 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
 Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'vol2223/vim-colorblind-colorscheme'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Plugin 'bling/vim-airline'
