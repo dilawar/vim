@@ -46,7 +46,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 '
 let g:syntastic_python_checkers = ['pylint']  "" ['flake8', 'pylint']
 let g:syntastic_python_pylint_args = '-E'
 let g:syntastic_tex_checkers = ['chktex'] 
-let g:syntastic_tex_chktex_args =  '-n1 -n2 -n37 -n12 -n3 -n25'
+let g:syntastic_tex_chktex_args =  '-n1 -n2 -n3 -n8 -n10 -n11 -n12 -n17 -n25 -n26 -n36 -n37'
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_mode_map = {
     \ "mode": "active",
@@ -105,11 +105,11 @@ set ruler
 set hlsearch
 set autoindent
 set smartindent
-set nospell
 set encoding=utf-8
 set fileencoding=utf-8
 syntax enable
 set complete-=k
+set spell spelllang=en
 
 " Mappings
 source $HOME/.vim/mymappings.vim
