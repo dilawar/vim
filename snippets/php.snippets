@@ -565,3 +565,16 @@ snippet prepare
 	$stmt = $db->prepare( "${0}" );
 	$stmt->execute( );
 	$res = $stmt->fetchAll( $stmt );
+
+snippet hippo
+	<?php
+	include_once 'header.php';
+	include_once 'database.php';
+	include_once 'methods.php';
+	include_once 'tohtml.php';
+	include_once 'check_access_permissions.php';
+	mustHaveAnyOfTheseRoles('USER' );
+	echo userHTML( );
+
+	?>
+
