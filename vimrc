@@ -14,6 +14,7 @@ Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'vim-scripts/netrw.vim'
 
 Bundle 'flazz/vim-colorschemes'
 colorscheme default
@@ -109,7 +110,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 syntax enable
 set complete-=k
-set spell spelllang=en
+set spell spelllang=en_us
 
 " Mappings
 source $HOME/.vim/mymappings.vim
