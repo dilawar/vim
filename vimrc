@@ -56,7 +56,7 @@ let g:syntastic_mode_map = {
 map <F8> :SyntasticCheck<CR>
 
 " YouCompleteMe.
-Bundle "Valloric/YouCompleteMe"
+" Bundle "Valloric/YouCompleteMe"
 let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 "" Fakeclip
