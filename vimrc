@@ -4,9 +4,6 @@
 " --enable-rubyinterp --prefix=/usr --enable-ruby
 " Get latest from: http://github.com/lucasoman/Conf/raw/master/.vimrc
 
-" load pathogen
-call pathogen#runtime_append_all_bundles()
-
 "set t_Co=256
 
 " misc options
