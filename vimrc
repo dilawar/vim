@@ -1,301 +1,477 @@
-set rtp+=~/.vim/bundle/vundle/ 
-call vundle#rc() 
+" vim: fdm=marker:
+" Recommended for vim >= 7; no guarantee of compatibility with earlier versions
+" Lucas Oman <me@lucasoman.com>
+" --enable-rubyinterp --prefix=/usr --enable-ruby
+" Get latest from: http://github.com/lucasoman/Conf/raw/master/.vimrc
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/DrawIt'
-Bundle 'vim-scripts/DoxygenToolkit.vim'
-Bundle 'vim-scripts/check-mutt-attachments.vim'
-Bundle "will133/vim-dirdiff"
-Bundle 'itchyny/calendar.vim'
-Bundle 'tpope/vim-dispatch'
-Bundle "tomtom/tcomment_vim"
-Bundle "ctrlpvim/ctrlp.vim"
-Plugin 'bling/vim-airline'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'vim-scripts/netrw.vim'
+" load pathogen
+call pathogen#runtime_append_all_bundles()
 
-Bundle 'flazz/vim-colorschemes'
-colorscheme default
+"set t_Co=256
 
-" Support from Wolfgang
-Bundle "WolfgangMehner/vim-plugins"
-
-"" Easytags
-"Bundle "xolox/vim-misc"
-"Bundle "xolox/vim-easytags"
-":let g:easytags_always_enabled = 0
-":let g:easytags_auto_highlight = 0
-":let g:easytags_autorecurse = 0
-":let g:easytags_async=1
-":let g:easytags_opts=['--options=$HOME/Scripts/ctags']
-
-" This script increase/descreses etc a selected column
-Plugin 'vim-scripts/VisIncr'
-
-Bundle "danchoi/elinks.vim"
-Bundle "junegunn/vim-easy-align"
-
-"" Syntastic
-Plugin 'scrooloose/syntastic'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler_options = ' -std=c++11 '
-let g:syntastic_python_checkers = ['pylint']  "" ['flake8', 'pylint']
-let g:syntastic_python_pylint_args = '-E'
-let g:syntastic_tex_checkers = ['chktex'] 
-let g:syntastic_tex_chktex_args =  '-n1 -n2 -n3 -n8 -n10 -n11 -n12 -n17 -n25 -n26 -n36 -n37'
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": ["ruby", "php"],
-    \ "passive_filetypes": ["python"] }
-map <F8> :SyntasticCheck<CR>
-
-" YouCompleteMe.
-" Bundle "Valloric/YouCompleteMe"
-let g:ycm_filetype_blacklist = { 'python' : 1 }
-
-"" Fakeclip
-Bundle "kana/vim-fakeclip"
-Bundle 'ervandew/supertab'
-
-""" SnipMate 
-""" NOTE: Using ultisnips
-Bundle 'SirVer/ultisnips'
-let g:snips_author="Dilawar Singh"
-let g:snips_email="dilawars@ncbs.res.in"
-let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
-" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsExpandTrigger="<nop>"
-"function ExpandSnippetOrCarriageReturn()
-"    let snippet = UltiSnips#ExpandSnippetOrJump()
-"    if g:ulti_expand_or_jump_res > 0
-"        return snippet
-"    else
-"        return "\<CR>"
-"    endif
-"endfunction
-"inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
-
-" vim-latexsuite mapping
-Bundle "vim-latex/vim-latex"
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_ViewRule = 'yap -1'
-" Do not expand " to stupid quites.
-let g:Tex_SmartKeyQuote = 0
-
-filetype plugin on
-filetype plugin indent on
-syntax on
-set hidden
-
-" The following are commented out as they cause vim to behave a lot
-" differently from regular Vi. They are highly recommended though.
-set showcmd    " Show (partial) command in status line.
-set showmatch  " Show matching brackets.
-set smartcase  " Do smart case matching
-set incsearch  " Incremental search
-set mouse=v    " Enable mouse usage (all modes)
-set number
+" misc options
+" {{{ interface
+" lines, cols in status line
 set ruler
+set rulerformat=%=%h%m%r%w\ %(%c%V%),%l/%L\ %P
+
+" a - terse messages (like [+] instead of [Modified]
+" t - truncate file names
+" I - no intro message when starting vim fileless
+" T - truncate long messages to avoid having to hit a key
+set shortmess=atTI
+
+" display the number of (characters|lines) in visual mode, also cur command
+set showcmd
+
+" current mode in status line
+set showmode
+
+" max items in popup menu
+set pumheight=8
+
+" show number column
+set number
+set numberwidth=3
+
+" show fold column, fold by markers
+set foldcolumn=2
+set foldmethod=marker
+
+" indicate when a line is wrapped by prefixing wrapped line with '> '
+set showbreak=>\ 
+
+" always show tab line
+set showtabline=2
+
+" highlight search matches
 set hlsearch
-set autoindent
-set smartindent
-set encoding=utf-8
-set fileencoding=utf-8
-syntax enable
-set complete-=k
-set spell spelllang=en_us
 
-" Mappings
-source $HOME/.vim/mymappings.vim
-au BufNewFile *.snw read ~/Scripts/template.snw 
-au BufRead,BufNewFile *.nw set filetype=noweb
-au BufRead,BufNewFile *.cu set filetype=cpp
-au BufRead,BufNewFile *.scad set filetype=openscad
-au BufRead,BufNewFile *.snw set filetype=noweb
-au BufRead,BufNewFile *.w set filetype=noweb
-au BufRead,BufNewFile *.nw set spell spelllang=en
-au BufRead,BufNewFile *.blog set filetype=markdown
-au BufRead,BufNewFile *.labnote set filetype=tex
-au BufRead,BufNewFile *.csv set filetype=csv
-au BufRead,BufNewFile *.asy set filetype=cpp
-au BufRead,BufNewFile *.yacml set filetype=dot
-au BufRead,BufNewFile *.ino set filetype=cpp
-au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
-au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
-au BufRead,BufNewFile wscript set filetype=python 
-au BufRead *.lyx syntax sync fromstart
+" highlight position of cursor
+"set cursorline
+"set cursorcolumn
 
-" Make pandoc behave like tex
-au BufRead,BufNewFile *.md setlocal filetype=markdown |
-    \ setlocal makeprg=markdown_to_pdf.sh\ % 
+"set statusline=%f\ %2*%m\ %1*%h%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}\ %{getfperm(@%)}]\ 0x%B\ %12.(%c:%l/%L%)
+"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+"set laststatus=2
+" }}}
+" {{{ behavior
+set nocompatible
+syntax on
+filetype on
+filetype plugin on
 
-au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
-let noweb_backend="tex"
-let noweb_language="haskell"
-let noweb_fold_code=1
+" fast terminal for smoother redrawing
+set ttyfast
 
-au BufRead,BufNewFile *.tex set spell spelllang=en
-au BufEnter *.tex set nosmartindent
+set omnifunc=syntaxcomplete#Complete
 
-" Blog related setting.
-au BufRead,BufNew *.blog setlocal spell spelllang=en 
-au BufRead,BufNew *.blog setlocal complete+=k
-au BufRead,BufNew *.md setlocal complete+=k
-au BufRead,BufNew *.md setlocal spell spelllang=en
-au BufRead,BufNew *.markdown setlocal complete+=k
-au BufRead,BufNew *.markdown setlocal syntax=markdown
-au BufRead,BufNew *.markdown setlocal spell spelllang=en
-" On tmp files do not wrap lines by inserting newline, wrap it without newline.
-au BufRead,BufNew *.tmp setlocal wrap linebreak nolist 
-au BufRead,BufNew *.txt setlocal wrap linebreak nolist 
+" indentation options
+" Note: smartindent is seriously outdated. cindent, even, is unnecessary.
+" Let the filetype plugins do the work.
+set shiftwidth=2
+set tabstop=2
+filetype indent on
+"set autoindent
+set cindent
 
-
-au BufNewFile *.vhd read ~/.vim/template/template.vhd
-" au BufRead,BufNewFile *.bsv set filetype=verilog
-au BufRead,BufNewFile *.bsv set syntax=bsv
-au BufRead,BufNewFile *.max set filetype=maxima  nospell
-au BufRead,BufNewFile *.maxima set filetype=maxima nospell
-au BufRead,BufNewFile *.mac set filetype=maxima nospell
-au BufRead,BufNewFile *.rules set filetype=make
-
-
-set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
-let g:haddock_docdir= "/usr/share/doc/ghc/html/"
-source $HOME/.vim/methods.vim 
-
-
-" Python related settings
-autocmd BufRead *.py setlocal makeprg=pylint\ \ %:p
-let g:pymode_lint_write=0
-let g:pymode_lint=0
-
-""indent guide
-"Plugin 'nathanaelkane/vim-indent-guides'
-"hi IndentGuidesOdd  ctermbg=white
-"hi IndentGuidesEven ctermbg=lightgrey
-"let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_guide_size=1
-Bundle "Yggdroot/indentLine"
-let g:indentLine_char="⋮"
-
-" default
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set smarttab
-set textwidth=80
-set wrap
-set iskeyword+=_
-set autoread
+" show matching enclosing chars for .1 sec
 set showmatch
-set errorbells
-set backspace=2 "
-" Create backup of all files.
-set backup
-set backupdir=~/vim-backup/,./.backup,/tmp,.
-set undofile
+set matchtime=1
 
-let vimDir = '$HOME/.vim/'
-let myUndoDir=expand(vimDir . '/undodir')
-call system('mkdir -p ' . myUndoDir)
-let &undodir = myUndoDir
-set undofile
+" t: autowrap text using textwidth
+" l: long lines are not broken in insert mode
+" c: autowrap comments using textwidth, inserting leader
+" r: insert comment leader after <CR>
+" o: insert comment leader after o or O
+set formatoptions-=t
+set formatoptions+=lcro
+set textwidth=80
 
-"" Read pdf file in vim
-command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
-command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -csw78
+" context while scrolling
+set scrolloff=3
 
-" clipboard
-set clipboard=unnamedplus
+" arrow keys, bs, space wrap to next/prev line
+set whichwrap=b,s,<,>,[,]
 
-""" When xlipboard support is not available
-:command -range Cz :silent :<line1>,<line2>w !xsel -i -b
-:command -range Cx :silent :<line1>,<line2>w !xsel -i -p
-:command -range Cv :silent :<line1>,<line2>w !xsel -i -s
-:cabbrev cv Cv
-:cabbrev cz Cz
-:cabbrev cx Cx
+" backspace over anything
+set backspace=indent,eol,start
 
-:command -range Pz :silent :r !xsel -o -b
-:command -range Px :silent :r !xsel -o -p
-:command -range Pv :silent :r !xsel -o -s
+" case insensitive search if all lowercase
+set ignorecase smartcase
 
-:cabbrev pz Pz
-:cabbrev px Px
-:cabbrev pv Pv
+" turn off bells, change to screen flash
+set visualbell
 
-augroup nonvim
-   au!
-   au BufRead *.png,*.jpg,*.pdf,*.gif,*.xls* sil exe "!open " . shellescape(expand("%:p")) | bd | let &ft=&ft
-   au BufRead *.ppt*,*.doc*,*.rtf let g:output_pdf = shellescape(expand("%:r") . ".pdf")
-   au BufRead *.ppt*,*.doc*,*.rtf sil exe "!/home/dilawar/Scripts/any2pdf " . shellescape(expand("%:p"))
-   au BufRead *.ppt*,*.doc*,*.rtf sil exe "!open " . g:output_pdf | bd | let &ft=&ft
-augroup end
+" show our whitespace
+set listchars=tab:\|\ ,trail:.
+"set list
 
+" complete to longest match, then list possibilities
+set wildmode=longest,list
 
+" turn off swap files
+set noswapfile
 
-" For mac
-set clipboard=unnamed
-" Diffdir options
-let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,*/.git/*"
+" options for diff mode
+set diffopt=filler
+set diffopt+=context:4
+set diffopt+=iwhite
+set diffopt+=vertical
 
-" Syntastic is very slow with pylint
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" keep a lot of history
+set history=100
 
-" Calendar
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
+" keep lots of stuff
+set viminfo+=:100
+set viminfo+=/100
 
-" Nerd Commentor 
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
+" don't duplicate an existing open buffer
+set switchbuf=useopen
 
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
+" }}}
+" {{{ colors
+highlight SpecialKey cterm=bold ctermfg=0
+" tabe line colors
+highlight TabLineFill ctermfg=DarkGray
+highlight TabLine ctermfg=4 ctermbg=DarkGray cterm=bold
+highlight TabLineSel ctermfg=7 cterm=none ctermbg=DarkGray
 
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
+" number column colors
+highlight LineNr cterm=none ctermbg=none ctermfg=4
 
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
+" fold colors
+highlight Folded cterm=none ctermbg=none ctermfg=4
+highlight FoldColumn cterm=none ctermbg=none ctermfg=4
 
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" visual mode colors
+highlight Visual ctermbg=7 ctermfg=4
 
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
+" dictionary menu colors
+highlight Pmenu ctermbg=7 ctermfg=0
+highlight PmenuSel ctermbg=Yellow ctermfg=0
 
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
+" diff colors
+highlight DiffAdd cterm=none ctermbg=4
+highlight DiffDelete cterm=none ctermbg=4
+highlight DiffChange cterm=none ctermbg=4
+highlight DiffText cterm=none ctermbg=4
 
+" keep cursor column last so it overrides all others
+highlight CursorColumn cterm=none ctermbg=Black
+highlight CursorLine cterm=none ctermbg=Black
 
-" Doxygen 
-let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
-let g:DoxygenToolkit_paramTag_pre="@Param "
-let g:DoxygenToolkit_returnTag="@Returns   "
-let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
-let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
-let g:DoxygenToolkit_authorName="Dilawar Singh <dilawars@ncbs.res.in>"
-let g:DoxygenToolkit_licenseTag="GNU-GPL v3"  
+highlight Search cterm=none ctermbg=7 ctermfg=4
 
-" Pandoc 
-let g:pandoc#biblio#use_bibtool=1
-let g:pandoc#modules#disabled=[ "folding" ]
-let g:pandoc#formatting#mode="hA"
+" make sure bold is disabled or your terminal will look like the vegas strip
+set background=dark
+" }}}
+" {{{ filetype dependent
+autocmd BufNewFile,BufRead *.html setlocal commentstring=<!--%s-->
+" ruby commenstring
+autocmd FileType ruby setlocal commentstring=#%s
+" make help navigation easier
+autocmd FileType help nnoremap <buffer> <CR> <C-]>
+autocmd FileType help nnoremap <buffer> <BS> <C-T>
+"}}}
+"php syntax options {{{
+let php_sql_query = 1  "for SQL syntax highlighting inside strings
+let php_htmlInStrings = 1  "for HTML syntax highlighting inside strings
+"php_baselib = 1  "for highlighting baselib functions
+"php_asp_tags = 1  "for highlighting ASP-style short tags
+"php_parent_error_close = 1  "for highlighting parent error ] or )
+"php_parent_error_open = 1  "for skipping an php end tag, if there exists an open ( or [ without a closing one
+"php_oldStyle = 1  "for using old colorstyle
+"php_noShortTags = 1  "don't sync <? ?> as php
+let php_folding = 1  "for folding classes and functions
+" }}}
+"netrw options {{{
+let g:netrw_sort_sequence = '[\/]$,\.php,\.phtml,*,\.info$,\.swp$,\.bak$,\~$'
+"}}}
+"{{{taglist options
+" set the names of flags
+let tlist_php_settings = 'php;c:class;f:function;d:constant;p:property'
+" close all folds except for current file
+let Tlist_File_Fold_Auto_Close = 1
+" make tlist pane active when opened
+let Tlist_GainFocus_On_ToggleOpen = 1
+" width of window
+let Tlist_WinWidth = 60
+" close tlist when a selection is made
+let Tlist_Close_On_Select = 1
+" show the prototype
+let Tlist_Display_Prototype = 1
+" show tags only for current buffer
+let Tlist_Show_One_File = 1
+"}}}
+"{{{html options
+let html_use_css = 1
+"}}}
 
-" VIMRC
-set shortmess=a
-set cmdheight=2
+" mappings
+" {{{ general
+let mapleader = "\\"
+" easier move screen up/down
+nmap <C-j> <C-e>
+nmap <C-k> <C-y>
+nmap <space> za
+" turns off highlighting
+nmap <Leader>/ :nohl<CR>
+" search for highlighted text
+vmap // y/<C-R>"<CR>
+" keep block highlighted when indenting
+vmap >> >gv
+vmap << <gv
+" fix a block of XML; inserts newlines, indents properly, folds by indent
+nmap <Leader>fx :setlocal filetype=xml<CR>:%s/></>\r</g<CR>:1,$!xmllint --format -<CR>:setlocal foldmethod=indent<CR>
+" comment/uncomment highlighted block
+vmap <Leader>cc :s!^!//!<CR>
+vmap <Leader>cu :s!^//!!<CR>
+" open local projects list file
+nmap <Leader>l :70vsplit ~/Dropbox/projects.list<CR>
+" fix syntax highlighting
+nmap <Leader>ss :syntax sync fromstart<CR>
+" toggle the tag list
+nmap <Leader>tl :TlistToggle<CR>
+" toggle gundo
+nmap <Leader>gu :GundoToggle<CR>
+" make arrow keys useful
+" use them to swap between split windows
+nmap <left> <C-W>h
+nmap <right> <C-W>l
+nmap <up> <C-W>k
+nmap <down> <C-W>j
+com -range XselCopy :<line1>,<line2>w !xsel -i -b
+com XselPaste :r !xsel -o -b
+vmap <silent> <Leader>xc :XselCopy<CR>
+nmap <silent> <Leader>xp :XselPaste<CR>
+"}}}
+" php {{{
+" syntax check
+nmap <Leader>ps :!php -l %<CR>
+" run current script
+nmap <Leader>pr :!php % \| less -F<CR>
+" lookup keyword in function reference
+nmap <Leader>ph :!pman <cword><CR>
+" create test method
+nmap <Leader>pt o<CR>/**<CR>@test<CR>/<CR>public function<TAB>
+" phpdoc comments
+nmap <Leader>cc o/**<CR>$Rev$<CR>$Date$<CR>$Id$<CR>$Author$<CR>$HeadURL$<CR><CR><CR><CR>@package <CR><BS>/<ESC>kkk$a 
+nmap <Leader>cb o/**<CR><CR><CR>@param <CR>@return <CR>@example <CR><BS>/<ESC>kkkkk$a 
+nmap <Leader>cv o/**<CR><CR><CR>@var <CR><BS>/<ESC>kkk$a 
+nmap <Leader>cp o/**<CR><CR><CR>@author Lucas Oman <me@lucasoman.com><CR>@param <CR>@return <CR>@example <CR><BS>/<ESC>kkkkkk$a 
+"}}}
+" svn {{{
+" set svn keywords
+nmap <Leader>sk :!svn propset svn:keywords "Rev Date Id Author HeadURL" %<CR>
+nmap <Leader>sp :call SvnPushFile()<CR>
+com! -nargs=1 Sstat :call SvnStatus("<args>")
 
-" wildcard
-set wildmode=longest,list,full
-set wildmenu
+" view status of given path
+fun! SvnStatus(path)
+	tabe
+	setl buftype=nofile
+	exe "r !svn st ".a:path
+endfunction
+
+" call script to copy file to appropriate location in htdocs
+fun! SvnPushFile()
+	let line = getline('.')
+	let file = strpart(l:line,8)
+	exe "!~/lib/updatedev.php ".l:file
+endfunction
+"}}}
+"f keys {{{
+nmap <F2> :call ToggleColumns()<CR>
+imap <F2> <C-o>:call ToggleColumns()<CR>
+nmap <F3> :Nload<CR>
+nmap <F4> :NERDTree<CR>
+set pastetoggle=<F5>
+" <F6>
+nmap <F7> :!updatedev.php %:p<CR>
+nmap <F8> :call WriteTrace()<CR>
+nmap <F9> \ph
+" <F10>
+" <F11> don't use; terminal full-screen
+" <F12>
+" }}}
+"{{{ list file
+let g:listFile_ranks = ['=','1','2','3','4','5','!','o','-','?','x']
+autocmd BufNewFile,BufRead *.list call MyListFileStuff()
+fun! MyListFileStuff()
+	nmap <buffer> ,! :Lmark !<CR>
+	vmap <buffer> ,! :Lmark !<CR>
+	nmap <buffer> ,tq :Ltag quick<CR>
+	vmap <buffer> ,tq :Ltag quick<CR>
+	nmap <buffer> ,sq :Lsearch tag quick<CR>
+	nmap <buffer> ,d ,x,t,r
+endfunction
+"}}}
+
+" minor helpful stuff
+fun! ToggleColumns() "{{{
+	"make it easy to remove line number column etc. for cross-terminal copy/paste
+  if &number
+    set nonumber
+    set foldcolumn=0
+    let s:showbreaktmp = &showbreak
+    set showbreak=
+  else
+    set number
+    set foldcolumn=2
+    let &showbreak = s:showbreaktmp
+  end
+endfunction
+"}}}
+fun! WriteTrace() "{{{
+	let lineNum = line('.')
+	let lineFile = bufname('%')
+	let lineVal = getline(lineNum)
+
+	let allLines = readfile($HOME."/trace.txt")
+	let allLines = add(allLines,lineFile.":".lineNum)
+	let allLines = add(allLines,lineVal)
+	let allLines = add(allLines,"")
+
+	call writefile(allLines,$HOME."/trace.txt")
+endfunction
+"}}}
+"{{{ctags stuff
+nmap <Leader>tf :call CtagsFind(expand('<cword>'))<CR>
+com! -nargs=+ Tf :call CtagsFind("<args>")
+" split window and search for tag
+nmap <Leader>ts :exe('stj '.expand('<cword>'))<CR>
+
+" open new tab and search for tag
+fun! CtagsFind(keyword)
+	tabe
+	exe "tj ".a:keyword
+endfunction
+"}}}
+
+" stand-alone components
+"{{{ TAB-COMPLETE and SNIPPETS
+" add new snippets as regex=>completion
+" first match encountered is used
+let s:snippets = {}
+let s:snippets['^\s*if$'] = " () {\<CR>}\<ESC>k^f)i" 
+let s:snippets['function$'] = " () {\<CR>}\<ESC>k^f(i" 
+let s:snippets['^\s*class$'] = "  {\<CR>}\<ESC>kt{i"
+let s:snippets['^\s*interface$'] = "  {\<CR>}\<ESC>kt{i"
+let s:snippets['^\s*foreach$'] = " () {\<CR>}\<ESC>k^f)i" 
+let s:snippets['^\s*while$'] = " () {\<CR>}\<ESC>k^f)i" 
+
+" when tab is pressed:
+" 1) checks snippets for matches, return match if there is one
+" 2) if character behind cursor is whitespace, just return a tab
+" 3) if word behind cursor contains a slash, try filename complete
+" 4) otherwise, try to ctrl-p complete
+fun! CleverTab()
+	if pumvisible()
+		return "\<C-N>"
+	endif
+	if col('.') > 1
+		let beginning = strpart( getline('.'), 0, col('.')-1 )
+		let words = split(l:beginning,' ')
+		let thisWord = l:words[-1]
+
+		for key in keys(s:snippets)
+			if l:beginning =~ key
+				return s:snippets[key]
+			endif
+		endfor
+	else
+		let beginning = ''
+	endif
+
+	if l:beginning == '' || l:beginning =~ '\s$'
+		return "\<Tab>"
+	elseif (l:thisWord =~ '/')
+		return "\<C-X>\<C-F>"
+	else
+		return "\<C-X>\<C-O>"
+		"return "\<C-P>"
+	endif
+endfunction
+imap <Tab> <C-R>=CleverTab()<CR>
+"}}}
+"CODE GREP {{{
+" grep for given string (second is case insensitive)
+" simply a wrapper for vimgrep
+" eg: :F /badxmlexception/ lib php
+com! -nargs=+ F :call CommandFind("<args>")
+fun! CommandFind(args)
+	tabe
+	let parts = split(a:args,' ')
+	exe "vimgrep ".l:parts[0]." ".l:parts[1]."/**/*.".l:parts[2]
+	exe "copen"
+endfunction
+"}}}
+"{{{ TAB MGMT
+" Some useful bits for managing tabs.
+" Also changes format of tab line.
+" Commands and shortcuts:
+" \oc - open dir of current file in new tab
+" H - navigate to tab to the left
+" L - navigate to tab to the right
+" C-l - move current tab left
+" C-h - move current tab right
+" gf - changes default behavior from opening file under cursor in current window to opening in new tab
+nmap <Leader>oc :tabe %:h<CR>
+
+" quicker aliases for navigating tabs
+nmap H gT
+nmap L gt
+" move tab left or right
+nmap <C-l> :call MoveTab(0)<CR>
+nmap <C-h> :call MoveTab(-2)<CR>
+
+" gf should use new tab, not current buffer
+map gf :tabe <cfile><CR>
+
+"tab line
+fun! MyTabLine()
+	let s = ''
+	for i in range(tabpagenr('$'))
+		" select the highlighting
+		if i + 1 == tabpagenr()
+			let s .= '%#TabLineSel#'
+		else
+			let s .= '%#TabLine#'
+		endif
+		" set the tab page number (for mouse clicks)
+		let s .= '%' . (i + 1) . 'T'.(i+1).''
+		" the filename is made by MyTabLabel()
+		let s .= '%{MyTabLabel(' . (i + 1) . ')}  '
+	endfor
+	" after the last tab fill with TabLineFill and reset tab page nr
+	let s .= '%#TabLineFill#%T'
+	return s
+endfunction
+
+fun! MyTabLabel(n)
+	let buflist = tabpagebuflist(a:n)
+	let winnr = tabpagewinnr(a:n)
+	let fullname = bufname(buflist[winnr - 1])
+	" show a/b/c/filename.ext
+	"let fullname = substitute(fullname,"(\w){1}\w*/","\1/","g")
+	" show filename.ext
+	let fullname = substitute(fullname,".*/","","")
+	if getbufvar(buflist[winnr - 1],"&mod")
+		let modified = "+"
+	else
+		let modified = " "
+	endif
+	return modified.fullname
+endfunction
+
+" Use the above tabe naming scheme
+set tabline=%!MyTabLine()
+
+"tab moving
+fun! MoveTab(n)
+	let which = tabpagenr()
+	let which = which + a:n
+	exe "tabm ".which
+endfunction
+"}}}
