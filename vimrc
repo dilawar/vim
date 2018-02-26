@@ -7,6 +7,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
+Bundle 'vim-scripts/vimspell'
 Bundle "will133/vim-dirdiff"
 Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
@@ -14,7 +15,6 @@ Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'vim-scripts/netrw.vim'
 
 Bundle 'flazz/vim-colorschemes'
 colorscheme default
@@ -56,8 +56,8 @@ let g:syntastic_mode_map = {
 map <F8> :SyntasticCheck<CR>
 
 " YouCompleteMe.
-Bundle "Valloric/YouCompleteMe"
-let g:ycm_filetype_blacklist = { 'python' : 1 }
+" Bundle "Valloric/YouCompleteMe"
+" let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
@@ -110,7 +110,6 @@ set encoding=utf-8
 set fileencoding=utf-8
 syntax enable
 set complete-=k
-set spell spelllang=en_us
 
 " Mappings
 source $HOME/.vim/mymappings.vim
