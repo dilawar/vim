@@ -13,6 +13,7 @@ Bundle 'tpope/vim-dispatch'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
+Bundle "vim-pandoc/vim-pandoc"
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
 
