@@ -119,3 +119,13 @@ fun! Filename(...)
 	if filename == '' | return a:0 == 2 ? a:2 : '' | endif
 	return !a:0 || a:1 == '' ? filename : substitute(a:1, '$1', filename, 'g')
 endf
+
+" Fixes to markdown italics in math mode. This is from here:
+" https://github.com/tpope/vim-markdown/issues/60
+autocmd FileType markdown |
+      \hi def link markdownItalic              NONE |
+      \hi def link markdownItalicDelimiter     NONE |
+      \hi def link markdownBold                NONE |
+      \hi def link markdownBoldDelimiter       NONE |
+      \hi def link markdownBoldItalic          NONE |
+      \hi def link markdownBoldItalicDelimiter NONE
