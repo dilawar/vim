@@ -12,8 +12,10 @@ Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
+Bundle 'chrisbra/unicode.vim'
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
+
 
 Bundle 'flazz/vim-colorschemes'
 colorscheme default
