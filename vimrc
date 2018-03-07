@@ -8,13 +8,14 @@ Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "will133/vim-dirdiff"
+Bundle "scrooloose/nerdcommenter"
 Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
 Plugin 'bling/vim-airline'
-Plugin 'easymotion/vim-easymotion'
+" Plugin 'easymotion/vim-easymotion'
 
 
 Bundle 'flazz/vim-colorschemes'
@@ -55,6 +56,7 @@ let g:syntastic_mode_map = {
     \ "active_filetypes": ["ruby", "php"],
     \ "passive_filetypes": ["python"] }
 map <F8> :SyntasticCheck<CR>
+
 
 " YouCompleteMe.
 " Bundle "Valloric/YouCompleteMe"
