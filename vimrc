@@ -14,9 +14,8 @@ Bundle 'tpope/vim-dispatch'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
-" Bundle "vim-pandoc/vim-pandoc"
 Bundle 'bling/vim-airline'
-" Bundle 'easymotion/vim-easymotion'
+Bundle 'easymotion/vim-easymotion'
 
 
 Bundle 'flazz/vim-colorschemes'
@@ -294,9 +293,12 @@ let g:DoxygenToolkit_authorName="Dilawar Singh <dilawars@ncbs.res.in>"
 let g:DoxygenToolkit_licenseTag="GNU-GPL v3"  
 
 " Pandoc 
+Bundle "vim-pandoc/vim-pandoc-syntax"
+Bundle "vim-pandoc/vim-pandoc"
 let g:pandoc#biblio#use_bibtool=1
-let g:pandoc#modules#disabled=[ "folding" ]
-let g:pandoc#formatting#mode="hA"
+let g:pandoc#modules#disabled=[ "folding", "formatting" ]
+let g:pandoc#formatting#mode="sA"
+let g:pandoc#spell#enabled=1
 
 " VIMRC
 set shortmess=a
