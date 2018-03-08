@@ -15,8 +15,8 @@ Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
 " Bundle "vim-pandoc/vim-pandoc"
-Plugin 'bling/vim-airline'
-" Plugin 'easymotion/vim-easymotion'
+Bundle 'bling/vim-airline'
+" Bundle 'easymotion/vim-easymotion'
 
 
 Bundle 'flazz/vim-colorschemes'
@@ -35,17 +35,20 @@ Bundle "WolfgangMehner/vim-plugins"
 ":let g:easytags_opts=['--options=$HOME/Scripts/ctags']
 
 " This script increase/descreses etc a selected column
-Plugin 'vim-scripts/VisIncr'
+Bundle 'vim-scripts/VisIncr'
 
 Bundle "danchoi/elinks.vim"
 Bundle "junegunn/vim-easy-align"
 
 "" Syntastic
-Plugin 'scrooloose/syntastic'
+Bundle 'vim-syntastic/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
 let g:syntastic_cpp_compiler_options = ' -std=c++11 '
 let g:syntastic_python_checkers = ['pylint']  "" ['flake8', 'pylint']
 let g:syntastic_python_pylint_args = '-E'
@@ -180,7 +183,7 @@ let g:pymode_lint_write=0
 let g:pymode_lint=0
 
 ""indent guide
-"Plugin 'nathanaelkane/vim-indent-guides'
+"Bundle 'nathanaelkane/vim-indent-guides'
 "hi IndentGuidesOdd  ctermbg=white
 "hi IndentGuidesEven ctermbg=lightgrey
 "let g:indent_guides_enable_on_vim_startup = 1
