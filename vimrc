@@ -295,10 +295,12 @@ let g:DoxygenToolkit_licenseTag="GNU-GPL v3"
 " Pandoc 
 Bundle "vim-pandoc/vim-pandoc-syntax"
 Bundle "vim-pandoc/vim-pandoc"
+Bundle "vim-pandoc/vim-pandoc-after"
 let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding", "formatting" ]
 let g:pandoc#formatting#mode="sA"
 let g:pandoc#spell#enabled=1
+let g:pandoc#after#modules#enabled=["supertab"]
 
 " VIMRC
 set shortmess=a
