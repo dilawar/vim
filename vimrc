@@ -52,6 +52,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 '
 let g:syntastic_python_checkers = ['pylint']  "" ['flake8', 'pylint']
 let g:syntastic_python_pylint_args = '-E'
 let g:syntastic_tex_checkers = ['chktex'] 
+let g:syntastic_php_checkers = ['php'] 
 let g:syntastic_tex_chktex_args =  '-n1 -n2 -n3 -n8 -n10 -n11 -n12 -n17 -n25 -n26 -n36 -n37'
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_mode_map = {
