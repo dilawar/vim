@@ -168,6 +168,7 @@ au BufRead,BufNewFile *.bsv set syntax=bsv
 au BufRead,BufNewFile *.max set filetype=maxima  nospell
 au BufRead,BufNewFile *.maxima set filetype=maxima nospell
 au BufRead,BufNewFile *.mac set filetype=maxima nospell
+au BufRead,BufNewFile *.maxima set filetype=maxima nospell
 au BufRead,BufNewFile *.mc set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
 
