@@ -190,7 +190,7 @@ let g:pymode_lint=0
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size=1
 Bundle "Yggdroot/indentLine"
-let g:indentLine_char="⋮"
+let g:indentLine_char="┊"
 
 " default
 set softtabstop=4
