@@ -16,6 +16,7 @@ Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
 Bundle 'bling/vim-airline'
 Bundle 'easymotion/vim-easymotion'
+Bundle 'lepture/vim-jinja'
 
 
 Bundle 'flazz/vim-colorschemes'
@@ -137,6 +138,7 @@ au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
 au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
 au BufRead,BufNewFile wscript set filetype=python 
 au BufRead *.lyx syntax sync fromstart
+au BufRead,BufNewFile *.jinja2,*.jinja set ft=jinja
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
