@@ -7,44 +7,25 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
-Bundle "will133/vim-dirdiff"
 Bundle "scrooloose/nerdcommenter"
-Bundle 'itchyny/calendar.vim'
-Bundle 'tpope/vim-dispatch'
 Bundle "tomtom/tcomment_vim"
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
-Bundle 'bling/vim-airline'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'lepture/vim-jinja'
-
-
 Bundle 'flazz/vim-colorschemes'
-colorscheme default
-
-" Support from Wolfgang
-Bundle "WolfgangMehner/vim-plugins"
-
-"" Easytags
-"Bundle "xolox/vim-misc"
-"Bundle "xolox/vim-easytags"
-":let g:easytags_always_enabled = 0
-":let g:easytags_auto_highlight = 0
-":let g:easytags_autorecurse = 0
-":let g:easytags_async=1
-":let g:easytags_opts=['--options=$HOME/Scripts/ctags']
 
 " This script increase/descreses etc a selected column
 Bundle 'vim-scripts/VisIncr'
-
-Bundle "danchoi/elinks.vim"
 Bundle "junegunn/vim-easy-align"
 
-"" Syntastic
-Bundle 'vim-syntastic/syntastic'
+Bundle 'bling/vim-airline'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+"" Syntastic
+Bundle 'vim-syntastic/syntastic'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -61,11 +42,6 @@ let g:syntastic_mode_map = {
     \ "active_filetypes": ["ruby", "php"],
     \ "passive_filetypes": ["python"] }
 map <F8> :SyntasticCheck<CR>
-
-
-" YouCompleteMe.
-" Bundle "Valloric/YouCompleteMe"
-" let g:ycm_filetype_blacklist = { 'python' : 1 }
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
@@ -89,14 +65,15 @@ let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
 "endfunction
 "inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 
-" vim-latexsuite mapping
-Bundle "vim-latex/vim-latex"
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_ViewRule = 'yap -1'
-" Do not expand " to stupid quites.
-let g:Tex_SmartKeyQuote = 0
+"" vim-latexsuite mapping
+" Bundle "vim-latex/vim-latex"
+" let g:tex_flavor='latex'
+" let g:Tex_DefaultTargetFormat='pdf'
+" let g:Tex_ViewRule = 'yap -1'
+"" Do not expand " to stupid quites.
+" let g:Tex_SmartKeyQuote = 0
 
+colorscheme default
 filetype plugin on
 filetype plugin indent on
 syntax on
