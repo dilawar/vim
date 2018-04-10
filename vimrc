@@ -14,6 +14,7 @@ Bundle 'chrisbra/unicode.vim'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'lepture/vim-jinja'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'lervag/vimtex'
 
 " This script increase/descreses etc a selected column
 Bundle 'vim-scripts/VisIncr'

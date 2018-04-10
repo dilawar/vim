@@ -622,6 +622,15 @@ snippet pgfplotstable
 	
 snippet g
 	\gls{${0:glossary}}
+
 snippet geometry
 	\usepackage[top=2cm, bottom=2cm, left=3cm, right=5cm, heightrounded,
 	      marginparwidth=4cm, marginparsep=5mm]{geometry}
+
+snippet pgfplotsset 
+	\pgfplotsset{
+	    , xtick align=center
+	    , ytick align=center
+	    , unit markings=parenthesis
+	    , legend style={fill=none,draw=none,font=\footnotesize}
+	}
