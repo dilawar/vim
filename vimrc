@@ -16,6 +16,9 @@ Bundle 'lepture/vim-jinja'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'lervag/vimtex'
 
+" Profile other bundle
+Bundle 'hyiltiz/vim-plugins-profile'
+
 " This script increase/descreses etc a selected column
 Bundle 'vim-scripts/VisIncr'
 Bundle "junegunn/vim-easy-align"
@@ -292,3 +295,4 @@ set cmdheight=2
 " wildcard
 set wildmode=longest,list,full
 set wildmenu
+set conceallevel=0
