@@ -8,7 +8,12 @@ Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "scrooloose/nerdcommenter"
-Bundle "tomtom/tcomment_vim"
+Bundle 'itchyny/calendar.vim'
+Bundle 'tpope/vim-dispatch'
+
+" tcomment slows things down quite a lot.
+" Bundle "tomtom/tcomment_vim"
+
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
 Bundle 'easymotion/vim-easymotion'
@@ -16,8 +21,14 @@ Bundle 'lepture/vim-jinja'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'lervag/vimtex'
 
-" Profile other bundle
-Bundle 'hyiltiz/vim-plugins-profile'
+"" Easytags
+"Bundle "xolox/vim-misc"
+"Bundle "xolox/vim-easytags"
+":let g:easytags_always_enabled = 0
+":let g:easytags_auto_highlight = 0
+":let g:easytags_autorecurse = 0
+":let g:easytags_async=1
+":let g:easytags_opts=['--options=$HOME/Scripts/ctags']
 
 " This script increase/descreses etc a selected column
 Bundle 'vim-scripts/VisIncr'
@@ -119,7 +130,7 @@ au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
 au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
 au BufRead,BufNewFile wscript set filetype=python 
 au BufRead *.lyx syntax sync fromstart
-au BufRead,BufNewFile *.jinja2,*.jinja set ft=jinja
+au BufRead,BufNewFile *.jinja2,*.jinja,*.html set ft=jinja
 
 " Make pandoc behave like tex
 au BufRead,BufNewFile *.md setlocal filetype=markdown |
