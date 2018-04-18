@@ -634,3 +634,9 @@ snippet pgfplotsset
 	    , unit markings=parenthesis
 	    , legend style={fill=none,draw=none,font=\footnotesize}
 	}
+
+snippet hist
+	stats "${0}" using "${1}" prefix "A";
+	bin(x,width)=width*floor(x/width);
+	plot "${)}" using (bin(column("${1}"),1)):(1.0/A_sum) smooth freq;
+

@@ -16,9 +16,6 @@ Bundle 'lepture/vim-jinja'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'lervag/vimtex'
 
-" Profile other bundle
-Bundle 'hyiltiz/vim-plugins-profile'
-
 " This script increase/descreses etc a selected column
 Bundle 'vim-scripts/VisIncr'
 Bundle "junegunn/vim-easy-align"
