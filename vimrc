@@ -157,6 +157,7 @@ au BufRead,BufNewFile *.mac set filetype=maxima nospell
 au BufRead,BufNewFile *.maxima set filetype=maxima nospell
 au BufRead,BufNewFile *.mc set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
+au BufRead,BufNewFile *.tex set filetype=tex
 
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
