@@ -11,6 +11,9 @@ Bundle "scrooloose/nerdcommenter"
 Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 
+" csv .
+Bundle 'chrisbra/csv.vim'
+
 " tcomment slows things down quite a lot.
 " Bundle "tomtom/tcomment_vim"
 
