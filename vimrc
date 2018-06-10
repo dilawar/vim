@@ -66,8 +66,8 @@ set omnifunc=syntaxcomplete#Complete
 " indentation options
 " Note: smartindent is seriously outdated. cindent, even, is unnecessary.
 " Let the filetype plugins do the work.
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 filetype indent on
 "set autoindent
 set cindent
