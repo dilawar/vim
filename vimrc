@@ -68,6 +68,7 @@ set omnifunc=syntaxcomplete#Complete
 " Let the filetype plugins do the work.
 set shiftwidth=4
 set tabstop=4
+set expandtab
 filetype indent on
 "set autoindent
 set cindent
