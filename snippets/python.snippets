@@ -431,6 +431,14 @@ snippet grid
 	ax4 = plt.subplot2grid( gridSize, (2,1), colspan = 1 )
 
 snippet pypet:
+	def run_experiment( traj ):
+	     """Example of a sophisticated simulation that involves multiplying two values.
+
+	    """
+	    z=traj.x * traj.y
+	    traj.f_add_result('z',z, comment='I am the product of two values!')
+	
+
 	# Create an environment that handles running our simulation
 	env = Environment( trajectory='Experiment'
 		    , filename='./experiment.hdf5'
@@ -444,3 +452,9 @@ snippet pypet:
 	# Add both parameters
 	traj.f_add_parameter('x', 1.0, comment='Im the first dimension!')
 	traj.f_add_parameter('y', 1.0, comment='Im the second dimension!')
+
+	# Explore the parameters with a cartesian product
+	traj.f_explore(cartesian_product({'x':[1.0,2.0,3.0,4.0], 'y':[6.0,7.0,8.0]}))
+
+	# Run the simulation with all parameter combinations
+	env.run(multiply)
