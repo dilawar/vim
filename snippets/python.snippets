@@ -429,3 +429,18 @@ snippet grid
 	ax2 = plt.subplot2grid( gridSize, (1,0), colspan = 2 )
 	ax3 = plt.subplot2grid( gridSize, (2,0), colspan = 1 )
 	ax4 = plt.subplot2grid( gridSize, (2,1), colspan = 1 )
+
+snippet pypet:
+	# Create an environment that handles running our simulation
+	env = Environment( trajectory='Experiment'
+		    , filename='./experiment.hdf5'
+		    , file_title='Experiment 1',
+		    #, comment = ''
+		    )
+
+	# Get the trajectory from the environment
+	traj = env.trajectory
+
+	# Add both parameters
+	traj.f_add_parameter('x', 1.0, comment='Im the first dimension!')
+	traj.f_add_parameter('y', 1.0, comment='Im the second dimension!')
