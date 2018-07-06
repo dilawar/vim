@@ -11,6 +11,10 @@ Bundle "scrooloose/nerdcommenter"
 Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 
+" Grammer
+Bundle "rhysd/vim-grammarous"
+Bundle "dpelle/vim-LanguageTool"
+
 " csv .
 Bundle 'chrisbra/csv.vim'
 
