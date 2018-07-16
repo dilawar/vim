@@ -134,8 +134,8 @@ au BufRead *.lyx syntax sync fromstart
 au BufRead,BufNewFile *.jinja2,*.jinja,*.html set ft=jinja
 
 " Make pandoc behave like tex
-au BufRead,BufNewFile *.md setlocal filetype=markdown |
-    \ setlocal makeprg=markdown_to_pdf.sh\ % 
+au BufRead,BufNewFile *.md setlocal filetype=pandoc |
+    \ setlocal makeprg=md2pdf.sh\ % 
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
 let noweb_backend="tex"
