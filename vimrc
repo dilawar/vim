@@ -37,6 +37,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" pweave support.
+Bundle 'coyotebush/vim-pweave'
+
 "" Syntastic
 Bundle 'vim-syntastic/syntastic'
 let g:syntastic_always_populate_loc_list = 1
