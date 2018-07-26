@@ -14,6 +14,8 @@ Bundle 'tpope/vim-dispatch'
 " Grammer
 Bundle "rhysd/vim-grammarous"
 Bundle "dpelle/vim-LanguageTool"
+let g:languagetool_jar='/usr/share/java/languagetool/languagetool-commandline.jar'
+let g:languagetool_lang='en'
 
 " csv .
 Bundle 'chrisbra/csv.vim'
