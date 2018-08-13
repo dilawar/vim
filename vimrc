@@ -72,7 +72,7 @@ let g:syntastic_php_checkers = ['php']
 let g:syntastic_tex_chktex_args =  '-n1 -n2 -n3 -n8 -n10 -n11 -n12 -n17 -n25 -n26 -n36 -n37'
 " let g:syntastic_aggregate_errors = 1
 let g:syntastic_mode_map = {
-    \ "mode": "active",
+    \ "mode": "passive",
     \ "active_filetypes": ["ruby", "php"],
     \ "passive_filetypes": ["python"] }
 map <F8> :SyntasticCheck<CR>
