@@ -10,7 +10,7 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle "scrooloose/nerdcommenter"
 Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
-
+Bundle 'godlygeek/tabular'
 " Grammer
 Bundle "rhysd/vim-grammarous"
 let g:grammarous#disabled_rules={
