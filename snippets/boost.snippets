@@ -1,10 +1,10 @@
-snippet program_options
-    po::options_description desc( "Allowed option" );
-    desc.add_options()
-        ("help", "produce help message")
-        ("simtime", "Simulation time" )
-        ("dt", "DT for simulation" )
-        ;
-    po::variables_map vm;
-    po::store( po::parse_command_line( argc, argv, desc), vm);
-    vm.notify()
+snippet po
+	po::options_description desc( "Allowed option" );
+	desc.add_options()
+	    ("help", "produce help message")
+	    ("simtime", "Simulation time" )
+	    ("dt", "DT for simulation" )
+	    ;
+	po::variables_map vm;
+	po::store( po::parse_command_line( argc, argv, desc), vm);
+	vm.notify()
