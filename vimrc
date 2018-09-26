@@ -18,16 +18,18 @@ let g:grammarous#disabled_rules={
             \ 'help' : ['WHITESPACE_RULE', 'EN_QUOTES', 'SENTENCE_WHITESPACE', 'UPPERCASE_SENTENCE_START'],
             \ }
 let g:grammarous#use_vim_spelllang=1
-let g:grammarous#hooks = {}
-function! g:grammarous#hooks.on_check(errs) abort
-    nmap <buffer><C-n> <Plug>(grammarous-move-to-next-error)
-    nmap <buffer><C-p> <Plug>(grammarous-move-to-previous-error)
-endfunction
+" let g:grammarous#hooks = {}
 
-function! g:grammarous#hooks.on_reset(errs) abort
-    nunmap <buffer><C-n>
-    nunmap <buffer><C-p>
-endfunction
+"function! g:grammarous#hooks.on_check(errs) abort
+"    nmap <buffer><C-n> <Plug>(grammarous-move-to-next-error)
+"    nmap <buffer><C-p> <Plug>(grammarous-move-to-previous-error)
+"endfunction
+"
+"function! g:grammarous#hooks.on_reset(errs) abort
+"    nunmap <buffer><C-n>
+"    nunmap <buffer><C-p>
+"endfunction
+
 Bundle "dpelle/vim-LanguageTool"
 let g:languagetool_jar='/usr/share/java/languagetool/languagetool-commandline.jar'
 let g:languagetool_lang='en'
