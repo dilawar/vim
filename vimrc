@@ -11,27 +11,33 @@ Bundle "scrooloose/nerdcommenter"
 Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'godlygeek/tabular'
-" Grammer
+
+" Grammarous 
+" Most of this config is from here:
+" https://github.com/icyd/nvim.init/blob/7b7348a4f6e54769837226715aef7607e4885661/config/plugins.vimrc
 Bundle "rhysd/vim-grammarous"
 let g:grammarous#disabled_rules={
             \ '*' : ['WHITESPACE_RULE', 'EN_QUOTES'],
             \ 'help' : ['WHITESPACE_RULE', 'EN_QUOTES', 'SENTENCE_WHITESPACE', 'UPPERCASE_SENTENCE_START'],
             \ }
 let g:grammarous#use_vim_spelllang=1
-" let g:grammarous#hooks = {}
-
-"function! g:grammarous#hooks.on_check(errs) abort
-"    nmap <buffer><C-n> <Plug>(grammarous-move-to-next-error)
-"    nmap <buffer><C-p> <Plug>(grammarous-move-to-previous-error)
-"endfunction
-"
-"function! g:grammarous#hooks.on_reset(errs) abort
-"    nunmap <buffer><C-n>
-"    nunmap <buffer><C-p>
-"endfunction
+let g:grammarous#languagetool_cmd = 'languagetool'
+let g:grammarous#use_vim_spelllang = 1
+let g:grammarous#enable_spell_check = 1
+let g:grammarous#default_comments_only_filetypes = {
+            \ '*' : 1, 'help' : 0, 'markdown' : 0,
+            \ 'pandoc' : 0,
+            \ }
+nnoremap <silent> <buffer><leader>zg :GrammarousCheck<CR>
+nnoremap <silent> <buffer><leader>zr :GrammarousReset<CR>
+nmap <buffer>gn <Plug>(grammarous-move-to-next-error)
+nmap <buffer>gp <Plug>(grammarous-move-to-previous-error)
+nmap <buffer>gr <Plug>(grammarous-move-to-info-window)r
+nmap <buffer>gf <Plug>(grammarous-move-to-info-window)f
+nmap <buffer>gR <Plug>(grammarous-move-to-info-window)R
 
 Bundle "dpelle/vim-LanguageTool"
-let g:languagetool_jar='/usr/share/java/languagetool/languagetool-commandline.jar'
+let g:languagetool_jar='~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.1/languagetool-commandline.jar'
 let g:languagetool_lang='en'
 
 " csv .
