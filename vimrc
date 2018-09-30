@@ -33,7 +33,7 @@ nnoremap <silent> <buffer><leader>zr :GrammarousReset<CR>
 nmap <buffer>gn <Plug>(grammarous-move-to-next-error)
 nmap <buffer>gp <Plug>(grammarous-move-to-previous-error)
 nmap <buffer>gr <Plug>(grammarous-move-to-info-window)r
-nmap <buffer>gf <Plug>(grammarous-move-to-info-window)f
+nmap <buffer>gF <Plug>(grammarous-move-to-info-window)f
 nmap <buffer>gR <Plug>(grammarous-move-to-info-window)R
 
 Bundle "dpelle/vim-LanguageTool"
