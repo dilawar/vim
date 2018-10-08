@@ -676,13 +676,8 @@ snippet everynthmark
 snippet legend_line_reduce
 	% This is from here https://tex.stackexchange.com/a/210259/8087
 	\pgfplotsset{
-	    compat=1.11,
-		legend image code/.code={
-		    \draw[mark repeat=2,mark phase=2]
-		    plot coordinates {
-			(0cm,0cm)
-			    (0.15cm,0cm)        %% default is (0.3cm,0cm)
-			    (0.3cm,0cm)         %% default is (0.6cm,0cm)
-		    };%
-		}
+	    legend image code/.code={
+		\draw[mark repeat=2,mark phase=2]
+		    plot coordinates {(0cm,0cm) (0.15cm,0cm) (0.3cm,0cm)};
+	    }
 	}
