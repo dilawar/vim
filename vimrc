@@ -15,30 +15,30 @@ Bundle 'godlygeek/tabular'
 " Grammarous 
 " Most of this config is from here:
 " https://github.com/icyd/nvim.init/blob/7b7348a4f6e54769837226715aef7607e4885661/config/plugins.vimrc
-Bundle "rhysd/vim-grammarous"
-let g:grammarous#disabled_rules={
-            \ '*' : ['WHITESPACE_RULE', 'EN_QUOTES'],
-            \ 'help' : ['WHITESPACE_RULE', 'EN_QUOTES', 'SENTENCE_WHITESPACE', 'UPPERCASE_SENTENCE_START'],
-            \ }
-let g:grammarous#use_vim_spelllang=1
-let g:grammarous#languagetool_cmd = 'languagetool'
-let g:grammarous#use_vim_spelllang = 1
-let g:grammarous#enable_spell_check = 1
-let g:grammarous#default_comments_only_filetypes = {
-            \ '*' : 1, 'help' : 0, 'markdown' : 0,
-            \ 'pandoc' : 0,
-            \ }
-nnoremap <silent> <buffer><leader>zg :GrammarousCheck<CR>
-nnoremap <silent> <buffer><leader>zr :GrammarousReset<CR>
-nmap <buffer>gn <Plug>(grammarous-move-to-next-error)
-nmap <buffer>gp <Plug>(grammarous-move-to-previous-error)
-nmap <buffer>gr <Plug>(grammarous-move-to-info-window)r
-nmap <buffer>gF <Plug>(grammarous-move-to-info-window)f
-nmap <buffer>gR <Plug>(grammarous-move-to-info-window)R
+"Bundle "rhysd/vim-grammarous"
+"let g:grammarous#disabled_rules={
+"            \ '*' : ['WHITESPACE_RULE', 'EN_QUOTES'],
+"            \ 'help' : ['WHITESPACE_RULE', 'EN_QUOTES', 'SENTENCE_WHITESPACE', 'UPPERCASE_SENTENCE_START'],
+"            \ }
+"let g:grammarous#use_vim_spelllang=1
+"let g:grammarous#languagetool_cmd = 'languagetool'
+"let g:grammarous#use_vim_spelllang = 1
+"let g:grammarous#enable_spell_check = 1
+"let g:grammarous#default_comments_only_filetypes = {
+"            \ '*' : 1, 'help' : 0, 'markdown' : 0,
+"            \ 'pandoc' : 0,
+"            \ }
+"nnoremap <silent> <buffer><leader>zg :GrammarousCheck<CR>
+"nnoremap <silent> <buffer><leader>zr :GrammarousReset<CR>
+"nmap <buffer>gn <Plug>(grammarous-move-to-next-error)
+"nmap <buffer>gp <Plug>(grammarous-move-to-previous-error)
+"nmap <buffer>gr <Plug>(grammarous-move-to-info-window)r
+"nmap <buffer>gF <Plug>(grammarous-move-to-info-window)f
+"nmap <buffer>gR <Plug>(grammarous-move-to-info-window)R
 
-Bundle "dpelle/vim-LanguageTool"
-let g:languagetool_jar='~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.1/languagetool-commandline.jar'
-let g:languagetool_lang='en'
+"Bundle "dpelle/vim-LanguageTool"
+"let g:languagetool_jar='~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.1/languagetool-commandline.jar'
+"let g:languagetool_lang='en'
 
 " csv .
 Bundle 'chrisbra/csv.vim'
@@ -68,25 +68,26 @@ set statusline+=%*
 " pweave support.
 Bundle 'coyotebush/vim-pweave'
 
-"" Syntastic
-Bundle 'vim-syntastic/syntastic'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_ignore_files = ['\m^/usr/', '\m\c\.h$']
-let g:syntastic_cpp_compiler_options = ' -std=c++11 '
-let g:syntastic_python_checkers = ['pylint']  "" ['flake8', 'pylint']
-let g:syntastic_python_pylint_args = '-E'
-let g:syntastic_tex_checkers = ['chktex'] 
-let g:syntastic_php_checkers = ['php'] 
-let g:syntastic_tex_chktex_args =  '-n1 -n2 -n3 -n8 -n10 -n11 -n12 -n17 -n25 -n26 -n36 -n37'
-" let g:syntastic_aggregate_errors = 1
-let g:syntastic_mode_map = {
-    \ "mode": "passive",
-    \ "active_filetypes": ["ruby", "php"],
-    \ "passive_filetypes": ["python"] }
-map <F8> :SyntasticCheck<CR>
+"
+""" Syntastic
+"Bundle 'vim-syntastic/syntastic'
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_ignore_files = ['\m^/usr/', '\m\c\.h$']
+"let g:syntastic_cpp_compiler_options = ' -std=c++11 '
+"let g:syntastic_python_checkers = ['pylint']  "" ['flake8', 'pylint']
+"let g:syntastic_python_pylint_args = '-E'
+"let g:syntastic_tex_checkers = ['chktex'] 
+"let g:syntastic_php_checkers = ['php'] 
+"let g:syntastic_tex_chktex_args =  '-n1 -n2 -n3 -n8 -n10 -n11 -n12 -n17 -n25 -n26 -n36 -n37'
+"" let g:syntastic_aggregate_errors = 1
+"let g:syntastic_mode_map = {
+"    \ "mode": "passive",
+"    \ "active_filetypes": ["ruby", "php"],
+"    \ "passive_filetypes": ["python"] }
+"map <F8> :SyntasticCheck<CR>
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
