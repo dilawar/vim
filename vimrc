@@ -98,6 +98,10 @@ Bundle 'SirVer/ultisnips'
 let g:snips_author="Dilawar Singh"
 let g:snips_email="dilawars@ncbs.res.in"
 let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsExpandTrigger="<nop>"
 "function ExpandSnippetOrCarriageReturn()
@@ -217,6 +221,9 @@ let g:pymode_lint=0
 "let g:indent_guides_guide_size=1
 Bundle "Yggdroot/indentLine"
 let g:indentLine_char="⁞"
+
+" The very heavy plugin.
+Bundle 'Valloric/YouCompleteMe'
 
 " default
 set softtabstop=4
