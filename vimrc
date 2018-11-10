@@ -15,8 +15,8 @@ Bundle 'godlygeek/tabular'
 " Grammarous 
 " Most of this config is from here:
 " https://github.com/icyd/nvim.init/blob/7b7348a4f6e54769837226715aef7607e4885661/config/plugins.vimrc
-"Bundle "rhysd/vim-grammarous"
-"let g:grammarous#disabled_rules={
+" Bundle "rhysd/vim-grammarous"
+" let g:grammarous#disabled_rules={
 "            \ '*' : ['WHITESPACE_RULE', 'EN_QUOTES'],
 "            \ 'help' : ['WHITESPACE_RULE', 'EN_QUOTES', 'SENTENCE_WHITESPACE', 'UPPERCASE_SENTENCE_START'],
 "            \ }
@@ -93,8 +93,8 @@ Bundle 'coyotebush/vim-pweave'
 Bundle "kana/vim-fakeclip"
 Bundle 'ervandew/supertab'
 
-""" SnipMate 
-""" NOTE: Using ultisnips
+" SnipMate 
+" NOTE: Using ultisnips
 Bundle 'SirVer/ultisnips'
 let g:snips_author="Dilawar Singh"
 let g:snips_email="dilawars@ncbs.res.in"
@@ -116,12 +116,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 
 "" vim-latexsuite mapping
-" Bundle "vim-latex/vim-latex"
-" let g:tex_flavor='latex'
-" let g:Tex_DefaultTargetFormat='pdf'
-" let g:Tex_ViewRule = 'yap -1'
-"" Do not expand " to stupid quites.
-" let g:Tex_SmartKeyQuote = 0
+Bundle "vim-latex/vim-latex"
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_ViewRule = 'yap -1'
+" Do not expand " to stupid quites.
+let g:Tex_SmartKeyQuote = 0
 
 colorscheme default
 filetype plugin on
