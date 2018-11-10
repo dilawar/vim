@@ -473,3 +473,6 @@ fun! MoveTab(n)
 	exe "tabm ".which
 endfunction
 "}}}
+
+" colors
+colorscheme default
