@@ -171,6 +171,7 @@ au BufRead,BufNewFile *.md setlocal filetype=pandoc |
     \ setlocal makeprg=md2pdf.sh\ % 
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
+au BufRead,BufNewFile *.pandoc setlocal spell spelllang=en
 let noweb_backend="tex"
 let noweb_language="haskell"
 let noweb_fold_code=1
