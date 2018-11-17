@@ -11,6 +11,7 @@ Bundle "scrooloose/nerdcommenter"
 Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'godlygeek/tabular'
+Bundle "heavenshell/vim-pydocstring"
 
 " Grammarous 
 " Most of this config is from here:
