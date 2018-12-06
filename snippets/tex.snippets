@@ -643,7 +643,14 @@ snippet pgfplotsset
 	    , xtick align=center
 	    , ytick align=center
 	    , unit markings=parenthesis
-	    , legend style={fill=none,draw=none,font=\footnotesize}
+	    , legend style={fill=none, draw=none, font=\footnotesize}
+	    , xlabel near ticks
+	    , ylabel near ticks
+	    % reduce size of lines in legend entries
+	    , legend image code/.code={
+		\draw[mark repeat=2,mark phase=2]
+		    plot coordinates {(0cm,0cm) (0.15cm,0cm) (0.3cm,0cm)};
+	    }
 	}
 
 snippet hist
