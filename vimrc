@@ -225,7 +225,7 @@ Bundle "Yggdroot/indentLine"
 let g:indentLine_char="⁞"
 
 " The very heavy plugin.
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
 " default
 set softtabstop=4
@@ -338,6 +338,7 @@ let g:pandoc#modules#disabled=[ "folding", "formatting" ]
 let g:pandoc#formatting#mode="sA"
 let g:pandoc#spell#enabled=1
 let g:pandoc#after#modules#enabled=["supertab"]
+let g:pandoc#syntax#conceal#use = 0
 
 " VIMRC
 set shortmess=a
