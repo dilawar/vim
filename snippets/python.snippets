@@ -16,8 +16,8 @@ snippet docs
 	Github: `g:snips_github`
 	Description: ${0}
 	"""
-snippet header 
 
+snippet header 
 	"""${0:`Filename('$1.py', 'unknown.py')`}: ${1}
 
 	"""
@@ -36,10 +36,9 @@ snippet header
 
 snippet matplotlib 
 	import matplotlib as mpl
+	# mpl.use( 'pgf' )
 	import matplotlib.pyplot as plt
-	mpl.style.use( 'bmh' )
-	mpl.rcParams['axes.linewidth'] = 0.2
-	mpl.rcParams['lines.linewidth'] = 1.0
+	mpl.style.use( ['bmh', 'fivethiryeight'] )
 	mpl.rcParams['text.latex.preamble'] = [ r'\\usepackage{siunitx}' ]
 	mpl.rcParams['text.usetex'] = True
 	
@@ -75,32 +74,32 @@ snippet moose_license
 	
 snippet wh
 	while ${1:condition}:
-		${0}
+	    ${0}
 # dowh - does the same as do...while in other languages
 snippet dowh
 	while True:
-		${1}
-		if ${0:condition}:
-			break
+	    ${1}
+	    if ${0:condition}:
+		break
 snippet with
 	with ${1:expr} as ${2:var}:
-		${0}
+	    ${0}
 # New Class
 snippet cl
 	class ${1:ClassName}(${2:object}):
-		"""${3:docstring for $1}"""
-		def __init__(self, ${4:arg}):
-			${5:super($1, self).__init__()}
-			self.$4 = $4
-			${0}
+	    """${3:docstring for $1}"""
+	    def __init__(self, ${4:arg}):
+		${5:super($1, self).__init__()}
+		self.$4 = $4
+		${0}
 # New Function
 snippet def
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
-		"""${3:docstring for $1}"""
-		${0}
+	    """${3:docstring for $1}"""
+	    ${0}
 snippet deff
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
-		${0}
+	    ${0}
 # New Method
 snippet defs
 	def ${1:mname}(self, ${2:arg}):
@@ -458,3 +457,9 @@ snippet pypet
 
 	# Run the simulation with all parameter combinations
 	env.run(multiply)
+
+
+snippet axis_label
+	ax.text(-0.1, 1.15, label, transform=ax.transAxes, 
+		fontsize='x-large', fontweight='bold', va='top', ha='right')
+
