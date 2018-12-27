@@ -333,20 +333,20 @@ Bundle 'SirVer/ultisnips'
 let g:snips_author="Dilawar Singh"
 let g:snips_email="dilawars@ncbs.res.in"
 let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
-let g:UltiSnipsExpandTrigger="<C-Space>"
-let g:UltiSnipsJumpForwardTrigger="<C-Space>"
-let g:UltiSnipsJumpBackwardTrigger="<C-Shift><C-Space>"
+"let g:UltiSnipsExpandTrigger="<C-Space>"
+"let g:UltiSnipsJumpForwardTrigger="<C-Space>"
+"let g:UltiSnipsJumpBackwardTrigger="<C-Shift><C-Space>"
 
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsExpandTrigger="<nop>"
-"function ExpandSnippetOrCarriageReturn()
-"    let snippet = UltiSnips#ExpandSnippetOrJump()
-"    if g:ulti_expand_or_jump_res > 0
-"        return snippet
-"    else
-"        return "\<CR>"
-"    endif
-"endfunction
-"inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+function ExpandSnippetOrCarriageReturn()
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+        return snippet
+    else
+        return "\<CR>"
+    endif
+endfunction
+inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 
 
