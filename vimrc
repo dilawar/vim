@@ -92,7 +92,7 @@ Bundle 'coyotebush/vim-pweave'
 " ALE
 Bundle "w0rp/ale"
 let g:airline#extensions#ale#enabled = 1
-let g:ale_lint_on_test_changed = 'never'
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_cpp_gcc_options = '-std=c++11 -Wall'
 let g:ale_linters = {
@@ -211,7 +211,7 @@ let g:pymode_lint=0
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size=1
 Bundle "Yggdroot/indentLine"
-let g:indentLine_char="⁞"
+" let g:indentLine_char="⁞"
 
 " The very heavy plugin.
 " Bundle 'Valloric/YouCompleteMe'
