@@ -139,6 +139,7 @@ set history=10000
 source $HOME/.vim/mymappings.vim
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
+au BufRead,BufNewFile *.vue set filetype=html
 au BufRead,BufNewFile *.cu set filetype=cpp
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
