@@ -95,6 +95,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_cpp_gcc_options = '-std=c++11'
+let g:ale_tex_chktex_options = '-n26 -n18'
 let g:ale_linters = {
             \ 'python' : [ 'pyflakes'], 
             \}
@@ -111,7 +112,7 @@ Bundle 'ervandew/supertab'
 "" Do not expand " to stupid quites.
 " let g:Tex_SmartKeyQuote = 0
 
-colorscheme default
+colorscheme solarized
 filetype plugin on
 filetype plugin indent on
 syntax on
@@ -140,6 +141,9 @@ source $HOME/.vim/mymappings.vim
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.cu set filetype=cpp
+au BufRead,BufNewFile *.vue set filetype=html |
+            \ setlocal iskeyword+=- |
+            \ setlocal ts=2 sw=2 
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
@@ -211,7 +215,7 @@ let g:pymode_lint=0
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size=1
 Bundle "Yggdroot/indentLine"
-let g:indentLine_char="⁞"
+" let g:indentLine_char="⁞"
 
 " The very heavy plugin.
 " Bundle 'Valloric/YouCompleteMe'
