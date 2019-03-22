@@ -144,6 +144,7 @@ au BufRead,BufNewFile *.cu set filetype=cpp
 au BufRead,BufNewFile *.vue set filetype=html |
             \ setlocal iskeyword+=- |
             \ setlocal ts=2 sw=2 
+au BufRead,BufNewFile *.js setlocal ts=2 sw=2 
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
@@ -214,7 +215,7 @@ let g:pymode_lint=0
 "hi IndentGuidesEven ctermbg=lightgrey
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size=1
-Bundle "Yggdroot/indentLine"
+" Bundle "Yggdroot/indentLine"
 " let g:indentLine_char="⁞"
 
 " The very heavy plugin.
