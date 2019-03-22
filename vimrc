@@ -140,6 +140,8 @@ set history=10000
 source $HOME/.vim/mymappings.vim
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
+au BufRead,BufNewFile *.vue set filetype=html |
+    \ setlocal iskeyword+=-
 au BufRead,BufNewFile *.cu set filetype=cpp
 au BufRead,BufNewFile *.vue set filetype=html |
             \ setlocal iskeyword+=- |
@@ -215,7 +217,6 @@ let g:pymode_lint=0
 "hi IndentGuidesEven ctermbg=lightgrey
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size=1
-" Bundle "Yggdroot/indentLine"
 " let g:indentLine_char="⁞"
 
 " The very heavy plugin.
