@@ -145,8 +145,8 @@ au BufRead,BufNewFile *.vue set filetype=html |
 au BufRead,BufNewFile *.cu set filetype=cpp
 au BufRead,BufNewFile *.vue set filetype=html |
             \ setlocal iskeyword+=- |
-            \ setlocal ts=2 sw=2 
-au BufRead,BufNewFile *.js setlocal ts=2 sw=2 
+            \ setlocal ts=3 sw=3 
+au BufRead,BufNewFile *.js setlocal ts=3 sw=3
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
