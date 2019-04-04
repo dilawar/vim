@@ -12,6 +12,7 @@ Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'godlygeek/tabular'
 Bundle "heavenshell/vim-pydocstring"
+Bundle "posva/vim-vue"
 
 " Grammarous 
 " Most of this config is from here:
