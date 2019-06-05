@@ -7,7 +7,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
-Bundle "scrooloose/nerdcommenter"
 Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'godlygeek/tabular'
@@ -77,7 +76,7 @@ Bundle 'coyotebush/vim-pweave'
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 "let g:syntastic_ignore_files = ['\m^/usr/', '\m\c\.h$']
-"let g:syntastic_cpp_compiler_options = ' -std=c++11 '
+"let g:syntastic_cpp_compiler_options = ' -std=c++14 '
 "let g:syntastic_python_checkers = ['pyflakes', 'flake8', 'pylint']  " ['flake8', 'pylint']
 "" let g:syntastic_python_pylint_args = '-E'
 "let g:syntastic_tex_checkers = ['chktex'] 
@@ -95,7 +94,7 @@ Bundle "w0rp/ale"
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
-let g:ale_cpp_gcc_options = '-std=c++11'
+let g:ale_cpp_gcc_options = '-std=c++14'
 let g:ale_tex_chktex_options = '-n26 -n18'
 let g:ale_linters = {
             \ 'python' : [ 'pyflakes'], 
@@ -112,6 +111,9 @@ Bundle 'ervandew/supertab'
 " let g:Tex_ViewRule = 'yap -1'
 "" Do not expand " to stupid quites.
 " let g:Tex_SmartKeyQuote = 0
+
+" vim alternate
+let g:alternateSearchPath="sfr:../source,sfr:../src,sfr:../include,sfr:../inc"
 
 
 " Unicode and latex
@@ -214,11 +216,6 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 source $HOME/.vim/methods.vim 
 
 
-" Python related settings
-autocmd BufRead *.py setlocal makeprg=pylint\ \ %:p
-let g:pymode_lint_write=0
-let g:pymode_lint=0
-
 ""indent guide
 "Bundle 'nathanaelkane/vim-indent-guides'
 "hi IndentGuidesOdd  ctermbg=white
@@ -301,6 +298,7 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " Nerd Commentor 
+Bundle 'scrooloose/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
@@ -373,4 +371,9 @@ function ExpandSnippetOrCarriageReturn()
     endif
 endfunction
 inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+
+" Python related settings
+au BufNewFile,BufRead *.py set comments+=b:#\'
+let g:pymode_lint_write=0
+let g:pymode_lint=0
 
