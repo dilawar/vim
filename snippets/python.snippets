@@ -283,7 +283,6 @@ snippet timestamp
 
 snippet argparse
 	import argparse
-	# Argument parser.
 	description = '''${0:description}'''
         parser = argparse.ArgumentParser(description=description)
         parser.add_argument('--input', '-i'
@@ -293,12 +292,6 @@ snippet argparse
         parser.add_argument('--output', '-o'
                 , required = False
                 , help = 'Output file'
-                )
-        parser.add_argument( '--debug', '-d'
-                , required = False
-                , default = 0
-                , type = int
-                , help = 'Enable debug mode. Default 0, debug level'
                 )
         class Args: pass 
         args = Args()
@@ -319,7 +312,7 @@ snippet savefigs
 	for i in plt.get_fignums():
             filename = __file__+"_{}.png".format(i)
             plt.figure(i)
-            print(("\t++ Storing figure {} to {}".format(i, filename)))
+            print("\t++ Storing figure {} to {}".format(i, filename))
             plt.savefig(filename)
 
 snippet cython
