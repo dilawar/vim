@@ -7,10 +7,10 @@ snippet uni
 		${0:representation}
 snippet from
 	from ${1:package} import ${0:module}
+
 # Module Docstring
 snippet docs
 	"""
-	File: ${1:`vim_snippets#Filename('$1.py', 'foo.py')`}
 	Author: `g:snips_author`
 	Email: `g:snips_email`
 	Github: `g:snips_github`
@@ -18,16 +18,10 @@ snippet docs
 	"""
 
 snippet header 
-	"""${0:`Filename('$1.py', 'unknown.py')`}: ${1}
-
-	"""
-		
 	__author__           = "`g:snips_author`"
-	__copyright__        = "Copyright 2017-, `g:snips_author`"
-	__version__          = "1.0.0"
+	__copyright__        = "Copyright 2019-, `g:snips_author`"
 	__maintainer__       = "`g:snips_author`"
 	__email__            = "`g:snips_email`"
-	__status__           = "Development"
 
 	import sys
 	import os
@@ -291,30 +285,31 @@ snippet argparse
 	import argparse
 	# Argument parser.
 	description = '''${0:description}'''
-	parser = argparse.ArgumentParser(description=description)
-	parser.add_argument('--input', '-i'
-	    , required = True
-	    , help = 'Input file'
-	    )
-	parser.add_argument('--output', '-o'
-	    , required = False
-	    , help = 'Output file'
-	    )
-	parser.add_argument( '--debug', '-d'
-	    , required = False
-	    , default = 0
-	    , type = int
-	    , help = 'Enable debug mode. Default 0, debug level'
-	    )
-	class Args: pass 
-	args = Args()
-	parser.parse_args(namespace=args)
+        parser = argparse.ArgumentParser(description=description)
+        parser.add_argument('--input', '-i'
+                , required = True
+                , help = 'Input file'
+                )
+        parser.add_argument('--output', '-o'
+                , required = False
+                , help = 'Output file'
+                )
+        parser.add_argument( '--debug', '-d'
+                , required = False
+                , default = 0
+                , type = int
+                , help = 'Enable debug mode. Default 0, debug level'
+                )
+        class Args: pass 
+        args = Args()
+        parser.parse_args(namespace=args)
 
 snippet arg
 	parser.add_argument('--${0:var}', '-${1:v}'
-	    , required = False
-	    , help = '${2:Help}'
-	    )
+                , required = False
+                , help = '${2:Help}'
+                )
+
 snippet arggroup
 	group = parser.add_mutually_exclusive_group()
 	group.add_argument("-${0:param1}", "--$0", help="${1}")
@@ -322,22 +317,20 @@ snippet arggroup
 
 snippet savefigs
 	for i in plt.get_fignums():
-		filename = __file__+"_{}.png".format(i)
-		plt.figure(i)
-		print(("\t++ Storing figure {} to {}".format(i, filename)))
-		plt.savefig(filename)
+            filename = __file__+"_{}.png".format(i)
+            plt.figure(i)
+            print(("\t++ Storing figure {} to {}".format(i, filename)))
+            plt.savefig(filename)
 
 snippet cython
 	"""${0:`Filename('$1.pyx', 'unknown.pyx')`}: ${1}
 
 	"""
 	__author__           = "`g:snips_author`"
-	__copyright__        = "Copyright 2013, Dilawar Singh"
-	__license__          = "GPL"
-	__version__          = "1.0.0"
+	__copyright__        = "Copyright 2019-, `g:snip_author`"
+	__license__          = "GPLv3"
 	__maintainer__       = "`g:snips_author`"
 	__email__            = "`g:snips_email`"
-	__status__           = "Development"
 
 	import sys
 	import os
