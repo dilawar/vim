@@ -131,7 +131,10 @@ nnoremap <C-l> :call unicoder#start(0)<CR>
 inoremap <C-l> <Esc>:call unicoder#start(1)<CR>
 vnoremap <C-l> :<C-u>call unicoder#selection()<CR>
 
-colorscheme solarized
+" shift+tab insert literal tab
+inoremap <S-Tab> <C-V><Tab>
+
+colorscheme default
 filetype plugin on
 filetype plugin indent on
 syntax on
