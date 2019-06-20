@@ -13,7 +13,7 @@ Bundle 'godlygeek/tabular'
 Bundle "heavenshell/vim-pydocstring"
 Bundle "posva/vim-vue"
 
-" clang-format
+" clang-format'
 Bundle "rhysd/vim-clang-format"
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
