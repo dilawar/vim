@@ -12,6 +12,7 @@ Bundle 'tpope/vim-dispatch'
 Bundle 'godlygeek/tabular'
 Bundle "heavenshell/vim-pydocstring"
 Bundle "posva/vim-vue"
+Bundle 'vimwiki/vimwiki'
 
 " clang-format'
 Bundle "rhysd/vim-clang-format"
