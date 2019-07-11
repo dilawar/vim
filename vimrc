@@ -35,10 +35,6 @@ let g:grammarous#use_vim_spelllang=1
 let g:grammarous#languagetool_cmd = 'languagetool'
 let g:grammarous#use_vim_spelllang = 1
 let g:grammarous#enable_spell_check = 1
-let g:grammarous#default_comments_only_filetypes = {
-            \ '*' : 1, 'help' : 0, 'markdown' : 0,
-            \ 'pandoc' : 0,
-            \ }
 nnoremap <silent> <buffer><leader>zg :GrammarousCheck<CR>
 nnoremap <silent> <buffer><leader>zr :GrammarousReset<CR>
 nmap <buffer>gn <Plug>(grammarous-move-to-next-error)
@@ -186,9 +182,6 @@ au BufRead,BufNewFile wscript set filetype=python
 au BufRead *.lyx syntax sync fromstart
 au BufRead,BufNewFile *.jinja2,*.jinja,*.html set ft=jinja
 
-" Make pandoc behave like tex
-au BufRead,BufNewFile *.md setlocal filetype=pandoc |
-    \ setlocal makeprg=md2pdf.sh\ % 
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
 au BufRead,BufNewFile *.pandoc setlocal spell spelllang=en
@@ -202,10 +195,8 @@ au BufEnter *.tex set nosmartindent
 " Blog related setting.
 au BufRead,BufNew *.blog setlocal spell spelllang=en 
 au BufRead,BufNew *.blog setlocal complete+=k
-au BufRead,BufNew *.md setlocal complete+=k
 au BufRead,BufNew *.md setlocal spell spelllang=en
 au BufRead,BufNew *.markdown setlocal complete+=k
-au BufRead,BufNew *.markdown setlocal syntax=markdown
 au BufRead,BufNew *.markdown setlocal spell spelllang=en
 " On tmp files do not wrap lines by inserting newline, wrap it without newline.
 au BufRead,BufNew *.tmp setlocal wrap linebreak nolist 
@@ -390,3 +381,5 @@ au BufNewFile,BufRead *.py set comments+=b:#\'
 let g:pymode_lint_write=0
 let g:pymode_lint=0
 
+" SOURCE: https://vim.fandom.com/wiki/Insert_current_filename
+:inoremap \fn <C-R>=expand("%:t")<CR>
