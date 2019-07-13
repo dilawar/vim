@@ -13,6 +13,8 @@ Bundle 'godlygeek/tabular'
 Bundle "heavenshell/vim-pydocstring"
 Bundle "posva/vim-vue"
 Bundle 'vimwiki/vimwiki'
+Bundle 'davidhalter/jedi-vim'
+
 
 " clang-format'
 Bundle "rhysd/vim-clang-format"
