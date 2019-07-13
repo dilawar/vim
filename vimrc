@@ -13,6 +13,8 @@ Bundle 'godlygeek/tabular'
 Bundle "heavenshell/vim-pydocstring"
 Bundle "posva/vim-vue"
 Bundle 'vimwiki/vimwiki'
+
+" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
 Bundle 'davidhalter/jedi-vim'
 
 
