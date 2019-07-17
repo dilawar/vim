@@ -16,7 +16,8 @@ Bundle 'vimwiki/vimwiki'
 
 " beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
 Bundle 'davidhalter/jedi-vim'
-
+let g:jedi#auto_initialization = 1
+let g:jedi#popup_on_dot = 0
 
 " clang-format'
 Bundle "rhysd/vim-clang-format"
