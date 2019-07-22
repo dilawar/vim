@@ -79,24 +79,24 @@ set statusline+=%*
 Bundle 'coyotebush/vim-pweave'
 
 """ Syntastic
-"Bundle 'vim-syntastic/syntastic'
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_ignore_files = ['\m^/usr/', '\m\c\.h$']
-"let g:syntastic_cpp_compiler_options = ' -std=c++14 '
-"let g:syntastic_python_checkers = ['pyflakes', 'flake8', 'pylint']  " ['flake8', 'pylint']
-"" let g:syntastic_python_pylint_args = '-E'
-"let g:syntastic_tex_checkers = ['chktex'] 
-"let g:syntastic_php_checkers = ['php'] 
-"let g:syntastic_tex_chktex_args =  '-n1 -n2 -n3 -n8 -n10 -n11 -n12 -n17 -n25 -n26 -n36 -n37'
-"" let g:syntastic_aggregate_errors = 1
-""let g:syntastic_mode_map = {
-""    \ "mode": "passive",
-""    \ "active_filetypes": ["ruby", "php"],
-""    \ "passive_filetypes": ["python"] }
-"map <F8> :SyntasticCheck<CR>
+Bundle 'vim-syntastic/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_ignore_files = ['\m^/usr/', '\m\c\.h$']
+let g:syntastic_cpp_compiler_options = ' -std=c++14 '
+let g:syntastic_python_checkers = ['pyflakes', 'flake8', 'pylint']  " ['flake8', 'pylint']
+let g:syntastic_python_pylint_args = '-E'
+let g:syntastic_tex_checkers = ['chktex'] 
+let g:syntastic_php_checkers = ['php'] 
+let g:syntastic_tex_chktex_args =  '-n1 -n2 -n3 -n8 -n10 -n11 -n12 -n17 -n25 -n26 -n36 -n37'
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_mode_map = {
+    \ "mode": "passive",
+    \ "active_filetypes": ["ruby", "php"],
+    \ "passive_filetypes": ["python"] }
+map <F8> :SyntasticCheck<CR>
 
 " ALE
 Bundle "w0rp/ale"
@@ -162,12 +162,10 @@ set history=10000
 source $HOME/.vim/mymappings.vim
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
-au BufRead,BufNewFile *.vue set filetype=html |
-    \ setlocal iskeyword+=-
 au BufRead,BufNewFile *.cu set filetype=cpp
 au BufRead,BufNewFile *.vue set filetype=html |
             \ setlocal iskeyword+=- |
-            \ setlocal ts=3 sw=3 
+            \ setlocal ts=2 sw=2 
 au BufRead,BufNewFile *.js setlocal ts=3 sw=3
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
