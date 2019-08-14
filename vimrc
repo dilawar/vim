@@ -168,6 +168,7 @@ au BufRead,BufNewFile *.cu set filetype=cpp
 au BufRead,BufNewFile *.vue set filetype=html |
             \ setlocal iskeyword+=- |
             \ setlocal ts=2 sw=2 
+au BufRead,BufNewFile *.php setlocal ts=4 sw=4
 au BufRead,BufNewFile *.js setlocal ts=3 sw=3
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
@@ -183,7 +184,7 @@ au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
 au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
 au BufRead,BufNewFile wscript set filetype=python 
 au BufRead *.lyx syntax sync fromstart
-au BufRead,BufNewFile *.jinja2,*.jinja,*.html set ft=jinja
+au BufRead,BufNewFile *.jinja2,*.jinja set ft=jinja
 
 
 au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
