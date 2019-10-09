@@ -37,10 +37,10 @@ let g:grammarous#disabled_rules={
             \ '*' : ['WHITESPACE_RULE', 'EN_QUOTES'],
             \ 'help' : ['WHITESPACE_RULE', 'EN_QUOTES', 'SENTENCE_WHITESPACE', 'UPPERCASE_SENTENCE_START'],
             \ }
-let g:grammarous#use_vim_spelllang=1
-let g:grammarous#languagetool_cmd = 'languagetool'
-let g:grammarous#use_vim_spelllang = 1
-let g:grammarous#enable_spell_check = 1
+" let g:grammarous#use_vim_spelllang=1
+" let g:grammarous#languagetool_cmd = 'languagetool'
+" let g:grammarous#use_vim_spelllang = 1
+" let g:grammarous#enable_spell_check = 1
 nnoremap <silent> <buffer><leader>zg :GrammarousCheck<CR>
 nnoremap <silent> <buffer><leader>zr :GrammarousReset<CR>
 nmap <buffer>gn <Plug>(grammarous-move-to-next-error)
