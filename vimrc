@@ -14,6 +14,7 @@ Bundle "heavenshell/vim-pydocstring"
 Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "stanangeloff/php.vim"
+Bundle "posva/vim-vue"
 
 " beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
 Bundle 'davidhalter/jedi-vim'
