@@ -11,7 +11,6 @@ Bundle 'itchyny/calendar.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'godlygeek/tabular'
 Bundle "heavenshell/vim-pydocstring"
-Bundle "posva/vim-vue"
 Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 
@@ -147,8 +146,7 @@ source $HOME/.vim/mymappings.vim
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.cu set filetype=cpp
-au BufRead,BufNewFile *.vue set filetype=html |
-            \ setlocal iskeyword+=- |
+au BufRead,BufNewFile *.vue setlocal iskeyword+=- |
             \ setlocal ts=2 sw=2 
 au BufRead,BufNewFile *.php setlocal ts=4 sw=4
 au BufRead,BufNewFile *.js setlocal ts=3 sw=3
