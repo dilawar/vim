@@ -15,6 +15,7 @@ Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "stanangeloff/php.vim"
 Bundle "posva/vim-vue"
+Bundle "alvan/vim-closetag"
 
 " beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
 Bundle 'davidhalter/jedi-vim'
