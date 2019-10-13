@@ -15,7 +15,10 @@ Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "stanangeloff/php.vim"
 Bundle "posva/vim-vue"
+
+" CloseTag
 Bundle "alvan/vim-closetag"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
 
 " beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
 Bundle 'davidhalter/jedi-vim'
