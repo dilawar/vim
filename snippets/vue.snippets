@@ -251,3 +251,38 @@ snippet popup
 	    </f7-block>
 	  </f7-page>
 	</f7-popup>
+
+snippet autocomplete
+	// Autocomplete.
+	app.autocomplete.create({
+	  inputEl : '#autocomplete_id',
+	  openIn: 'dropdown',
+	  //expandInput: true,
+	
+	  source: function(q, render)
+	  {
+	    const autocomplete = this;
+	    var results = [];
+	
+	    if(2 >= q.length)
+	    {
+	      render(results);
+	      return;
+	    }
+	
+	    autocomplete.preloaderShow();
+	
+	    self.promiseWithAuth('search/login/'+q)
+	      .then( (json) => {
+	        var res = JSON.parse(json).data;
+	        results = res.map(x=> x.login);
+	        autocomplete.preloaderHide();
+	        render(results);
+	      });
+	  },
+	  on: {
+	    change: function(val) {
+	      self.thisSpeaker.login = val[0];
+	    },
+	  },
+	});
