@@ -16,6 +16,9 @@ Bundle "tpope/vim-obsession"
 Bundle "stanangeloff/php.vim"
 Bundle "posva/vim-vue"
 
+" phpstan
+Bundle "phpstan/vim-phpstan"
+
 " CloseTag
 Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
@@ -110,13 +113,13 @@ Bundle 'coyotebush/vim-pweave'
 " ALE
 Bundle "w0rp/ale"
 let g:airline#extensions#ale#enabled = 1
-let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_cpp_gcc_options = '-std=c++14'
 let g:ale_tex_chktex_options = '-n26 -n18'
 let g:ale_linters = {
             \ 'python' : [ 'pyflakes'], 
-            \ 'php' : [ 'php -l'], 
+            \ 'php' : [ 'psalm', 'php'], 
             \}
 
 "" Fakeclip
@@ -248,6 +251,7 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set textwidth=80
+set colorcolumn=81
 set wrap
 set iskeyword+=_
 set autoread
