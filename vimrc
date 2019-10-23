@@ -23,10 +23,10 @@ Bundle "phpstan/vim-phpstan"
 Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
 
-" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
-Bundle 'davidhalter/jedi-vim'
-let g:jedi#auto_initialization = 1
-let g:jedi#popup_on_dot = 0
+"" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
+"Bundle 'davidhalter/jedi-vim'
+"let g:jedi#auto_initialization = 1
+"let g:jedi#popup_on_dot = 0
 
 " clang-format'
 Bundle "rhysd/vim-clang-format"
@@ -73,7 +73,6 @@ Bundle 'chrisbra/unicode.vim'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'lepture/vim-jinja'
 Bundle 'flazz/vim-colorschemes'
-Bundle 'lervag/vimtex'
 
 " This script increase/descreses etc a selected column
 Bundle 'vim-scripts/VisIncr'
@@ -126,13 +125,15 @@ let g:ale_linters = {
 Bundle "kana/vim-fakeclip"
 Bundle 'ervandew/supertab'
 
-"" vim-latexsuite mapping
+" NOTE: Using vimtex plugin.
+" " vim-latexsuite mapping
 " Bundle "vim-latex/vim-latex"
 " let g:tex_flavor='latex'
 " let g:Tex_DefaultTargetFormat='pdf'
 " let g:Tex_ViewRule = 'yap -1'
-"" Do not expand " to stupid quites.
+" " Do not expand " to stupid quites.
 " let g:Tex_SmartKeyQuote = 0
+Bundle 'lervag/vimtex'
 
 " vim alternate
 let g:alternateSearchPath="sfr:../source,sfr:../src,sfr:../include,sfr:../inc"
