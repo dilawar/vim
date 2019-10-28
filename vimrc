@@ -172,6 +172,9 @@ syntax enable
 set complete-=k
 set history=10000
 
+" Spellfile;
+set spellfile=~/.vim/myspell.en
+
 " Mappings
 source $HOME/.vim/mymappings.vim
 au BufNewFile *.snw read ~/Scripts/template.snw 
