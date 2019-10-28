@@ -173,7 +173,7 @@ set complete-=k
 set history=10000
 
 " Spellfile;
-set spellfile=~/.vim/myspell.en
+set spellfile=$HOME/.vim/en.utf-8.add
 
 " Mappings
 source $HOME/.vim/mymappings.vim
