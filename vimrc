@@ -70,6 +70,7 @@ let g:csv_no_conceal = 1
 
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
+Bundle 'arthurxavierx/vim-unicoder'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'lepture/vim-jinja'
 Bundle 'flazz/vim-colorschemes'
