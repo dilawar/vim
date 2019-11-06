@@ -70,10 +70,12 @@ let g:csv_no_conceal = 1
 
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
-Bundle 'arthurxavierx/vim-unicoder'
 Bundle 'easymotion/vim-easymotion'
 Bundle 'lepture/vim-jinja'
 Bundle 'flazz/vim-colorschemes'
+
+" Turn TeX symbols into unicode.
+Bundle 'arthurxavierx/vim-unicoder'
 
 " This script increase/descreses etc a selected column
 Bundle 'vim-scripts/VisIncr'
