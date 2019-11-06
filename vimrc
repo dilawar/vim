@@ -79,7 +79,7 @@ Bundle 'vim-scripts/VisIncr'
 Bundle "junegunn/vim-easy-align"
 
 " c-support
-Bundle 'WolfgangMehner/c-support'
+" Bundle 'WolfgangMehner/c-support'
 
 Bundle 'bling/vim-airline'
 set statusline+=%#warningmsg#
@@ -125,14 +125,7 @@ let g:ale_linters = {
 Bundle "kana/vim-fakeclip"
 Bundle 'ervandew/supertab'
 
-" NOTE: Using vimtex plugin.
-" " vim-latexsuite mapping
-" Bundle "vim-latex/vim-latex"
-" let g:tex_flavor='latex'
-" let g:Tex_DefaultTargetFormat='pdf'
-" let g:Tex_ViewRule = 'yap -1'
-" " Do not expand " to stupid quites.
-" let g:Tex_SmartKeyQuote = 0
+" vimtex
 Bundle 'lervag/vimtex'
 
 " vim alternate
