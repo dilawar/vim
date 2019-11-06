@@ -134,13 +134,6 @@ Bundle 'lervag/vimtex'
 " vim alternate
 let g:alternateSearchPath="sfr:../source,sfr:../src,sfr:../include,sfr:../inc"
 
-
-" Unicode and latex
-Bundle "joom/latex-unicoder.vim"
-nnoremap <C-l> :call unicoder#start(0)<CR>
-inoremap <C-l> <Esc>:call unicoder#start(1)<CR>
-vnoremap <C-l> :<C-u>call unicoder#selection()<CR>
-
 " shift+tab insert literal tab
 inoremap <S-Tab> <C-V><Tab>
 
