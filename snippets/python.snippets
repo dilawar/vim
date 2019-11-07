@@ -30,9 +30,9 @@ snippet header
 
 snippet matplotlib 
 	import matplotlib as mpl
-	# mpl.use( 'pgf' )
+	# mpl.use('pgf')
 	import matplotlib.pyplot as plt
-	mpl.style.use( ['bmh', 'fivethirtyeight'] )
+	mpl.style.use(['bmh', 'fivethirtyeight'])
 	
 snippet license
 	# This file is part of ${1:app} ${2}.
@@ -289,17 +289,17 @@ snippet argparse
 	parser.add_argument('--input', '-i'
 	        , required = True
 	        , help = 'Input file'
-	        )
+	       )
 	parser.add_argument('--output', '-o'
 	        , required = False
 	        , help = 'Output file'
-	        )
-	parser.add_argument( '--debug', '-d'
+	       )
+	parser.add_argument('--debug', '-d'
 	        , required = False
 	        , default = 0
 	        , type = int
 	        , help = 'Enable debug mode. Default 0, debug level'
-	        )
+	       )
 	class Args: pass 
 	args = Args()
 	parser.parse_args(namespace=args)
@@ -308,7 +308,7 @@ snippet arg
 	parser.add_argument('--${0:var}', '-${1:v}'
 	         , required = False
 	         , help = '${2:Help}'
-	         )
+	        )
 
 snippet arggroup
 	group = parser.add_mutually_exclusive_group()
@@ -381,39 +381,39 @@ snippet datadir
 
 snippet _debug
 	debug_level_ = 1
-	def debug__( msg, level = 1 ):
+	def debug__(msg, level = 1):
 	    # Print debug message depending on level
 	    global debug_level_ 
 	    if type(msg) == list: msg = '\n|- '.join(msg)
-	    if level >= debug_level_: print( msg )
+	    if level >= debug_level_: print(msg)
 
 snippet p
-	print( "${0}" )
+	print(f"${0}")
 
 snippet info 
-	print( f"[INFO ] ${0}" )
+	print(f"[INFO ] ${0}")
 
 snippet warn 
-	print( f"[WARN ] ${0}" )
+	print(f"[WARN ] ${0}", file=sys.stderr)
 
 snippet debug 
-	print( f"[DEBUG] ${0}" )
+	print(f"[DEBUG] ${0}")
 
 snippet error 
-	print( f"[ERROR] ${0}" )
+	print(f"[ERROR] ${0}", file=sys.stderr)
 
 snippet imshow 
-	plt.imshow( ${1:img}, interpolation = 'none', aspect = 'auto' )
+	plt.imshow(${1:img}, interpolation = 'none', aspect = 'auto')
 
 snippet grid
 	gridSize = (3, 2)
-	ax1 = plt.subplot2grid( gridSize, (0,0), colspan = 2 )
-	ax2 = plt.subplot2grid( gridSize, (1,0), colspan = 2 )
-	ax3 = plt.subplot2grid( gridSize, (2,0), colspan = 1 )
-	ax4 = plt.subplot2grid( gridSize, (2,1), colspan = 1 )
+	ax1 = plt.subplot2grid(gridSize, (0,0), colspan = 2)
+	ax2 = plt.subplot2grid(gridSize, (1,0), colspan = 2)
+	ax3 = plt.subplot2grid(gridSize, (2,0), colspan = 1)
+	ax4 = plt.subplot2grid(gridSize, (2,1), colspan = 1)
 
 snippet pypet
-	def run_experiment( traj ):
+	def run_experiment(traj):
 	     """Example of a sophisticated simulation that involves multiplying two values.
 
 	    """
@@ -422,11 +422,11 @@ snippet pypet
 	
 
 	# Create an environment that handles running our simulation
-	env = Environment( trajectory='Experiment'
+	env = Environment(trajectory='Experiment'
 	           , filename='./experiment.hdf5'
 	           , file_title='Experiment 1', #
 	           , comment = ''
-	           )
+	          )
 
 	# Get the trajectory from the environment
 	traj = env.trajectory
