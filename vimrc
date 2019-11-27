@@ -1,28 +1,28 @@
 set rtp+=~/.vim/bundle/vundle/ 
 call vundle#rc() 
 
-Plugin 'gmarik/vundle'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/DrawIt'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'vim-scripts/check-mutt-attachments.vim'
-Plugin 'itchyny/calendar.vim'
-Plugin 'tpope/vim-dispatch'
-Plugin 'godlygeek/tabular'
-Plugin "heavenshell/vim-pydocstring"
-Plugin 'vimwiki/vimwiki'
-Plugin "tpope/vim-obsession"
-Plugin "stanangeloff/php.vim"
-Plugin "posva/vim-vue"
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
+Bundle 'vim-scripts/DrawIt'
+Bundle 'vim-scripts/DoxygenToolkit.vim'
+Bundle 'vim-scripts/check-mutt-attachments.vim'
+Bundle 'itchyny/calendar.vim'
+Bundle 'tpope/vim-dispatch'
+Bundle 'godlygeek/tabular'
+Bundle "heavenshell/vim-pydocstring"
+Bundle 'vimwiki/vimwiki'
+Bundle "tpope/vim-obsession"
+Bundle "stanangeloff/php.vim"
+Bundle "posva/vim-vue"
 
 " Google Codefmt
 " (The latter must be installed before it can be used.)
-Plugin 'google/vim-maktaba'
-Plugin 'google/vim-codefmt'
+Bundle 'google/vim-maktaba'
+Bundle 'google/vim-codefmt'
 " Also add Glaive, which is used to configure codefmt's maktaba flags. See
 " `:help :Glaive` for usage.
-Plugin 'google/vim-glaive'
+Bundle 'google/vim-glaive'
 " ...
 call vundle#end()
 " the glaive#Install() should go after the "call vundle#end()"
@@ -32,24 +32,24 @@ Glaive codefmt plugin[mappings]
 Glaive codefmt google_java_executable="java -jar /path/to/google-java-format-VERSION-all-deps.jar"
 
 " phpstan
-Plugin "phpstan/vim-phpstan"
+Bundle "phpstan/vim-phpstan"
 
 " CloseTag
-Plugin "alvan/vim-closetag"
+Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
 
 "" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
-"Plugin 'davidhalter/jedi-vim'
+"Bundle 'davidhalter/jedi-vim'
 "let g:jedi#auto_initialization = 1
 "let g:jedi#popup_on_dot = 0
 
 " clang-format'
-" Plugin "rhysd/vim-clang-format"
+" Bundle "rhysd/vim-clang-format"
 
 " Grammarous 
 " Most of this config is from here:
 " https://github.com/icyd/nvim.init/blob/7b7348a4f6e54769837226715aef7607e4885661/config/plugins.vimrc
-Plugin "rhysd/vim-grammarous"
+Bundle "rhysd/vim-grammarous"
 let g:grammarous#disabled_rules={
             \ '*' : ['WHITESPACE_RULE', 'EN_QUOTES'],
             \ 'help' : ['WHITESPACE_RULE', 'EN_QUOTES', 'SENTENCE_WHITESPACE', 'UPPERCASE_SENTENCE_START'],
@@ -66,46 +66,46 @@ nmap <buffer>gr <Plug>(grammarous-move-to-info-window)r
 nmap <buffer>gF <Plug>(grammarous-move-to-info-window)f
 nmap <buffer>gR <Plug>(grammarous-move-to-info-window)R
 
-Plugin "dpelle/vim-LanguageTool"
+Bundle "dpelle/vim-LanguageTool"
 let g:languagetool_jar='~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.1/languagetool-commandline.jar'
 let g:languagetool_lang='en'
 
 " csv .
-Plugin 'chrisbra/csv.vim'
+Bundle 'chrisbra/csv.vim'
 let g:csv_no_conceal = 1
 
 " vim-cmake
-Plugin "vhdirk/vim-cmake"
+Bundle "vhdirk/vim-cmake"
 
 " tcomment slows things down quite a lot.
-" Plugin "tomtom/tcomment_vim"
+" Bundle "tomtom/tcomment_vim"
 
-Plugin "ctrlpvim/ctrlp.vim"
-Plugin 'chrisbra/unicode.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'lepture/vim-jinja'
-Plugin 'flazz/vim-colorschemes'
+Bundle "ctrlpvim/ctrlp.vim"
+Bundle 'chrisbra/unicode.vim'
+Bundle 'easymotion/vim-easymotion'
+Bundle 'lepture/vim-jinja'
+Bundle 'flazz/vim-colorschemes'
 
 " Turn TeX symbols into unicode.
-Plugin 'dilawar/vim-unicoder'
+Bundle 'dilawar/vim-unicoder'
 
 " This script increase/descreses etc a selected column
-Plugin 'vim-scripts/VisIncr'
-Plugin "junegunn/vim-easy-align"
+Bundle 'vim-scripts/VisIncr'
+Bundle "junegunn/vim-easy-align"
 
 " c-support
-Plugin 'WolfgangMehner/c-support'
+Bundle 'WolfgangMehner/c-support'
 
-Plugin 'bling/vim-airline'
+Bundle 'bling/vim-airline'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " pweave support.
-Plugin 'coyotebush/vim-pweave'
+Bundle 'coyotebush/vim-pweave'
 
 """ Syntastic
-" Plugin 'vim-syntastic/syntastic'
+" Bundle 'vim-syntastic/syntastic'
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
@@ -125,7 +125,7 @@ Plugin 'coyotebush/vim-pweave'
 " map <F8> :SyntasticCheck<CR>
 
 " ALE
-" Plugin "w0rp/ale"
+" Bundle "w0rp/ale"
 let g:airline#extensions#ale#enabled = 1
 " let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
@@ -137,11 +137,11 @@ let g:ale_linters = {
             \}
 
 "" Fakeclip
-Plugin "kana/vim-fakeclip"
-Plugin 'ervandew/supertab'
+Bundle "kana/vim-fakeclip"
+Bundle 'ervandew/supertab'
 
 " vimtex
-Plugin 'lervag/vimtex'
+Bundle 'lervag/vimtex'
 
 " vim alternate
 let g:alternateSearchPath="sfr:../source,sfr:../src,sfr:../include,sfr:../inc"
@@ -240,7 +240,7 @@ source $HOME/.vim/methods.vim
 
 
 ""indent guide
-"Plugin 'nathanaelkane/vim-indent-guides'
+"Bundle 'nathanaelkane/vim-indent-guides'
 "hi IndentGuidesOdd  ctermbg=white
 "hi IndentGuidesEven ctermbg=lightgrey
 "let g:indent_guides_enable_on_vim_startup = 1
@@ -248,7 +248,7 @@ source $HOME/.vim/methods.vim
 " let g:indentLine_char="⁞"
 
 " The very heavy plugin.
-" Plugin 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
 " default
 set softtabstop=4
@@ -322,7 +322,7 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " Nerd Commentor 
-Plugin 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
@@ -355,9 +355,9 @@ let g:DoxygenToolkit_authorName="Dilawar Singh <dilawars@ncbs.res.in>"
 let g:DoxygenToolkit_licenseTag="GNU-GPL v3"  
 
 " Pandoc 
-Plugin "vim-pandoc/vim-pandoc-syntax"
-Plugin "vim-pandoc/vim-pandoc"
-Plugin "vim-pandoc/vim-pandoc-after"
+Bundle "vim-pandoc/vim-pandoc-syntax"
+Bundle "vim-pandoc/vim-pandoc"
+Bundle "vim-pandoc/vim-pandoc-after"
 let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding", "formatting" ]
 let g:pandoc#formatting#mode="sA"
@@ -376,7 +376,7 @@ set conceallevel=0
 
 """ SnipMate 
 """ NOTE: Using ultisnips
-Plugin 'SirVer/ultisnips'
+Bundle 'SirVer/ultisnips'
 let g:snips_author="Dilawar Singh"
 let g:snips_email="dilawars@ncbs.res.in"
 let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
