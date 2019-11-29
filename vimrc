@@ -251,8 +251,8 @@ source $HOME/.vim/methods.vim
 " Bundle 'Valloric/YouCompleteMe'
 
 " default
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 set textwidth=80
