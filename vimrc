@@ -2,7 +2,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc() 
 
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-surround'
+Bundle 'machakann/vim-sandwich'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
@@ -200,13 +200,6 @@ au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
 au BufRead,BufNewFile wscript set filetype=python 
 au BufRead *.lyx syntax sync fromstart
 au BufRead,BufNewFile *.jinja2,*.jinja set ft=jinja
-
-
-au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
-au BufRead,BufNewFile *.pandoc setlocal spell spelllang=en
-let noweb_backend="tex"
-let noweb_language="haskell"
-let noweb_fold_code=1
 
 au BufRead,BufNewFile *.tex set spell spelllang=en
 au BufEnter *.tex set nosmartindent
