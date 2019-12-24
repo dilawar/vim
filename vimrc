@@ -5,31 +5,16 @@ Bundle 'gmarik/vundle'
 Bundle 'machakann/vim-sandwich'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
-Bundle 'vim-scripts/DoxygenToolkit.vim'
+" Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'itchyny/calendar.vim'
-Bundle 'tpope/vim-dispatch'
-Bundle 'godlygeek/tabular'
+" Bundle 'tpope/vim-dispatch'
+" Bundle 'godlygeek/tabular'
 Bundle "heavenshell/vim-pydocstring"
-Bundle 'vimwiki/vimwiki'
+" Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "stanangeloff/php.vim"
 Bundle "posva/vim-vue"
-
-" Google Codefmt
-" (The latter must be installed before it can be used.)
-Bundle 'google/vim-maktaba'
-Bundle 'google/vim-codefmt'
-" Also add Glaive, which is used to configure codefmt's maktaba flags. See
-" `:help :Glaive` for usage.
-Bundle 'google/vim-glaive'
-" ...
-call vundle#end()
-" the glaive#Install() should go after the "call vundle#end()"
-call glaive#Install()
-" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
-Glaive codefmt plugin[mappings]
-Glaive codefmt google_java_executable="java -jar /path/to/google-java-format-VERSION-all-deps.jar"
 
 " phpstan
 Bundle "phpstan/vim-phpstan"
@@ -39,9 +24,9 @@ Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
 
 "" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
-"Bundle 'davidhalter/jedi-vim'
-"let g:jedi#auto_initialization = 1
-"let g:jedi#popup_on_dot = 0
+Bundle 'davidhalter/jedi-vim'
+let g:jedi#auto_initialization = 1
+let g:jedi#popup_on_dot = 1
 
 " clang-format'
 " Bundle "rhysd/vim-clang-format"
