@@ -26,7 +26,10 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
 "" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
 Bundle 'davidhalter/jedi-vim'
 let g:jedi#auto_initialization = 1
-let g:jedi#popup_on_dot = 1
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#show_call_signatures = "1"
+
 
 " clang-format'
 " Bundle "rhysd/vim-clang-format"
