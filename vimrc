@@ -13,11 +13,13 @@ Bundle 'godlygeek/tabular'
 Bundle "heavenshell/vim-pydocstring"
 Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
-Bundle "stanangeloff/php.vim"
 Bundle "posva/vim-vue"
 
-" phpstan
+" php
 Bundle "phpstan/vim-phpstan"
+Bundle "stanangeloff/php.vim"
+Bundle "captbaritone/better-indent-support-for-php-with-html"
+
 
 " CloseTag
 Bundle "alvan/vim-closetag"
