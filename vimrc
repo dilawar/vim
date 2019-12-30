@@ -2,16 +2,16 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc() 
 
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-surround'
+Bundle 'machakann/vim-sandwich'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
-Bundle 'vim-scripts/DoxygenToolkit.vim'
+" Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'itchyny/calendar.vim'
-Bundle 'tpope/vim-dispatch'
-Bundle 'godlygeek/tabular'
+" Bundle 'tpope/vim-dispatch'
+" Bundle 'godlygeek/tabular'
 Bundle "heavenshell/vim-pydocstring"
-Bundle 'vimwiki/vimwiki'
+" Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "posva/vim-vue"
 
@@ -26,18 +26,15 @@ Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
 
 "" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
-"Bundle 'davidhalter/jedi-vim'
-"let g:jedi#auto_initialization = 1
-"let g:jedi#popup_on_dot = 0
+Bundle 'davidhalter/jedi-vim'
+let g:jedi#auto_initialization = 1
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#show_call_signatures = "1"
+
 
 " clang-format'
-Bundle "rhysd/vim-clang-format"
-let g:clang_format#style_options = {
-            \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "true",
-            \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "Standard" : "C++11",
-            \ "BreakBeforeBraces" : "Stroustrup"}
+" Bundle "rhysd/vim-clang-format"
 
 " Grammarous 
 " Most of this config is from here:
@@ -67,6 +64,9 @@ let g:languagetool_lang='en'
 Bundle 'chrisbra/csv.vim'
 let g:csv_no_conceal = 1
 
+" vim-cmake
+Bundle "vhdirk/vim-cmake"
+
 " tcomment slows things down quite a lot.
 " Bundle "tomtom/tcomment_vim"
 
@@ -77,14 +77,14 @@ Bundle 'lepture/vim-jinja'
 Bundle 'flazz/vim-colorschemes'
 
 " Turn TeX symbols into unicode.
-Bundle 'arthurxavierx/vim-unicoder'
+Bundle 'dilawar/vim-unicoder'
 
 " This script increase/descreses etc a selected column
 Bundle 'vim-scripts/VisIncr'
 Bundle "junegunn/vim-easy-align"
 
 " c-support
-" Bundle 'WolfgangMehner/c-support'
+Bundle 'WolfgangMehner/c-support'
 
 Bundle 'bling/vim-airline'
 set statusline+=%#warningmsg#
@@ -115,7 +115,7 @@ Bundle 'coyotebush/vim-pweave'
 " map <F8> :SyntasticCheck<CR>
 
 " ALE
-Bundle "w0rp/ale"
+" Bundle "w0rp/ale"
 let g:airline#extensions#ale#enabled = 1
 " let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
@@ -191,13 +191,6 @@ au BufRead,BufNewFile wscript set filetype=python
 au BufRead *.lyx syntax sync fromstart
 au BufRead,BufNewFile *.jinja2,*.jinja set ft=jinja
 
-
-au BufRead,BufNewFile *.pandoc setlocal filetype=pandoc
-au BufRead,BufNewFile *.pandoc setlocal spell spelllang=en
-let noweb_backend="tex"
-let noweb_language="haskell"
-let noweb_fold_code=1
-
 au BufRead,BufNewFile *.tex set spell spelllang=en
 au BufEnter *.tex set nosmartindent
 
@@ -241,8 +234,8 @@ source $HOME/.vim/methods.vim
 " Bundle 'Valloric/YouCompleteMe'
 
 " default
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 set textwidth=80
