@@ -18,7 +18,7 @@ Bundle "posva/vim-vue"
 " php
 Bundle "phpstan/vim-phpstan"
 Bundle "stanangeloff/php.vim"
-Bundle "captbaritone/better-indent-support-for-php-with-html"
+Bundle "dilawar/better-indent-support-for-php-with-html"
 
 
 " CloseTag
