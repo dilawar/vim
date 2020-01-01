@@ -226,7 +226,7 @@ source $HOME/.vim/methods.vim
 "hi IndentGuidesEven ctermbg=lightgrey
 "let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size=1
-" let g:indentLine_char="⁞"
+"let g:indentLine_char="⁞"
 
 " The very heavy plugin.
 " Bundle 'Valloric/YouCompleteMe'
@@ -236,8 +236,9 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
-set textwidth=80
-set colorcolumn=81
+set textwidth=79
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 set wrap
 set iskeyword+=_
 set autoread
