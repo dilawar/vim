@@ -21,21 +21,20 @@ snippet transition
 
 snippet vbase
 	<template>
-          <div>
-          </div>
+	  <div>
+	  </div>
 	</template>
 	<script>
-        export default{
-          ${0}
-        }
+	export default{
+	  ${0}
+	}
 	</script>
-
+	
 	<style scoped>
 	</style>
 
 snippet vimport:c
 	import ${1:Name} from './components/$1.vue';
-
 	export default {
 		components: {
 			$1
@@ -62,7 +61,6 @@ snippet vanim:js:el
 	  @after-leave="afterLeave"
 	  @leave-cancelled="leaveCancelled"
 	  :css="false">
-
 	 </transition>
 
 snippet vanim:js:method
