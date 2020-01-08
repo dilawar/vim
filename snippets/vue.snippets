@@ -21,19 +21,16 @@ snippet transition
 
 snippet vbase
 	<template>
-		<div>
-
-		</div>
+          <div>
+          </div>
 	</template>
-
 	<script>
-		export default{
-			${0}
-		}
+        export default{
+          ${0}
+        }
 	</script>
 
 	<style scoped>
-
 	</style>
 
 snippet vimport:c
@@ -251,6 +248,14 @@ snippet popup
 	    </f7-block>
 	  </f7-page>
 	</f7-popup>
+
+snippet texteditor
+	<f7-list-input label="Description (optional)"
+	               :value="thisBooking.description"
+	               :textEditorParams="{mode: 'keyboard-toolbar'}"
+	               @texteditor:change="(v)=>thisBooking.description=v"
+	               type="texteditor">
+	</f7-list-input>
 
 snippet autocomplete
 	// Autocomplete.
