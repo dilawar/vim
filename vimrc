@@ -21,9 +21,10 @@ Bundle "stanangeloff/php.vim"
 Bundle "dilawar/better-indent-support-for-php-with-html"
 
 
-" CloseTag
+" CloseTag and matching
 Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
+runtime macros/matchit.vim
 
 "" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
 Bundle 'davidhalter/jedi-vim'
@@ -339,14 +340,14 @@ let g:DoxygenToolkit_authorName="Dilawar Singh <dilawars@ncbs.res.in>"
 let g:DoxygenToolkit_licenseTag="GNU-GPL v3"  
 
 " Pandoc 
-Bundle "vim-pandoc/vim-pandoc-syntax"
 Bundle "vim-pandoc/vim-pandoc"
+Bundle "vim-pandoc/vim-pandoc-syntax"
 Bundle "vim-pandoc/vim-pandoc-after"
-let g:pandoc#biblio#use_bibtool=1
+" let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding", "formatting" ]
 let g:pandoc#formatting#mode="sA"
 let g:pandoc#spell#enabled=1
-let g:pandoc#after#modules#enabled=["supertab"]
+" let g:pandoc#after#modules#enabled=["supertab"]
 let g:pandoc#syntax#conceal#use = 0
 
 " VIMRC
