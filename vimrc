@@ -24,7 +24,9 @@ Bundle "dilawar/better-indent-support-for-php-with-html"
 " CloseTag and matching
 Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
+
 Bundle 'andymass/vim-matchup'
+" let loaded_matchit=1
 
 " Fixup to pandoc template $if(key)$ $endif(key)$ syntax etc.
 " FROM: https://stackoverflow.com/a/34645680/1805129
