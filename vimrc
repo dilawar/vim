@@ -24,7 +24,18 @@ Bundle "dilawar/better-indent-support-for-php-with-html"
 " CloseTag and matching
 Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
-runtime macros/matchit.vim
+Bundle 'andymass/vim-matchup'
+
+" Fixup to pandoc template $if(key)$ $endif(key)$ syntax etc.
+" FROM: https://stackoverflow.com/a/34645680/1805129
+" This gets rid of the nasty _ italic bug in tpope's vim-markdown
+" block $$...$$
+syn region math start=/\$\$/ end=/\$\$/
+" inline math
+syn match math '\$[^$].\{-}\$'
+
+" actually highlight the region we defined as "math"
+hi link math Statement
 
 "" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
 Bundle 'davidhalter/jedi-vim'
