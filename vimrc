@@ -1,3 +1,4 @@
+set nocompatible
 set rtp+=~/.vim/bundle/vundle/ 
 call vundle#rc() 
 
@@ -25,8 +26,9 @@ Bundle "dilawar/better-indent-support-for-php-with-html"
 Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
 
-Bundle 'andymass/vim-matchup'
-let loaded_matchit=1
+" Bundle 'andymass/vim-matchup'
+" Bundle 'tmhedberg/matchit'
+" let loaded_matchit=1
 
 " Fixup to pandoc template $if(key)$ $endif(key)$ syntax etc.
 " FROM: https://stackoverflow.com/a/34645680/1805129
