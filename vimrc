@@ -3,7 +3,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc() 
 
 Bundle 'gmarik/vundle'
-Bundle 'machakann/vim-sandwich'
+Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
 " Bundle 'vim-scripts/DoxygenToolkit.vim'
