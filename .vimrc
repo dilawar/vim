@@ -58,6 +58,8 @@ set complete-=k
 syntax enable
 
 " c-support
+set errorformat+=%f:%l:\ %m
+set errorformat^=%-G%f:%l:\ warning:%m
 set makeprg=make
 if filereadable("build_me.sh")
     set makeprg=./build_me.sh
@@ -143,10 +145,6 @@ colorscheme torte
 set cc=+1
 hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
-" c-support
-
-set errorformat+=%f:%l:\ %m
-set errorformat^=%-G%f:%l:\ warning:%m
 
 source $HOME/.vim/methods.vim 
 

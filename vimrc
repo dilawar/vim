@@ -100,7 +100,7 @@ Bundle 'vim-scripts/VisIncr'
 Bundle "junegunn/vim-easy-align"
 
 " c-support
-Bundle 'WolfgangMehner/c-support'
+" Bundle 'WolfgangMehner/c-support'
 
 Bundle 'bling/vim-airline'
 set statusline+=%#warningmsg#
