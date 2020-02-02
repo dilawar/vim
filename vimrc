@@ -19,6 +19,7 @@ Bundle "posva/vim-vue"
 " php
 Bundle "phpstan/vim-phpstan"
 Bundle "stanangeloff/php.vim"
+Bundle "stephpy/vim-php-cs-fixer"
 Bundle "dilawar/better-indent-support-for-php-with-html"
 
 
@@ -131,16 +132,17 @@ Bundle 'coyotebush/vim-pweave'
 " map <F8> :SyntasticCheck<CR>
 
 " ALE
-" Bundle "w0rp/ale"
-let g:airline#extensions#ale#enabled = 1
+Bundle "w0rp/ale"
+" let g:airline#extensions#ale#enabled = 1
 " let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+let g:ale_fix_on_save = 1
 let g:ale_cpp_gcc_options = '-std=c++14'
 let g:ale_tex_chktex_options = '-n26 -n18'
-let g:ale_linters = {
-            \ 'python' : [ 'pyflakes'], 
-            \ 'php' : [ 'psalm', 'php'], 
-            \}
+"let g:ale_linters = {
+"            \ 'python' : [ 'pyflakes'], 
+"            \ 'php' : [ 'psalm', 'php'], 
+"            \}
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
