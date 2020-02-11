@@ -252,8 +252,8 @@ source $HOME/.vim/methods.vim
 " Bundle 'Valloric/YouCompleteMe'
 
 " default
-set softtabstop=2
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set smarttab
 set textwidth=79
@@ -264,7 +264,6 @@ set iskeyword+=_
 set autoread
 set showmatch
 set errorbells
-set backspace=2 "
 " Create backup of all files.
 set backup
 set backupdir=~/vim-backup/,./.backup,/tmp,.
