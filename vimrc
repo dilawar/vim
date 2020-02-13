@@ -49,7 +49,6 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
 
-
 " clang-format'
 " Bundle "rhysd/vim-clang-format"
 
@@ -180,6 +179,7 @@ set fileencoding=utf-8
 syntax enable
 set complete-=k
 set history=10000
+set backspace=indent,eol,start
 
 " Spellfile;
 set spellfile=$HOME/.vim/en.utf-8.add
@@ -297,16 +297,6 @@ set clipboard=unnamedplus
 :cabbrev pz Pz
 :cabbrev px Px
 :cabbrev pv Pv
-
-augroup nonvim
-   au!
-   au BufRead *.png,*.jpg,*.pdf,*.gif,*.xls* sil exe "!open " . shellescape(expand("%:p")) | bd | let &ft=&ft
-   au BufRead *.ppt*,*.doc*,*.rtf let g:output_pdf = shellescape(expand("%:r") . ".pdf")
-   au BufRead *.ppt*,*.doc*,*.rtf sil exe "!/home/dilawar/Scripts/any2pdf " . shellescape(expand("%:p"))
-   au BufRead *.ppt*,*.doc*,*.rtf sil exe "!open " . g:output_pdf | bd | let &ft=&ft
-augroup end
-
-
 
 " For mac
 set clipboard=unnamed
