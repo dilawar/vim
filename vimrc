@@ -22,6 +22,8 @@ Bundle "stanangeloff/php.vim"
 Bundle "stephpy/vim-php-cs-fixer"
 Bundle "dilawar/better-indent-support-for-php-with-html"
 
+Bundle "luochen1990/rainbow"
+let g:rainbow_active = 1
 
 " CloseTag and matching
 Bundle "alvan/vim-closetag"
@@ -156,7 +158,7 @@ let g:alternateSearchPath="sfr:../source,sfr:../src,sfr:../include,sfr:../inc"
 " shift+tab insert literal tab
 inoremap <S-Tab> <C-V><Tab>
 
-colorscheme default
+colorscheme monochrome
 filetype plugin on
 filetype plugin indent on
 syntax on
@@ -183,6 +185,7 @@ set backspace=indent,eol,start
 
 " Spellfile;
 set spellfile=$HOME/.vim/en.utf-8.add
+
 
 " Mappings
 source $HOME/.vim/mymappings.vim
