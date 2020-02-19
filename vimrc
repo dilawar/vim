@@ -90,9 +90,9 @@ Bundle "vhdirk/vim-cmake"
 
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
-Bundle 'easymotion/vim-easymotion'
+" Bundle 'easymotion/vim-easymotion'
 Bundle 'lepture/vim-jinja'
-Bundle 'flazz/vim-colorschemes'
+" Bundle 'flazz/vim-colorschemes'
 
 " Turn TeX symbols into unicode.
 Bundle 'dilawar/vim-unicoder'
@@ -104,7 +104,7 @@ Bundle "junegunn/vim-easy-align"
 " c-support
 " Bundle 'WolfgangMehner/c-support'
 
-Bundle 'bling/vim-airline'
+" Bundle 'bling/vim-airline'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -140,10 +140,10 @@ let g:ale_lint_on_enter = 0
 let g:ale_fix_on_save = 1
 let g:ale_cpp_gcc_options = '-std=c++14'
 let g:ale_tex_chktex_options = '-n26 -n18'
-"let g:ale_linters = {
-"            \ 'python' : [ 'pyflakes'], 
-"            \ 'php' : [ 'psalm', 'php'], 
-"            \}
+let g:ale_linters = {
+            \ 'python' : [ 'pyflakes'], 
+            \ 'php' : [ 'psalm', 'php'], 
+            \}
 
 "" Fakeclip
 Bundle "kana/vim-fakeclip"
@@ -158,7 +158,7 @@ let g:alternateSearchPath="sfr:../source,sfr:../src,sfr:../include,sfr:../inc"
 " shift+tab insert literal tab
 inoremap <S-Tab> <C-V><Tab>
 
-colorscheme monochrome
+colorscheme default
 filetype plugin on
 filetype plugin indent on
 syntax on
@@ -316,7 +316,7 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " Nerd Commentor 
-Bundle 'scrooloose/nerdcommenter'
+" Bundle 'scrooloose/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
