@@ -12,7 +12,7 @@ Bundle 'itchyny/calendar.vim'
 " Bundle 'tpope/vim-dispatch'
 " Bundle 'godlygeek/tabular'
 Bundle "heavenshell/vim-pydocstring"
-" Bundle 'vimwiki/vimwiki'
+Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "posva/vim-vue"
 
