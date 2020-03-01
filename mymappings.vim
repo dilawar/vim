@@ -129,3 +129,9 @@ autocmd FileType markdown |
       \hi def link markdownBoldDelimiter       NONE |
       \hi def link markdownBoldItalic          NONE |
       \hi def link markdownBoldItalicDelimiter NONE
+
+" boxes
+vmap ,mc !boxes -d c-cmt<CR>
+nmap ,mc !!boxes -d c-cmt<CR>
+vmap ,xc !boxes -d c-cmt -r<CR>
+nmap ,xc !!boxes -d c-cmt -r<CR>

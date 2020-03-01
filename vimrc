@@ -54,6 +54,12 @@ let g:jedi#show_call_signatures = "1"
 
 " clang-format'
 Bundle "rhysd/vim-clang-format"
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "C++11",
+            \ "BreakBeforeBraces" : "Stroustrup"}
 
 Bundle "dpelle/vim-LanguageTool"
 let g:languagetool_jar='~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.1/languagetool-commandline.jar'
@@ -66,7 +72,7 @@ Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
 " Bundle 'easymotion/vim-easymotion'
 Bundle 'lepture/vim-jinja'
-" Bundle 'flazz/vim-colorschemes'
+Bundle 'flazz/vim-colorschemes'
 
 " Turn TeX symbols into unicode.
 Bundle 'dilawar/vim-unicoder'
@@ -76,18 +82,18 @@ Bundle 'vim-scripts/VisIncr'
 Bundle "junegunn/vim-easy-align"
 
 " c-support
-" Bundle 'WolfgangMehner/c-support'
+Bundle 'WolfgangMehner/c-support'
 
 
 " Airline
 Bundle 'bling/vim-airline'
 
 Bundle "kristijanhusak/vim-hybrid-material"
-set background=light
-colorscheme hybrid_material
-let g:enable_bold_font=1
-let g:hybrid_transparent_background=1
-let g:airline_theme = "hybrid"
+colorscheme materialbox
+set background=dark
+" let g:enable_bold_font=1
+" let g:hybrid_transparent_background=1
+" let g:airline_theme = "hybrid"
 
 " pweave support.
 Bundle 'coyotebush/vim-pweave'
