@@ -1,5 +1,6 @@
 set nocompatible
 set rtp+=~/.vim/bundle/vundle/ 
+
 call vundle#rc() 
 
 Bundle 'gmarik/vundle'
@@ -52,41 +53,14 @@ let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
 
 " clang-format'
-" Bundle "rhysd/vim-clang-format"
-
-" Grammarous 
-" Most of this config is from here:
-" https://github.com/icyd/nvim.init/blob/7b7348a4f6e54769837226715aef7607e4885661/config/plugins.vimrc
-Bundle "rhysd/vim-grammarous"
-let g:grammarous#disabled_rules={
-            \ '*' : ['WHITESPACE_RULE', 'EN_QUOTES'],
-            \ 'help' : ['WHITESPACE_RULE', 'EN_QUOTES', 'SENTENCE_WHITESPACE', 'UPPERCASE_SENTENCE_START'],
-            \ }
-" let g:grammarous#use_vim_spelllang=1
-" let g:grammarous#languagetool_cmd = 'languagetool'
-" let g:grammarous#use_vim_spelllang = 1
-" let g:grammarous#enable_spell_check = 1
-nnoremap <silent> <buffer><leader>zg :GrammarousCheck<CR>
-nnoremap <silent> <buffer><leader>zr :GrammarousReset<CR>
-nmap <buffer>gn <Plug>(grammarous-move-to-next-error)
-nmap <buffer>gp <Plug>(grammarous-move-to-previous-error)
-nmap <buffer>gr <Plug>(grammarous-move-to-info-window)r
-nmap <buffer>gF <Plug>(grammarous-move-to-info-window)f
-nmap <buffer>gR <Plug>(grammarous-move-to-info-window)R
+Bundle "rhysd/vim-clang-format"
 
 Bundle "dpelle/vim-LanguageTool"
 let g:languagetool_jar='~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.1/languagetool-commandline.jar'
 let g:languagetool_lang='en'
 
-" csv .
-Bundle 'chrisbra/csv.vim'
-let g:csv_no_conceal = 1
-
 " vim-cmake
 Bundle "vhdirk/vim-cmake"
-
-" tcomment slows things down quite a lot.
-" Bundle "tomtom/tcomment_vim"
 
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
@@ -104,38 +78,24 @@ Bundle "junegunn/vim-easy-align"
 " c-support
 " Bundle 'WolfgangMehner/c-support'
 
-" Bundle 'bling/vim-airline'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+
+" Airline
+Bundle 'bling/vim-airline'
+
+Bundle "kristijanhusak/vim-hybrid-material"
+set background=light
+colorscheme hybrid_material
+let g:enable_bold_font=1
+let g:hybrid_transparent_background=1
+let g:airline_theme = "hybrid"
 
 " pweave support.
 Bundle 'coyotebush/vim-pweave'
 
-""" Syntastic
-" Bundle 'vim-syntastic/syntastic'
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_ignore_files = ['\m^/usr/', '\m\c\.h$']
-" let g:syntastic_cpp_compiler_options = ' -std=c++14 '
-" let g:syntastic_python_checkers = ['pyflakes', 'flake8', 'pylint']  " ['flake8', 'pylint']
-" let g:syntastic_python_pylint_args = '-E'
-" let g:syntastic_tex_checkers = ['chktex']
-" let g:syntastic_php_checkers = ['php']
-" let g:syntastic_tex_chktex_args =  '-n1 -n2 -n3 -n8 -n10 -n11 -n12 -n17 -n25 -n26 -n36 -n37'
-" let g:syntastic_aggregate_errors = 1
-" let g:syntastic_mode_map = {
-    " \ "mode": "passive",
-    " \ "active_filetypes": ["ruby", "php"],
-    " \ "passive_filetypes": ["python"] }
-" map <F8> :SyntasticCheck<CR>
-
 " ALE
 Bundle "w0rp/ale"
-" let g:airline#extensions#ale#enabled = 1
-" let g:ale_lint_on_text_changed = 'never'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_fix_on_save = 1
 let g:ale_cpp_gcc_options = '-std=c++14'
@@ -158,7 +118,6 @@ let g:alternateSearchPath="sfr:../source,sfr:../src,sfr:../include,sfr:../inc"
 " shift+tab insert literal tab
 inoremap <S-Tab> <C-V><Tab>
 
-colorscheme default
 filetype plugin on
 filetype plugin indent on
 syntax on
