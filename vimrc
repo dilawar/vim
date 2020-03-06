@@ -281,7 +281,7 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " Nerd Commentor 
-" Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
