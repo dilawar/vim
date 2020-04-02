@@ -12,19 +12,19 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'itchyny/calendar.vim'
 " Bundle 'tpope/vim-dispatch'
 " Bundle 'godlygeek/tabular'
-Bundle "heavenshell/vim-pydocstring"
 Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "posva/vim-vue"
+
+Bundle "heavenshell/vim-pydocstring"
+let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
+let g:pydocstring_formatter = "numpy"
 
 " php
 Bundle "phpstan/vim-phpstan"
 Bundle "stanangeloff/php.vim"
 Bundle "stephpy/vim-php-cs-fixer"
 Bundle "dilawar/better-indent-support-for-php-with-html"
-
-Bundle "luochen1990/rainbow"
-let g:rainbow_active = 1
 
 " CloseTag and matching
 Bundle "alvan/vim-closetag"
@@ -56,14 +56,14 @@ let g:jedi#show_call_signatures = "1"
 Bundle "rhysd/vim-clang-format"
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AllowShortIfStatementsOnASingleLine" : "false",
             \ "AlwaysBreakTemplateDeclarations" : "true",
             \ "Standard" : "C++11",
             \ "BreakBeforeBraces" : "Stroustrup"}
 
-Bundle "dpelle/vim-LanguageTool"
-let g:languagetool_jar='~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.1/languagetool-commandline.jar'
-let g:languagetool_lang='en'
+" Bundle "dpelle/vim-LanguageTool"
+" let g:languagetool_jar='~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.1/languagetool-commandline.jar'
+" let g:languagetool_lang='en'
 
 " vim-cmake
 Bundle "vhdirk/vim-cmake"
@@ -71,29 +71,20 @@ Bundle "vhdirk/vim-cmake"
 Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
 " Bundle 'easymotion/vim-easymotion'
-Bundle 'lepture/vim-jinja'
-Bundle 'flazz/vim-colorschemes'
+" Bundle 'lepture/vim-jinja'
 
 " Turn TeX symbols into unicode.
 Bundle 'dilawar/vim-unicoder'
 
 " This script increase/descreses etc a selected column
-Bundle 'vim-scripts/VisIncr'
+" Bundle 'vim-scripts/VisIncr'
 Bundle "junegunn/vim-easy-align"
 
 " c-support
-Bundle 'WolfgangMehner/c-support'
-
+" Bundle 'WolfgangMehner/c-support'
 
 " Airline
 Bundle 'bling/vim-airline'
-
-Bundle "kristijanhusak/vim-hybrid-material"
-colorscheme materialbox
-set background=dark
-" let g:enable_bold_font=1
-" let g:hybrid_transparent_background=1
-" let g:airline_theme = "hybrid"
 
 " pweave support.
 Bundle 'coyotebush/vim-pweave'
@@ -115,8 +106,19 @@ let g:ale_linters = {
 Bundle "kana/vim-fakeclip"
 Bundle 'ervandew/supertab'
 
+"" ALternate
+Bundle 'LucHermitte/lh-vim-lib'
+Bundle 'LucHermitte/alternate-lite'
+
+
 " vimtex
 Bundle 'lervag/vimtex'
+
+" colorscheme
+Bundle 'flazz/vim-colorschemes'
+colorscheme materialbox
+set background=dark
+
 
 " vim alternate
 let g:alternateSearchPath="sfr:../source,sfr:../src,sfr:../include,sfr:../inc"
@@ -156,6 +158,7 @@ set spellfile=$HOME/.vim/en.utf-8.add
 source $HOME/.vim/mymappings.vim
 au BufNewFile *.snw read ~/Scripts/template.snw 
 au BufRead,BufNewFile *.nw set filetype=noweb
+au BufRead,BufNewFile *.snippet set expandtab!
 au BufRead,BufNewFile *.cu set filetype=cpp
 au BufRead,BufNewFile *.vue setlocal iskeyword+=- |
             \ setlocal ts=2 sw=2 
@@ -362,3 +365,6 @@ let g:pymode_lint=0
 
 " SOURCE: https://vim.fandom.com/wiki/Insert_current_filename
 :inoremap \fn <C-R>=expand("%:t")<CR>
+
+" Else vim might look colors in tmux/screen.
+set notermguicolors
