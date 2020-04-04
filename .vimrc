@@ -3,8 +3,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'bling/vim-airline'
-Bundle 'vim-scripts/a.vim'
-Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'ervandew/supertab'
@@ -14,22 +12,16 @@ Plugin 'dilawar/vim-snippets'
 " Following three goes together
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
-"Bundle "garbas/vim-snipmate"
-Bundle "lukerandall/haskellmode-vim"
-Bundle "LaTex-Box-Team/LaTeX-Box"
+" Bundle "LaTex-Box-Team/LaTeX-Box"
 
-Bundle 'easymotion/vim-easymotion'
-Bundle "danchoi/elinks.vim"
 Bundle 'scrooloose/nerdcommenter'
-Bundle "tpope/vim-commentary"
+" Bundle "tpope/vim-commentary"
 Bundle 'tpope/vim-fugitive'
 Bundle "junegunn/vim-easy-align"
-"Bundle 'scrooloose/syntastic'
-"Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/gist-vim'
-Bundle "chrisbra/csv.vim"
-Bundle "JuliaLang/julia-vim"
+" Bundle 'mattn/gist-vim'
+" Bundle "chrisbra/csv.vim"
+" Bundle "JuliaLang/julia-vim"
 "Bundle 'Valloric/YouCompleteMe'
 
 
