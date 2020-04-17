@@ -117,7 +117,7 @@ Bundle 'lervag/vimtex'
 " colorscheme
 Bundle 'flazz/vim-colorschemes'
 colorscheme materialbox
-set background=dark
+" set background=dark
 
 
 " vim alternate
