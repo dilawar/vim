@@ -2,8 +2,19 @@ set nocompatible
 set rtp+=~/.vim/bundle/vundle/ 
 
 call vundle#rc() 
-
 Bundle 'gmarik/vundle'
+
+"" LucHermite
+Bundle 'LucHermitte/lh-vim-lib'
+Bundle 'LucHermitte/lh-style'
+Bundle 'LucHermitte/lh-tags'
+Bundle 'LucHermitte/lh-dev'
+Bundle 'LucHermitte/searchInRuntime'
+Bundle 'LucHermitte/mu-template'
+Bundle 'tomtom/stakeholders_vim'
+Bundle 'LucHermitte/alternate-lite'
+Bundle 'LucHermitte/lh-cpp'
+
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
@@ -12,9 +23,6 @@ Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'itchyny/calendar.vim'
 " Bundle 'tpope/vim-dispatch'
 " Bundle 'godlygeek/tabular'
-Bundle 'vimwiki/vimwiki'
-Bundle "tpope/vim-obsession"
-Bundle "posva/vim-vue"
 
 Bundle "heavenshell/vim-pydocstring"
 let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
@@ -22,25 +30,8 @@ let g:pydocstring_formatter = "numpy"
 
 " php
 Bundle "phpstan/vim-phpstan"
-Bundle "stanangeloff/php.vim"
 Bundle "stephpy/vim-php-cs-fixer"
 Bundle "dilawar/better-indent-support-for-php-with-html"
-
-" CloseTag and matching
-Bundle "alvan/vim-closetag"
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
-
-" Bundle 'andymass/vim-matchup'
-" Bundle 'tmhedberg/matchit'
-" let loaded_matchit=1
-
-" Fixup to pandoc template $if(key)$ $endif(key)$ syntax etc.
-" FROM: https://stackoverflow.com/a/34645680/1805129
-" This gets rid of the nasty _ italic bug in tpope's vim-markdown
-" block $$...$$
-" syn region math start=/\$\$/ end=/\$\$/
-" inline math
-" syn match math '\$[^$].\{-}\$'
 
 " actually highlight the region we defined as "math"
 hi link math Statement
@@ -61,31 +52,16 @@ let g:clang_format#style_options = {
             \ "Standard" : "C++11",
             \ "BreakBeforeBraces" : "Stroustrup"}
 
-" Bundle "dpelle/vim-LanguageTool"
-" let g:languagetool_jar='~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.1/languagetool-commandline.jar'
-" let g:languagetool_lang='en'
-
-" vim-cmake
-Bundle "vhdirk/vim-cmake"
-
-Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
-" Bundle 'easymotion/vim-easymotion'
-" Bundle 'lepture/vim-jinja'
 
 " Turn TeX symbols into unicode.
 Bundle 'dilawar/vim-unicoder'
 
 " This script increase/descreses etc a selected column
-" Bundle 'vim-scripts/VisIncr'
 Bundle "junegunn/vim-easy-align"
-
 
 " Airline
 Bundle 'bling/vim-airline'
-
-" pweave support.
-Bundle 'coyotebush/vim-pweave'
 
 " ALE
 Bundle "w0rp/ale"
@@ -101,20 +77,8 @@ let g:ale_linters = {
             \}
 
 "" Fakeclip
-Bundle "kana/vim-fakeclip"
 Bundle 'ervandew/supertab'
 
-"" LucHermite
-Bundle 'LucHermitte/lh-vim-lib'
-Bundle 'LucHermitte/lh-style'
-Bundle 'LucHermitte/lh-tags'
-Bundle 'LucHermitte/lh-dev'
-Bundle 'LucHermitte/lh-brackets'
-Bundle 'LucHermitte/searchInRuntime'
-Bundle 'LucHermitte/mu-template'
-Bundle 'tomtom/stakeholders_vim'
-Bundle 'LucHermitte/alternate-lite'
-Bundle 'LucHermitte/lh-cpp'
 
 
 " vimtex
