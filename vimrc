@@ -80,8 +80,6 @@ Bundle 'dilawar/vim-unicoder'
 " Bundle 'vim-scripts/VisIncr'
 Bundle "junegunn/vim-easy-align"
 
-" c-support
-" Bundle 'WolfgangMehner/c-support'
 
 " Airline
 Bundle 'bling/vim-airline'
@@ -106,9 +104,17 @@ let g:ale_linters = {
 Bundle "kana/vim-fakeclip"
 Bundle 'ervandew/supertab'
 
-"" ALternate
+"" LucHermite
 Bundle 'LucHermitte/lh-vim-lib'
+Bundle 'LucHermitte/lh-style'
+Bundle 'LucHermitte/lh-tags'
+Bundle 'LucHermitte/lh-dev'
+Bundle 'LucHermitte/lh-brackets'
+Bundle 'LucHermitte/searchInRuntime'
+Bundle 'LucHermitte/mu-template'
+Bundle 'tomtom/stakeholders_vim'
 Bundle 'LucHermitte/alternate-lite'
+Bundle 'LucHermitte/lh-cpp'
 
 
 " vimtex
