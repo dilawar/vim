@@ -14,7 +14,7 @@ Bundle 'itchyny/calendar.vim'
 " Bundle 'godlygeek/tabular'
 Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
-Bundle "posva/vim-vue"
+Bundle "leafOfTree/vim-vue-plugin"
 
 Bundle "heavenshell/vim-pydocstring"
 let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
@@ -30,9 +30,9 @@ Bundle "dilawar/better-indent-support-for-php-with-html"
 Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
 
-" Bundle 'andymass/vim-matchup'
-" Bundle 'tmhedberg/matchit'
-" let loaded_matchit=1
+Bundle 'andymass/vim-matchup'
+Bundle 'tmhedberg/matchit'
+let loaded_matchit=1
 
 " Fixup to pandoc template $if(key)$ $endif(key)$ syntax etc.
 " FROM: https://stackoverflow.com/a/34645680/1805129
@@ -161,6 +161,7 @@ au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.snippet set expandtab!
 au BufRead,BufNewFile *.cu set filetype=cpp
 au BufRead,BufNewFile *.vue setlocal iskeyword+=- |
+            \ setlocal filetype=vue |
             \ setlocal ts=2 sw=2 
 au BufRead,BufNewFile *.php setlocal ts=4 sw=4
 au BufRead,BufNewFile *.js setlocal ts=3 sw=3
@@ -368,3 +369,6 @@ let g:pymode_lint=0
 
 " Else vim might look colors in tmux/screen.
 set notermguicolors
+
+" errorfmt
+set errorformat^=%-G%f:%l:\ warning:%m
