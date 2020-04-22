@@ -2,8 +2,19 @@ set nocompatible
 set rtp+=~/.vim/bundle/vundle/ 
 
 call vundle#rc() 
-
 Bundle 'gmarik/vundle'
+
+"" LucHermite
+Bundle 'LucHermitte/lh-vim-lib'
+Bundle 'LucHermitte/lh-style'
+Bundle 'LucHermitte/lh-tags'
+Bundle 'LucHermitte/lh-dev'
+Bundle 'LucHermitte/searchInRuntime'
+Bundle 'LucHermitte/mu-template'
+Bundle 'tomtom/stakeholders_vim'
+Bundle 'LucHermitte/alternate-lite'
+Bundle 'LucHermitte/lh-cpp'
+
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/DrawIt'
@@ -22,7 +33,6 @@ let g:pydocstring_formatter = "numpy"
 
 " php
 Bundle "phpstan/vim-phpstan"
-Bundle "stanangeloff/php.vim"
 Bundle "stephpy/vim-php-cs-fixer"
 Bundle "dilawar/better-indent-support-for-php-with-html"
 
@@ -61,33 +71,16 @@ let g:clang_format#style_options = {
             \ "Standard" : "C++11",
             \ "BreakBeforeBraces" : "Stroustrup"}
 
-" Bundle "dpelle/vim-LanguageTool"
-" let g:languagetool_jar='~/.vim/bundle/vim-grammarous/misc/LanguageTool-4.1/languagetool-commandline.jar'
-" let g:languagetool_lang='en'
-
-" vim-cmake
-Bundle "vhdirk/vim-cmake"
-
-Bundle "ctrlpvim/ctrlp.vim"
 Bundle 'chrisbra/unicode.vim'
-" Bundle 'easymotion/vim-easymotion'
-" Bundle 'lepture/vim-jinja'
 
 " Turn TeX symbols into unicode.
 Bundle 'dilawar/vim-unicoder'
 
 " This script increase/descreses etc a selected column
-" Bundle 'vim-scripts/VisIncr'
 Bundle "junegunn/vim-easy-align"
-
-" c-support
-" Bundle 'WolfgangMehner/c-support'
 
 " Airline
 Bundle 'bling/vim-airline'
-
-" pweave support.
-Bundle 'coyotebush/vim-pweave'
 
 " ALE
 Bundle "w0rp/ale"
@@ -103,12 +96,8 @@ let g:ale_linters = {
             \}
 
 "" Fakeclip
-Bundle "kana/vim-fakeclip"
 Bundle 'ervandew/supertab'
 
-"" ALternate
-Bundle 'LucHermitte/lh-vim-lib'
-Bundle 'LucHermitte/alternate-lite'
 
 
 " vimtex
