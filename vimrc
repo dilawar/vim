@@ -5,18 +5,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 "" LucHermite
-Bundle 'LucHermitte/lh-vim-lib'
-Bundle 'LucHermitte/lh-style'
-Bundle 'LucHermitte/lh-tags'
-Bundle 'LucHermitte/lh-dev'
-Bundle 'LucHermitte/searchInRuntime'
-Bundle 'LucHermitte/mu-template'
 Bundle 'tomtom/stakeholders_vim'
+Bundle 'LucHermitte/lh-vim-lib'
 Bundle 'LucHermitte/alternate-lite'
-Bundle 'LucHermitte/lh-cpp'
 
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
@@ -105,7 +100,7 @@ Bundle 'lervag/vimtex'
 
 " colorscheme
 Bundle 'flazz/vim-colorschemes'
-colorscheme materialbox
+colorscheme solarized8_light
 " set background=dark
 
 
@@ -361,3 +356,4 @@ set notermguicolors
 
 " errorfmt
 set errorformat^=%-G%f:%l:\ warning:%m
+set errorformat^=%-G%f:%l:\ note:%m
