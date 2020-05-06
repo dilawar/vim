@@ -100,7 +100,7 @@ Bundle 'lervag/vimtex'
 
 " colorscheme
 Bundle 'flazz/vim-colorschemes'
-colorscheme solarized8_light
+colorscheme materialbox
 " set background=dark
 
 
