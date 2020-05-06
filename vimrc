@@ -325,6 +325,7 @@ set conceallevel=0
 """ SnipMate 
 """ NOTE: Using ultisnips
 Bundle 'SirVer/ultisnips'
+Bundle 'dilawar/vim-snippets'
 let g:snips_author="Dilawar Singh"
 let g:snips_email="dilawars@ncbs.res.in"
 let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
