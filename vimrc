@@ -17,7 +17,8 @@ Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'itchyny/calendar.vim'
 " Bundle 'tpope/vim-dispatch'
-" Bundle 'godlygeek/tabular'
+Bundle 'godlygeek/tabular'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "leafOfTree/vim-vue-plugin"
