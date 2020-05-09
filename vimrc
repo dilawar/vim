@@ -99,9 +99,10 @@ Bundle 'ervandew/supertab'
 Bundle 'lervag/vimtex'
 
 " colorscheme
-Bundle 'flazz/vim-colorschemes'
-colorscheme sol
+"Bundle 'flazz/vim-colorschemes'
 " set background=dark
+Bundle 'chriskempson/base16-vim'
+colorscheme base16-default-dark
 
 
 " vim alternate
