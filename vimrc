@@ -17,7 +17,8 @@ Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'itchyny/calendar.vim'
 " Bundle 'tpope/vim-dispatch'
-" Bundle 'godlygeek/tabular'
+Bundle 'godlygeek/tabular'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "leafOfTree/vim-vue-plugin"
@@ -99,7 +100,8 @@ Bundle 'ervandew/supertab'
 Bundle 'lervag/vimtex'
 
 " colorscheme
-"Bundle 'flazz/vim-colorschemes'
+Bundle 'flazz/vim-colorschemes'
+colorscheme materialbox
 " set background=dark
 Bundle 'chriskempson/base16-vim'
 colorscheme base16-default-dark
@@ -325,6 +327,7 @@ set conceallevel=0
 """ SnipMate 
 """ NOTE: Using ultisnips
 Bundle 'SirVer/ultisnips'
+Bundle 'dilawar/vim-snippets'
 let g:snips_author="Dilawar Singh"
 let g:snips_email="dilawars@ncbs.res.in"
 let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
