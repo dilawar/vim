@@ -101,10 +101,10 @@ Bundle 'lervag/vimtex'
 
 " colorscheme
 Bundle 'flazz/vim-colorschemes'
-colorscheme materialbox
+colorscheme default
 " set background=dark
-Bundle 'chriskempson/base16-vim'
-colorscheme base16-default-dark
+" Bundle 'chriskempson/base16-vim'
+"colorscheme base16-default-dark
 
 
 " vim alternate
@@ -211,8 +211,8 @@ source $HOME/.vim/methods.vim
 " Bundle 'Valloric/YouCompleteMe'
 
 " default
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 set textwidth=79
