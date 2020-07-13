@@ -35,6 +35,10 @@ Bundle "dilawar/better-indent-support-for-php-with-html"
 " previm
 " Bundle "kannokanno/previm"
 
+" RST
+Bundle "matthew-brett/vim-rst-sections"
+Bundle "philpep/vim-rst-tables"
+
 " CloseTag and matching
 Bundle "alvan/vim-closetag"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
