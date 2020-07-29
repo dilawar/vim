@@ -178,9 +178,10 @@ au BufEnter *.tex set nosmartindent
 au BufRead,BufNew *.blog setlocal spell spelllang=en 
 au BufRead,BufNew *.blog setlocal complete+=k
 au BufRead,BufNew *.md setlocal spell spelllang=en
+au BufRead,BufNew *.md setlocal filetype=pandoc
+au BufRead,BufNew *.md setlocal complete+=k
+au BufRead,BufNew *.md setlocal spell spelllang=en
 au BufRead,BufNew *.rst setlocal spell spelllang=en
-au BufRead,BufNew *.markdown setlocal complete+=k
-au BufRead,BufNew *.markdown setlocal spell spelllang=en
 " On tmp files do not wrap lines by inserting newline, wrap it without newline.
 au BufRead,BufNew *.tmp setlocal wrap linebreak nolist 
 au BufRead,BufNew *.txt setlocal wrap linebreak nolist 
@@ -312,11 +313,11 @@ let g:NERDTrimTrailingWhitespace = 1
 Bundle "vim-pandoc/vim-pandoc"
 Bundle "vim-pandoc/vim-pandoc-syntax"
 Bundle "vim-pandoc/vim-pandoc-after"
-" let g:pandoc#biblio#use_bibtool=1
+let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding", "formatting" ]
 let g:pandoc#formatting#mode="sA"
 let g:pandoc#spell#enabled=1
-" let g:pandoc#after#modules#enabled=["supertab"]
+let g:pandoc#after#modules#enabled=["supertab"]
 let g:pandoc#syntax#conceal#use = 0
 
 " VIMRC
