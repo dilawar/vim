@@ -19,7 +19,7 @@ Bundle 'itchyny/calendar.vim'
 " Bundle 'tpope/vim-dispatch'
 Bundle 'godlygeek/tabular'
 Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'vimwiki/vimwiki'
+"Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "leafOfTree/vim-vue-plugin"
 
