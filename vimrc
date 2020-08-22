@@ -16,7 +16,7 @@ Bundle 'vim-scripts/DrawIt'
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'vim-scripts/check-mutt-attachments.vim'
 Bundle 'itchyny/calendar.vim'
-" Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-dispatch'
 Bundle 'godlygeek/tabular'
 Bundle 'ctrlpvim/ctrlp.vim'
 "Bundle 'vimwiki/vimwiki'
@@ -91,7 +91,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_fix_on_save = 1
-let g:ale_cpp_gcc_options = '-std=c++14'
+let g:ale_cpp_gcc_options = '-std=c++17'
 let g:ale_tex_chktex_options = '-n26 -n18'
 let g:ale_linters = {
             \ 'python' : [ 'pyflakes'], 
@@ -101,11 +101,13 @@ let g:ale_linters = {
 Bundle 'ervandew/supertab'
 " vimtex
 Bundle 'lervag/vimtex'
+let g:tex_flavor="latex"
 
 " colorscheme
 Bundle 'flazz/vim-colorschemes'
-colorscheme default
 " set background=dark
+" colorscheme material
+
 " Bundle 'chriskempson/base16-vim'
 "colorscheme base16-default-dark
 
@@ -301,13 +303,8 @@ let g:NERDTrimTrailingWhitespace = 1
 
 
 " Doxygen 
-" let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
-" let g:DoxygenToolkit_paramTag_pre="@Param "
-" let g:DoxygenToolkit_returnTag="@Returns   "
-" let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
-" let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
-" let g:DoxygenToolkit_authorName="Dilawar Singh <dilawars@ncbs.res.in>"
-" let g:DoxygenToolkit_licenseTag="GNU-GPL v3"  
+let g:DoxygenToolkit_authorName="Dilawar Singh <me@dilawars.me>"
+let g:DoxygenToolkit_licenseTag="MIT"  
 
 " Pandoc 
 Bundle "vim-pandoc/vim-pandoc"
@@ -334,8 +331,8 @@ set conceallevel=0
 Bundle 'SirVer/ultisnips'
 Bundle 'dilawar/vim-snippets'
 let g:snips_author="Dilawar Singh"
-let g:snips_email="dilawars@ncbs.res.in"
-let g:tex_conceal = ""    " Otherwise keep screwing up my tex.
+let g:snips_email="me@dilawars.me"
+let g:tex_conceal = ""    
 "let g:UltiSnipsExpandTrigger="<C-Space>"
 "let g:UltiSnipsJumpForwardTrigger="<C-Space>"
 "let g:UltiSnipsJumpBackwardTrigger="<C-Shift><C-Space>"
