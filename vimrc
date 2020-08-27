@@ -22,6 +22,7 @@ Bundle 'ctrlpvim/ctrlp.vim'
 "Bundle 'vimwiki/vimwiki'
 Bundle "tpope/vim-obsession"
 Bundle "leafOfTree/vim-vue-plugin"
+Bundle "aklt/plantuml-syntax"
 
 Bundle "heavenshell/vim-pydocstring"
 let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
