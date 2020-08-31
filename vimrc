@@ -1,55 +1,49 @@
-set nocompatible
-set rtp+=~/.vim/bundle/vundle/ 
+call plug#begin("~/.vim/plugged")
 
-call vundle#rc() 
-Bundle 'gmarik/vundle'
+Plug 'gmarik/vundle'
 
 "" LucHermite
-Bundle 'tomtom/stakeholders_vim'
-Bundle 'LucHermitte/lh-vim-lib'
-Bundle 'LucHermitte/alternate-lite'
+Plug 'tomtom/stakeholders_vim'
+Plug 'LucHermitte/lh-vim-lib'
+Plug 'LucHermitte/alternate-lite'
 
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'vim-scripts/DrawIt'
-Bundle 'vim-scripts/DoxygenToolkit.vim'
-Bundle 'vim-scripts/check-mutt-attachments.vim'
-Bundle 'itchyny/calendar.vim'
-Bundle 'tpope/vim-dispatch'
-Bundle 'godlygeek/tabular'
-Bundle 'ctrlpvim/ctrlp.vim'
-"Bundle 'vimwiki/vimwiki'
-Bundle "tpope/vim-obsession"
-Bundle "leafOfTree/vim-vue-plugin"
-Bundle "iamcco/markdown-preview.nvim"
-
-Bundle "aklt/plantuml-syntax"
-au BufRead,BufNewFile *.plantuml set filetype=plantuml
-
-Bundle "heavenshell/vim-pydocstring"
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'vim-scripts/DrawIt'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vim-scripts/check-mutt-attachments.vim'
+Plug 'itchyny/calendar.vim'
+Plug 'godlygeek/tabular'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+" Plug "aklt/plantuml-syntax"
+" Plug "heavenshell/vim-pydocstring"
 let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
 let g:pydocstring_formatter = "numpy"
 
 " php
-Bundle "phpstan/vim-phpstan"
-Bundle "stephpy/vim-php-cs-fixer"
-Bundle "dilawar/better-indent-support-for-php-with-html"
+" Plug "phpstan/vim-phpstan"
+"Plug "stephpy/vim-php-cs-fixer"
+"Plug "dilawar/better-indent-support-for-php-with-html"
 
 " previm
-" Bundle "kannokanno/previm"
+" Plug "kannokanno/previm"
 
 " RST
-Bundle "matthew-brett/vim-rst-sections"
-Bundle "philpep/vim-rst-tables"
+" Plug "matthew-brett/vim-rst-sections"
+" Plug "philpep/vim-rst-tables"
 
 " CloseTag and matching
-Bundle "alvan/vim-closetag"
+" Plug "alvan/vim-closetag"
+
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
 
-Bundle 'andymass/vim-matchup'
-Bundle 'tmhedberg/matchit'
+Plug 'andymass/vim-matchup'
+Plug 'tmhedberg/matchit'
 let loaded_matchit=1
+
+Plug 'SirVer/ultisnips'
+Plug 'dilawar/vim-snippets'
 
 " Fixup to pandoc template $if(key)$ $endif(key)$ syntax etc.
 " FROM: https://stackoverflow.com/a/34645680/1805129
@@ -63,14 +57,14 @@ let loaded_matchit=1
 hi link math Statement
 
 "" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
-Bundle 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 let g:jedi#auto_initialization = 1
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
 
 " clang-format'
-Bundle "rhysd/vim-clang-format"
+" Plug "rhysd/vim-clang-format"
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
             \ "AllowShortIfStatementsOnASingleLine" : "false",
@@ -78,19 +72,20 @@ let g:clang_format#style_options = {
             \ "Standard" : "C++11",
             \ "BreakBeforeBraces" : "Stroustrup"}
 
-Bundle 'chrisbra/unicode.vim'
-
+Plug 'chrisbra/unicode.vim'
 " Turn TeX symbols into unicode.
-Bundle 'dilawar/vim-unicoder'
+Plug 'dilawar/vim-unicoder'
+Plug 'bling/vim-airline'
+Plug 'dense-analysis/ale'
+Plug 'ervandew/supertab'
+Plug 'lervag/vimtex'
+Plug 'flazz/vim-colorschemes'
 
-" This script increase/descreses etc a selected column
-Bundle "junegunn/vim-easy-align"
+Plug 'scrooloose/nerdcommenter'
+call plug#end()
 
-" Airline
-Bundle 'bling/vim-airline'
+au BufRead,BufNewFile *.plantuml set filetype=plantuml
 
-" ALE
-Bundle "w0rp/ale"
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
@@ -102,18 +97,12 @@ let g:ale_linters = {
             \ 'php' : [ 'psalm', 'php'], 
             \}
 
-Bundle 'ervandew/supertab'
 " vimtex
-Bundle 'lervag/vimtex'
 let g:tex_flavor="latex"
 
 " colorscheme
-Bundle 'flazz/vim-colorschemes'
 " set background=dark
 " colorscheme material
-
-" Bundle 'chriskempson/base16-vim'
-"colorscheme base16-default-dark
 
 
 " vim alternate
@@ -209,18 +198,6 @@ set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 source $HOME/.vim/methods.vim 
 
-
-""indent guide
-"Bundle 'nathanaelkane/vim-indent-guides'
-"hi IndentGuidesOdd  ctermbg=white
-"hi IndentGuidesEven ctermbg=lightgrey
-"let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_guide_size=1
-"let g:indentLine_char="⁞"
-
-" The very heavy plugin.
-" Bundle 'Valloric/YouCompleteMe'
-
 " default
 set softtabstop=4
 set shiftwidth=4
@@ -283,7 +260,6 @@ let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
 " Nerd Commentor 
-Bundle 'scrooloose/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
@@ -310,10 +286,6 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:DoxygenToolkit_authorName="Dilawar Singh <me@dilawars.me>"
 let g:DoxygenToolkit_licenseTag="MIT"  
 
-" Pandoc 
-Bundle "vim-pandoc/vim-pandoc"
-Bundle "vim-pandoc/vim-pandoc-syntax"
-Bundle "vim-pandoc/vim-pandoc-after"
 let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding", "formatting" ]
 let g:pandoc#formatting#mode="sA"
@@ -332,8 +304,6 @@ set conceallevel=0
 
 """ SnipMate 
 """ NOTE: Using ultisnips
-Bundle 'SirVer/ultisnips'
-Bundle 'dilawar/vim-snippets'
 let g:snips_author="Dilawar Singh"
 let g:snips_email="me@dilawars.me"
 let g:tex_conceal = ""    
