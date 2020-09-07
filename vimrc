@@ -19,6 +19,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 Plug 'godlygeek/tabular'
+Plug 'coyotebush/vim-pweave'
+Plug 'rhysd/vim-clang-format'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Plug "aklt/plantuml-syntax"
 " Plug "heavenshell/vim-pydocstring"
@@ -287,7 +289,7 @@ let g:NERDTrimTrailingWhitespace = 1
 
 
 " Doxygen 
-let g:DoxygenToolkit_authorName="Dilawar Singh <me@dilawars.me>"
+let g:DoxygenToolkit_authorName="Dilawar Singh <dilawar.s.rajput@gmail.com>"
 let g:DoxygenToolkit_licenseTag="MIT"  
 
 let g:pandoc#biblio#use_bibtool=1
@@ -309,7 +311,7 @@ set conceallevel=0
 """ SnipMate 
 """ NOTE: Using ultisnips
 let g:snips_author="Dilawar Singh"
-let g:snips_email="me@dilawars.me"
+let g:snips_email="dilawar.s.rajput@gmail.com"
 let g:tex_conceal = ""    
 "let g:UltiSnipsExpandTrigger="<C-Space>"
 "let g:UltiSnipsJumpForwardTrigger="<C-Space>"
