@@ -283,32 +283,6 @@ set wildmode=longest,list,full
 set wildmenu
 set conceallevel=0
 
-""" SnipMate 
-""" NOTE: Using ultisnips
-let g:snips_author="Dilawar Singh"
-let g:snips_email="dilawar.s.rajput@gmail.com"
-let g:tex_conceal = ""    
-"let g:UltiSnipsExpandTrigger="<C-Space>"
-"let g:UltiSnipsJumpForwardTrigger="<C-Space>"
-"let g:UltiSnipsJumpBackwardTrigger="<C-Shift><C-Space>"
-
-" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsExpandTrigger="<nop>"
-function ExpandSnippetOrCarriageReturn()
-    let snippet = UltiSnips#ExpandSnippetOrJump()
-    if g:ulti_expand_or_jump_res > 0
-        return snippet
-    else
-        return "\<CR>"
-    endif
-endfunction
-inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
-
-" Python related settings
-au BufNewFile,BufRead *.py set comments+=b:#\'
-let g:pymode_lint_write=0
-let g:pymode_lint=0
-
 " SOURCE: https://vim.fandom.com/wiki/Insert_current_filename
 :inoremap \fn <C-R>=expand("%:t")<CR>
 
