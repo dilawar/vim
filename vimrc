@@ -14,14 +14,16 @@ Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
-Plug 'rstacruz/vim-closer'
+
+" FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
+" Plug 'rstacruz/vim-closer'
+" let g:AutoClosePreserveDotTeg = 0
+
 
 Plug 'alvan/vim-closetag'
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
-
 " FIXME: vim-closetag does not work unless nopaste is set https://github.com/alvan/vim-closetag/issues/50
 set nopaste    
-
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'posva/vim-vue'
 Plug 'vim-scripts/check-mutt-attachments.vim'
