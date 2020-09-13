@@ -12,70 +12,41 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'leafOfTree/vim-vue-plugin'
-" Plug 'majutsushi/tagbar'
-" Plug 'universal-ctags/ctags'
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'rstacruz/vim-closer'
+
+Plug 'alvan/vim-closetag'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
+
+" FIXME: vim-closetag does not work unless nopaste is set https://github.com/alvan/vim-closetag/issues/50
+set nopaste    
+
+" Plug 'leafOfTree/vim-vue-plugin'
+" Plug 'posva/vim-vue'
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 Plug 'godlygeek/tabular'
 Plug 'coyotebush/vim-pweave'
 Plug 'rhysd/vim-clang-format'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-" Plug "aklt/plantuml-syntax"
-" Plug "heavenshell/vim-pydocstring"
 let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
 let g:pydocstring_formatter = "numpy"
 
 " php
-" Plug "phpstan/vim-phpstan"
-"Plug "stephpy/vim-php-cs-fixer"
-"Plug "dilawar/better-indent-support-for-php-with-html"
-
-" previm
-" Plug "kannokanno/previm"
-
-" RST
-" Plug "matthew-brett/vim-rst-sections"
-" Plug "philpep/vim-rst-tables"
-
-" CloseTag and matching
-" Plug "alvan/vim-closetag"
-
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
-
-Plug 'andymass/vim-matchup'
-Plug 'tmhedberg/matchit'
-let loaded_matchit=1
-
+Plug 'phpstan/vim-phpstan'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'dilawar/better-indent-support-for-php-with-html'
 Plug 'SirVer/ultisnips'
 Plug 'dilawar/vim-snippets'
 
-" Fixup to pandoc template $if(key)$ $endif(key)$ syntax etc.
-" FROM: https://stackoverflow.com/a/34645680/1805129
-" This gets rid of the nasty _ italic bug in tpope's vim-markdown
-" block $$...$$
-" syn region math start=/\$\$/ end=/\$\$/
-" inline math
-" syn match math '\$[^$].\{-}\$'
-
-" actually highlight the region we defined as "math"
-hi link math Statement
-
-"" beware of using python-mode with jedihttps://github.com/davidhalter/jedi-vim/issues/163
-Plug 'davidhalter/jedi-vim'
-let g:jedi#auto_initialization = 1
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-let g:jedi#show_call_signatures = "1"
-
 " clang-format'
-" Plug "rhysd/vim-clang-format"
+Plug 'rhysd/vim-clang-format'
 let g:clang_format#style_options = {
             \ "AccessModifierOffset" : -4,
             \ "AllowShortIfStatementsOnASingleLine" : "false",
             \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "Standard" : "C++11",
+            \ "Standard" : "C++17",
             \ "BreakBeforeBraces" : "Stroustrup"}
 
 Plug 'chrisbra/unicode.vim'
@@ -86,9 +57,9 @@ Plug 'dense-analysis/ale'
 Plug 'ervandew/supertab'
 Plug 'lervag/vimtex'
 Plug 'flazz/vim-colorschemes'
-
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
+
 
 au BufRead,BufNewFile *.plantuml set filetype=plantuml
 
