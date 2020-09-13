@@ -56,7 +56,9 @@ Plug 'bling/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'ervandew/supertab'
 Plug 'lervag/vimtex'
+
 Plug 'flazz/vim-colorschemes'
+
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
