@@ -22,8 +22,8 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
 " FIXME: vim-closetag does not work unless nopaste is set https://github.com/alvan/vim-closetag/issues/50
 set nopaste    
 
-" Plug 'leafOfTree/vim-vue-plugin'
-" Plug 'posva/vim-vue'
+Plug 'leafOfTree/vim-vue-plugin'
+Plug 'posva/vim-vue'
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 Plug 'godlygeek/tabular'
