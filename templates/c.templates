@@ -11,8 +11,8 @@
 
 SetMacro( 'AUTHOR',       'Dilawar Singh' )
 SetMacro( 'AUTHORREF',    '' )
-SetMacro( 'EMAIL',        'dilawar.s.rajput@gmail.com' )
-SetMacro( 'ORGANIZATION', 'NCBS Bangalore' )
+SetMacro( 'EMAIL',        'dilawar@subcom.tech' )
+SetMacro( 'ORGANIZATION', 'Subconscious Compute' )
 SetMacro( 'COMPANY',      '' )
 SetMacro( 'COPYRIGHT',    'Copyright (c) |YEAR|, |AUTHOR|' )
 SetMacro( 'LICENSE',      'GNU General Public License' )

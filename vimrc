@@ -39,8 +39,13 @@ let g:pydocstring_formatter = "numpy"
 Plug 'phpstan/vim-phpstan'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
+
+
+" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'dilawar/vim-snippets'
+let g:snips_author = "Dilawar Singh"
+let g:snips_email = "dilawar@subcom.tech"
 
 " clang-format'
 Plug 'rhysd/vim-clang-format'
