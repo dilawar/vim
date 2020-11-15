@@ -13,12 +13,11 @@ Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-
+Plug 'vim-pandoc/vim-pandoc'
 
 " FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
 " Plug 'rstacruz/vim-closer'
 " let g:AutoClosePreserveDotTeg = 0
-
 
 Plug 'alvan/vim-closetag'
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue,*.php'
@@ -32,6 +31,8 @@ Plug 'godlygeek/tabular'
 Plug 'coyotebush/vim-pweave'
 Plug 'rhysd/vim-clang-format'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
 let g:pydocstring_formatter = "numpy"
 
@@ -66,7 +67,7 @@ Plug 'lervag/vimtex'
 
 Plug 'flazz/vim-colorschemes'
 
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 
