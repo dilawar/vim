@@ -15,6 +15,9 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-pandoc/vim-pandoc'
 
+" Tabular
+Plug 'godlygeek/tabular'
+
 " FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
 " Plug 'rstacruz/vim-closer'
 " let g:AutoClosePreserveDotTeg = 0
@@ -36,13 +39,17 @@ Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
 let g:pydocstring_formatter = "numpy"
 
+" tags
+Plug 'craigemery/vim-autotag'
+
 " php
 Plug 'phpstan/vim-phpstan'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
 
 " Python
-Plug 'davidhalter/vim-jedi'
+" Plug 'davidhalter/jedi-vim'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 
 " Snippets
@@ -280,7 +287,7 @@ let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding", "formatting" ]
 let g:pandoc#formatting#mode="sA"
 let g:pandoc#spell#enabled=1
-let g:pandoc#after#modules#enabled=["supertab"]
+" let g:pandoc#after#modules#enabled=["supertab"]
 let g:pandoc#syntax#conceal#use = 0
 
 " VIMRC
