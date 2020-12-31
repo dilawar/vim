@@ -1,3 +1,6 @@
+" Prefer python3
+set pyx=3
+
 call plug#begin("~/.vim/plugged")
 
 Plug 'gmarik/vundle'
@@ -81,18 +84,22 @@ Plug 'alvan/vim-closetag'
 call plug#end()
 
 
+
 au BufRead,BufNewFile *.plantuml set filetype=plantuml
 
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 let g:ale_cpp_gcc_options = '-std=c++17'
 let g:ale_tex_chktex_options = '-n26 -n18'
 let g:ale_linters = {
             \ 'python' : [ 'pyflakes'], 
-            \ 'php' : [ 'psalm', 'php'], 
+            \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'], 
             \}
+let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
+let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
 
 " vimtex
 let g:tex_flavor="latex"
@@ -145,8 +152,6 @@ au BufRead,BufNewFile *.cu set filetype=cpp
 au BufRead,BufNewFile *.vue setlocal iskeyword+=- |
             \ setlocal filetype=vue |
             \ setlocal ts=2 sw=2 
-au BufRead,BufNewFile *.php setlocal ts=2 sw=2
-au BufRead,BufNewFile *.js setlocal ts=2 sw=2
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
@@ -196,8 +201,8 @@ let g:haddock_docdir= "/usr/share/doc/ghc/html/"
 source $HOME/.vim/methods.vim 
 
 " default
-set softtabstop=4
 set shiftwidth=4
+set tabstop=4
 set expandtab
 set smarttab
 set textwidth=79
