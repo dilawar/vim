@@ -46,8 +46,11 @@ Plug 'phpstan/vim-phpstan'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
 
-" Python
+" Python 
+" jedi does not work well when different version of python are installed. Never
+" figured out what is the issue and life feels short to have such a fun!
 " Plug 'davidhalter/jedi-vim'
+
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 
