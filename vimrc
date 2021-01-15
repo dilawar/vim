@@ -52,6 +52,7 @@ Plug 'dilawar/better-indent-support-for-php-with-html'
 " Plug 'davidhalter/jedi-vim'
 
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'dilawar/vim-mypy'
 
 
 " Snippets
