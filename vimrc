@@ -21,6 +21,9 @@ Plug 'vim-pandoc/vim-pandoc'
 " Tabular
 Plug 'godlygeek/tabular'
 
+" YCM
+Plug 'ycm-core/YouCompleteMe', {'do' : './install.py'}
+
 " FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
 " Plug 'rstacruz/vim-closer'
 " let g:AutoClosePreserveDotTeg = 0
@@ -51,8 +54,12 @@ Plug 'dilawar/better-indent-support-for-php-with-html'
 " figured out what is the issue and life feels short to have such a fun!
 " Plug 'davidhalter/jedi-vim'
 
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" let g:pymode_warnings=1
 Plug 'dilawar/vim-mypy'
+
+" Python vim
+Plug 'jupyter-vim/jupyter-vim'
 
 
 " Snippets
