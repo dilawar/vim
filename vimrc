@@ -17,12 +17,17 @@ Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-pandoc/vim-pandoc'
+Plug 'tomtom/tcomment_vim'
+
+" Grammar
+Plug 'rhysd/vim-grammarous'
 
 " Tabular
 Plug 'godlygeek/tabular'
 
 " YCM
 Plug 'ycm-core/YouCompleteMe', {'do' : './install.py'}
+" Plug 'dense-analysis/ale'
 
 " FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
 " Plug 'rstacruz/vim-closer'
@@ -67,6 +72,10 @@ Plug 'SirVer/ultisnips'
 Plug 'dilawar/vim-snippets'
 let g:snips_author = "Dilawar Singh"
 let g:snips_email = "dilawar@subcom.tech"
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 
 " clang-format'
 Plug 'rhysd/vim-clang-format'
@@ -81,14 +90,10 @@ Plug 'chrisbra/unicode.vim'
 " Turn TeX symbols into unicode.
 Plug 'dilawar/vim-unicoder'
 Plug 'bling/vim-airline'
-Plug 'dense-analysis/ale'
 Plug 'ervandew/supertab'
 Plug 'lervag/vimtex'
-
 Plug 'flazz/vim-colorschemes'
-
 Plug 'preservim/nerdcommenter'
-
 Plug 'alvan/vim-closetag'
  
 
@@ -160,9 +165,7 @@ au BufNewFile *.snw read ~/Scripts/template.snw
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.snippet set expandtab!
 au BufRead,BufNewFile *.cu set filetype=cpp
-au BufRead,BufNewFile *.vue setlocal iskeyword+=- |
-            \ setlocal filetype=vue |
-            \ setlocal ts=2 sw=2 
+au BufRead,BufNewFile *.vue setlocal iskeyword+=- setlocal filetype=vue
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
@@ -193,6 +196,7 @@ au BufRead,BufNew *.rst setlocal spell spelllang=en
 " On tmp files do not wrap lines by inserting newline, wrap it without newline.
 au BufRead,BufNew *.tmp setlocal wrap linebreak nolist 
 au BufRead,BufNew *.txt setlocal wrap linebreak nolist 
+au BufRead,BufNew *.py setlocal comments+=#'   " #' is used  by pyweave.
 
 
 au BufNewFile *.vhd read ~/.vim/template/template.vhd
