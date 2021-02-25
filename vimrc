@@ -196,7 +196,7 @@ au BufRead,BufNew *.rst setlocal spell spelllang=en
 " On tmp files do not wrap lines by inserting newline, wrap it without newline.
 au BufRead,BufNew *.tmp setlocal wrap linebreak nolist 
 au BufRead,BufNew *.txt setlocal wrap linebreak nolist 
-au BufRead,BufNew *.py setlocal comments+=#'   " #' is used  by pyweave.
+au BufRead,BufNew *.py setlocal comments+=:#'   " #' is used  by pyweave.
 
 
 au BufNewFile *.vhd read ~/.vim/template/template.vhd
