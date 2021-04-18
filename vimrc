@@ -17,7 +17,7 @@ Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-pandoc/vim-pandoc'
-Plug 'tomtom/tcomment_vim'
+" Plug 'tomtom/tcomment_vim'
 
 " Grammar
 Plug 'rhysd/vim-grammarous'
@@ -26,8 +26,8 @@ Plug 'rhysd/vim-grammarous'
 Plug 'godlygeek/tabular'
 
 " YCM
-Plug 'ycm-core/YouCompleteMe', {'do' : './install.py'}
-" Plug 'dense-analysis/ale'
+" Plug 'ycm-core/YouCompleteMe', {'do' : './install.py'}
+Plug 'dense-analysis/ale'
 
 " FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
 " Plug 'rstacruz/vim-closer'
@@ -39,7 +39,6 @@ Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 Plug 'godlygeek/tabular'
 Plug 'coyotebush/vim-pweave'
-Plug 'rhysd/vim-clang-format'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
@@ -72,19 +71,14 @@ Plug 'SirVer/ultisnips'
 Plug 'dilawar/vim-snippets'
 let g:snips_author = "Dilawar Singh"
 let g:snips_email = "dilawar@subcom.tech"
-let g:UltiSnipsExpandTrigger="<c-space>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" let g:UltiSnipsExpandTrigger="<c-space>"
+" let g:UltiSnipsJumpForwardTrigger="<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 
 " clang-format'
 Plug 'rhysd/vim-clang-format'
-let g:clang_format#style_options = {
-            \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "false",
-            \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "Standard" : "C++17",
-            \ "BreakBeforeBraces" : "Stroustrup"}
+let g:clang_format#style_options = {"BasedOnStyle" : "Mozilla"}
 
 Plug 'chrisbra/unicode.vim'
 " Turn TeX symbols into unicode.
@@ -122,7 +116,7 @@ let g:tex_flavor="latex"
 
 " colorscheme
 " set background=dark
-" colorscheme material
+colorscheme 256-grayvim
 
 
 " vim alternate
@@ -165,7 +159,7 @@ au BufNewFile *.snw read ~/Scripts/template.snw
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.snippet set expandtab!
 au BufRead,BufNewFile *.cu set filetype=cpp
-au BufRead,BufNewFile *.vue setlocal iskeyword+=- setlocal filetype=vue
+au BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
