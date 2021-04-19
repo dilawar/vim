@@ -28,6 +28,26 @@ Plug 'godlygeek/tabular'
 " YCM
 " Plug 'ycm-core/YouCompleteMe', {'do' : './install.py'}
 Plug 'dense-analysis/ale'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_cpp_gcc_options = '-std=c++17'
+let g:ale_tex_chktex_options = '-n26 -n18'
+let g:ale_linters = {
+            \ 'python' : [ 'pyflakes'], 
+            \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'], 
+            \}
+let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
+let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
+
+let g:ale_fixers = {
+            \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+            \   'javascript': ['eslint'],
+            \   'python' : ['black'],
+            \}
+let g:ale_fix_on_save = 1
 
 " FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
 " Plug 'rstacruz/vim-closer'
@@ -56,7 +76,7 @@ Plug 'dilawar/better-indent-support-for-php-with-html'
 " Python 
 " jedi does not work well when different version of python are installed. Never
 " figured out what is the issue and life feels short to have such a fun!
-" Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " let g:pymode_warnings=1
@@ -97,19 +117,6 @@ call plug#end()
 
 au BufRead,BufNewFile *.plantuml set filetype=plantuml
 
-let g:airline#extensions#ale#enabled = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
-let g:ale_cpp_gcc_options = '-std=c++17'
-let g:ale_tex_chktex_options = '-n26 -n18'
-let g:ale_linters = {
-            \ 'python' : [ 'pyflakes'], 
-            \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'], 
-            \}
-let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
-let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
 
 " vimtex
 let g:tex_flavor="latex"
