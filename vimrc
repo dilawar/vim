@@ -28,6 +28,7 @@ Plug 'godlygeek/tabular'
 " YCM
 " Plug 'ycm-core/YouCompleteMe', {'do' : './install.py'}
 Plug 'dense-analysis/ale'
+Plug 'rust-lang/rust.vim'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
@@ -36,8 +37,9 @@ let g:ale_fix_on_save = 1
 let g:ale_cpp_gcc_options = '-std=c++17'
 let g:ale_tex_chktex_options = '-n26 -n18'
 let g:ale_linters = {
-            \ 'python' : [ 'pyflakes'], 
-            \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'], 
+            \ 'python' : [ 'pyflakes'],
+            \ 'rust' : [ 'analyzer'],
+            \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
             \}
 let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
 let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
@@ -46,6 +48,7 @@ let g:ale_fixers = {
             \   '*': ['remove_trailing_lines', 'trim_whitespace'],
             \   'javascript': ['eslint'],
             \   'python' : ['black'],
+            \   'rust' : ['rustfmt'],
             \}
 let g:ale_fix_on_save = 1
 
@@ -53,7 +56,7 @@ let g:ale_fix_on_save = 1
 " Plug 'rstacruz/vim-closer'
 " let g:AutoClosePreserveDotTeg = 0
 
-set nopaste    
+set nopaste
 Plug 'posva/vim-vue'
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
@@ -73,7 +76,7 @@ Plug 'phpstan/vim-phpstan'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
 
-" Python 
+" Python
 " jedi does not work well when different version of python are installed. Never
 " figured out what is the issue and life feels short to have such a fun!
 Plug 'davidhalter/jedi-vim'
@@ -109,7 +112,7 @@ Plug 'lervag/vimtex'
 Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdcommenter'
 Plug 'alvan/vim-closetag'
- 
+
 
 call plug#end()
 
@@ -162,7 +165,7 @@ set spellfile=$HOME/.vim/en.utf-8.add
 
 " Mappings
 source $HOME/.vim/mymappings.vim
-au BufNewFile *.snw read ~/Scripts/template.snw 
+au BufNewFile *.snw read ~/Scripts/template.snw
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.snippet set expandtab!
 au BufRead,BufNewFile *.cu set filetype=cpp
@@ -179,7 +182,7 @@ au BufRead,BufNewFile *.yacml set filetype=dot
 au BufRead,BufNewFile *.ino set filetype=cpp
 au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
 au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
-au BufRead,BufNewFile wscript set filetype=python 
+au BufRead,BufNewFile wscript set filetype=python
 au BufRead *.lyx syntax sync fromstart
 au BufRead,BufNewFile *.jinja2,*.jinja set ft=jinja
 
@@ -187,7 +190,7 @@ au BufRead,BufNewFile *.tex set spell spelllang=en
 au BufEnter *.tex set nosmartindent
 
 " Blog related setting.
-au BufRead,BufNew *.blog setlocal spell spelllang=en 
+au BufRead,BufNew *.blog setlocal spell spelllang=en
 au BufRead,BufNew *.blog setlocal complete+=k
 au BufRead,BufNew *.md setlocal spell spelllang=en
 au BufRead,BufNew *.md setlocal filetype=pandoc
@@ -195,8 +198,8 @@ au BufRead,BufNew *.md setlocal complete+=k
 au BufRead,BufNew *.md setlocal spell spelllang=en
 au BufRead,BufNew *.rst setlocal spell spelllang=en
 " On tmp files do not wrap lines by inserting newline, wrap it without newline.
-au BufRead,BufNew *.tmp setlocal wrap linebreak nolist 
-au BufRead,BufNew *.txt setlocal wrap linebreak nolist 
+au BufRead,BufNew *.tmp setlocal wrap linebreak nolist
+au BufRead,BufNew *.txt setlocal wrap linebreak nolist
 au BufRead,BufNew *.py setlocal comments+=:#'   " #' is used  by pyweave.
 
 
@@ -214,7 +217,7 @@ au BufRead,BufNewFile *.tex set filetype=tex
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
-source $HOME/.vim/methods.vim 
+source $HOME/.vim/methods.vim
 
 " default
 set shiftwidth=4
@@ -277,7 +280,7 @@ set statusline+=%*
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
-" Nerd Commentor 
+" Nerd Commentor
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
@@ -300,9 +303,9 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 
-" Doxygen 
+" Doxygen
 let g:DoxygenToolkit_authorName="Dilawar Singh <dilawar.s.rajput@gmail.com>"
-let g:DoxygenToolkit_licenseTag="MIT"  
+let g:DoxygenToolkit_licenseTag="MIT"
 
 let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding", "formatting" ]
