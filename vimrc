@@ -39,6 +39,7 @@ let g:ale_tex_chktex_options = '-n26 -n18'
 let g:ale_linters = {
             \ 'python' : [ 'pyflakes'],
             \ 'rust' : [ 'analyzer'],
+            \ 'javascript' : [ 'eslint'],
             \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
             \}
 let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
@@ -56,8 +57,9 @@ let g:ale_fix_on_save = 1
 " Plug 'rstacruz/vim-closer'
 " let g:AutoClosePreserveDotTeg = 0
 
-set nopaste
 Plug 'posva/vim-vue'
+au BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue sw=2 tw=2
+
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 Plug 'godlygeek/tabular'
@@ -169,7 +171,6 @@ au BufNewFile *.snw read ~/Scripts/template.snw
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.snippet set expandtab!
 au BufRead,BufNewFile *.cu set filetype=cpp
-au BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue
 au BufRead,BufNewFile *.scad set filetype=openscad
 au BufRead,BufNewFile *.snw set filetype=noweb
 au BufRead,BufNewFile *.w set filetype=noweb
