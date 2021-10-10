@@ -19,6 +19,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-pandoc/vim-pandoc'
 " Plug 'tomtom/tcomment_vim'
 
+" c-support
+Plug 'dilawar/c-support'
+let g:C_UseTool_cmake = 'yes'
+let g:C_UseTool_doxygen = 'yes'
+
 " Grammar
 Plug 'rhysd/vim-grammarous'
 
@@ -27,7 +32,7 @@ Plug 'godlygeek/tabular'
 
 " YCM
 " Plug 'ycm-core/YouCompleteMe', {'do' : './install.py'}
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'rust-lang/rust.vim'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'

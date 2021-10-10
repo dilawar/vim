@@ -4,11 +4,10 @@
 
 SetMacro( 'AUTHOR',       'Dilawar Singh' )
 SetMacro( 'AUTHORREF',    '' )
-SetMacro( 'EMAIL',        'dilawars@ncbs.res.in' )
-SetMacro( 'ORGANIZATION', 'NCBS Bangalore' )
-SetMacro( 'COMPANY',      '' )
+SetMacro( 'EMAIL',        'dilawar@subcom.tech' )
+SetMacro( 'ORGANIZATION', 'Subconscious Compute' )
+SetMacro( 'COMPANY',      'Subconscious Compute' )
 SetMacro( 'COPYRIGHT',    'Copyright (c) |YEAR|, |AUTHOR|' )
-SetMacro( 'LICENSE',      'GNU General Public License' )
 
 § =============================================================
 §  Date and Time Format
