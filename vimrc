@@ -23,6 +23,8 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'dilawar/c-support'
 let g:C_UseTool_cmake = 'yes'
 let g:C_UseTool_doxygen = 'yes'
+" cmake
+Plug 'cdelledonne/vim-cmake'
 
 " Grammar
 Plug 'rhysd/vim-grammarous'
@@ -90,7 +92,7 @@ Plug 'davidhalter/jedi-vim'
 
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " let g:pymode_warnings=1
-Plug 'dilawar/vim-mypy'
+" Plug 'dilawar/vim-mypy'
 
 " Python vim
 Plug 'jupyter-vim/jupyter-vim'
