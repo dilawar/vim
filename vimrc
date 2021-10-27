@@ -5,11 +5,6 @@ call plug#begin("~/.vim/plugged")
 
 Plug 'gmarik/vundle'
 
-"" LucHermite
-Plug 'tomtom/stakeholders_vim'
-Plug 'LucHermitte/lh-vim-lib'
-Plug 'LucHermitte/alternate-lite'
-
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -17,7 +12,9 @@ Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-pandoc/vim-pandoc'
-" Plug 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
+
+Plug 'dilawar/a.vim'
 
 " c-support
 Plug 'dilawar/c-support'
@@ -97,6 +94,8 @@ Plug 'davidhalter/jedi-vim'
 " Python vim
 Plug 'jupyter-vim/jupyter-vim'
 
+" Nim
+Plug 'zah/nim.vim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
