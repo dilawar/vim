@@ -36,8 +36,8 @@ Plug 'rust-lang/rust.vim'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
+let g:ale_lint_on_save = 0
+let g:ale_fix_on_save = 0
 let g:ale_cpp_gcc_options = '-std=c++17'
 let g:ale_tex_chktex_options = '-n26 -n18'
 let g:ale_linters = {
@@ -55,7 +55,6 @@ let g:ale_fixers = {
             \   'python' : ['black'],
             \   'rust' : ['rustfmt'],
             \}
-let g:ale_fix_on_save = 1
 
 " FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
 " Plug 'rstacruz/vim-closer'
@@ -76,6 +75,9 @@ let g:pydocstring_formatter = "numpy"
 
 " tags
 Plug 'craigemery/vim-autotag'
+
+" nim
+Plug 'zah/nim.vim'
 
 " php
 Plug 'phpstan/vim-phpstan'
