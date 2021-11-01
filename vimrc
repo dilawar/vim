@@ -9,17 +9,21 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'vim-scripts/DrawIt'
-Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'tomtom/tcomment_vim'
 
+" alternate
 Plug 'dilawar/a.vim'
+
+" doc
+Plug 'kkoomen/vim-doge'
 
 " c-support
 Plug 'dilawar/c-support'
 let g:C_UseTool_cmake = 'yes'
 let g:C_UseTool_doxygen = 'yes'
+
 " cmake
 Plug 'cdelledonne/vim-cmake'
 
@@ -311,10 +315,6 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-
-" Doxygen
-let g:DoxygenToolkit_authorName="Dilawar Singh <dilawar.s.rajput@gmail.com>"
-let g:DoxygenToolkit_licenseTag="MIT"
 
 let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding", "formatting" ]
