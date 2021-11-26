@@ -20,7 +20,7 @@ Plug 'dilawar/a.vim'
 Plug 'kkoomen/vim-doge'
 
 " c-support
-Plug 'dilawar/c-support'
+" Plug 'dilawar/c-support'
 let g:C_UseTool_cmake = 'yes'
 let g:C_UseTool_doxygen = 'yes'
 
@@ -32,6 +32,10 @@ Plug 'rhysd/vim-grammarous'
 
 " Tabular
 Plug 'godlygeek/tabular'
+
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " YCM
 " Plug 'ycm-core/YouCompleteMe', {'do' : './install.py'}
@@ -169,7 +173,6 @@ set smartindent
 set encoding=utf-8
 set fileencoding=utf-8
 syntax enable
-set complete-=k
 set history=10000
 set backspace=indent,eol,start
 
@@ -341,3 +344,5 @@ set notermguicolors
 " errorfmt
 set errorformat^=%-G%f:%l:\ warning:%m
 set errorformat^=%-G%f:%l:\ note:%m
+
+set complete-=i
