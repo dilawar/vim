@@ -36,11 +36,11 @@ Plug 'godlygeek/tabular'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'rust-lang/rust.vim'
 
 " YCM
 " Plug 'ycm-core/YouCompleteMe', {'do' : './install.py'}
-" Plug 'dense-analysis/ale'
-Plug 'rust-lang/rust.vim'
+Plug 'dense-analysis/ale'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
@@ -95,7 +95,7 @@ Plug 'dilawar/better-indent-support-for-php-with-html'
 " Python
 " jedi does not work well when different version of python are installed. Never
 " figured out what is the issue and life feels short to have such a fun!
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " let g:pymode_warnings=1
