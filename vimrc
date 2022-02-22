@@ -36,10 +36,16 @@ Plug 'godlygeek/tabular'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'rust-lang/rust.vim'
 
-" YCM
-" Plug 'ycm-core/YouCompleteMe', {'do' : './install.py'}
+" COC
+" Use release branch (recommend)
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Or build from source code by using yarn: https://yarnpkg.com
+" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+
+
+" ALE
 Plug 'dense-analysis/ale'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
@@ -50,7 +56,7 @@ let g:ale_cpp_gcc_options = '-std=c++17'
 let g:ale_tex_chktex_options = '-n26 -n18'
 let g:ale_linters = {
             \ 'python' : [ 'pyflakes'],
-            \ 'rust' : [ 'analyzer'],
+            \ 'rust' : [ 'analyzer', 'cargo'],
             \ 'javascript' : [ 'eslint'],
             \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
             \}
@@ -63,6 +69,8 @@ let g:ale_fixers = {
             \   'python' : ['black'],
             \   'rust' : ['rustfmt'],
             \}
+
+let g:ale_rust_cargo_use_clippy = 1
 
 " FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
 " Plug 'rstacruz/vim-closer'
@@ -82,7 +90,7 @@ let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
 let g:pydocstring_formatter = "numpy"
 
 " tags
-Plug 'craigemery/vim-autotag'
+Plug 'ludovicchabant/vim-gutentags'
 
 " nim
 Plug 'zah/nim.vim'
@@ -131,6 +139,9 @@ Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdcommenter'
 Plug 'alvan/vim-closetag'
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 
 call plug#end()
 
@@ -144,7 +155,7 @@ let g:tex_flavor="latex"
 
 " colorscheme
 " set background=dark
-colorscheme 256-grayvim
+" colorscheme 256-grayvim
 
 
 " vim alternate
@@ -230,6 +241,10 @@ au BufRead,BufNewFile *.mc set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
 au BufRead,BufNewFile *.tex set filetype=tex
 
+" Rust
+au BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+" au BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+
 
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 let g:haddock_docdir= "/usr/share/doc/ghc/html/"
@@ -240,8 +255,8 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set smarttab
-set textwidth=79
-set colorcolumn=80
+set textwidth=100
+set colorcolumn=101
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set wrap
 set iskeyword+=_
