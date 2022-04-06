@@ -96,6 +96,17 @@ Plug 'ludovicchabant/vim-gutentags'
 
 " nim
 Plug 'zah/nim.vim'
+fun! JumpToDef()
+    if exists("*GotoDefinition_" . &filetype)
+        call GotoDefinition_{&filetype}()
+    else
+        exe "norm! \<C-]>"
+    endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " php
 Plug 'phpstan/vim-phpstan'
@@ -222,7 +233,7 @@ au BufEnter *.tex set nosmartindent
 au BufRead,BufNew *.blog setlocal spell spelllang=en
 au BufRead,BufNew *.blog setlocal complete+=k
 au BufRead,BufNew *.md setlocal spell spelllang=en
-au BufRead,BufNew *.md setlocal filetype=pandoc
+au BufRead,BufNew *.md setlocal filetype=mardown
 au BufRead,BufNew *.md setlocal complete+=k
 au BufRead,BufNew *.md setlocal spell spelllang=en
 au BufRead,BufNew *.rst setlocal spell spelllang=en
@@ -257,8 +268,8 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set smarttab
-set textwidth=100
-set colorcolumn=101
+set textwidth=80
+set colorcolumn=81
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set wrap
 set iskeyword+=_
