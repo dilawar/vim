@@ -45,7 +45,7 @@ Plug 'junegunn/fzf.vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
 " Syntastic
-if 1
+if 0
     Plug 'vim-syntastic/syntastic'
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
@@ -69,22 +69,23 @@ else
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'pyflakes'],
-
                 \ 'rust' : [ 'analyzer', 'cargo'],
                 \ 'javascript' : [ 'eslint'],
                 \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
                 \}
-let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
-let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
 
-let g:ale_fixers = {
-            \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-            \   'javascript': ['eslint'],
-            \   'python' : ['black'],
-            \   'rust' : ['rustfmt'],
-            \}
+    let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
+    let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
 
-let g:ale_rust_cargo_use_clippy = 1
+    let g:ale_fixers = {
+                \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+                \   'javascript': ['eslint'],
+                \   'python' : ['black'],
+                \   'rust' : ['rustfmt'],
+                \}
+
+    let g:ale_rust_cargo_use_clippy = 1
+
 endif
 
 " FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
