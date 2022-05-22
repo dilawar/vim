@@ -44,22 +44,36 @@ Plug 'junegunn/fzf.vim'
 " Or build from source code by using yarn: https://yarnpkg.com
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
+" Syntastic
+if 1
+    Plug 'vim-syntastic/syntastic'
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
 
-" ALE
-Plug 'dense-analysis/ale'
-let g:airline#extensions#ale#enabled = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 0
-let g:ale_fix_on_save = 0
-let g:ale_cpp_gcc_options = '-std=c++17'
-let g:ale_tex_chktex_options = '-n26 -n18'
-let g:ale_linters = {
-            \ 'python' : [ 'pyflakes'],
-            \ 'rust' : [ 'analyzer', 'cargo'],
-            \ 'javascript' : [ 'eslint'],
-            \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
-            \}
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+
+else 
+
+    " ALE
+    Plug 'dense-analysis/ale'
+    let g:airline#extensions#ale#enabled = 1
+    let g:ale_lint_on_text_changed = 'never'
+    let g:ale_lint_on_enter = 0
+    let g:ale_lint_on_save = 0
+    let g:ale_fix_on_save = 0
+    let g:ale_cpp_gcc_options = '-std=c++17'
+    let g:ale_tex_chktex_options = '-n26 -n18'
+    let g:ale_linters = {
+                \ 'python' : [ 'pyflakes'],
+
+                \ 'rust' : [ 'analyzer', 'cargo'],
+                \ 'javascript' : [ 'eslint'],
+                \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
+                \}
 let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
 let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
 
@@ -71,6 +85,7 @@ let g:ale_fixers = {
             \}
 
 let g:ale_rust_cargo_use_clippy = 1
+endif
 
 " FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
 " Plug 'rstacruz/vim-closer'
@@ -154,6 +169,7 @@ Plug 'alvan/vim-closetag'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+Plug 'dilawar/vim-slint'
 
 
 call plug#end()
