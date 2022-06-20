@@ -298,7 +298,7 @@ set backup
 set backupdir=~/vim-backup/,./.backup,/tmp,.
 set undofile
 
-# always prefer unix encoding
+" always prefer unix encoding
 autocmd BufWrite * :set ff=unix
 
 let vimDir = '$HOME/.vim/'
