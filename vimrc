@@ -108,7 +108,9 @@ Plug 'pixelneo/vim-python-docstring'
 let g:python_style =  'numpy'
 
 " tags
+Plug 'preservim/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
+
 
 " nim
 Plug 'zah/nim.vim'
