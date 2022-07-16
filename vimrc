@@ -110,7 +110,8 @@ let g:python_style =  'numpy'
 " tags
 Plug 'preservim/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
-
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " nim
 Plug 'zah/nim.vim'
