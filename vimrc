@@ -110,7 +110,8 @@ let g:python_style =  'numpy'
 " tags
 Plug 'preservim/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
-
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " nim
 Plug 'zah/nim.vim'
@@ -147,8 +148,8 @@ Plug 'jupyter-vim/jupyter-vim'
 Plug 'zah/nim.vim'
 
 " Snippets
-Plug 'SirVer/ultisnips'
-Plug 'dilawar/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'dilawar/vim-snippets'
 let g:snips_author = "Dilawar Singh"
 let g:snips_email = "dilawar@subcom.tech"
 " let g:UltiSnipsExpandTrigger="<c-space>"
