@@ -25,7 +25,7 @@ let g:C_UseTool_cmake = 'yes'
 let g:C_UseTool_doxygen = 'yes'
 
 " cmake
-Plug 'cdelledonne/vim-cmake'
+" Plug 'cdelledonne/vim-cmake'
 
 " Grammar
 Plug 'rhysd/vim-grammarous'
@@ -220,12 +220,6 @@ syntax enable
 set history=10000
 set backspace=indent,eol,start
 
-" Spellfile;
-set spellfile=$HOME/.vim/en.utf-8.add
-
-
-" Mappings
-source $HOME/.vim/mymappings.vim
 au BufNewFile *.snw read ~/Scripts/template.snw
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.snippet set expandtab!
@@ -278,10 +272,6 @@ au BufRead,BufNewFile *.tex set filetype=tex
 au BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 " au BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
-
-set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
-let g:haddock_docdir= "/usr/share/doc/ghc/html/"
-source $HOME/.vim/methods.vim
 
 " default
 set shiftwidth=4
