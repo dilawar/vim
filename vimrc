@@ -148,8 +148,8 @@ Plug 'jupyter-vim/jupyter-vim'
 Plug 'zah/nim.vim'
 
 " Snippets
-" Plug 'SirVer/ultisnips'
-" Plug 'dilawar/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'dilawar/vim-snippets'
 let g:snips_author = "Dilawar Singh"
 let g:snips_email = "dilawar@subcom.tech"
 " let g:UltiSnipsExpandTrigger="<c-space>"
