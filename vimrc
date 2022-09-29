@@ -56,19 +56,19 @@ if 0
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
 
-else 
+else
 
     " ALE
     Plug 'dense-analysis/ale'
     let g:airline#extensions#ale#enabled = 1
     let g:ale_lint_on_text_changed = 'never'
     let g:ale_lint_on_enter = 0
-    let g:ale_lint_on_save = 0
-    let g:ale_fix_on_save = 0
+    let g:ale_lint_on_save = 1
+    let g:ale_fix_on_save = 1
     let g:ale_cpp_gcc_options = '-std=c++17'
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
-                \ 'python' : [ 'pyflakes'],
+                \ 'python' : [ 'pylint', 'pyflakes' ],
                 \ 'rust' : [ 'analyzer', 'cargo'],
                 \ 'javascript' : [ 'eslint'],
                 \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
