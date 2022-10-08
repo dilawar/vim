@@ -101,6 +101,9 @@ Plug 'godlygeek/tabular'
 Plug 'coyotebush/vim-pweave'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+" Python
+
+Plug 'python-rope/ropevim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
 let g:pydocstring_formatter = "numpy"
