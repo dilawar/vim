@@ -100,6 +100,9 @@ Plug 'itchyny/calendar.vim'
 Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+" Python
+
+Plug 'python-rope/ropevim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
 let g:pydocstring_formatter = "numpy"
@@ -207,12 +210,6 @@ syntax enable
 set history=10000
 set backspace=indent,eol,start
 
-" Spellfile;
-set spellfile=$HOME/.vim/en.utf-8.add
-
-
-" Mappings
-source $HOME/.vim/mymappings.vim
 au BufNewFile *.snw read ~/Scripts/template.snw
 au BufRead,BufNewFile *.nw set filetype=noweb
 au BufRead,BufNewFile *.snippet set expandtab!
@@ -265,10 +262,6 @@ au BufRead,BufNewFile *.tex set filetype=tex
 au BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 " au BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
-
-set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
-let g:haddock_docdir= "/usr/share/doc/ghc/html/"
-source $HOME/.vim/methods.vim
 
 " default
 set shiftwidth=4
