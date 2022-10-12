@@ -20,15 +20,15 @@ Plug 'dilawar/a.vim'
 Plug 'kkoomen/vim-doge'
 
 " c-support
-" Plug 'dilawar/c-support'
+Plug 'dilawar/c-support'
 let g:C_UseTool_cmake = 'yes'
 let g:C_UseTool_doxygen = 'yes'
 
 " cmake
-Plug 'cdelledonne/vim-cmake'
+" Plug 'cdelledonne/vim-cmake'
 
 " Grammar
-Plug 'rhysd/vim-grammarous'
+" Plug 'rhysd/vim-grammarous'
 
 " Tabular
 Plug 'godlygeek/tabular'
@@ -53,7 +53,7 @@ if 0
 
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_open = 0
     let g:syntastic_check_on_wq = 0
 
 else
@@ -63,8 +63,8 @@ else
     let g:airline#extensions#ale#enabled = 1
     let g:ale_lint_on_text_changed = 'never'
     let g:ale_lint_on_enter = 0
-    let g:ale_lint_on_save = 1
-    let g:ale_fix_on_save = 1
+    let g:ale_lint_on_save = 0
+    let g:ale_fix_on_save = 0
     let g:ale_cpp_gcc_options = '-std=c++17'
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
@@ -98,7 +98,6 @@ au BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue sw=2 tw=2
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 Plug 'godlygeek/tabular'
-Plug 'coyotebush/vim-pweave'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
@@ -108,7 +107,7 @@ Plug 'pixelneo/vim-python-docstring'
 let g:python_style =  'numpy'
 
 " tags
-Plug 'preservim/tagbar'
+" Plug 'preservim/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
@@ -131,18 +130,6 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 Plug 'phpstan/vim-phpstan'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
-
-" Python
-" jedi does not work well when different version of python are installed. Never
-" figured out what is the issue and life feels short to have such a fun!
-" Plug 'davidhalter/jedi-vim'
-
-" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-" let g:pymode_warnings=1
-" Plug 'dilawar/vim-mypy'
-
-" Python vim
-Plug 'jupyter-vim/jupyter-vim'
 
 " Nim
 Plug 'zah/nim.vim'
