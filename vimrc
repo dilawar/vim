@@ -63,8 +63,8 @@ else
     let g:airline#extensions#ale#enabled = 1
     let g:ale_lint_on_text_changed = 'never'
     let g:ale_lint_on_enter = 0
-    let g:ale_lint_on_save = 0
-    let g:ale_fix_on_save = 0
+    let g:ale_lint_on_save = 1
+    let g:ale_fix_on_save = 1
     let g:ale_cpp_gcc_options = '-std=c++17'
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
@@ -110,8 +110,9 @@ Plug 'pixelneo/vim-python-docstring'
 let g:python_style =  'numpy'
 
 " tags
-" Plug 'preservim/tagbar'
+Plug 'preservim/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
