@@ -77,6 +77,13 @@ else
     let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
     let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
 
+    let g:ale_rust_analyzer_config = {
+                \ 'checkOnSave' : {
+                    \ 'command' : 'clippy',
+                    \ 'extraArgs' : ['--target-dir', '/tmp/_rust_analyze']
+                    \},
+                \}
+
     let g:ale_fixers = {
                 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
                 \   'javascript': ['eslint'],
