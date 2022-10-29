@@ -120,6 +120,7 @@ let g:python_style =  'numpy'
 Plug 'preservim/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
+
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
@@ -141,6 +142,18 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 Plug 'phpstan/vim-phpstan'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
+
+" Python
+" jedi does not work well when different version of python are installed. Never
+" figured out what is the issue and life feels short to have such a fun!
+" Plug 'davidhalter/jedi-vim'
+
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" let g:pymode_warnings=1
+Plug 'dilawar/vim-mypy'
+
+" " Python vim
+" Plug 'jupyter-vim/jupyter-vim'
 
 " Nim
 Plug 'zah/nim.vim'
