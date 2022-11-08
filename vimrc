@@ -1,10 +1,13 @@
-" Prefer python3
 set pyx=3
+"if isdirectory("C:/Python310")
+"    set pythonthreehome="C:/Python310"
+"    set pythonthreedll="C:/Python310/python3.dll"
+"    let g:python3_host_prog = "C:/Python310/python.exe"
+"endif
 
 call plug#begin("~/.vim/plugged")
 
 Plug 'gmarik/vundle'
-
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -63,8 +66,8 @@ else
     let g:airline#extensions#ale#enabled = 1
     let g:ale_lint_on_text_changed = 'never'
     let g:ale_lint_on_enter = 0
-    let g:ale_lint_on_save = 1
-    let g:ale_fix_on_save = 1
+    let g:ale_lint_on_save = 0
+    let g:ale_fix_on_save = 0
     let g:ale_cpp_gcc_options = '-std=c++17'
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
@@ -109,7 +112,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " Python
 
-Plug 'python-rope/ropevim'
+" Plug 'python-rope/ropevim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
 let g:pydocstring_formatter = "numpy"
@@ -120,6 +123,7 @@ let g:python_style =  'numpy'
 Plug 'preservim/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
+
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
@@ -142,17 +146,35 @@ Plug 'phpstan/vim-phpstan'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
 
+" Python
+" jedi does not work well when different version of python are installed. Never
+" figured out what is the issue and life feels short to have such a fun!
+" Plug 'davidhalter/jedi-vim'
+
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" let g:pymode_warnings=1
+Plug 'dilawar/vim-mypy'
+
+
 " Nim
 Plug 'zah/nim.vim'
 
 " Snippets
-Plug 'SirVer/ultisnips'
+if 0
+    Plug 'SirVer/ultisnips'
+    let g:snips_author = "Dilawar Singh"
+    let g:snips_email = "dilawar@subcom.tech"
+    " let g:UltiSnipsExpandTrigger="<c-space>"
+    " let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+else
+    Plug 'MarcWeber/vim-addon-mw-utils'
+    Plug 'tomtom/tlib_vim'
+    Plug 'garbas/vim-snipmate'
+    let g:snipMate = { 'snippet_version' : 1 }
+endif
 Plug 'dilawar/vim-snippets'
-let g:snips_author = "Dilawar Singh"
-let g:snips_email = "dilawar@subcom.tech"
-" let g:UltiSnipsExpandTrigger="<c-space>"
-" let g:UltiSnipsJumpForwardTrigger="<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 
 
 " clang-format'
