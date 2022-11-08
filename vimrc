@@ -162,7 +162,6 @@ Plug 'zah/nim.vim'
 " Snippets
 if 0
     Plug 'SirVer/ultisnips'
-    Plug 'dilawar/vim-snippets'
     let g:snips_author = "Dilawar Singh"
     let g:snips_email = "dilawar@subcom.tech"
     " let g:UltiSnipsExpandTrigger="<c-space>"
@@ -172,8 +171,9 @@ else
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
     Plug 'garbas/vim-snipmate'
-    Plug 'honza/vim-snippets'
+    let g:snipMate = { 'snippet_version' : 1 }
 endif
+Plug 'dilawar/vim-snippets'
 
 
 
