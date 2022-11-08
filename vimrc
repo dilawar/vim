@@ -1,9 +1,9 @@
 set pyx=3
-if isdirectory("C:/Python310")
-    set pythonthreehome="C:/Python310"
-    set pythonthreedll="C:/Python310/python3.dll"
-    let g:python3_host_prog = "C:/Python310/python.exe"
-endif
+"if isdirectory("C:/Python310")
+"    set pythonthreehome="C:/Python310"
+"    set pythonthreedll="C:/Python310/python3.dll"
+"    let g:python3_host_prog = "C:/Python310/python.exe"
+"endif
 
 call plug#begin("~/.vim/plugged")
 
@@ -160,13 +160,21 @@ Plug 'dilawar/vim-mypy'
 Plug 'zah/nim.vim'
 
 " Snippets
-"Plug 'SirVer/ultisnips'
-Plug 'dilawar/vim-snippets'
-let g:snips_author = "Dilawar Singh"
-let g:snips_email = "dilawar@subcom.tech"
-" let g:UltiSnipsExpandTrigger="<c-space>"
-" let g:UltiSnipsJumpForwardTrigger="<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+if 0
+    Plug 'SirVer/ultisnips'
+    Plug 'dilawar/vim-snippets'
+    let g:snips_author = "Dilawar Singh"
+    let g:snips_email = "dilawar@subcom.tech"
+    " let g:UltiSnipsExpandTrigger="<c-space>"
+    " let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+else
+    Plug 'MarcWeber/vim-addon-mw-utils'
+    Plug 'tomtom/tlib_vim'
+    Plug 'garbas/vim-snipmate'
+    Plug 'honza/vim-snippets'
+endif
+
 
 
 " clang-format'
