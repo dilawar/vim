@@ -1,3 +1,7 @@
+let &pythonthreehome = 'C:\Python310'
+let &pythonthreedll = 'C:\Python310\python310.dll'
+
+
 set pyx=3
 
 call plug#begin("~/.vim/plugged")
