@@ -1,6 +1,7 @@
-let &pythonthreehome = 'C:\Python310'
-let &pythonthreedll = 'C:\Python310\python310.dll'
-
+if filereadable('C:\Python310\python310.dll') 
+    let &pythonthreehome = 'C:\Python310'
+    let &pythonthreedll = 'C:\Python310\python310.dll'
+endif
 
 set pyx=3
 
