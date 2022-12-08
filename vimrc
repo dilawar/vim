@@ -189,7 +189,7 @@ Plug 'alvan/vim-closetag'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-let g:rust_cargo_avoid_whole_workspace = 0
+let g:rust_cargo_avoid_whole_workspace = 1
 
 Plug 'dilawar/vim-slint'
 
