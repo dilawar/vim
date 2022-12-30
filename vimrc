@@ -76,6 +76,7 @@ else
 
     let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
     let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
+    let g:ale_php_psalm_executable='./vendor/bin/psalm'
 
     let g:ale_fixers = {
                 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -103,7 +104,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " Python
 
-Plug 'python-rope/ropevim'
+" Plug 'python-rope/ropevim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
 let g:pydocstring_formatter = "numpy"
@@ -131,9 +132,9 @@ nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " php
-Plug 'phpstan/vim-phpstan'
-Plug 'stephpy/vim-php-cs-fixer'
-Plug 'dilawar/better-indent-support-for-php-with-html'
+" Plug 'phpstan/vim-phpstan'
+" Plug 'stephpy/vim-php-cs-fixer'
+" Plug 'dilawar/better-indent-support-for-php-with-html'
 
 " Python
 " jedi does not work well when different version of python are installed. Never
