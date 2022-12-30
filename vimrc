@@ -1,10 +1,13 @@
-" Prefer python3
+if filereadable('C:\Python310\python310.dll') 
+    let &pythonthreehome = 'C:\Python310'
+    let &pythonthreedll = 'C:\Python310\python310.dll'
+endif
+
 set pyx=3
 
 call plug#begin("~/.vim/plugged")
 
 Plug 'gmarik/vundle'
-
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -20,7 +23,7 @@ Plug 'dilawar/a.vim'
 Plug 'kkoomen/vim-doge'
 
 " c-support
-" Plug 'dilawar/c-support'
+Plug 'dilawar/c-support'
 let g:C_UseTool_cmake = 'yes'
 let g:C_UseTool_doxygen = 'yes'
 
@@ -28,7 +31,7 @@ let g:C_UseTool_doxygen = 'yes'
 " Plug 'cdelledonne/vim-cmake'
 
 " Grammar
-Plug 'rhysd/vim-grammarous'
+" Plug 'rhysd/vim-grammarous'
 
 " Tabular
 Plug 'godlygeek/tabular'
@@ -53,7 +56,7 @@ if 0
 
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_open = 0
     let g:syntastic_check_on_wq = 0
 
 else
@@ -63,13 +66,13 @@ else
     let g:airline#extensions#ale#enabled = 1
     let g:ale_lint_on_text_changed = 'never'
     let g:ale_lint_on_enter = 0
-    let g:ale_lint_on_save = 1
-    let g:ale_fix_on_save = 1
+    let g:ale_lint_on_save = 0
+    let g:ale_fix_on_save = 0
     let g:ale_cpp_gcc_options = '-std=c++17'
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'pylint', 'pyflakes' ],
-                \ 'rust' : [ 'analyzer', 'cargo'],
+                \ 'rust' : [ 'analyzer'],
                 \ 'javascript' : [ 'eslint'],
                 \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
                 \}
@@ -77,6 +80,13 @@ else
     let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
     let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
     let g:ale_php_psalm_executable='./vendor/bin/psalm'
+
+    let g:ale_rust_analyzer_config = {
+                \ 'checkOnSave' : {
+                    \ 'command' : 'clippy',
+                    \ 'extraArgs' : ['--target-dir', '/tmp/_rust_analyze']
+                    \},
+                \}
 
     let g:ale_fixers = {
                 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -99,7 +109,6 @@ au BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue sw=2 tw=2
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 Plug 'godlygeek/tabular'
-Plug 'coyotebush/vim-pweave'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " Python
@@ -114,6 +123,8 @@ let g:python_style =  'numpy'
 " tags
 Plug 'preservim/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
+
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
@@ -143,22 +154,29 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " let g:pymode_warnings=1
-" Plug 'dilawar/vim-mypy'
+Plug 'dilawar/vim-mypy'
 
-" Python vim
-Plug 'jupyter-vim/jupyter-vim'
 
 " Nim
 Plug 'zah/nim.vim'
 
 " Snippets
-Plug 'SirVer/ultisnips'
-Plug 'dilawar/vim-snippets'
-let g:snips_author = "Dilawar Singh"
-let g:snips_email = "dilawar@subcom.tech"
-" let g:UltiSnipsExpandTrigger="<c-space>"
-" let g:UltiSnipsJumpForwardTrigger="<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+if 1
+    Plug 'SirVer/ultisnips'
+    let g:snips_author = "Dilawar Singh"
+    let g:snips_email = "dilawar@subcom.tech"
+    " let g:UltiSnipsExpandTrigger="<c-space>"
+    " let g:UltiSnipsJumpForwardTrigger="<c-j>"
+    " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+    Plug 'dilawar/vim-snippets'
+else
+    Plug 'MarcWeber/vim-addon-mw-utils'
+    Plug 'tomtom/tlib_vim'
+    Plug 'garbas/vim-snipmate'
+    let g:snipMate = { 'snippet_version' : 1 }
+    Plug 'honza/vim-snippets'
+endif
+
 
 
 " clang-format'
@@ -177,6 +195,8 @@ Plug 'alvan/vim-closetag'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+let g:rust_cargo_avoid_whole_workspace = 0
+
 Plug 'dilawar/vim-slint'
 
 
