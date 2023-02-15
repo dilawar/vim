@@ -1,6 +1,6 @@
-if filereadable('C:\Python310\python310.dll') 
-    let &pythonthreehome = 'C:\Python310'
-    let &pythonthreedll = 'C:\Python310\python310.dll'
+if filereadable('C:\Python310\python311.dll') 
+    let &pythonthreehome = 'C:\Python311'
+    let &pythonthreedll = 'C:\Python311\python311.dll'
 endif
 
 set pyx=3
@@ -72,7 +72,7 @@ else
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'pylint', 'pyflakes' ],
-                \ 'rust' : [ 'analyzer'],
+                \ 'rust' : [ 'rls', 'rustc'],
                 \ 'javascript' : [ 'eslint'],
                 \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
                 \}
@@ -95,6 +95,12 @@ else
                 \}
 
     let g:ale_rust_cargo_use_clippy = 1
+    let g:ale_rust_rls_config = {
+                    \   'rust': {
+                    \     'clippy_preference': 'on'
+                    \   }
+                    \ }
+
 
 endif
 
@@ -160,7 +166,7 @@ Plug 'dilawar/vim-mypy'
 Plug 'zah/nim.vim'
 
 " Snippets
-if 1
+if 0
     Plug 'SirVer/ultisnips'
     let g:snips_author = "Dilawar Singh"
     let g:snips_email = "dilawar@subcom.tech"
