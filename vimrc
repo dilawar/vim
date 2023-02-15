@@ -79,6 +79,7 @@ else
 
     let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
     let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
+    let g:ale_php_psalm_executable='./vendor/bin/psalm'
 
     let g:ale_rust_analyzer_config = {
                 \ 'checkOnSave' : {
@@ -148,9 +149,9 @@ nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " php
-Plug 'phpstan/vim-phpstan'
-Plug 'stephpy/vim-php-cs-fixer'
-Plug 'dilawar/better-indent-support-for-php-with-html'
+" Plug 'phpstan/vim-phpstan'
+" Plug 'stephpy/vim-php-cs-fixer'
+" Plug 'dilawar/better-indent-support-for-php-with-html'
 
 " Python
 " jedi does not work well when different version of python are installed. Never
@@ -200,7 +201,7 @@ Plug 'alvan/vim-closetag'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-let g:rust_cargo_avoid_whole_workspace = 0
+let g:rust_cargo_avoid_whole_workspace = 1
 
 Plug 'dilawar/vim-slint'
 
