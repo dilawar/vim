@@ -183,7 +183,7 @@ else
     Plug 'tomtom/tlib_vim'
     Plug 'garbas/vim-snipmate'
     let g:snipMate = { 'snippet_version' : 1 }
-    Plug 'honza/vim-snippets'
+    Plug 'dilawar/vim-snippets'
 endif
 
 
