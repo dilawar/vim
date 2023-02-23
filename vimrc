@@ -30,8 +30,11 @@ let g:C_UseTool_doxygen = 'yes'
 " cmake
 " Plug 'cdelledonne/vim-cmake'
 
+" Just
+Plug 'NoahTheDuke/vim-just'
+
 " Grammar
-" Plug 'rhysd/vim-grammarous'
+Plug 'rhysd/vim-grammarous'
 
 " Tabular
 Plug 'godlygeek/tabular'
