@@ -1,6 +1,6 @@
-if filereadable('C:\Python310\python310.dll') 
-    let &pythonthreehome = 'C:\Python310'
-    let &pythonthreedll = 'C:\Python310\python310.dll'
+if filereadable('C:\Python310\python311.dll') 
+    let &pythonthreehome = 'C:\Python311'
+    let &pythonthreedll = 'C:\Python311\python311.dll'
 endif
 
 set pyx=3
@@ -30,8 +30,11 @@ let g:C_UseTool_doxygen = 'yes'
 " cmake
 " Plug 'cdelledonne/vim-cmake'
 
+" Just
+Plug 'NoahTheDuke/vim-just'
+
 " Grammar
-" Plug 'rhysd/vim-grammarous'
+Plug 'rhysd/vim-grammarous'
 
 " Tabular
 Plug 'godlygeek/tabular'
@@ -72,13 +75,14 @@ else
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'pylint', 'pyflakes' ],
-                \ 'rust' : [ 'analyzer'],
+                \ 'rust' : [ 'rls', 'rustc'],
                 \ 'javascript' : [ 'eslint'],
                 \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
                 \}
 
     let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
     let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
+    let g:ale_php_psalm_executable='./vendor/bin/psalm'
 
     let g:ale_rust_analyzer_config = {
                 \ 'checkOnSave' : {
@@ -95,6 +99,12 @@ else
                 \}
 
     let g:ale_rust_cargo_use_clippy = 1
+    let g:ale_rust_rls_config = {
+                    \   'rust': {
+                    \     'clippy_preference': 'on'
+                    \   }
+                    \ }
+
 
 endif
 
@@ -142,9 +152,9 @@ nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " php
-Plug 'phpstan/vim-phpstan'
-Plug 'stephpy/vim-php-cs-fixer'
-Plug 'dilawar/better-indent-support-for-php-with-html'
+" Plug 'phpstan/vim-phpstan'
+" Plug 'stephpy/vim-php-cs-fixer'
+" Plug 'dilawar/better-indent-support-for-php-with-html'
 
 " Python
 " jedi does not work well when different version of python are installed. Never
@@ -160,7 +170,7 @@ Plug 'dilawar/vim-mypy'
 Plug 'zah/nim.vim'
 
 " Snippets
-if 1
+if 0
     Plug 'SirVer/ultisnips'
     let g:snips_author = "Dilawar Singh"
     let g:snips_email = "dilawar@subcom.tech"
@@ -173,7 +183,7 @@ else
     Plug 'tomtom/tlib_vim'
     Plug 'garbas/vim-snipmate'
     let g:snipMate = { 'snippet_version' : 1 }
-    Plug 'honza/vim-snippets'
+    Plug 'dilawar/vim-snippets'
 endif
 
 
@@ -194,7 +204,7 @@ Plug 'alvan/vim-closetag'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-let g:rust_cargo_avoid_whole_workspace = 0
+let g:rust_cargo_avoid_whole_workspace = 1
 
 Plug 'dilawar/vim-slint'
 
