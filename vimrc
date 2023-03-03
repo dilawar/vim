@@ -113,7 +113,7 @@ endif
 " let g:AutoClosePreserveDotTeg = 0
 
 Plug 'posva/vim-vue'
-autocmd BufRead,BufNewFile *.vue :setlocal iskeyword+=- filetype=vue sw=2 tw=2
+autocmd BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue sw=2 tw=2
 
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
