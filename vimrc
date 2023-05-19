@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+if filereadable('C:\Python310\python311.dll') 
+    let &pythonthreehome = 'C:\Python311'
+    let &pythonthreedll = 'C:\Python311\python311.dll'
+endif
+
+>>>>>>> 164f53af653a96dfe50c8e3f5ca68c74dbd380c0
 set pyx=3
 
 call plug#begin("~/.vim/plugged")
@@ -25,8 +33,11 @@ let g:C_UseTool_doxygen = 'yes'
 " cmake
 " Plug 'cdelledonne/vim-cmake'
 
+" Just
+Plug 'NoahTheDuke/vim-just'
+
 " Grammar
-" Plug 'rhysd/vim-grammarous'
+Plug 'rhysd/vim-grammarous'
 
 " Tabular
 Plug 'godlygeek/tabular'
@@ -67,7 +78,8 @@ else
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
-                \ 'rust' : [ 'analyzer'],
+                \ 'python' : [ 'pylint', 'pyflakes' ],
+                \ 'rust' : [ 'rls', 'rustc'],
                 \ 'javascript' : [ 'eslint'],
                 \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
                 \}
@@ -91,10 +103,20 @@ else
                 \}
 
     let g:ale_rust_cargo_use_clippy = 1
+    let g:ale_rust_rls_config = {
+                    \   'rust': {
+                    \     'clippy_preference': 'on'
+                    \   }
+                    \ }
+
 
 endif
 
 Plug 'posva/vim-vue'
+<<<<<<< HEAD
+=======
+autocmd BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue sw=2 tw=2
+>>>>>>> 164f53af653a96dfe50c8e3f5ca68c74dbd380c0
 
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
@@ -150,7 +172,7 @@ Plug 'dilawar/vim-mypy'
 Plug 'zah/nim.vim'
 
 " Snippets
-if 1
+if 0
     Plug 'SirVer/ultisnips'
     let g:snips_author = "Dilawar Singh"
     let g:snips_email = "dilawar@subcom.tech"
@@ -163,7 +185,7 @@ else
     Plug 'tomtom/tlib_vim'
     Plug 'garbas/vim-snipmate'
     let g:snipMate = { 'snippet_version' : 1 }
-    Plug 'honza/vim-snippets'
+    Plug 'dilawar/vim-snippets'
 endif
 
 
@@ -186,7 +208,7 @@ let g:closetag_filetypes = 'html,vue'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-let g:rust_cargo_avoid_whole_workspace = 0
+let g:rust_cargo_avoid_whole_workspace = 1
 
 Plug 'dilawar/vim-slint'
 
