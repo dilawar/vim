@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-=======
-if filereadable('C:\Python310\python311.dll') 
-    let &pythonthreehome = 'C:\Python311'
-    let &pythonthreedll = 'C:\Python311\python311.dll'
-endif
-
->>>>>>> 164f53af653a96dfe50c8e3f5ca68c74dbd380c0
 set pyx=3
 
 call plug#begin("~/.vim/plugged")
@@ -78,7 +70,6 @@ else
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
-                \ 'python' : [ 'pylint', 'pyflakes' ],
                 \ 'rust' : [ 'rls', 'rustc'],
                 \ 'javascript' : [ 'eslint'],
                 \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
@@ -113,11 +104,6 @@ else
 endif
 
 Plug 'posva/vim-vue'
-<<<<<<< HEAD
-=======
-autocmd BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue sw=2 tw=2
->>>>>>> 164f53af653a96dfe50c8e3f5ca68c74dbd380c0
-
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 " Plug 'godlygeek/tabular'
