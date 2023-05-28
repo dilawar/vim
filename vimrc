@@ -74,8 +74,8 @@ else
     let g:ale_cpp_gcc_options = '-std=c++17'
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
-                \ 'python' : [ 'pylint', 'pyflakes' ],
-                \ 'rust' : [ 'rls', 'rustc'],
+                \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
+                \ 'rust' : [ 'analyzer', 'rustc'],
                 \ 'javascript' : [ 'eslint'],
                 \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
                 \}
@@ -87,7 +87,7 @@ else
     let g:ale_rust_analyzer_config = {
                 \ 'checkOnSave' : {
                     \ 'command' : 'clippy',
-                    \ 'extraArgs' : ['--target-dir', '/tmp/_rust_analyze']
+                    \ 'extraArgs' : ['--all-targets', '--target-dir', '/tmp/_rust_analyze']
                     \},
                 \}
 
@@ -208,10 +208,17 @@ let g:rust_cargo_avoid_whole_workspace = 1
 
 Plug 'dilawar/vim-slint'
 
-
+" Vim backup.
+Plug 'her/central.vim'
 call plug#end()
 
-
+" Create backup of all files.
+let g:central_cleanup_enable = 90
+" set backup
+" silent !mkdir ~/.cache/vim > /dev/null 2>&1
+" set backupdir=~/vim-backup/,~/.cache/vim,./.backup,/tmp,.
+" set undofile
+" set noswapfile
 
 au BufRead,BufNewFile *.plantuml set filetype=plantuml
 
@@ -221,7 +228,7 @@ let g:tex_flavor="latex"
 
 " colorscheme
 " set background=dark
-" colorscheme 256-grayvim
+colorscheme 256-grayvim
 
 
 " vim alternate
@@ -319,10 +326,6 @@ set iskeyword+=_
 set autoread
 set showmatch
 set errorbells
-" Create backup of all files.
-set backup
-set backupdir=~/vim-backup/,./.backup,/tmp,.
-set undofile
 
 " always prefer unix encoding
 autocmd BufWrite * :set ff=unix
