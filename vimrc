@@ -1,8 +1,3 @@
-if filereadable('C:\Python310\python311.dll') 
-    let &pythonthreehome = 'C:\Python311'
-    let &pythonthreedll = 'C:\Python311\python311.dll'
-endif
-
 set pyx=3
 
 call plug#begin("~/.vim/plugged")
@@ -69,15 +64,15 @@ else
     let g:airline#extensions#ale#enabled = 1
     let g:ale_lint_on_text_changed = 'never'
     let g:ale_lint_on_enter = 0
-    let g:ale_lint_on_save = 0
+    let g:ale_lint_on_save = 1
     let g:ale_fix_on_save = 0
     let g:ale_cpp_gcc_options = '-std=c++17'
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
-                \ 'rust' : [ 'analyzer', 'rustc'],
+                \ 'rust' : [ 'rls', 'analyzer', 'rustc'],
                 \ 'javascript' : [ 'eslint'],
-                \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
+                \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
                 \}
 
     let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
@@ -108,16 +103,10 @@ else
 
 endif
 
-" FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
-" Plug 'rstacruz/vim-closer'
-" let g:AutoClosePreserveDotTeg = 0
-
 Plug 'posva/vim-vue'
-autocmd BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue sw=2 tw=2
-
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " Python
@@ -152,9 +141,9 @@ nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " php
-" Plug 'phpstan/vim-phpstan'
-" Plug 'stephpy/vim-php-cs-fixer'
-" Plug 'dilawar/better-indent-support-for-php-with-html'
+Plug 'phpstan/vim-phpstan'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'dilawar/better-indent-support-for-php-with-html'
 
 " Python
 " jedi does not work well when different version of python are installed. Never
@@ -164,7 +153,6 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " let g:pymode_warnings=1
 Plug 'dilawar/vim-mypy'
-
 
 " Nim
 Plug 'zah/nim.vim'
@@ -200,7 +188,9 @@ Plug 'ervandew/supertab'
 Plug 'lervag/vimtex'
 Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdcommenter'
+
 Plug 'alvan/vim-closetag'
+let g:closetag_filetypes = 'html,vue'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -395,7 +385,6 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-
 let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding", "formatting" ]
 let g:pandoc#formatting#mode="sA"
@@ -418,8 +407,8 @@ set conceallevel=0
 " Else vim might look colors in tmux/screen.
 set notermguicolors
 
-" errorfmt
-set errorformat^=%-G%f:%l:\ warning:%m
-set errorformat^=%-G%f:%l:\ note:%m
+" " errorfmt
+" set errorformat^=%-G%f:%l:\ warning:%m
+" set errorformat^=%-G%f:%l:\ note:%m
 
 set complete-=i

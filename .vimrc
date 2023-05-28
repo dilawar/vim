@@ -68,7 +68,6 @@ set wildmode=longest,list
 let g:C_UseTool_cmake = 'yes'
 let g:C_UseTool_doxygen = 'yes'
 
-
 " Mappings
 source $HOME/.vim/mymappings.vim
 
@@ -99,11 +98,6 @@ au BufNewFile,BufRead *.context setlocal filetype=tex
 au BufRead,BufNewFile *.anansi setlocal filetype=tex |
     \ setlocal makeprg=anansi.sh\ % |
     \ setlocal spell spelllang=en
-
-
-let noweb_backend="tex"
-let noweb_language="python"
-let noweb_fold_code=1
 
 au BufRead,BufNewFile *.tex set spell spelllang=en
 au BufEnter *.tex set nosmartindent
@@ -155,8 +149,6 @@ let g:snippets_dir = '$HOME/.vim/snippets'
 
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['noweb'] = 'python,haskell'
-let g:snipMate.scope_aliases['markdown'] = 'markdown,tex'
 
 " Python related settings
 autocmd BufRead *.py setlocal makeprg=pylint\ -E\ %:p
