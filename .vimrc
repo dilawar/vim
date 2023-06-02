@@ -238,3 +238,26 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+"" Emoji shortcuts
+ab :check: ✅
+ab :cool: 😎
+ab :100: 💯
+ab :great: 👌
+ab :warning: ⚠
+ab :bulb: 💡
+ab :pushpin: 📌
+ab :bomb: 💣
+ab :pill: 💊
+ab :construction: 🚧
+ab :pencil: 📝
+ab :point_right: 👉
+ab :book: 📖
+ab :link: 🔗
+ab :wrench: 🔧
+ab :info: 🛈
+ab :telephone: 📞
+ab :email: 📧
+ab :computer: 💻
+ab :thumbup: 👍
+ab :thumbdown: 👍
