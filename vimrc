@@ -15,7 +15,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'dilawar/a.vim'
 
 " doc
-Plug 'kkoomen/vim-doge'
+" Plug 'kkoomen/vim-doge'
 
 "" 0.5 secs to load.
 " " c-support
@@ -297,10 +297,6 @@ au BufRead,BufNewFile *.maxima set filetype=maxima nospell
 au BufRead,BufNewFile *.mc set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
 au BufRead,BufNewFile *.tex set filetype=tex
-
-" Rust
-au BufRead *.rs :setlocal tags=./rusty-tags.vi;/
-" au BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 
 " default
