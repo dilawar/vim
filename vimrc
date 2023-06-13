@@ -119,10 +119,14 @@ Plug 'pixelneo/vim-python-docstring'
 let g:python_style =  'numpy'
 
 " tags
-Plug 'preservim/tagbar'
-Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
-
+" Plug 'preservim/tagbar'
+" Plug 'ludovicchabant/vim-gutentags'
+" let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+let g:easy_tags_async = 1
+set tags=./__tags
+let g:easytags_dynamic_files=1
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
