@@ -10,6 +10,7 @@ Plug 'vim-scripts/DrawIt'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'tomtom/tcomment_vim'
+Plug 'bling/vim-airline'
 
 " alternate
 Plug 'dilawar/a.vim'
@@ -61,7 +62,7 @@ if 0
 else
     " ALE
     Plug 'dense-analysis/ale'
-    let g:airline#extensions#ale#enabled = 1
+    " let g:airline#extensions#ale#enabled = 1
     let g:ale_lint_on_text_changed = 'never'
     let g:ale_lint_on_enter = 0
     let g:ale_lint_on_save = 0
@@ -108,6 +109,7 @@ Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 " Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+let g:mkdp_port = '31415'
 
 " Python
 
@@ -120,15 +122,15 @@ let g:python_style =  'numpy'
 
 " tags
 " Plug 'preservim/tagbar'
-" Plug 'ludovicchabant/vim-gutentags'
-" let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
-let g:easy_tags_async = 1
-set tags=./__tags
-let g:easytags_dynamic_files=1
-autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
-autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
+
+" Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-misc'
+" let g:easy_tags_async = 1
+" set tags=./_tags;~
+" autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;$HOME,$RUST_SRC_PATH/rusty-tags.vi
+" autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " nim
 Plug 'zah/nim.vim'
@@ -187,7 +189,6 @@ let g:clang_format#style_options = {"BasedOnStyle" : "Mozilla"}
 Plug 'chrisbra/unicode.vim'
 " Turn TeX symbols into unicode.
 Plug 'dilawar/vim-unicoder'
-Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'lervag/vimtex'
 Plug 'flazz/vim-colorschemes'
