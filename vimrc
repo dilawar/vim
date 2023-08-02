@@ -91,7 +91,7 @@ else
                 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
                 \   'javascript': ['eslint'],
                 \   'python' : ['black'],
-                \   'rust' : ['rustfmt'],
+                \   'rust' : ['rustfmt', '+nightly'],
                 \}
 
     let g:ale_rust_cargo_use_clippy = 1
@@ -200,6 +200,7 @@ let g:closetag_filetypes = 'html,vue'
 " Rust
 Plug 'rust-lang/rust.vim'
 let g:rust_cargo_avoid_whole_workspace = 1
+let g:rustfmt_command = 'rustfmt +nightly'
 
 Plug 'dilawar/vim-slint'
 
