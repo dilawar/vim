@@ -75,11 +75,12 @@ else
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'pylint', 'pyflakes' ],
-                \ 'rust' : [ 'rls', 'rustc'],
+                \ 'rust' : [ 'analyzer', 'cargo'],
                 \ 'javascript' : [ 'eslint'],
-                \ 'php' : [ 'php-cs-fixer', 'psalm', 'php'],
+                \ 'php' : [ 'phpstan', 'psalm', 'php', 'php-cs-fixer'],
                 \}
 
+    let g:ale_php_phpstan_executable='./vendor/bin/phpstan'
     let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
     let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
     let g:ale_php_psalm_executable='./vendor/bin/psalm'
@@ -113,7 +114,7 @@ endif
 " let g:AutoClosePreserveDotTeg = 0
 
 Plug 'posva/vim-vue'
-autocmd BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue sw=2 tw=2
+" autocmd BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue sw=2 tw=2
 
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
