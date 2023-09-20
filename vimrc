@@ -1,8 +1,3 @@
-if filereadable('C:\Python310\python311.dll') 
-    let &pythonthreehome = 'C:\Python311'
-    let &pythonthreedll = 'C:\Python311\python311.dll'
-endif
-
 set pyx=3
 
 call plug#begin("~/.vim/plugged")
@@ -20,12 +15,13 @@ Plug 'tomtom/tcomment_vim'
 Plug 'dilawar/a.vim'
 
 " doc
-Plug 'kkoomen/vim-doge'
+" Plug 'kkoomen/vim-doge'
 
-" c-support
-Plug 'dilawar/c-support'
-let g:C_UseTool_cmake = 'yes'
-let g:C_UseTool_doxygen = 'yes'
+"" 0.5 secs to load.
+" " c-support
+" Plug 'dilawar/c-support'
+" let g:C_UseTool_cmake = 'yes'
+" let g:C_UseTool_doxygen = 'yes'
 
 " cmake
 " Plug 'cdelledonne/vim-cmake'
@@ -63,7 +59,6 @@ if 0
     let g:syntastic_check_on_wq = 0
 
 else
-
     " ALE
     Plug 'dense-analysis/ale'
     let g:airline#extensions#ale#enabled = 1
@@ -74,10 +69,10 @@ else
     let g:ale_cpp_gcc_options = '-std=c++17'
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
-                \ 'python' : [ 'pylint', 'pyflakes' ],
-                \ 'rust' : [ 'analyzer', 'cargo'],
+                \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
+                \ 'rust' : [ 'rls', 'analyzer', 'rustc'],
                 \ 'javascript' : [ 'eslint'],
-                \ 'php' : [ 'phpstan', 'psalm', 'php', 'php-cs-fixer'],
+                \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
                 \}
 
     let g:ale_php_phpstan_executable='./vendor/bin/phpstan'
@@ -88,7 +83,7 @@ else
     let g:ale_rust_analyzer_config = {
                 \ 'checkOnSave' : {
                     \ 'command' : 'clippy',
-                    \ 'extraArgs' : ['--target-dir', '/tmp/_rust_analyze']
+                    \ 'extraArgs' : ['--all-targets', '--target-dir', '/tmp/_rust_analyze']
                     \},
                 \}
 
@@ -109,16 +104,10 @@ else
 
 endif
 
-" FIXME: See https://stackoverflow.com/questions/13621845/vim-pumvisible-call-putting-in-random-text
-" Plug 'rstacruz/vim-closer'
-" let g:AutoClosePreserveDotTeg = 0
-
 Plug 'posva/vim-vue'
-" autocmd BufRead,BufNewFile *.vue setlocal iskeyword+=- filetype=vue sw=2 tw=2
-
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " Python
@@ -131,10 +120,14 @@ Plug 'pixelneo/vim-python-docstring'
 let g:python_style =  'numpy'
 
 " tags
-Plug 'preservim/tagbar'
-Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
-
+" Plug 'preservim/tagbar'
+" Plug 'ludovicchabant/vim-gutentags'
+" let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+let g:easy_tags_async = 1
+set tags=./__tags
+let g:easytags_dynamic_files=1
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
@@ -153,9 +146,9 @@ nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " php
-" Plug 'phpstan/vim-phpstan'
-" Plug 'stephpy/vim-php-cs-fixer'
-" Plug 'dilawar/better-indent-support-for-php-with-html'
+Plug 'phpstan/vim-phpstan'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'dilawar/better-indent-support-for-php-with-html'
 
 " Python
 " jedi does not work well when different version of python are installed. Never
@@ -165,7 +158,6 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " let g:pymode_warnings=1
 Plug 'dilawar/vim-mypy'
-
 
 " Nim
 Plug 'zah/nim.vim'
@@ -201,7 +193,9 @@ Plug 'ervandew/supertab'
 Plug 'lervag/vimtex'
 Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdcommenter'
+
 Plug 'alvan/vim-closetag'
+let g:closetag_filetypes = 'html,vue'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -209,10 +203,17 @@ let g:rust_cargo_avoid_whole_workspace = 1
 
 Plug 'dilawar/vim-slint'
 
-
+" Vim backup.
+Plug 'her/central.vim'
 call plug#end()
 
-
+" Create backup of all files.
+let g:central_cleanup_enable = 90
+" set backup
+" silent !mkdir ~/.cache/vim > /dev/null 2>&1
+" set backupdir=~/vim-backup/,~/.cache/vim,./.backup,/tmp,.
+" set undofile
+" set noswapfile
 
 au BufRead,BufNewFile *.plantuml set filetype=plantuml
 
@@ -222,7 +223,7 @@ let g:tex_flavor="latex"
 
 " colorscheme
 " set background=dark
-" colorscheme 256-grayvim
+colorscheme 256-grayvim
 
 
 " vim alternate
@@ -302,10 +303,6 @@ au BufRead,BufNewFile *.mc set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
 au BufRead,BufNewFile *.tex set filetype=tex
 
-" Rust
-au BufRead *.rs :setlocal tags=./rusty-tags.vi;/
-" au BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
-
 
 " default
 set shiftwidth=4
@@ -320,10 +317,6 @@ set iskeyword+=_
 set autoread
 set showmatch
 set errorbells
-" Create backup of all files.
-set backup
-set backupdir=~/vim-backup/,./.backup,/tmp,.
-set undofile
 
 " always prefer unix encoding
 autocmd BufWrite * :set ff=unix
@@ -393,7 +386,6 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-
 let g:pandoc#biblio#use_bibtool=1
 let g:pandoc#modules#disabled=[ "folding", "formatting" ]
 let g:pandoc#formatting#mode="sA"
@@ -416,8 +408,8 @@ set conceallevel=0
 " Else vim might look colors in tmux/screen.
 set notermguicolors
 
-" errorfmt
-set errorformat^=%-G%f:%l:\ warning:%m
-set errorformat^=%-G%f:%l:\ note:%m
+" " errorfmt
+" set errorformat^=%-G%f:%l:\ warning:%m
+" set errorformat^=%-G%f:%l:\ note:%m
 
 set complete-=i
