@@ -92,6 +92,7 @@ else
                 \   'javascript': ['eslint'],
                 \   'python' : ['black'],
                 \   'rust' : ['rustfmt'],
+                \   'php' : ['./vendor/bin/phpcbf'],
                 \}
 
     let g:ale_rust_cargo_use_clippy = 1
@@ -146,7 +147,6 @@ nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " php
-Plug 'phpstan/vim-phpstan'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
 
@@ -223,7 +223,7 @@ let g:tex_flavor="latex"
 
 " colorscheme
 " set background=dark
-colorscheme 256-grayvim
+" colorscheme 256-grayvim
 
 
 " vim alternate
