@@ -15,7 +15,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'dilawar/a.vim'
 
 " doc
-" Plug 'kkoomen/vim-doge'
+Plug 'kkoomen/vim-doge'
 
 "" 0.5 secs to load.
 " " c-support
@@ -38,6 +38,10 @@ Plug 'godlygeek/tabular'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" php support.
+Plug 'tobys/pdv'
+Plug 'dilawar/php.vim'
 
 " COC
 " Use release branch (recommend)
@@ -92,7 +96,7 @@ else
                 \   'javascript': ['eslint'],
                 \   'python' : ['black'],
                 \   'rust' : ['rustfmt'],
-                \   'php' : ['./vendor/bin/phpcbf'],
+                \   'php' : ['phpcbf'],
                 \}
 
     let g:ale_rust_cargo_use_clippy = 1
@@ -206,14 +210,6 @@ Plug 'dilawar/vim-slint'
 " Vim backup.
 Plug 'her/central.vim'
 call plug#end()
-
-" Create backup of all files.
-let g:central_cleanup_enable = 90
-" set backup
-" silent !mkdir ~/.cache/vim > /dev/null 2>&1
-" set backupdir=~/vim-backup/,~/.cache/vim,./.backup,/tmp,.
-" set undofile
-" set noswapfile
 
 au BufRead,BufNewFile *.plantuml set filetype=plantuml
 
