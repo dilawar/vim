@@ -41,6 +41,10 @@ Plug 'junegunn/fzf.vim'
 
 " php support.
 Plug 'tobys/pdv'
+Plug 'tobys/vmustache'
+let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
+nnoremap <buffer> <C-D> :call pdv#DocumentCurrentLine()<CR>
+
 Plug 'dilawar/php.vim'
 
 " COC
