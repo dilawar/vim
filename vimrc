@@ -16,6 +16,7 @@ Plug 'dilawar/a.vim'
 
 " doc
 Plug 'kkoomen/vim-doge'
+Plug 'etlamb/DoxygenToolkit.vim'
 
 "" 0.5 secs to load.
 " " c-support
@@ -40,11 +41,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " php support.
-Plug 'tobys/pdv'
-Plug 'tobys/vmustache'
-let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
-nnoremap <buffer> <C-D> :call pdv#DocumentCurrentLine()<CR>
-
 Plug 'dilawar/php.vim'
 
 " COC
@@ -80,6 +76,7 @@ else
                 \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
                 \ 'rust' : [ 'rls', 'analyzer', 'rustc'],
                 \ 'javascript' : [ 'eslint'],
+                \ 'xml' : [ 'xmllint'],
                 \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
                 \}
 
@@ -101,6 +98,7 @@ else
                 \   'python' : ['black'],
                 \   'rust' : ['rustfmt'],
                 \   'php' : ['phpcbf'],
+                \   'xml' : ['xmllint'],
                 \}
 
     let g:ale_rust_cargo_use_clippy = 1
