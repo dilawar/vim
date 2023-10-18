@@ -6,6 +6,7 @@ Plug 'gmarik/vundle'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/ragtag'
 Plug 'vim-scripts/DrawIt'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-pandoc/vim-pandoc'
@@ -201,7 +202,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdcommenter'
 
 Plug 'alvan/vim-closetag'
-let g:closetag_filetypes = 'html,vue'
+let g:closetag_filetypes = 'html,vue,xml,xsl'
 
 " Rust
 Plug 'rust-lang/rust.vim'
@@ -221,7 +222,7 @@ let g:tex_flavor="latex"
 
 " colorscheme
 " set background=dark
-" colorscheme 256-grayvim
+colorscheme solarized8_light
 
 
 " vim alternate
