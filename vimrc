@@ -6,11 +6,12 @@ Plug 'gmarik/vundle'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/ragtag'
+Plug 'tpope/vim-ragtag'
 Plug 'vim-scripts/DrawIt'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'tomtom/tcomment_vim'
+Plug 'mhinz/vim-grepper'
 
 " alternate
 Plug 'dilawar/a.vim'
@@ -75,7 +76,7 @@ else
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
-                \ 'rust' : [ 'rls', 'analyzer', 'rustc'],
+                \ 'rust' : ['cargo'],
                 \ 'javascript' : [ 'eslint'],
                 \ 'xml' : [ 'xmllint'],
                 \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
@@ -85,13 +86,6 @@ else
     let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
     let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
     let g:ale_php_psalm_executable='./vendor/bin/psalm'
-
-    let g:ale_rust_analyzer_config = {
-                \ 'checkOnSave' : {
-                    \ 'command' : 'clippy',
-                    \ 'extraArgs' : ['--all-targets', '--target-dir', '/tmp/_rust_analyze']
-                    \},
-                \}
 
     let g:ale_fixers = {
                 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -103,11 +97,6 @@ else
                 \}
 
     let g:ale_rust_cargo_use_clippy = 1
-    let g:ale_rust_rls_config = {
-                    \   'rust': {
-                    \     'clippy_preference': 'on'
-                    \   }
-                    \ }
 
 
 endif
