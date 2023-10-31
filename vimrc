@@ -99,6 +99,7 @@ else
                 \}
 
     let g:ale_rust_cargo_use_clippy = 1
+    let g:ale_rust_rls_toolchain = 'nightly'
     let g:ale_rust_rls_config = {
                     \   'rust': {
                     \     'clippy_preference': 'on'
@@ -205,6 +206,9 @@ Plug 'alvan/vim-closetag'
 " Rust
 Plug 'rust-lang/rust.vim'
 let g:rust_cargo_avoid_whole_workspace = 1
+let g:rustfmt_command = 'rustfmt +nightly'
+let g:rustfmt_options = '--unstable-features'
+let g:rustfmt_autosave = 0
 
 Plug 'dilawar/vim-slint'
 
