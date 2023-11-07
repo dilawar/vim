@@ -19,6 +19,7 @@ Plug 'dilawar/a.vim'
 " doc
 Plug 'kkoomen/vim-doge'
 Plug 'etlamb/DoxygenToolkit.vim'
+Plug 'coyotebush/vim-pweave'
 
 "" 0.5 secs to load.
 " " c-support
@@ -113,8 +114,7 @@ Plug 'itchyny/calendar.vim'
 " Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
-" Python
-
+"" Python
 " Plug 'python-rope/ropevim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
@@ -210,6 +210,10 @@ Plug 'dilawar/vim-slint'
 
 " Vim backup.
 Plug 'her/central.vim'
+
+"" jupyter
+Plug 'jupyter-vim/jupyter-vim'
+
 call plug#end()
 
 au BufRead,BufNewFile *.plantuml set filetype=plantuml
