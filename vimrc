@@ -19,6 +19,7 @@ Plug 'dilawar/a.vim'
 " doc
 Plug 'kkoomen/vim-doge'
 Plug 'etlamb/DoxygenToolkit.vim'
+Plug 'coyotebush/vim-pweave'
 
 "" 0.5 secs to load.
 " " c-support
@@ -97,6 +98,12 @@ else
                 \}
 
     let g:ale_rust_cargo_use_clippy = 1
+    let g:ale_rust_rls_toolchain = 'nightly'
+    let g:ale_rust_rls_config = {
+                    \   'rust': {
+                    \     'clippy_preference': 'on'
+                    \   }
+                    \ }
 
 endif
 
@@ -106,8 +113,7 @@ Plug 'itchyny/calendar.vim'
 " Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
-" Python
-
+"" Python
 " Plug 'python-rope/ropevim'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 " let g:pydocstring_doq_path = expand("$HOME/.local/bin/doq")
@@ -194,12 +200,19 @@ let g:closetag_filetypes = 'html,vue,xml,xsl'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-" let g:rust_cargo_avoid_whole_workspace = 1
+let g:rust_cargo_avoid_whole_workspace = 0
+let g:rustfmt_command = 'rustfmt +nightly'
+let g:rustfmt_options = '--unstable-features'
+let g:rustfmt_autosave = 0
 
 Plug 'dilawar/vim-slint'
 
 " Vim backup.
 Plug 'her/central.vim'
+
+"" jupyter
+Plug 'jupyter-vim/jupyter-vim'
+
 call plug#end()
 
 au BufRead,BufNewFile *.plantuml set filetype=plantuml
@@ -400,3 +413,7 @@ set notermguicolors
 " set errorformat^=%-G%f:%l:\ note:%m
 
 set complete-=i
+
+" navigation
+set grepprg=rg\ --vimgrep
+
