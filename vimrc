@@ -98,7 +98,6 @@ else
 
     let g:ale_rust_cargo_use_clippy = 1
 
-
 endif
 
 Plug 'posva/vim-vue'
@@ -195,7 +194,7 @@ let g:closetag_filetypes = 'html,vue,xml,xsl'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-let g:rust_cargo_avoid_whole_workspace = 1
+" let g:rust_cargo_avoid_whole_workspace = 1
 
 Plug 'dilawar/vim-slint'
 
