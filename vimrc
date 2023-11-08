@@ -414,3 +414,7 @@ set notermguicolors
 " set errorformat^=%-G%f:%l:\ note:%m
 
 set complete-=i
+
+" navigation
+set grepprg=rg\ --vimgrep
+
