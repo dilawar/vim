@@ -45,6 +45,10 @@ Plug 'junegunn/fzf.vim'
 
 " php support.
 Plug 'dilawar/php.vim'
+Plug 'tpope/vim-dispatch'             "| Optional
+Plug 'tpope/vim-projectionist'        "|
+Plug 'noahfrederick/vim-composer'     "|
+Plug 'noahfrederick/vim-laravel'
 
 " COC
 " Use release branch (recommend)
