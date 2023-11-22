@@ -3,7 +3,6 @@ set pyx=3
 call plug#begin("~/.vim/plugged")
 
 Plug 'gmarik/vundle'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-ragtag'
@@ -12,6 +11,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'tomtom/tcomment_vim'
 Plug 'mhinz/vim-grepper'
+
+Plug 'tpope/vim-surround'
+" Thanks https://vi.stackexchange.com/a/2985/7610
+nmap <silent> dsf ds)db  " bar(foo(x, y, z)) -> foo(x, y, z)
 
 " alternate
 Plug 'dilawar/a.vim'
@@ -204,7 +207,7 @@ let g:closetag_filetypes = 'html,vue,xml,xsl'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-let g:rust_cargo_avoid_whole_workspace = 0
+let g:rust_cargo_avoid_whole_workspace = 1
 let g:rustfmt_command = 'rustfmt +nightly'
 let g:rustfmt_options = '--unstable-features'
 let g:rustfmt_autosave = 0
@@ -314,8 +317,8 @@ set tabstop=4
 set expandtab
 set smarttab
 set textwidth=80
-set colorcolumn=81
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+set colorcolumn=88
+highlight ColorColumn ctermbg=magenta guibg=lightgrey
 set wrap
 set iskeyword+=_
 set autoread
