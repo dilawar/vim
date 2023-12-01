@@ -3,7 +3,6 @@ set pyx=3
 call plug#begin("~/.vim/plugged")
 
 Plug 'gmarik/vundle'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-ragtag'
@@ -11,6 +10,10 @@ Plug 'vim-scripts/DrawIt'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'mhinz/vim-grepper'
+
+Plug 'tpope/vim-surround'
+" Thanks https://vi.stackexchange.com/a/2985/7610
+nmap <silent> dsf ds)db  " bar(foo(x, y, z)) -> foo(x, y, z)
 
 " alternate
 Plug 'dilawar/a.vim'
@@ -44,6 +47,10 @@ Plug 'junegunn/fzf.vim'
 
 " php support.
 Plug 'dilawar/php.vim'
+Plug 'tpope/vim-dispatch'             "| Optional
+Plug 'tpope/vim-projectionist'        "|
+Plug 'noahfrederick/vim-composer'     "|
+Plug 'noahfrederick/vim-laravel'
 
 " COC
 " Use release branch (recommend)
@@ -104,7 +111,6 @@ else
                     \     'clippy_preference': 'on'
                     \   }
                     \ }
-
 
 endif
 
@@ -311,8 +317,8 @@ set tabstop=4
 set expandtab
 set smarttab
 set textwidth=80
-set colorcolumn=81
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+set colorcolumn=88
+highlight ColorColumn ctermbg=magenta guibg=lightgrey
 set wrap
 set iskeyword+=_
 set autoread
