@@ -9,7 +9,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-ragtag'
 Plug 'vim-scripts/DrawIt'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-pandoc/vim-pandoc'
 Plug 'tomtom/tcomment_vim'
 Plug 'mhinz/vim-grepper'
 
@@ -97,6 +96,7 @@ else
                 \   'xml' : ['xmllint'],
                 \}
 
+    let g:ale_rust_rustfmt_options = '+nightly'
     let g:ale_rust_cargo_use_clippy = 1
     let g:ale_rust_rls_toolchain = 'nightly'
     let g:ale_rust_rls_config = {
@@ -125,12 +125,12 @@ let g:python_style =  'numpy'
 " tags
 " Plug 'preservim/tagbar'
 " Plug 'ludovicchabant/vim-gutentags'
-" let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
-let g:easy_tags_async = 1
-set tags=./__tags
-let g:easytags_dynamic_files=1
+let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
+" Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-misc'
+" let g:easy_tags_async = 1
+" set tags=./__tags
+" let g:easytags_dynamic_files=1
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
@@ -201,9 +201,9 @@ let g:closetag_filetypes = 'html,vue,xml,xsl'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-let g:rust_cargo_avoid_whole_workspace = 1
-let g:rustfmt_command = 'rustfmt +nightly'
-let g:rustfmt_options = '--unstable-features'
+" let g:rust_cargo_avoid_whole_workspace = 1
+let g:rustfmt_command = 'rustfmt'
+let g:rustfmt_options = '+nightly --unstable-features'
 let g:rustfmt_autosave = 0
 
 Plug 'dilawar/vim-slint'
@@ -386,13 +386,6 @@ let g:NERDCommentEmptyLines = 1
 
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
-
-let g:pandoc#biblio#use_bibtool=1
-let g:pandoc#modules#disabled=[ "folding", "formatting" ]
-let g:pandoc#formatting#mode="sA"
-let g:pandoc#spell#enabled=1
-" let g:pandoc#after#modules#enabled=["supertab"]
-let g:pandoc#syntax#conceal#use = 0
 
 " VIMRC
 set shortmess=a
