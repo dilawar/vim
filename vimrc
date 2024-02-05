@@ -10,6 +10,7 @@ Plug 'vim-scripts/DrawIt'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'mhinz/vim-grepper'
+Plug 'will133/vim-dirdiff'
 
 Plug 'tpope/vim-surround'
 " Thanks https://vi.stackexchange.com/a/2985/7610
@@ -230,7 +231,7 @@ let g:tex_flavor="latex"
 
 " colorscheme
 " set background=dark
-colorscheme solarized8_light
+" colorscheme solarized8_light
 
 
 " vim alternate
