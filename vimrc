@@ -84,7 +84,7 @@ else
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
-                \ 'rust' : ['cargo'],
+                \ 'rust' : ['analyzer', 'rustc', 'cargo'],
                 \ 'javascript' : [ 'eslint'],
                 \ 'xml' : [ 'xmllint'],
                 \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
@@ -131,7 +131,7 @@ let g:python_style =  'numpy'
 
 " tags
 " Plug 'preservim/tagbar'
-" Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
 " Plug 'xolox/vim-easytags'
 " Plug 'xolox/vim-misc'
@@ -208,7 +208,7 @@ let g:closetag_filetypes = 'html,vue,xml,xsl'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-" let g:rust_cargo_avoid_whole_workspace = 1
+let g:rust_cargo_avoid_whole_workspace = 0
 let g:rustfmt_command = 'rustfmt'
 let g:rustfmt_options = '+nightly --unstable-features'
 let g:rustfmt_autosave = 0
