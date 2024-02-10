@@ -84,7 +84,7 @@ else
     let g:ale_tex_chktex_options = '-n26 -n18'
     let g:ale_linters = {
                 \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
-                \ 'rust' : ['analyzer', 'rustc', 'cargo'],
+                \ 'rust' : [ 'rustc', 'cargo' ],
                 \ 'javascript' : [ 'eslint'],
                 \ 'xml' : [ 'xmllint'],
                 \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
