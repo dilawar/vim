@@ -60,60 +60,46 @@ Plug 'noahfrederick/vim-laravel'
 " Or build from source code by using yarn: https://yarnpkg.com
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
-" Syntastic
-if 0
-    Plug 'vim-syntastic/syntastic'
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
+" ALE
+Plug 'dense-analysis/ale'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 0
+let g:ale_fix_on_save = 0
+let g:ale_cpp_gcc_options = '-std=c++17'
+let g:ale_tex_chktex_options = '-n26 -n18'
+let g:ale_linters = {
+            \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
+            \ 'rust' : [ 'analyzer' ],
+            \ 'javascript' : [ 'eslint'],
+            \ 'xml' : [ 'xmllint'],
+            \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
+            \}
 
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 0
-    let g:syntastic_check_on_wq = 0
+let g:ale_php_phpstan_executable='./vendor/bin/phpstan'
+let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
+let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
+let g:ale_php_psalm_executable='./vendor/bin/psalm'
 
-else
-    " ALE
-    Plug 'dense-analysis/ale'
-    let g:airline#extensions#ale#enabled = 1
-    let g:ale_lint_on_text_changed = 'never'
-    let g:ale_lint_on_enter = 0
-    let g:ale_lint_on_save = 0
-    let g:ale_fix_on_save = 0
-    let g:ale_cpp_gcc_options = '-std=c++17'
-    let g:ale_tex_chktex_options = '-n26 -n18'
-    let g:ale_linters = {
-                \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
-                \ 'rust' : [ 'rustc', 'cargo' ],
-                \ 'javascript' : [ 'eslint'],
-                \ 'xml' : [ 'xmllint'],
-                \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
-                \}
+let g:ale_fixers = {
+            \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+            \   'javascript': ['eslint'],
+            \   'python' : ['black'],
+            \   'rust' : ['rustfmt'],
+            \   'php' : ['phpcbf'],
+            \   'xml' : ['xmllint'],
+            \}
 
-    let g:ale_php_phpstan_executable='./vendor/bin/phpstan'
-    let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
-    let g:ale_php_php_cs_fixer_executable='./vendor/bin/php-cs-fixer'
-    let g:ale_php_psalm_executable='./vendor/bin/psalm'
+let g:ale_rust_rustfmt_options = '+nightly'
+let g:ale_rust_cargo_use_clippy = 1
+let g:ale_rust_rls_toolchain = 'nightly'
+let g:ale_rust_rls_config = {
+                \   'rust': {
+                \     'clippy_preference': 'on'
+                \   }
+                \ }
 
-    let g:ale_fixers = {
-                \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-                \   'javascript': ['eslint'],
-                \   'python' : ['black'],
-                \   'rust' : ['rustfmt'],
-                \   'php' : ['phpcbf'],
-                \   'xml' : ['xmllint'],
-                \}
-
-    let g:ale_rust_rustfmt_options = '+nightly'
-    let g:ale_rust_cargo_use_clippy = 1
-    let g:ale_rust_rls_toolchain = 'nightly'
-    let g:ale_rust_rls_config = {
-                    \   'rust': {
-                    \     'clippy_preference': 'on'
-                    \   }
-                    \ }
-
-endif
 
 Plug 'posva/vim-vue'
 Plug 'vim-scripts/check-mutt-attachments.vim'
@@ -139,7 +125,7 @@ let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
 " set tags=./__tags
 " let g:easytags_dynamic_files=1
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
-autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+"autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . " &> /dev/null" | redraw!
 
 " nim
 Plug 'zah/nim.vim'
@@ -208,7 +194,7 @@ let g:closetag_filetypes = 'html,vue,xml,xsl'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-let g:rust_cargo_avoid_whole_workspace = 0
+let g:rust_cargo_avoid_whole_workspace = 1
 let g:rustfmt_command = 'rustfmt'
 let g:rustfmt_options = '+nightly --unstable-features'
 let g:rustfmt_autosave = 0
@@ -417,4 +403,3 @@ set complete-=i
 
 " navigation
 set grepprg=rg\ --vimgrep
-
