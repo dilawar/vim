@@ -9,8 +9,22 @@ Plug 'tpope/vim-ragtag'
 Plug 'vim-scripts/DrawIt'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tomtom/tcomment_vim'
-Plug 'mhinz/vim-grepper'
 Plug 'will133/vim-dirdiff'
+
+Plug 'mhinz/vim-grepper'
+nnoremap <leader>g :Grepper -tool rg<cr>
+nnoremap <leader>G :Grepper -tool git<cr>
+
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
+
+" Optional. The default behaviour should work for most users.
+let g:grepper               = {}
+let g:grepper.tools         = ['rg', 'git', 'ag']
+let g:grepper.jump          = 1
+let g:grepper.next_tool     = '<leader>g'
+let g:grepper.simple_prompt = 1
+let g:grepper.quickfix      = 1
 
 Plug 'tpope/vim-surround'
 " Thanks https://vi.stackexchange.com/a/2985/7610
@@ -117,15 +131,16 @@ let g:python_style =  'numpy'
 
 " tags
 " Plug 'preservim/tagbar'
-Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
+" Plug 'ludovicchabant/vim-gutentags'
+" let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
 " Plug 'xolox/vim-easytags'
 " Plug 'xolox/vim-misc'
 " let g:easy_tags_async = 1
 " set tags=./__tags
 " let g:easytags_dynamic_files=1
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
-"autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . " &> /dev/null" | redraw!
+" autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . " &> /dev/null" | redraw!
+:command! -nargs=0 RustyTags execute "!rusty-tags vi --start-dir=" . expand('%:p:h')
 
 " nim
 Plug 'zah/nim.vim'
@@ -400,6 +415,3 @@ set notermguicolors
 " set errorformat^=%-G%f:%l:\ note:%m
 
 set complete-=i
-
-" navigation
-set grepprg=rg\ --vimgrep
