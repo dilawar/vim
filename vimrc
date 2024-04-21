@@ -56,10 +56,6 @@ Plug 'rhysd/vim-grammarous'
 " Tabular
 Plug 'godlygeek/tabular'
 
-" fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
 " php support.
 Plug 'dilawar/php.vim'
 Plug 'tpope/vim-dispatch'             "| Optional
