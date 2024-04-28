@@ -127,6 +127,7 @@ let g:python_style =  'numpy'
 
 " tags
 " Plug 'preservim/tagbar'
+<<<<<<< HEAD
 " Plug 'ludovicchabant/vim-gutentags'
 " let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
 " Plug 'xolox/vim-easytags'
@@ -137,6 +138,10 @@ let g:python_style =  'numpy'
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 " autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . " &> /dev/null" | redraw!
 :command! -nargs=0 RustyTags execute "!rusty-tags vi --start-dir=" . expand('%:p:h')
+=======
+Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
+>>>>>>> dc38fed (chore: just use exuberant-tags)
 
 " nim
 Plug 'zah/nim.vim'
