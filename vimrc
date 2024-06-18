@@ -162,7 +162,7 @@ Plug 'dilawar/vim-mypy'
 Plug 'zah/nim.vim'
 
 " Snippets
-if 0
+if 1
     Plug 'SirVer/ultisnips'
     let g:snips_author = "Dilawar Singh"
     let g:snips_email = "dilawar@subcom.tech"
