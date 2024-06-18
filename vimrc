@@ -57,11 +57,12 @@ Plug 'rhysd/vim-grammarous'
 Plug 'godlygeek/tabular'
 
 " php support.
-Plug 'dilawar/php.vim'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'noahfrederick/vim-laravel'
+
 Plug 'tpope/vim-dispatch'             "| Optional
 Plug 'tpope/vim-projectionist'        "|
 Plug 'noahfrederick/vim-composer'     "|
-Plug 'noahfrederick/vim-laravel'
 
 " COC
 " Use release branch (recommend)
@@ -201,8 +202,6 @@ let g:rust_cargo_avoid_whole_workspace = 1
 let g:rustfmt_command = 'rustfmt'
 let g:rustfmt_options = '+nightly --unstable-features'
 let g:rustfmt_autosave = 0
-
-Plug 'dilawar/vim-slint'
 
 " Vim backup.
 Plug 'her/central.vim'
