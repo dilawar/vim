@@ -14,10 +14,8 @@ Plug 'will133/vim-dirdiff'
 Plug 'mhinz/vim-grepper'
 nnoremap <leader>g :Grepper -tool rg<cr>
 nnoremap <leader>G :Grepper -tool git<cr>
-
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
-
 " Optional. The default behaviour should work for most users.
 let g:grepper               = {}
 let g:grepper.tools         = ['rg', 'git', 'ag']
@@ -25,6 +23,9 @@ let g:grepper.jump          = 1
 let g:grepper.next_tool     = '<leader>g'
 let g:grepper.simple_prompt = 1
 let g:grepper.quickfix      = 1
+
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plug 'tpope/vim-surround'
 " Thanks https://vi.stackexchange.com/a/2985/7610
