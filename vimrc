@@ -114,6 +114,8 @@ let g:ale_rust_rls_config = {
 
 
 Plug 'posva/vim-vue'
+au BufRead,BufNewFile *.vue set ts=2 sw=2
+
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 " Plug 'godlygeek/tabular'
