@@ -10,7 +10,8 @@ Plug 'vim-scripts/DrawIt'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'will133/vim-dirdiff'
-Plug 'prettier/vim-pretter'
+
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 Plug 'mhinz/vim-grepper'
 nnoremap <leader>g :Grepper -tool rg<cr>
