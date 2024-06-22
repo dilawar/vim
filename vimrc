@@ -10,6 +10,7 @@ Plug 'vim-scripts/DrawIt'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'will133/vim-dirdiff'
+Plug 'prettier/vim-pretter'
 
 Plug 'mhinz/vim-grepper'
 nnoremap <leader>g :Grepper -tool rg<cr>
