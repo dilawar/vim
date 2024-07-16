@@ -203,7 +203,6 @@ let g:closetag_filetypes = 'html,vue,xml,xsl'
 
 " Rust
 Plug 'rust-lang/rust.vim'
-let g:rust_cargo_avoid_whole_workspace = 1
 let g:rustfmt_command = 'rustfmt'
 let g:rustfmt_options = '+nightly --unstable-features'
 let g:rustfmt_autosave = 0
