@@ -12,6 +12,10 @@ Plug 'tomtom/tcomment_vim'
 Plug 'will133/vim-dirdiff'
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+" always|never|preserve
+" default: 'preserve'
+let g:prettier#config#prose_wrap = 'always'
+
 
 Plug 'mhinz/vim-grepper'
 nnoremap <leader>g :Grepper -tool rg<cr>
