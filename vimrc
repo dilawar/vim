@@ -211,7 +211,7 @@ let g:rustfmt_options = '+nightly --unstable-features'
 let g:rustfmt_autosave = 0
 
 " Vim backup.
-Plug 'her/central.vim'
+set backupdir=~/.vim/backup
 
 "" jupyter
 Plug 'jupyter-vim/jupyter-vim'
