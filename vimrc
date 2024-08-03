@@ -136,9 +136,13 @@ Plug 'pixelneo/vim-python-docstring'
 let g:python_style =  'numpy'
 
 " tags
-" Plug 'preservim/tagbar'
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
+let g:gutentags_generate_on_write = 0
+let g:gutentags_generate_on_new = 0
+
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " nim
 Plug 'zah/nim.vim'
@@ -157,6 +161,11 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 " php
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
+
+" diff mergetool
+Plug 'samoshkin/vim-mergetool'
+let g:mergetool_layout = 'mr'
+let g:mergetool_prefer_revision = 'local'
 
 " Python
 " jedi does not work well when different version of python are installed. Never
@@ -226,7 +235,7 @@ let g:tex_flavor="latex"
 
 " colorscheme
 " set background=dark
-" colorscheme solarized8_light
+colorscheme gruvbox
 
 
 " vim alternate
