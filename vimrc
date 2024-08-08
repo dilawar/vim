@@ -220,10 +220,13 @@ let g:rustfmt_options = '+nightly --unstable-features'
 let g:rustfmt_autosave = 0
 
 " Vim backup.
+set backup
+set writebackup
 set backupdir=~/.vim/backup
+au BufWritePre * let &bex = '@' . strftime("%F.%H")
 
 "" jupyter
-Plug 'jupyter-vim/jupyter-vim'
+" Plug 'jupyter-vim/jupyter-vim'
 
 call plug#end()
 
