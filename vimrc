@@ -32,6 +32,7 @@ let g:grepper.quickfix      = 1
 
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+nnoremap <silent><Leader>F :Rg <C-R><C-W><CR>
 
 Plug 'tpope/vim-surround'
 " Thanks https://vi.stackexchange.com/a/2985/7610
@@ -161,6 +162,8 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 " php
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
+Plug 'alexandersix/vim-blade'
+autocmd BufRead,BufNewFile *.blade.php set filetype=blade
 
 " diff mergetool
 Plug 'samoshkin/vim-mergetool'
