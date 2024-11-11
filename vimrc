@@ -226,7 +226,7 @@ let g:rustfmt_autosave = 0
 set backup
 set writebackup
 set backupdir=~/.vim/backup
-au BufWritePre * let &bex = '@' . strftime("%F.%H")
+au BufWritePre * let &bex = '@' . strftime("%F.%H-%M")
 
 "" jupyter
 " Plug 'jupyter-vim/jupyter-vim'
