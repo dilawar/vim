@@ -10,6 +10,7 @@ Plug 'vim-scripts/DrawIt'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'will133/vim-dirdiff'
+Plug 'scrooloose/nerdtree'
 
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 " always|never|preserve
@@ -65,8 +66,13 @@ Plug 'rhysd/vim-grammarous'
 Plug 'godlygeek/tabular'
 
 " php support.
+Plug 'biinari/php.vim'
+Plug 'stephpy/vim-php-cs-fixer'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'noahfrederick/vim-laravel'
+Plug 'ncm2/ncm2'
+Plug 'phpactor/phpactor'
+Plug 'phpactor/ncm2-phpactor'
 
 Plug 'tpope/vim-dispatch'             "| Optional
 Plug 'tpope/vim-projectionist'        "|
@@ -162,8 +168,8 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 " php
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'dilawar/better-indent-support-for-php-with-html'
-Plug 'alexandersix/vim-blade'
-autocmd BufRead,BufNewFile *.blade.php set filetype=blade
+" Plug 'alexandersix/vim-blade'
+" autocmd BufRead,BufNewFile *.blade.php set filetype=php
 
 " diff mergetool
 Plug 'samoshkin/vim-mergetool'
@@ -214,7 +220,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdcommenter'
 
 Plug 'alvan/vim-closetag'
-let g:closetag_filetypes = 'html,vue,xml,xsl'
+let g:closetag_filetypes = 'html,xml,xsl'
 
 " Rust
 Plug 'rust-lang/rust.vim'
