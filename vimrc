@@ -129,6 +129,9 @@ let g:ale_rust_rls_config = {
 Plug 'posva/vim-vue'
 au BufRead,BufNewFile *.vue set ts=2 sw=2
 
+Plug 'peitalin/vim-jsx-typescript'
+
+
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 " Plug 'godlygeek/tabular'
@@ -146,10 +149,10 @@ let g:python_style =  'numpy'
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
 let g:gutentags_generate_on_write = 0
-let g:gutentags_generate_on_new = 0
+let g:gutentags_generate_on_new = 1
 
-autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
-autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+" autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+" autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " nim
 Plug 'zah/nim.vim'
@@ -279,55 +282,6 @@ syntax enable
 set history=10000
 set backspace=indent,eol,start
 
-au BufNewFile *.snw read ~/Scripts/template.snw
-au BufRead,BufNewFile *.nw set filetype=noweb
-au BufRead,BufNewFile *.snippet set expandtab!
-au BufRead,BufNewFile *.cu set filetype=cpp
-au BufRead,BufNewFile *.scad set filetype=openscad
-au BufRead,BufNewFile *.snw set filetype=noweb
-au BufRead,BufNewFile *.w set filetype=noweb
-au BufRead,BufNewFile *.nw set spell spelllang=en
-au BufRead,BufNewFile *.blog set filetype=markdown
-au BufRead,BufNewFile *.labnote set filetype=tex
-au BufRead,BufNewFile *.csv set filetype=csv
-au BufRead,BufNewFile *.asy set filetype=cpp
-au BufRead,BufNewFile *.yacml set filetype=dot
-au BufRead,BufNewFile *.ino set filetype=cpp
-au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
-au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
-au BufRead,BufNewFile wscript set filetype=python
-au BufRead *.lyx syntax sync fromstart
-au BufRead,BufNewFile *.jinja2,*.jinja set ft=jinja
-
-au BufRead,BufNewFile *.tex set spell spelllang=en
-au BufEnter *.tex set nosmartindent
-
-" Blog related setting.
-au BufRead,BufNew *.blog setlocal spell spelllang=en
-au BufRead,BufNew *.blog setlocal complete+=k
-au BufRead,BufNew *.md setlocal spell spelllang=en
-au BufRead,BufNew *.md setlocal filetype=mardown
-au BufRead,BufNew *.md setlocal complete+=k
-au BufRead,BufNew *.md setlocal spell spelllang=en
-au BufRead,BufNew *.rst setlocal spell spelllang=en
-" On tmp files do not wrap lines by inserting newline, wrap it without newline.
-au BufRead,BufNew *.tmp setlocal wrap linebreak nolist
-au BufRead,BufNew *.txt setlocal wrap linebreak nolist
-au BufRead,BufNew *.py setlocal comments+=:#'   " #' is used  by pyweave.
-
-
-au BufNewFile *.vhd read ~/.vim/template/template.vhd
-" au BufRead,BufNewFile *.bsv set filetype=verilog
-au BufRead,BufNewFile *.bsv set syntax=bsv
-au BufRead,BufNewFile *.max set filetype=maxima  nospell
-au BufRead,BufNewFile *.maxima set filetype=maxima nospell
-au BufRead,BufNewFile *.mac set filetype=maxima nospell
-au BufRead,BufNewFile *.maxima set filetype=maxima nospell
-au BufRead,BufNewFile *.mc set filetype=maxima nospell
-au BufRead,BufNewFile *.rules set filetype=make
-au BufRead,BufNewFile *.tex set filetype=tex
-
-
 " default
 set shiftwidth=4
 set tabstop=4
@@ -430,3 +384,52 @@ set notermguicolors
 " set errorformat^=%-G%f:%l:\ note:%m
 
 set complete-=i
+
+au BufNewFile *.snw read ~/Scripts/template.snw
+au BufRead,BufNewFile *.nw set filetype=noweb
+au BufRead,BufNewFile *.snippet set expandtab!
+au BufRead,BufNewFile *.cu set filetype=cpp
+au BufRead,BufNewFile *.scad set filetype=openscad
+au BufRead,BufNewFile *.snw set filetype=noweb
+au BufRead,BufNewFile *.w set filetype=noweb
+au BufRead,BufNewFile *.nw set spell spelllang=en
+au BufRead,BufNewFile *.blog set filetype=markdown
+au BufRead,BufNewFile *.labnote set filetype=tex
+au BufRead,BufNewFile *.csv set filetype=csv
+au BufRead,BufNewFile *.asy set filetype=cpp
+au BufRead,BufNewFile *.yacml set filetype=dot
+au BufRead,BufNewFile *.ino set filetype=cpp
+au BufRead,BufNewFile *.gnu,*.gnuplot,*.plt,*.gpi set filetype=gnuplot
+au BufRead,BufNewFile *.lyx set syntax=lyx foldmethod=syntax foldcolumn=3
+au BufRead,BufNewFile wscript set filetype=python
+au BufRead *.lyx syntax sync fromstart
+au BufRead,BufNewFile *.jinja2,*.jinja set ft=jinja
+
+au BufRead,BufNewFile *.tex set spell spelllang=en
+au BufEnter *.tex set nosmartindent
+
+" Blog related setting.
+au BufRead,BufNew *.blog setlocal spell spelllang=en
+au BufRead,BufNew *.blog setlocal complete+=k
+au BufRead,BufNew *.md setlocal spell spelllang=en
+au BufRead,BufNew *.md setlocal filetype=mardown
+au BufRead,BufNew *.md setlocal complete+=k
+au BufRead,BufNew *.md setlocal spell spelllang=en
+au BufRead,BufNew *.rst setlocal spell spelllang=en
+" On tmp files do not wrap lines by inserting newline, wrap it without newline.
+au BufRead,BufNew *.tmp setlocal wrap linebreak nolist
+au BufRead,BufNew *.txt setlocal wrap linebreak nolist
+au BufRead,BufNew *.py setlocal comments+=:#'   " #' is used  by pyweave.
+
+
+au BufNewFile *.vhd read ~/.vim/template/template.vhd
+" au BufRead,BufNewFile *.bsv set filetype=verilog
+au BufRead,BufNewFile *.bsv set syntax=bsv
+au BufRead,BufNewFile *.max set filetype=maxima  nospell
+au BufRead,BufNewFile *.maxima set filetype=maxima nospell
+au BufRead,BufNewFile *.mac set filetype=maxima nospell
+au BufRead,BufNewFile *.maxima set filetype=maxima nospell
+au BufRead,BufNewFile *.mc set filetype=maxima nospell
+au BufRead,BufNewFile *.rules set filetype=make
+au BufRead,BufNewFile *.tex set filetype=tex
+au BufRead,BufNewFile *.tsx set tw=2
