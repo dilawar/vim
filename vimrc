@@ -227,7 +227,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdcommenter'
 
 Plug 'alvan/vim-closetag'
-let g:closetag_filetypes = 'html,xml,xsl'
+let g:closetag_filetypes = 'html,xml,xsl,php,js,vue'
 
 " Rust
 Plug 'rust-lang/rust.vim'
