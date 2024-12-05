@@ -99,7 +99,7 @@ let g:ale_linters = {
             \ 'rust' : [ 'analyzer' ],
             \ 'javascript' : [ 'eslint'],
             \ 'xml' : [ 'xmllint'],
-            \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm', 'php'],
+            \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm'],
             \}
 
 let g:ale_php_phpstan_executable='./vendor/bin/phpstan'
@@ -110,7 +110,7 @@ let g:ale_php_psalm_executable='./vendor/bin/psalm'
 let g:ale_fixers = {
             \   '*': ['remove_trailing_lines', 'trim_whitespace'],
             \   'javascript': ['eslint'],
-            \   'python' : ['black'],
+            \   'python' : ['ruff'],
             \   'rust' : ['rustfmt'],
             \   'php' : ['phpcbf'],
             \   'xml' : ['xmllint'],
@@ -167,9 +167,10 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " php
 Plug 'stephpy/vim-php-cs-fixer'
+Plug 'tobyS/pdv'
 Plug 'dilawar/better-indent-support-for-php-with-html'
-" Plug 'alexandersix/vim-blade'
-" autocmd BufRead,BufNewFile *.blade.php set filetype=php
+Plug 'alexandersix/vim-blade'
+autocmd BufRead,BufNewFile *.blade.php set filetype=php
 
 " diff mergetool
 Plug 'samoshkin/vim-mergetool'
@@ -267,7 +268,7 @@ set showcmd    " Show (partial) command in status line.
 set showmatch  " Show matching brackets.
 set smartcase  " Do smart case matching
 set incsearch  " Incremental search
-set mouse=v    " Enable mouse usage (all modes)
+set mouse=a    " Enable mouse usage (all modes)
 set number
 set ruler
 set hlsearch
@@ -374,8 +375,6 @@ set clipboard=unnamedplus
 :cabbrev px Px
 :cabbrev pv Pv
 
-" For mac
-set clipboard=unnamed
 " Diffdir options
 let g:DirDiffExcludes = "CVS,*.class,*.exe,.*.swp,*/.git/*"
 
