@@ -109,7 +109,8 @@ let g:ale_php_psalm_executable='./vendor/bin/psalm'
 
 let g:ale_fixers = {
             \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-            \   'javascript': ['eslint'],
+            \   'javascript': ['prettier'],
+            \   'css': ['prettier'],
             \   'python' : ['ruff'],
             \   'rust' : ['rustfmt'],
             \   'php' : ['phpcbf'],
