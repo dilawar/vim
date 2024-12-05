@@ -98,6 +98,7 @@ let g:ale_linters = {
             \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
             \ 'rust' : [ 'analyzer' ],
             \ 'javascript' : [ 'eslint'],
+            \ 'typescript' : [ 'eslint', 'tsserver', 'prettier'],
             \ 'xml' : [ 'xmllint'],
             \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm'],
             \}
