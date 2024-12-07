@@ -129,9 +129,6 @@ let g:ale_rust_rls_config = {
                 \ }
 
 
-Plug 'posva/vim-vue'
-au BufRead,BufNewFile *.vue set ts=2 sw=2
-
 Plug 'peitalin/vim-jsx-typescript'
 
 
@@ -243,6 +240,9 @@ au BufWritePre * let &bex = '@' . strftime("%F.%H-%M")
 
 "" jupyter
 " Plug 'jupyter-vim/jupyter-vim'
+
+Plug 'posva/vim-vue'
+au BufRead,BufNewFile *.vue set ts=2 sw=2 tw=2
 
 call plug#end()
 
