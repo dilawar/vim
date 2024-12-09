@@ -130,8 +130,6 @@ let g:ale_rust_rls_config = {
 
 
 Plug 'peitalin/vim-jsx-typescript'
-
-
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 " Plug 'godlygeek/tabular'
@@ -241,8 +239,6 @@ au BufWritePre * let &bex = '@' . strftime("%F.%H-%M")
 "" jupyter
 " Plug 'jupyter-vim/jupyter-vim'
 
-Plug 'posva/vim-vue'
-au BufRead,BufNewFile *.vue set ts=2 sw=2 tw=2
 
 call plug#end()
 
@@ -409,6 +405,7 @@ au BufRead,BufNewFile *.jinja2,*.jinja set ft=jinja
 
 au BufRead,BufNewFile *.tex set spell spelllang=en
 au BufEnter *.tex set nosmartindent
+au BufRead,BufNewFile *.vue setlocal tabstop=2 expandtab shiftwidth=2
 
 " Blog related setting.
 au BufRead,BufNew *.blog setlocal spell spelllang=en
