@@ -216,7 +216,6 @@ Plug 'chrisbra/unicode.vim'
 " Turn TeX symbols into unicode.
 Plug 'dilawar/vim-unicoder'
 Plug 'bling/vim-airline'
-Plug 'ervandew/supertab'
 Plug 'lervag/vimtex'
 Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdcommenter'
@@ -239,10 +238,9 @@ au BufWritePre * let &bex = '@' . strftime("%F.%H-%M")
 "" jupyter
 " Plug 'jupyter-vim/jupyter-vim'
 
+Plug 'ervandew/supertab'
 
 call plug#end()
-
-au BufRead,BufNewFile *.plantuml set filetype=plantuml
 
 
 " vimtex
@@ -405,7 +403,6 @@ au BufRead,BufNewFile *.jinja2,*.jinja set ft=jinja
 
 au BufRead,BufNewFile *.tex set spell spelllang=en
 au BufEnter *.tex set nosmartindent
-au BufRead,BufNewFile *.vue setlocal tabstop=2 expandtab shiftwidth=2
 
 " Blog related setting.
 au BufRead,BufNew *.blog setlocal spell spelllang=en
@@ -432,3 +429,5 @@ au BufRead,BufNewFile *.mc set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
 au BufRead,BufNewFile *.tex set filetype=tex
 au BufRead,BufNewFile *.tsx set tw=2
+au BufRead,BufNewFile *.vue set ts=2 tw=2 expandtab
+au BufRead,BufNewFile *.plantuml set filetype=plantuml
