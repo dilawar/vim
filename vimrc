@@ -428,6 +428,5 @@ au BufRead,BufNewFile *.maxima set filetype=maxima nospell
 au BufRead,BufNewFile *.mc set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
 au BufRead,BufNewFile *.tex set filetype=tex
-au BufRead,BufNewFile *.tsx set tw=2
-au BufRead,BufNewFile *.vue set ts=2 tw=2 expandtab
+au BufRead,BufNewFile *.vue set ts=2 sw=2 expandtab
 au BufRead,BufNewFile *.plantuml set filetype=plantuml
