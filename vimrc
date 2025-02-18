@@ -130,7 +130,12 @@ let g:ale_rust_rls_config = {
 
 
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'heavenshell/vim-jsdoc'
+
+Plug 'heavenshell/vim-jsdoc', {
+    \ 'for': ['javascript', 'javascript.jsx','typescript'],
+    \ 'do': 'make install'
+\}
+
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 " Plug 'godlygeek/tabular'
