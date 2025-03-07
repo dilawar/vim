@@ -86,10 +86,12 @@ let g:ale_linters = {
             \ 'rust' : [ 'analyzer' ],
             \ 'javascript' : [ 'eslint'],
             \ 'typescript' : [ 'eslint', 'tsserver', 'prettier'],
+            \ 'vue' : [ 'eslint', 'stylelint', 'tsserver'],
             \ 'typescriptreact' : [ 'eslint', 'tsserver', 'prettier'],
             \ 'xml' : [ 'xmllint'],
-            \ 'php' : [ 'phpstan', 'php-cs-fixer', 'psalm'],
             \}
+
+let g:ale_linter_aliases = {'vue': ['css', 'javascript', 'typescript']}
 
 let g:ale_php_phpstan_executable='./vendor/bin/phpstan'
 let g:ale_php_phpcs_executable='./vendor/bin/phpcs'
