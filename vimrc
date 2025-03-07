@@ -120,7 +120,7 @@ let g:ale_rust_rls_config = {
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'posva/vim-vue'
 Plug 'heavenshell/vim-jsdoc', {
-    \ 'for': ['javascript', 'javascript.jsx','typescript'],
+    \ 'for': ['javascript', 'javascript.jsx','typescript', 'vue'],
     \ 'do': 'make install'
 \}
 
