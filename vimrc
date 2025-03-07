@@ -47,12 +47,6 @@ Plug 'kkoomen/vim-doge'
 Plug 'etlamb/DoxygenToolkit.vim'
 Plug 'coyotebush/vim-pweave'
 
-"" 0.5 secs to load.
-" " c-support
-" Plug 'dilawar/c-support'
-" let g:C_UseTool_cmake = 'yes'
-" let g:C_UseTool_doxygen = 'yes'
-
 " cmake
 " Plug 'cdelledonne/vim-cmake'
 
@@ -77,13 +71,6 @@ Plug 'phpactor/ncm2-phpactor'
 Plug 'tpope/vim-dispatch'             "| Optional
 Plug 'tpope/vim-projectionist'        "|
 Plug 'noahfrederick/vim-composer'     "|
-
-" COC
-" Use release branch (recommend)
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Or build from source code by using yarn: https://yarnpkg.com
-" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
 " ALE
 Plug 'dense-analysis/ale'
@@ -129,8 +116,9 @@ let g:ale_rust_rls_config = {
                 \ }
 
 
+" Frontend
 Plug 'peitalin/vim-jsx-typescript'
-
+Plug 'posva/vim-vue'
 Plug 'heavenshell/vim-jsdoc', {
     \ 'for': ['javascript', 'javascript.jsx','typescript'],
     \ 'do': 'make install'
