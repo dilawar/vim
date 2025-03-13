@@ -33,7 +33,6 @@ let g:grepper.quickfix      = 1
 
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-nnoremap <silent><Leader>F :Rg <C-R><C-W><CR>
 
 Plug 'tpope/vim-surround'
 " Thanks https://vi.stackexchange.com/a/2985/7610
@@ -73,6 +72,7 @@ Plug 'tpope/vim-projectionist'        "|
 Plug 'noahfrederick/vim-composer'     "|
 
 " ALE
+let g:ale_completion_enabled = 1
 Plug 'dense-analysis/ale'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
@@ -86,7 +86,6 @@ let g:ale_linters = {
             \ 'rust' : [ 'analyzer' ],
             \ 'javascript' : [ 'eslint'],
             \ 'typescript' : [ 'eslint', 'tsserver', 'prettier'],
-            \ 'vue' : [ 'eslint', 'stylelint', 'tsserver'],
             \ 'typescriptreact' : [ 'eslint', 'tsserver', 'prettier'],
             \ 'xml' : [ 'xmllint'],
             \}
@@ -108,14 +107,13 @@ let g:ale_fixers = {
             \   'xml' : ['xmllint'],
             \}
 
-let g:ale_rust_rustfmt_options = '+nightly'
 let g:ale_rust_cargo_use_clippy = 1
-let g:ale_rust_rls_toolchain = 'nightly'
 let g:ale_rust_rls_config = {
                 \   'rust': {
                 \     'clippy_preference': 'on'
                 \   }
                 \ }
+" let omnifunc=ale#completion#OmniFunc
 
 
 " Frontend
@@ -140,13 +138,13 @@ Plug 'pixelneo/vim-python-docstring'
 let g:python_style =  'numpy'
 
 " tags
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
 let g:gutentags_generate_on_write = 0
 let g:gutentags_generate_on_new = 1
 
-" autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
-" autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " nim
 Plug 'zah/nim.vim'
@@ -222,7 +220,7 @@ let g:closetag_filetypes = 'html,xml,xsl,php,js,vue'
 " Rust
 Plug 'rust-lang/rust.vim'
 let g:rustfmt_command = 'rustfmt'
-let g:rustfmt_options = '+nightly --unstable-features'
+let g:rustfmt_options = '--edition 2021'
 let g:rustfmt_autosave = 0
 
 " Vim backup.
