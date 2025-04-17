@@ -88,6 +88,7 @@ let g:ale_linters = {
             \ 'typescript' : [ 'eslint', 'tsserver', 'prettier'],
             \ 'typescriptreact' : [ 'eslint', 'tsserver', 'prettier'],
             \ 'xml' : [ 'xmllint'],
+            \ 'php' : [ 'php_cs_fixer', 'php'],
             \}
 
 let g:ale_linter_aliases = {'vue': ['css', 'javascript', 'typescript']}
@@ -103,7 +104,7 @@ let g:ale_fixers = {
             \   'css': ['prettier'],
             \   'python' : ['ruff'],
             \   'rust' : ['rustfmt'],
-            \   'php' : ['phpcbf'],
+            \   'php' : ['php_cs_fixer'],
             \   'xml' : ['xmllint'],
             \}
 
@@ -162,10 +163,28 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " php
 Plug 'stephpy/vim-php-cs-fixer'
+
 Plug 'tobyS/pdv'
+autocmd FileType php inoremap <C-p> <ESC>:call PhpDocSingle()<CR>i
+autocmd FileType php nnoremap <C-p> :call PhpDocSingle()<CR>
+autocmd FileType php vnoremap <C-p> :call PhpDocRange()<CR>
+
 Plug 'dilawar/better-indent-support-for-php-with-html'
 Plug 'alexandersix/vim-blade'
+
+" Include Phpactor
+Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+
+" Require ncm2 and this plugin
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'phpactor/ncm2-phpactor'
+
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
 autocmd BufRead,BufNewFile *.blade.php set filetype=php
+
 
 " diff mergetool
 Plug 'samoshkin/vim-mergetool'
