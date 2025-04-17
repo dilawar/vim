@@ -162,9 +162,8 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 Plug 'stephpy/vim-php-cs-fixer'
 
 Plug 'tobyS/pdv'
-autocmd FileType php inoremap <C-p> <ESC>:call PhpDocSingle()<CR>i
-autocmd FileType php nnoremap <C-p> :call PhpDocSingle()<CR>
-autocmd FileType php vnoremap <C-p> :call PhpDocRange()<CR>
+nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
+
 
 Plug 'dilawar/better-indent-support-for-php-with-html'
 Plug 'alexandersix/vim-blade'
