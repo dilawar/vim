@@ -136,7 +136,7 @@ Plug 'pixelneo/vim-python-docstring'
 let g:python_style =  'numpy'
 
 " tags
-" Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_ctags_exclude=["builds/*", "build/*", "target/*", "vendor/*"]
 let g:gutentags_generate_on_write = 0
 let g:gutentags_generate_on_new = 1
@@ -160,7 +160,9 @@ ino <M-g> <esc>:call JumpToDef()<cr>i
 
 " php
 Plug 'stephpy/vim-php-cs-fixer'
+Plug 'phpstan/vim-phpstan'
 
+Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
