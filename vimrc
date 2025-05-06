@@ -60,7 +60,6 @@ Plug 'godlygeek/tabular'
 
 " php support.
 Plug 'biinari/php.vim'
-Plug 'stephpy/vim-php-cs-fixer'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'noahfrederick/vim-laravel'
 
