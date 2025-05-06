@@ -85,7 +85,7 @@ let g:ale_linters = {
             \ 'typescript' : [ 'eslint', 'tsserver', 'prettier'],
             \ 'typescriptreact' : [ 'eslint', 'tsserver', 'prettier'],
             \ 'xml' : [ 'xmllint'],
-            \ 'php' : [ 'php_cs_fixer', 'php'],
+            \ 'php' : [ 'phpstan', 'php_cs_fixer', 'php'],
             \}
 
 let g:ale_linter_aliases = {'vue': ['css', 'javascript', 'typescript']}
@@ -157,10 +157,6 @@ endf
 " Jump to tag
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
-
-" php
-Plug 'stephpy/vim-php-cs-fixer'
-Plug 'phpstan/vim-phpstan'
 
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
