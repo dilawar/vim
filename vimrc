@@ -189,7 +189,7 @@ Plug 'zah/nim.vim'
 " Snippets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
-Plug "rafamadriz/friendly-snippets"
+Plug 'rafamadriz/friendly-snippets'
 
 " clang-format'
 Plug 'rhysd/vim-clang-format'
