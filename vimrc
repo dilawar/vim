@@ -80,9 +80,9 @@ let g:ale_tex_chktex_options = '-n26 -n18'
 let g:ale_linters = {
             \ 'python' : [ 'ruff', 'pylint', 'pyflakes' ],
             \ 'rust' : [ 'analyzer' ],
-            \ 'javascript' : [ 'eslint'],
-            \ 'typescript' : [ 'eslint', 'tsserver', 'prettier'],
-            \ 'typescriptreact' : [ 'eslint', 'tsserver', 'prettier'],
+            \ 'javascript' : [ 'biome', 'eslint'],
+            \ 'typescript' : [ 'tsserver', 'eslint', 'prettier'],
+            \ 'typescriptreact' : [ 'tsserver', 'eslint', 'prettier'],
             \ 'xml' : [ 'xmllint'],
             \ 'php' : [ 'phpstan', 'php_cs_fixer', 'php'],
             \}
