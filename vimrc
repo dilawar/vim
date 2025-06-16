@@ -60,11 +60,16 @@ Plug 'godlygeek/tabular'
 
 " php support.
 Plug 'biinari/php.vim'
+Plug 'vim-scripts/php.vim-html-enhanced'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'noahfrederick/vim-laravel'
 
+" Other googdies
 Plug 'tpope/vim-dispatch'             "| Optional
 Plug 'tpope/vim-projectionist'        "|
+Plug 'tpope/vim-ragtag'
+let g:ragtag_global_maps = 1
+Plug 'tpope/vim-unimpaired'
 Plug 'noahfrederick/vim-composer'     "|
 
 " ALE
