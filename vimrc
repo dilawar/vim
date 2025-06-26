@@ -12,6 +12,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'will133/vim-dirdiff'
 Plug 'scrooloose/nerdtree'
 
+Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 " always|never|preserve
 " default: 'preserve'
@@ -59,10 +62,10 @@ Plug 'rhysd/vim-grammarous'
 Plug 'godlygeek/tabular'
 
 " php support.
-Plug 'biinari/php.vim'
-Plug 'vim-scripts/php.vim-html-enhanced'
-Plug 'shawncplus/phpcomplete.vim'
-Plug 'noahfrederick/vim-laravel'
+" Plug 'biinari/php.vim'
+" Plug 'vim-scripts/php.vim-html-enhanced'
+" Plug 'shawncplus/phpcomplete.vim'
+" Plug 'noahfrederick/vim-laravel'
 
 " Other googdies
 Plug 'tpope/vim-dispatch'             "| Optional
@@ -244,9 +247,6 @@ set writebackup
 set backupdir=~/.vim/backup
 au BufWritePre * let &bex = '@' . strftime("%F.%H-%M")
 
-"" jupyter
-" Plug 'jupyter-vim/jupyter-vim'
-Plug 'ervandew/supertab'
 
 " LSP
 Plug 'prabirshrestha/vim-lsp'
