@@ -12,6 +12,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'will133/vim-dirdiff'
 Plug 'scrooloose/nerdtree'
 
+" csv support
+Plug 'chrisbra/csv.vim'
+
 Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
@@ -231,6 +234,10 @@ Plug 'bling/vim-airline'
 Plug 'lervag/vimtex'
 Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdcommenter'
+
+Plug 'dpelle/vim-languagetool'
+let g:languagetool_jar="~/App/LanguageTool-6.6-stable/languagetool-commandline.jar"
+
 
 Plug 'alvan/vim-closetag'
 let g:closetag_filetypes = 'html,xml,xsl,php,js,vue'
