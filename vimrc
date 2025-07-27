@@ -261,6 +261,7 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+let g:lsp_diagnostics_enabled = 0   " disable diagnostics
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand('/tmp/vim-lsp.log')
 
