@@ -135,7 +135,7 @@ Plug 'heavenshell/vim-jsdoc', {
 Plug 'vim-scripts/check-mutt-attachments.vim'
 Plug 'itchyny/calendar.vim'
 " Plug 'godlygeek/tabular'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install'  }
 
 "" Python
 " Plug 'python-rope/ropevim'
