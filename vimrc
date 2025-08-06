@@ -235,7 +235,7 @@ Plug 'lervag/vimtex'
 Plug 'flazz/vim-colorschemes'
 Plug 'preservim/nerdcommenter'
 
-Plug 'dpelle/vim-languagetool'
+Plug 'dilawar/vim-languagetool'
 let g:languagetool_jar="~/App/LanguageTool-6.6-stable/languagetool-commandline.jar"
 
 
