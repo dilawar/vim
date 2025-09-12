@@ -37,8 +37,9 @@ let g:grepper.next_tool     = '<leader>g'
 let g:grepper.simple_prompt = 1
 let g:grepper.quickfix      = 1
 
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" ripgrep 
+Plug 'jremmen/vim-ripgrep'
+let g:g_derive_root = true
 
 Plug 'tpope/vim-surround'
 " Thanks https://vi.stackexchange.com/a/2985/7610
@@ -260,6 +261,11 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+let g:asyncomplete_auto_popup = 0
+
 
 let g:lsp_diagnostics_enabled = 0   " disable diagnostics
 " let g:lsp_log_verbose = 1
@@ -494,4 +500,5 @@ au BufRead,BufNewFile *.mc set filetype=maxima nospell
 au BufRead,BufNewFile *.rules set filetype=make
 au BufRead,BufNewFile *.tex set filetype=tex
 au BufRead,BufNewFile *.vue set ts=2 sw=2 expandtab
+au BufRead,BufNewFile *.ts set ts=2 sw=2 expandtab
 au BufRead,BufNewFile *.plantuml set filetype=plantuml
