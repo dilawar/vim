@@ -39,7 +39,7 @@ let g:grepper.quickfix      = 1
 
 " ripgrep 
 Plug 'jremmen/vim-ripgrep'
-let g:g_derive_root = true
+let g:g_derive_root = 1
 
 Plug 'tpope/vim-surround'
 " Thanks https://vi.stackexchange.com/a/2985/7610
