@@ -81,7 +81,6 @@ Plug 'noahfrederick/vim-composer'     "|
 
 " ALE
 Plug 'dense-analysis/ale'
-let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
@@ -122,12 +121,12 @@ let g:ale_rust_rls_config = {
                 \     'clippy_preference': 'on'
                 \   }
                 \ }
-let omnifunc=ale#completion#OmniFunc
+set omnifunc=ale#completion#OmniFunc
 nnoremap K <cmd>ALEHover<CR>
 nnoremap <leader>gd <cmd>ALEGoToDefinition<CR>
 nnoremap <leader>gr <cmd>ALEFindReferences<CR>
 nnoremap <leader>ca <cmd>ALECodeAc
-
+let g:ale_completion_enabled = 1
 
 " Frontend
 Plug 'peitalin/vim-jsx-typescript'
